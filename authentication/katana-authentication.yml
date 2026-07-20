@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.katanamrp.com/docs/getting-started
+docs: https://developer.katanamrp.com/reference/api-authentication
+notes: >-
+  The published OpenAPI (https://api.katanamrp.com/v1/openapi.json) does not
+  declare any securitySchemes; the auth model below is captured from the Katana
+  developer docs. Katana authenticates every request with an account-scoped API
+  key sent as an HTTP Bearer token. Keys are generated in the Katana app under
+  Settings > API > API keys and are server-side only (never expose in a frontend).
+  A missing/incorrect/outdated key returns 401. Requires a Professional plan or higher.
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: apiKey
+  type: http
+  scheme: bearer
+  bearer_format: opaque
+  location: header
+  header: Authorization
+  value_prefix: 'Bearer '
+  description: >-
+    Account-scoped API key issued in the Katana app (Settings > API > API keys),
+    sent as `Authorization: Bearer <api key>`.
+  management_url: https://factory.katanamrp.com/settings/api
+  sources:
+  - docs
