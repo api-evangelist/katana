@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController OperatorsController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: OperatorsController
+paths:
+  /operators:
+    get:
+      x-controller-name: OperatorsController
+      x-operation-name: find
+      tags:
+      - OperatorsController
+      responses:
+        '200':
+          description: Return value of OperatorsController.find
+      operationId: OperatorsController.find
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: working_area
+        in: query
+        schema:
+          enum:
+          - shopFloor
+          - warehouse
+          type: string
+      - name: resource_id
+        in: query
+        schema:
+          type: number

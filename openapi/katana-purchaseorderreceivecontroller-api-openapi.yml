@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PurchaseOrderReceiveController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PurchaseOrderReceiveController
+paths:
+  /purchase_order_receive:
+    post:
+      x-controller-name: PurchaseOrderReceiveController
+      x-operation-name: receivePartially
+      tags:
+      - PurchaseOrderReceiveController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderReceiveController.receivePartially
+      requestBody:
+        content:
+          application/json:
+            schema:
+              anyOf:
+              - $ref: '#/components/schemas/PurchaseOrderRowReceiveDto'
+              - type: array
+                items:
+                  $ref: '#/components/schemas/PurchaseOrderRowReceiveDto'
+                minItems: 1
+        required: true
+      operationId: PurchaseOrderReceiveController.receivePartially
+components:
+  schemas:
+    PurchaseOrderRowReceiveDto:
+      title: PurchaseOrderRowReceiveDto
+      type: object
+      properties:
+        received_date:
+          type: string
+          format: date
+        purchase_order_row_id:
+          type: integer
+          maximum: 2147483647
+        quantity:
+          type: number
+          minimum: 0
+        batch_transactions:
+          type: array
+          items:
+            title: PurchaseOrderRowReceiveBatchDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                nullable: true
+                maximum: 2147483647
+              quantity:
+                type: number
+                minimum: 0
+            required:
+            - batch_id
+            - quantity
+            additionalProperties: false
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - purchase_order_row_id
+      - quantity
+      additionalProperties: false

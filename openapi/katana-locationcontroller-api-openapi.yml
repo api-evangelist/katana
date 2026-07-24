@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController LocationController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: LocationController
+paths:
+  /locations/{id}:
+    get:
+      x-controller-name: LocationController
+      x-operation-name: getLocation
+      tags:
+      - LocationController
+      responses:
+        '200':
+          description: Return value of LocationController.getLocation
+      operationId: LocationController.getLocation
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /locations:
+    get:
+      x-controller-name: LocationController
+      x-operation-name: getAllLocations
+      tags:
+      - LocationController
+      responses:
+        '200':
+          description: Return value of LocationController.getAllLocations
+      operationId: LocationController.getAllLocations
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: legal_name
+        in: query
+        schema:
+          type: string
+      - name: address_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: is_primary
+        in: query
+        schema:
+          type: boolean
+      - name: sales_allowed
+        in: query
+        schema:
+          type: boolean
+      - name: manufacturing_allowed
+        in: query
+        schema:
+          type: boolean
+      - name: purchases_allowed
+        in: query
+        schema:
+          type: boolean
+      - name: rank
+        in: query
+        schema:
+          type: number
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean

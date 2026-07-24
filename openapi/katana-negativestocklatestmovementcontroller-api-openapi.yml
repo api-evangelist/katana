@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController NegativeStockLatestMovementController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: NegativeStockLatestMovementController
+paths:
+  /negative_stock:
+    get:
+      x-controller-name: NegativeStockLatestMovementController
+      x-operation-name: getAllNegativeStockLatestMovements
+      tags:
+      - NegativeStockLatestMovementController
+      responses:
+        '200':
+          description: Return value of NegativeStockLatestMovementController.getAllNegativeStockLatestMovements
+      operationId: NegativeStockLatestMovementController.getAllNegativeStockLatestMovements
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: location_id
+        in: query
+        schema:
+          type: number
+      - name: variant_id
+        in: query
+        schema:
+          type: number
+      - name: latest_negative_stock_date_max
+        in: query
+        schema:
+          type: string
+      - name: latest_negative_stock_date_min
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: sku
+        in: query
+        schema:
+          type: string
+      - name: category
+        in: query
+        schema:
+          type: string

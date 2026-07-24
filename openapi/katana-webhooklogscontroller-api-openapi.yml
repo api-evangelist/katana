@@ -1,0 +1,122 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController WebhookLogsController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: WebhookLogsController
+paths:
+  /webhook_logs_export:
+    post:
+      x-controller-name: WebhookLogsController
+      x-operation-name: exportWebhookLogs
+      tags:
+      - WebhookLogsController
+      responses:
+        '200':
+          description: Return value of WebhookLogsController.exportWebhookLogs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookLogsExportDto'
+        required: true
+      operationId: WebhookLogsController.exportWebhookLogs
+components:
+  schemas:
+    WebhookLogsExportDto:
+      title: WebhookLogsExportDto
+      type: object
+      properties:
+        webhook_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        event:
+          type: string
+          nullable: false
+          enum:
+          - sales_order.created
+          - sales_order.packed
+          - sales_order.delivered
+          - sales_order.updated
+          - sales_order.approved
+          - sales_order.deleted
+          - sales_order.availability_updated
+          - purchase_order.created
+          - purchase_order.updated
+          - purchase_order.deleted
+          - purchase_order.partially_received
+          - purchase_order.received
+          - purchase_order.approved
+          - purchase_order_row.created
+          - purchase_order_row.received
+          - purchase_order_row.updated
+          - purchase_order_row.deleted
+          - outsourced_purchase_order.created
+          - outsourced_purchase_order.updated
+          - outsourced_purchase_order.deleted
+          - outsourced_purchase_order.received
+          - outsourced_purchase_order.approved
+          - outsourced_purchase_order_row.created
+          - outsourced_purchase_order_row.updated
+          - outsourced_purchase_order_row.deleted
+          - outsourced_purchase_order_row.received
+          - outsourced_purchase_order_recipe_row.created
+          - outsourced_purchase_order_recipe_row.updated
+          - outsourced_purchase_order_recipe_row.deleted
+          - manufacturing_order.created
+          - manufacturing_order.updated
+          - manufacturing_order.deleted
+          - manufacturing_order.in_progress
+          - manufacturing_order.blocked
+          - manufacturing_order.done
+          - manufacturing_order_recipe_row.created
+          - manufacturing_order_recipe_row.updated
+          - manufacturing_order_recipe_row.deleted
+          - manufacturing_order_recipe_row.ingredients_in_stock
+          - manufacturing_order_operation_row.created
+          - manufacturing_order_operation_row.updated
+          - manufacturing_order_operation_row.deleted
+          - manufacturing_order_operation_row.in_progress
+          - manufacturing_order_operation_row.paused
+          - manufacturing_order_operation_row.blocked
+          - manufacturing_order_operation_row.completed
+          - current_inventory.product_updated
+          - current_inventory.material_updated
+          - current_inventory.product_out_of_stock
+          - current_inventory.material_out_of_stock
+          - product.created
+          - product.updated
+          - product.deleted
+          - material.created
+          - material.updated
+          - material.deleted
+          - variant.created
+          - variant.updated
+          - variant.deleted
+          - product_recipe_row.created
+          - product_recipe_row.deleted
+          - product_recipe_row.updated
+        status_code:
+          type: integer
+          nullable: false
+          minimum: 100
+          maximum: 600
+        delivered:
+          type: boolean
+          default: false
+          nullable: false
+        created_at_min:
+          type: string
+          format: date
+          nullable: false
+        created_at_max:
+          type: string
+          format: date
+          nullable: false
+      additionalProperties: false

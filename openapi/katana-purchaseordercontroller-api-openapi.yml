@@ -1,0 +1,313 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PurchaseOrderController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PurchaseOrderController
+paths:
+  /purchase_orders/{id}:
+    patch:
+      x-controller-name: PurchaseOrderController
+      x-operation-name: updatePurchaseOrder
+      tags:
+      - PurchaseOrderController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderController.updatePurchaseOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePurchaseOrderDto'
+        required: true
+        x-parameter-index: 1
+      operationId: PurchaseOrderController.updatePurchaseOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: PurchaseOrderController
+      x-operation-name: getPurchaseOrder
+      tags:
+      - PurchaseOrderController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderController.getPurchaseOrder
+      operationId: PurchaseOrderController.getPurchaseOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - supplier
+    delete:
+      x-controller-name: PurchaseOrderController
+      x-operation-name: deletePurchaseOrder
+      tags:
+      - PurchaseOrderController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderController.deletePurchaseOrder
+      operationId: PurchaseOrderController.deletePurchaseOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /purchase_orders:
+    post:
+      x-controller-name: PurchaseOrderController
+      x-operation-name: createPurchaseOrder
+      tags:
+      - PurchaseOrderController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderController.createPurchaseOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePurchaseOrderDto'
+        required: true
+      operationId: PurchaseOrderController.createPurchaseOrder
+    get:
+      x-controller-name: PurchaseOrderController
+      x-operation-name: getPurchaseOrders
+      tags:
+      - PurchaseOrderController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderController.getPurchaseOrders
+      operationId: PurchaseOrderController.getPurchaseOrders
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: status
+        in: query
+        schema:
+          enum:
+          - DRAFT
+          - NOT_RECEIVED
+          - PARTIALLY_RECEIVED
+          - RECEIVED
+          type: string
+      - name: order_no
+        in: query
+        schema:
+          type: string
+      - name: currency
+        in: query
+        schema:
+          type: string
+      - name: billing_status
+        in: query
+        schema:
+          enum:
+          - BILLED
+          - NOT_BILLED
+          - PARTIALLY_BILLED
+          type: string
+      - name: last_document_status
+        in: query
+        schema:
+          enum:
+          - notSent
+          - sending
+          - sent
+          - failed
+          type: string
+      - name: supplier_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+      - name: entity_type
+        in: query
+        schema:
+          enum:
+          - regular
+          - outsourced
+          type: string
+      - name: tracking_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - supplier
+components:
+  schemas:
+    UpdatePurchaseOrderDto:
+      title: UpdatePurchaseOrderDto
+      type: object
+      properties:
+        order_no:
+          type: string
+          minLength: 1
+        supplier_id:
+          type: integer
+          maximum: 2147483647
+        currency:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          enum:
+          - DRAFT
+          - NOT_RECEIVED
+          - RECEIVED
+          - PARTIALLY_RECEIVED
+        expected_arrival_date:
+          type: string
+        order_created_date:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        tracking_location_id:
+          type: integer
+          maximum: 2147483647
+        additional_info:
+          type: string
+      additionalProperties: false
+    CreatePurchaseOrderDto:
+      title: CreatePurchaseOrderDto
+      type: object
+      properties:
+        order_no:
+          type: string
+          minLength: 1
+        entity_type:
+          type: string
+          enum:
+          - regular
+          - outsourced
+        supplier_id:
+          type: integer
+          maximum: 2147483647
+        currency:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          enum:
+          - DRAFT
+          - NOT_RECEIVED
+        expected_arrival_date:
+          type: string
+          format: date
+        order_created_date:
+          type: string
+          format: date
+        location_id:
+          type: integer
+          maximum: 2147483647
+        tracking_location_id:
+          type: integer
+          maximum: 2147483647
+        additional_info:
+          type: string
+        purchase_order_rows:
+          type: array
+          items:
+            title: CreatePurchaseOrderRowDto
+            type: object
+            properties:
+              quantity:
+                type: number
+                maximum: 100000000000000000
+                minimum: 0
+              variant_id:
+                type: integer
+                maximum: 2147483647
+              tax_rate_id:
+                type: integer
+                maximum: 2147483647
+              price_per_unit:
+                type: number
+                minimum: 0
+                maximum: 100000000000000000
+              purchase_uom_conversion_rate:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 100000000000000000
+              purchase_uom:
+                type: string
+                nullable: true
+                minLength: 1
+                maxLength: 7
+              tax_rate:
+                type: string
+              tax_name:
+                type: string
+              arrival_date:
+                type: string
+              location_id:
+                type: integer
+                nullable: false
+                maximum: 2147483647
+                minimum: 1
+            required:
+            - quantity
+            - variant_id
+            - price_per_unit
+            additionalProperties: false
+      required:
+      - supplier_id
+      - location_id
+      - purchase_order_rows
+      additionalProperties: false

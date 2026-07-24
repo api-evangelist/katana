@@ -1,0 +1,167 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PriceListRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PriceListRowController
+paths:
+  /price_list_rows/{id}:
+    patch:
+      x-controller-name: PriceListRowController
+      x-operation-name: updateById
+      tags:
+      - PriceListRowController
+      responses:
+        '200':
+          description: Return value of PriceListRowController.updateById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchPriceListRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: PriceListRowController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: PriceListRowController
+      x-operation-name: findById
+      tags:
+      - PriceListRowController
+      responses:
+        '200':
+          description: Return value of PriceListRowController.findById
+      operationId: PriceListRowController.findById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: PriceListRowController
+      x-operation-name: deleteById
+      tags:
+      - PriceListRowController
+      responses:
+        '204':
+          description: Price list row delete success
+      operationId: PriceListRowController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /price_list_rows:
+    post:
+      x-controller-name: PriceListRowController
+      x-operation-name: create
+      tags:
+      - PriceListRowController
+      responses:
+        '200':
+          description: Return value of PriceListRowController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePriceListRowsDto'
+        required: true
+      operationId: PriceListRowController.create
+    get:
+      x-controller-name: PriceListRowController
+      x-operation-name: findAndPaginate
+      tags:
+      - PriceListRowController
+      responses:
+        '200':
+          description: Return value of PriceListRowController.findAndPaginate
+      operationId: PriceListRowController.findAndPaginate
+      parameters:
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: variant_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: price_list_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+components:
+  schemas:
+    CreatePriceListRowsDto:
+      title: CreatePriceListRowsDto
+      type: object
+      properties:
+        price_list_id:
+          type: number
+        price_list_rows:
+          type: array
+          items:
+            title: CreatePriceListRowDto
+            type: object
+            properties:
+              variant_id:
+                type: number
+              adjustment_method:
+                type: string
+                enum:
+                - fixed
+                - percentage
+                - markup
+              amount:
+                type: number
+            required:
+            - variant_id
+            - adjustment_method
+            - amount
+            additionalProperties: false
+      required:
+      - price_list_id
+      - price_list_rows
+      additionalProperties: false
+    PatchPriceListRowDto:
+      title: PatchPriceListRowDto
+      type: object
+      properties:
+        variant_id:
+          type: number
+        adjustment_method:
+          type: string
+          enum:
+          - fixed
+          - percentage
+          - markup
+        amount:
+          type: number
+          minimum: 0
+          exclusiveMinimum: true
+      additionalProperties: false

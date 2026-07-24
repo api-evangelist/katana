@@ -1,0 +1,194 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SupplierAddressController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SupplierAddressController
+paths:
+  /supplier_addresses/{id}:
+    patch:
+      x-controller-name: SupplierAddressController
+      x-operation-name: updateSupplierAddress
+      tags:
+      - SupplierAddressController
+      responses:
+        '200':
+          description: Return value of SupplierAddressController.updateSupplierAddress
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupplierAddressPatchDto'
+        required: true
+        x-parameter-index: 1
+      operationId: SupplierAddressController.updateSupplierAddress
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: SupplierAddressController
+      x-operation-name: deleteSupplierAddress
+      tags:
+      - SupplierAddressController
+      responses:
+        '200':
+          description: Return value of SupplierAddressController.deleteSupplierAddress
+      operationId: SupplierAddressController.deleteSupplierAddress
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /supplier_addresses:
+    post:
+      x-controller-name: SupplierAddressController
+      x-operation-name: createSupplierAddress
+      tags:
+      - SupplierAddressController
+      responses:
+        '200':
+          description: Return value of SupplierAddressController.createSupplierAddress
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupplierAddressCreateDto'
+        required: true
+      operationId: SupplierAddressController.createSupplierAddress
+    get:
+      x-controller-name: SupplierAddressController
+      x-operation-name: getAllSupplierAddresses
+      tags:
+      - SupplierAddressController
+      responses:
+        '200':
+          description: Return value of SupplierAddressController.getAllSupplierAddresses
+      operationId: SupplierAddressController.getAllSupplierAddresses
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: supplier_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: line_1
+        in: query
+        schema:
+          type: string
+      - name: line_2
+        in: query
+        schema:
+          type: string
+      - name: city
+        in: query
+        schema:
+          type: string
+      - name: state
+        in: query
+        schema:
+          type: string
+      - name: zip
+        in: query
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    SupplierAddressCreateDto:
+      title: SupplierAddressCreateDto
+      type: object
+      properties:
+        line_1:
+          type: string
+          nullable: true
+        line_2:
+          type: string
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        supplier_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - supplier_id
+      additionalProperties: false
+    SupplierAddressPatchDto:
+      title: SupplierAddressPatchDto
+      type: object
+      properties:
+        line_1:
+          type: string
+          nullable: true
+          minLength: 1
+        line_2:
+          type: string
+          nullable: true
+          minLength: 1
+        city:
+          type: string
+          nullable: true
+          minLength: 1
+        state:
+          type: string
+          nullable: true
+          minLength: 1
+        zip:
+          type: string
+          nullable: true
+          minLength: 1
+        country:
+          type: string
+          nullable: true
+          minLength: 1
+      additionalProperties: false

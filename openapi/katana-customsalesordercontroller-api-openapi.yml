@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController CustomSalesOrderController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: CustomSalesOrderController
+paths:
+  /sales_order_rerank:
+    post:
+      x-controller-name: CustomSalesOrderController
+      x-operation-name: rerank
+      tags:
+      - CustomSalesOrderController
+      responses:
+        '200':
+          description: Return value of CustomSalesOrderController.rerank
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RerankSalesOrderDto'
+        required: true
+      operationId: CustomSalesOrderController.rerank
+components:
+  schemas:
+    RerankSalesOrderDto:
+      title: RerankSalesOrderDto
+      type: object
+      properties:
+        order_ids:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: integer
+            minimum: 1
+            maximum: 2147483647
+        place:
+          $ref: '#/components/schemas/RerankPlaceDto'
+      required:
+      - order_ids
+      - place
+      additionalProperties: false
+    RerankPlaceDto:
+      title: RerankPlaceDto
+      type: object
+      properties:
+        before_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - before_id
+      additionalProperties: false

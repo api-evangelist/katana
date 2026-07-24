@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController TaxRateController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: TaxRateController
+paths:
+  /tax_rates:
+    post:
+      x-controller-name: TaxRateController
+      x-operation-name: createTaxRate
+      tags:
+      - TaxRateController
+      responses:
+        '200':
+          description: Return value of TaxRateController.createTaxRate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTaxRateDto'
+        required: true
+      operationId: TaxRateController.createTaxRate
+    get:
+      x-controller-name: TaxRateController
+      x-operation-name: getAllTaxRates
+      tags:
+      - TaxRateController
+      responses:
+        '200':
+          description: Return value of TaxRateController.getAllTaxRates
+      operationId: TaxRateController.getAllTaxRates
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: rate
+        in: query
+        schema:
+          type: number
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: is_default_sales
+        in: query
+        schema:
+          type: boolean
+      - name: is_default_purchases
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateTaxRateDto:
+      title: CreateTaxRateDto
+      type: object
+      properties:
+        name:
+          type: string
+        rate:
+          type: number
+          minimum: 0
+          maximum: 999.999
+      required:
+      - rate
+      additionalProperties: false

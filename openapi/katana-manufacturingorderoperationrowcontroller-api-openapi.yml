@@ -1,0 +1,303 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController ManufacturingOrderOperationRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: ManufacturingOrderOperationRowController
+paths:
+  /manufacturing_order_operation_rows/{id}:
+    patch:
+      x-controller-name: ManufacturingOrderOperationRowController
+      x-operation-name: updateManufacturingOrderOperationRow
+      tags:
+      - ManufacturingOrderOperationRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderOperationRowController.updateManufacturingOrderOperationRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateManufacturingOrderOperationRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: ManufacturingOrderOperationRowController.updateManufacturingOrderOperationRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: ManufacturingOrderOperationRowController
+      x-operation-name: retrieveManufacturingOrderOperationRow
+      tags:
+      - ManufacturingOrderOperationRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderOperationRowController.retrieveManufacturingOrderOperationRow
+      operationId: ManufacturingOrderOperationRowController.retrieveManufacturingOrderOperationRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: ManufacturingOrderOperationRowController
+      x-operation-name: deleteManufacturingOrderOperationRow
+      tags:
+      - ManufacturingOrderOperationRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderOperationRowController.deleteManufacturingOrderOperationRow
+      operationId: ManufacturingOrderOperationRowController.deleteManufacturingOrderOperationRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /manufacturing_order_operation_rows:
+    post:
+      x-controller-name: ManufacturingOrderOperationRowController
+      x-operation-name: createManufacturingOrderOperationRow
+      tags:
+      - ManufacturingOrderOperationRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderOperationRowController.createManufacturingOrderOperationRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateManufacturingOrderOperationRowDto'
+        required: true
+      operationId: ManufacturingOrderOperationRowController.createManufacturingOrderOperationRow
+    get:
+      x-controller-name: ManufacturingOrderOperationRowController
+      x-operation-name: getManufacturingOrderOperationRows
+      tags:
+      - ManufacturingOrderOperationRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderOperationRowController.getManufacturingOrderOperationRows
+      operationId: ManufacturingOrderOperationRowController.getManufacturingOrderOperationRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: manufacturing_order_id
+        in: query
+        schema:
+          type: number
+          maximum: 2147483647
+      - name: status
+        in: query
+        schema:
+          enum:
+          - NOT_STARTED
+          - BLOCKED
+          - IN_PROGRESS
+          - PAUSED
+          - COMPLETED
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateManufacturingOrderOperationRowDto:
+      title: CreateManufacturingOrderOperationRowDto
+      type: object
+      properties:
+        manufacturing_order_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        operation_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        operation_name:
+          type: string
+          minLength: 1
+        resource_id:
+          type: integer
+          nullable: true
+          minimum: 1
+          maximum: 2147483647
+        resource_name:
+          type: string
+          nullable: true
+          minLength: 1
+        assigned_operators:
+          type: array
+          items:
+            title: CreateOperatorDto
+            type: object
+            properties:
+              operator_id:
+                type: integer
+                minimum: 1
+                maximum: 2147483647
+              name:
+                type: string
+            additionalProperties: false
+        planned_time_per_unit:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        planned_time_parameter:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        cost_per_hour:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        type:
+          type: string
+          nullable: false
+          enum:
+          - process
+          - setup
+          - perUnit
+          - fixed
+        cost_parameter:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        status:
+          type: string
+          enum:
+          - NOT_STARTED
+      required:
+      - manufacturing_order_id
+      - status
+      additionalProperties: false
+    UpdateManufacturingOrderOperationRowDto:
+      title: UpdateManufacturingOrderOperationRowDto
+      type: object
+      properties:
+        operation_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        operation_name:
+          type: string
+          nullable: false
+          minLength: 1
+        resource_id:
+          type: integer
+          nullable: true
+          maximum: 2147483647
+          minimum: 1
+        resource_name:
+          type: string
+          nullable: true
+          minLength: 1
+        planned_time_per_unit:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 10000000000000000
+        planned_time_parameter:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 10000000000000000
+        total_actual_time:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 10000000000000000
+        cost_per_hour:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 10000000000000000
+        cost_parameter:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 10000000000000000
+        type:
+          type: string
+          nullable: false
+          enum:
+          - process
+          - setup
+          - perUnit
+          - fixed
+        status:
+          type: string
+          nullable: false
+          enum:
+          - NOT_STARTED
+          - BLOCKED
+          - IN_PROGRESS
+          - PAUSED
+          - COMPLETED
+        assigned_operators:
+          type: array
+          items:
+            title: UpdateOperatorDto
+            type: object
+            properties:
+              operator_id:
+                type: integer
+                nullable: false
+                maximum: 2147483647
+                minimum: 1
+              name:
+                type: string
+                nullable: false
+                minLength: 1
+            additionalProperties: false
+          nullable: false
+        completed_by_operators:
+          type: array
+          items:
+            title: UpdateOperatorDto
+            type: object
+            properties:
+              operator_id:
+                type: integer
+                nullable: false
+                maximum: 2147483647
+                minimum: 1
+              name:
+                type: string
+                nullable: false
+                minLength: 1
+            additionalProperties: false
+          nullable: false
+      additionalProperties: false

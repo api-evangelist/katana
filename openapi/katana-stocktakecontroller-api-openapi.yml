@@ -1,0 +1,206 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController StocktakeController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: StocktakeController
+paths:
+  /stocktakes/{id}:
+    patch:
+      x-controller-name: StocktakeController
+      x-operation-name: updateById
+      tags:
+      - StocktakeController
+      responses:
+        '204':
+          description: Stocktake update success
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStocktakeDto'
+        required: true
+        x-parameter-index: 1
+      operationId: StocktakeController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+    delete:
+      x-controller-name: StocktakeController
+      x-operation-name: deleteById
+      tags:
+      - StocktakeController
+      responses:
+        '204':
+          description: Stocktake delete success
+      operationId: StocktakeController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /stocktakes:
+    post:
+      x-controller-name: StocktakeController
+      x-operation-name: createStocktake
+      tags:
+      - StocktakeController
+      responses:
+        '200':
+          description: Return value of StocktakeController.createStocktake
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStocktakeDto'
+        required: true
+      operationId: StocktakeController.createStocktake
+    get:
+      x-controller-name: StocktakeController
+      x-operation-name: findStocktakes
+      tags:
+      - StocktakeController
+      responses:
+        '200':
+          description: Return value of StocktakeController.findStocktakes
+      operationId: StocktakeController.findStocktakes
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: stocktake_number
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          enum:
+          - NOT_STARTED
+          - IN_PROGRESS
+          - COUNTED
+          - COMPLETED
+          type: string
+      - name: stock_adjustment_id
+        in: query
+        schema:
+          type: string
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateStocktakeDto:
+      title: CreateStocktakeDto
+      type: object
+      properties:
+        stocktake_number:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        reason:
+          type: string
+          maxLength: 540
+        additional_info:
+          type: string
+          nullable: true
+        created_date:
+          type: string
+        set_remaining_items_as_counted:
+          type: boolean
+        stocktake_rows:
+          type: array
+          items:
+            title: CreateStocktakeRowDto
+            type: object
+            properties:
+              variant_id:
+                type: integer
+                maximum: 2147483647
+              batch_id:
+                type: integer
+                nullable: true
+                maximum: 2147483647
+              bin_location_id:
+                type: integer
+                nullable: true
+                maximum: 2147483647
+              notes:
+                type: string
+                nullable: true
+              counted_quantity:
+                type: number
+                nullable: true
+                maximum: 2147483647
+            required:
+            - variant_id
+            additionalProperties: false
+          maxItems: 250
+      required:
+      - stocktake_number
+      - location_id
+      additionalProperties: false
+    UpdateStocktakeDto:
+      title: UpdateStocktakeDto
+      type: object
+      properties:
+        stocktake_number:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        status:
+          type: string
+          enum:
+          - NOT_STARTED
+          - IN_PROGRESS
+          - COUNTED
+          - COMPLETED
+        reason:
+          type: string
+          nullable: true
+          maxLength: 540
+        additional_info:
+          type: string
+          nullable: true
+        created_date:
+          type: string
+        completed_date:
+          type: string
+          nullable: true
+        set_remaining_items_as_counted:
+          type: boolean
+      additionalProperties: false

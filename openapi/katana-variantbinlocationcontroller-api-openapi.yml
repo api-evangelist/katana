@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController VariantBinLocationController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: VariantBinLocationController
+paths:
+  /variant_bin_locations:
+    post:
+      x-controller-name: VariantBinLocationController
+      x-operation-name: bulkUpsertVariantBinLocations
+      tags:
+      - VariantBinLocationController
+      responses:
+        '200':
+          description: Return value of VariantBinLocationController.bulkUpsertVariantBinLocations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/VariantBinLocationUpsertDto'
+        description: bulk upsert variant bin locations and bin locations via API
+      operationId: VariantBinLocationController.bulkUpsertVariantBinLocations
+components:
+  schemas:
+    VariantBinLocationUpsertDto:
+      title: VariantBinLocationUpsertDto
+      type: object
+      properties:
+        bin_name:
+          type: string
+          nullable: false
+          minLength: 1
+        variant_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - bin_name
+      - variant_id
+      additionalProperties: false

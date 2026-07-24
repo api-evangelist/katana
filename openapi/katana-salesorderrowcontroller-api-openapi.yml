@@ -1,0 +1,1469 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SalesOrderRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SalesOrderRowController
+paths:
+  /sales_order_rows/search:
+    post:
+      x-controller-name: SalesOrderRowController
+      x-operation-name: searchSalesOrderRows
+      tags:
+      - SalesOrderRowController
+      responses:
+        '200':
+          description: Return value of SalesOrderRowController.searchSalesOrderRows
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchSalesOrderRowsDto'
+        required: true
+      operationId: SalesOrderRowController.searchSalesOrderRows
+  /sales_order_rows/{id}:
+    patch:
+      x-controller-name: SalesOrderRowController
+      x-operation-name: updateSalesOrderRow
+      tags:
+      - SalesOrderRowController
+      responses:
+        '200':
+          description: Return value of SalesOrderRowController.updateSalesOrderRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSalesOrderRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: SalesOrderRowController.updateSalesOrderRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: SalesOrderRowController
+      x-operation-name: findById
+      tags:
+      - SalesOrderRowController
+      responses:
+        '200':
+          description: Return value of SalesOrderRowController.findById
+      operationId: SalesOrderRowController.findById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - variant
+    delete:
+      x-controller-name: SalesOrderRowController
+      x-operation-name: deleteSalesOrderRow
+      tags:
+      - SalesOrderRowController
+      responses:
+        '200':
+          description: Return value of SalesOrderRowController.deleteSalesOrderRow
+      operationId: SalesOrderRowController.deleteSalesOrderRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /sales_order_rows:
+    post:
+      x-controller-name: SalesOrderRowController
+      x-operation-name: createSalesOrderRow
+      tags:
+      - SalesOrderRowController
+      responses:
+        '200':
+          description: Return value of SalesOrderRowController.createSalesOrderRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSalesOrderRowWithSalesOrderIdDto'
+        required: true
+      operationId: SalesOrderRowController.createSalesOrderRow
+    get:
+      x-controller-name: SalesOrderRowController
+      x-operation-name: findAllSalesOrders
+      tags:
+      - SalesOrderRowController
+      responses:
+        '200':
+          description: Return value of SalesOrderRowController.findAllSalesOrders
+      operationId: SalesOrderRowController.findAllSalesOrders
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: sales_order_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: tax_rate_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: linked_manufacturing_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: product_availability
+        in: query
+        schema:
+          enum:
+          - IN_STOCK
+          - EXPECTED
+          - PICKED
+          - NOT_AVAILABLE
+          - NOT_APPLICABLE
+          type: string
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - variant
+components:
+  schemas:
+    CreateSalesOrderRowWithSalesOrderIdDto:
+      title: CreateSalesOrderRowWithSalesOrderIdDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        tax_rate_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        attributes:
+          type: array
+          items:
+            title: CreateSalesOrderRowAttributeDto
+            type: object
+            properties:
+              key:
+                type: string
+              value:
+                type: string
+            required:
+            - key
+            - value
+            additionalProperties: false
+          nullable: false
+        total_discount:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 1000000000000000000
+        price_per_unit:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 1000000000000000000
+        custom_fields:
+          type: object
+          nullable: true
+          additionalProperties: true
+        sales_order_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - quantity
+      - variant_id
+      - sales_order_id
+      additionalProperties: false
+    TraceabilityInputItemDto:
+      title: TraceabilityInputItemDto
+      type: object
+      properties:
+        batch_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+            - type: string
+              pattern: ^(-|)[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false
+    SearchSalesOrderRowsDto:
+      title: SearchSalesOrderRowsDto
+      type: object
+      properties:
+        filter:
+          type: object
+          additionalProperties: false
+          properties:
+            where:
+              type: object
+              properties:
+                and:
+                  type: array
+                  items:
+                    type: object
+                    additionalProperties: true
+                or:
+                  type: array
+                  items:
+                    type: object
+                    additionalProperties: true
+                id:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                sales_order_id:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                variant_id:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                location_id:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                tax_rate_id:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                quantity:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                price_per_unit:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                total_discount:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                tax_rate:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                currency:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                product_availability:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                created_at:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                updated_at:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                delivery_date:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                shipping_date:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+                custom_fields:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+              patternProperties:
+                ^custom_fields\..+$:
+                  anyOf:
+                  - type: string
+                    maxLength: 256
+                  - type: number
+                  - type: boolean
+                  - type: 'null'
+                  - type: object
+                    properties:
+                      neq:
+                        description: Not equal
+                      gt:
+                        description: Greater than
+                      gte:
+                        description: Greater than or equal
+                      lt:
+                        description: Less than
+                      lte:
+                        description: Less than or equal
+                      inq:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is in this list
+                      nin:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        maxItems: 100
+                        description: Value is not in this list
+                      between:
+                        type: array
+                        items:
+                          anyOf:
+                          - type: string
+                            maxLength: 256
+                          - type: number
+                          - type: boolean
+                          - type: 'null'
+                        minItems: 2
+                        maxItems: 2
+                        description: Inclusive range [low, high]
+                      like:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-sensitive (`%` and `_` wildcards)
+                      ilike:
+                        type: string
+                        maxLength: 256
+                        description: SQL LIKE pattern, case-insensitive — UI `contains` / `starts with` / `ends with`
+                    additionalProperties: false
+              additionalProperties: false
+            order:
+              oneOf:
+              - type: string
+              - type: array
+                items:
+                  type: string
+              description: 'Order clause(s). Format: `<field> ASC|DESC`.'
+            limit:
+              type: integer
+              minimum: 0
+              maximum: 200
+              description: Page size (max 200)
+            page:
+              type: integer
+              minimum: 1
+              description: 1-based page number — matches the rest of the public API
+      additionalProperties: false
+    UpdateSalesOrderRowDto:
+      title: UpdateSalesOrderRowDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        tax_rate_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        batch_transactions:
+          type: array
+          items:
+            title: UpdateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            additionalProperties: false
+          nullable: false
+        serial_number_transactions:
+          type: array
+          items:
+            title: UpdateSerialNumberTransactionDto
+            type: object
+            properties:
+              serial_number_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: integer
+                minimum: 0
+                maximum: 1
+            required:
+            - serial_number_id
+            additionalProperties: false
+          nullable: false
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceabilityInputItemDto'
+        attributes:
+          type: array
+          items:
+            title: CreateSalesOrderRowAttributeDto
+            type: object
+            properties:
+              key:
+                type: string
+              value:
+                type: string
+            required:
+            - key
+            - value
+            additionalProperties: false
+          nullable: false
+        price_per_unit:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 1000000000000000000
+        total_discount:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 1000000000000000000
+        custom_fields:
+          type: object
+          nullable: true
+          additionalProperties: true
+      additionalProperties: false

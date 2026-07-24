@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController InventorySafetyStockLevelController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: InventorySafetyStockLevelController
+paths:
+  /inventory_reorder_points:
+    post:
+      x-controller-name: InventorySafetyStockLevelController
+      x-operation-name: createInventoryReorderPoint
+      tags:
+      - InventorySafetyStockLevelController
+      responses:
+        '200':
+          description: Return value of InventorySafetyStockLevelController.createInventoryReorderPoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+              - location_id
+              - variant_id
+              - value
+              properties:
+                location_id:
+                  type: integer
+                  maximum: 2147483647
+                variant_id:
+                  type: integer
+                  maximum: 2147483647
+                value:
+                  type: number
+                  maximum: 100000000000000000
+        required: true
+      operationId: InventorySafetyStockLevelController.createInventoryReorderPoint
+  /inventory_safety_stock_levels:
+    post:
+      x-controller-name: InventorySafetyStockLevelController
+      x-operation-name: createInventorySafetyStockLevel
+      tags:
+      - InventorySafetyStockLevelController
+      responses:
+        '200':
+          description: Return value of InventorySafetyStockLevelController.createInventorySafetyStockLevel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+              - location_id
+              - variant_id
+              - value
+              properties:
+                location_id:
+                  type: integer
+                  maximum: 2147483647
+                variant_id:
+                  type: integer
+                  maximum: 2147483647
+                value:
+                  type: number
+                  maximum: 100000000000000000
+        required: true
+      operationId: InventorySafetyStockLevelController.createInventorySafetyStockLevel

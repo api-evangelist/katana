@@ -1,0 +1,367 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SalesOrderFulfillmentController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SalesOrderFulfillmentController
+paths:
+  /sales_order_fulfillments/{id}:
+    patch:
+      x-controller-name: SalesOrderFulfillmentController
+      x-operation-name: updateSalesOrderFulfillment
+      tags:
+      - SalesOrderFulfillmentController
+      responses:
+        '200':
+          description: Return value of SalesOrderFulfillmentController.updateSalesOrderFulfillment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSalesOrderFulfillmentDto'
+        required: true
+        x-parameter-index: 1
+      operationId: SalesOrderFulfillmentController.updateSalesOrderFulfillment
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: SalesOrderFulfillmentController
+      x-operation-name: getSalesOrderFulfillment
+      tags:
+      - SalesOrderFulfillmentController
+      responses:
+        '200':
+          description: Return value of SalesOrderFulfillmentController.getSalesOrderFulfillment
+      operationId: SalesOrderFulfillmentController.getSalesOrderFulfillment
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+    delete:
+      x-controller-name: SalesOrderFulfillmentController
+      x-operation-name: deleteSalesOrderFulfillment
+      tags:
+      - SalesOrderFulfillmentController
+      responses:
+        '200':
+          description: Return value of SalesOrderFulfillmentController.deleteSalesOrderFulfillment
+      operationId: SalesOrderFulfillmentController.deleteSalesOrderFulfillment
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /sales_order_fulfillments:
+    post:
+      x-controller-name: SalesOrderFulfillmentController
+      x-operation-name: createSalesOrderFulfillment
+      tags:
+      - SalesOrderFulfillmentController
+      responses:
+        '200':
+          description: Return value of SalesOrderFulfillmentController.createSalesOrderFulfillment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSalesOrderFulfillmentDto'
+        required: true
+      operationId: SalesOrderFulfillmentController.createSalesOrderFulfillment
+    get:
+      x-controller-name: SalesOrderFulfillmentController
+      x-operation-name: getAllSalesOrderFulfillments
+      tags:
+      - SalesOrderFulfillmentController
+      responses:
+        '200':
+          description: Return value of SalesOrderFulfillmentController.getAllSalesOrderFulfillments
+      operationId: SalesOrderFulfillmentController.getAllSalesOrderFulfillments
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: picked_date_min
+        in: query
+        schema:
+          type: string
+      - name: tracking_number
+        in: query
+        schema:
+          type: string
+      - name: tracking_url
+        in: query
+        schema:
+          type: string
+      - name: tracking_carrier
+        in: query
+        schema:
+          type: string
+      - name: tracking_method
+        in: query
+        schema:
+          type: string
+      - name: sales_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: status
+        in: query
+        schema:
+          enum:
+          - PACKED
+          - DELIVERED
+          type: string
+      - name: invoice_status
+        in: query
+        schema:
+          enum:
+          - INVOICED
+          - NOT_INVOICED
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    TraceabilityInputItemDto:
+      title: TraceabilityInputItemDto
+      type: object
+      properties:
+        batch_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+            - type: string
+              pattern: ^(-|)[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false
+    UpdateSalesOrderFulfillmentDto:
+      title: UpdateSalesOrderFulfillmentDto
+      type: object
+      properties:
+        picked_date:
+          type: string
+          nullable: false
+          minLength: 1
+        status:
+          type: string
+          nullable: false
+          enum:
+          - PACKED
+          - DELIVERED
+        conversion_rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 1000000000000
+        conversion_date:
+          type: string
+          nullable: true
+          minLength: 1
+        tracking_number:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 256
+        tracking_url:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 2048
+        tracking_carrier:
+          type: string
+          nullable: true
+          minLength: 1
+        tracking_method:
+          type: string
+          nullable: true
+          minLength: 1
+        packer_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      additionalProperties: false
+    CreateSalesOrderFulfillmentDto:
+      title: CreateSalesOrderFulfillmentDto
+      type: object
+      properties:
+        sales_order_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        picked_date:
+          type: string
+          nullable: false
+          minLength: 1
+        status:
+          type: string
+          nullable: false
+          enum:
+          - PACKED
+          - DELIVERED
+        sales_order_fulfillment_rows:
+          type: array
+          items:
+            title: CreateSalesOrderFulfillmentRowDto
+            type: object
+            properties:
+              sales_order_row_id:
+                type: integer
+                nullable: false
+                maximum: 2147483647
+                minimum: 1
+              quantity:
+                type: number
+                nullable: false
+                minimum: 0
+                maximum: 100000000000000000
+              batch_transactions:
+                type: array
+                items:
+                  title: CreateBatchTransactionV2Dto
+                  type: object
+                  properties:
+                    batch_id:
+                      type: integer
+                      nullable: true
+                      maximum: 2147483647
+                    quantity:
+                      type: number
+                  required:
+                  - batch_id
+                  - quantity
+                  additionalProperties: false
+                nullable: false
+              serial_numbers:
+                type: array
+                items:
+                  type: number
+              traceability:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TraceabilityInputItemDto'
+            required:
+            - sales_order_row_id
+            - quantity
+            definitions:
+              TraceabilityInputItemDto:
+                title: TraceabilityInputItemDto
+                type: object
+                properties:
+                  batch_id:
+                    type: number
+                    nullable: true
+                    minimum: 0
+                    maximum: 2147483647
+                  serial_number_id:
+                    type: number
+                    nullable: true
+                    minimum: 0
+                    maximum: 2147483647
+                  bin_location_id:
+                    type: number
+                    nullable: true
+                    minimum: 0
+                    maximum: 2147483647
+                  quantity:
+                    allOf:
+                    - anyOf:
+                      - type: number
+                      - type: string
+                        pattern: ^(-|)[0-9]+?\.?[0-9]*$
+                    - anyOf:
+                      - type: number
+                        not:
+                          const: 0
+                      - type: string
+                        not:
+                          pattern: ^(-|)[0]+?\.?[0]*$
+                additionalProperties: false
+            additionalProperties: false
+          nullable: false
+          minItems: 1
+        conversion_rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 1000000000000
+        conversion_date:
+          type: string
+          nullable: true
+          minLength: 0
+        tracking_number:
+          type: string
+          nullable: true
+          minLength: 0
+          maxLength: 256
+        tracking_url:
+          type: string
+          nullable: true
+          minLength: 0
+          maxLength: 2048
+        tracking_carrier:
+          type: string
+          nullable: true
+          minLength: 0
+        tracking_method:
+          type: string
+          nullable: true
+          minLength: 0
+      required:
+      - sales_order_id
+      - status
+      - sales_order_fulfillment_rows
+      additionalProperties: false

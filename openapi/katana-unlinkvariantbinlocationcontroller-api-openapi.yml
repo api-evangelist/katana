@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController UnlinkVariantBinLocationController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: UnlinkVariantBinLocationController
+paths:
+  /unlink_variant_bin_locations:
+    post:
+      x-controller-name: UnlinkVariantBinLocationController
+      x-operation-name: unlinkBinLocations
+      tags:
+      - UnlinkVariantBinLocationController
+      responses:
+        '204':
+          description: Unlink bin locations success
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/UnlinkBinLocationDto'
+              minItems: 1
+              maxItems: 500
+        required: true
+      operationId: UnlinkVariantBinLocationController.unlinkBinLocations
+components:
+  schemas:
+    UnlinkBinLocationDto:
+      title: UnlinkBinLocationDto
+      type: object
+      properties:
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        variant_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - location_id
+      - variant_id
+      additionalProperties: false

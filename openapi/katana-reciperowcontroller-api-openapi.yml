@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController RecipeRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: RecipeRowController
+paths:
+  /recipe_rows/{id}:
+    patch:
+      x-controller-name: RecipeRowController
+      x-operation-name: updateRecipeRow
+      tags:
+      - RecipeRowController
+      responses:
+        '200':
+          description: Return value of RecipeRowController.updateRecipeRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecipeRowUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: RecipeRowController.updateRecipeRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+    delete:
+      x-controller-name: RecipeRowController
+      x-operation-name: deleteRecipeRow
+      tags:
+      - RecipeRowController
+      responses:
+        '200':
+          description: Return value of RecipeRowController.deleteRecipeRow
+      operationId: RecipeRowController.deleteRecipeRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+components:
+  schemas:
+    RecipeRowUpdateDto:
+      title: RecipeRowUpdateDto
+      type: object
+      properties:
+        ingredient_variant_id:
+          type: integer
+        quantity:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        notes:
+          type: string
+          maxLength: 255
+      additionalProperties: false

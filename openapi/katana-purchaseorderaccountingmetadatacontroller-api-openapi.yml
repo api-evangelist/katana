@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PurchaseOrderAccountingMetadataController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PurchaseOrderAccountingMetadataController
+paths:
+  /purchase_order_accounting_metadata:
+    get:
+      x-controller-name: PurchaseOrderAccountingMetadataController
+      x-operation-name: getAllPurchaseOrderAccountingMetadata
+      tags:
+      - PurchaseOrderAccountingMetadataController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderAccountingMetadataController.getAllPurchaseOrderAccountingMetadata
+      operationId: PurchaseOrderAccountingMetadataController.getAllPurchaseOrderAccountingMetadata
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: purchase_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: received_items_group_id
+        in: query
+        schema:
+          type: integer
+          format: int32

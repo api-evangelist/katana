@@ -1,0 +1,238 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PurchaseOrderRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PurchaseOrderRowController
+paths:
+  /purchase_order_rows/{id}:
+    patch:
+      x-controller-name: PurchaseOrderRowController
+      x-operation-name: updatePurchaseOrderRow
+      tags:
+      - PurchaseOrderRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRowController.updatePurchaseOrderRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePurchaseOrderRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: PurchaseOrderRowController.updatePurchaseOrderRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: PurchaseOrderRowController
+      x-operation-name: getPurchaseOrderRow
+      tags:
+      - PurchaseOrderRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRowController.getPurchaseOrderRow
+      operationId: PurchaseOrderRowController.getPurchaseOrderRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: PurchaseOrderRowController
+      x-operation-name: deletePurchaseOrderRow
+      tags:
+      - PurchaseOrderRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRowController.deletePurchaseOrderRow
+      operationId: PurchaseOrderRowController.deletePurchaseOrderRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /purchase_order_rows:
+    post:
+      x-controller-name: PurchaseOrderRowController
+      x-operation-name: addPurchaseOrderRow
+      tags:
+      - PurchaseOrderRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRowController.addPurchaseOrderRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePurchaseOrderRowWithPurchaseOrderIdDto'
+        required: true
+      operationId: PurchaseOrderRowController.addPurchaseOrderRow
+    get:
+      x-controller-name: PurchaseOrderRowController
+      x-operation-name: getPurchaseOrderRows
+      tags:
+      - PurchaseOrderRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRowController.getPurchaseOrderRows
+      operationId: PurchaseOrderRowController.getPurchaseOrderRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: purchase_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: tax_rate_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: purchase_uom
+        in: query
+        schema:
+          type: string
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    UpdatePurchaseOrderRowDto:
+      title: UpdatePurchaseOrderRowDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          maximum: 100000000000000000
+          minimum: 0
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        tax_rate_id:
+          type: integer
+          maximum: 2147483647
+        price_per_unit:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        purchase_uom_conversion_rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000000000
+        purchase_uom:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 7
+        tax_rate:
+          type: string
+        tax_name:
+          type: string
+        received_date:
+          type: string
+          format: date-time
+        arrival_date:
+          type: string
+          format: date
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      additionalProperties: false
+    CreatePurchaseOrderRowWithPurchaseOrderIdDto:
+      title: CreatePurchaseOrderRowWithPurchaseOrderIdDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          maximum: 100000000000000000
+          minimum: 0
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        tax_rate_id:
+          type: integer
+          maximum: 2147483647
+        price_per_unit:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        purchase_uom_conversion_rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000000000
+        purchase_uom:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 7
+        tax_rate:
+          type: string
+        tax_name:
+          type: string
+        arrival_date:
+          type: string
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        purchase_order_id:
+          type: integer
+          maximum: 2147483647
+        currency:
+          type: string
+      required:
+      - quantity
+      - variant_id
+      - price_per_unit
+      - purchase_order_id
+      additionalProperties: false

@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController BatchController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: BatchController
+paths:
+  /batches:
+    post:
+      x-controller-name: BatchController
+      x-operation-name: createBatch
+      tags:
+      - BatchController
+      responses:
+        '200':
+          description: Return value of BatchController.createBatch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBatchDto'
+        required: true
+      operationId: BatchController.createBatch
+components:
+  schemas:
+    CreateBatchDto:
+      title: CreateBatchDto
+      type: object
+      properties:
+        batch_number:
+          type: string
+          minLength: 1
+        batch_created_date:
+          type: string
+        expiration_date:
+          type: string
+        variant_id:
+          type: number
+          maximum: 2147483647
+        batch_barcode:
+          type: string
+          minLength: 3
+          maxLength: 40
+      required:
+      - batch_number
+      - variant_id
+      additionalProperties: false

@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController BatchStockController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: BatchStockController
+paths:
+  /batch_stocks/{id}:
+    patch:
+      x-controller-name: BatchStockController
+      x-operation-name: updateBatchStock
+      tags:
+      - BatchStockController
+      responses:
+        '200':
+          description: Return value of BatchStockController.updateBatchStock
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBatchDto'
+        required: true
+      operationId: BatchStockController.updateBatchStock
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /batch_stocks:
+    get:
+      x-controller-name: BatchStockController
+      x-operation-name: getBatchStock
+      tags:
+      - BatchStockController
+      responses:
+        '200':
+          description: Return value of BatchStockController.getBatchStock
+      operationId: BatchStockController.getBatchStock
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: batch_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: batch_number
+        in: query
+        schema:
+          type: string
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: batch_barcode
+        in: query
+        schema:
+          type: string
+      - name: include_empty
+        in: query
+        schema:
+          type: boolean
+      - name: batch_created_at_max
+        in: query
+        schema:
+          type: string
+      - name: batch_created_at_min
+        in: query
+        schema:
+          type: string
+components:
+  schemas:
+    UpdateBatchDto:
+      title: UpdateBatchDto
+      type: object
+      properties:
+        batch_number:
+          type: string
+        expiration_date:
+          type: string
+          nullable: true
+        batch_created_date:
+          type: string
+          nullable: true
+        batch_barcode:
+          type: string
+          minLength: 3
+          maxLength: 40
+          nullable: true
+      additionalProperties: false

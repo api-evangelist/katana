@@ -1,0 +1,345 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController VariantController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: VariantController
+paths:
+  /variants/{id}:
+    patch:
+      x-controller-name: VariantController
+      x-operation-name: updateVariant
+      tags:
+      - VariantController
+      responses:
+        '200':
+          description: Return value of VariantController.updateVariant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VariantUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: VariantController.updateVariant
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: VariantController
+      x-operation-name: getVariant
+      tags:
+      - VariantController
+      responses:
+        '200':
+          description: Return value of VariantController.getVariant
+      operationId: VariantController.getVariant
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - product_or_material
+    delete:
+      x-controller-name: VariantController
+      x-operation-name: deleteManufacturingOrder
+      tags:
+      - VariantController
+      responses:
+        '200':
+          description: Return value of VariantController.deleteManufacturingOrder
+      operationId: VariantController.deleteManufacturingOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /variants:
+    post:
+      x-controller-name: VariantController
+      x-operation-name: createVariant
+      tags:
+      - VariantController
+      responses:
+        '200':
+          description: Return value of VariantController.createVariant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateVariantDto'
+        required: true
+      operationId: VariantController.createVariant
+    get:
+      x-controller-name: VariantController
+      x-operation-name: getAllVariants
+      tags:
+      - VariantController
+      responses:
+        '200':
+          description: Return value of VariantController.getAllVariants
+      operationId: VariantController.getAllVariants
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: product_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: material_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: sku
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: sales_price
+        in: query
+        schema:
+          type: number
+      - name: purchase_price
+        in: query
+        schema:
+          type: number
+      - name: type
+        in: query
+        schema:
+          type: string
+          enum:
+          - product
+          - material
+      - name: internal_barcode
+        in: query
+        schema:
+          type: string
+      - name: registered_barcode
+        in: query
+        schema:
+          type: string
+      - name: abc_classification
+        in: query
+        schema:
+          type: string
+          enum:
+          - A
+          - B
+          - C
+      - name: supplier_item_codes
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+      - name: include_archived
+        in: query
+        schema:
+          type: boolean
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - product_or_material
+components:
+  schemas:
+    CreateVariantDto:
+      title: CreateVariantDto
+      type: object
+      properties:
+        sku:
+          type: string
+        sales_price:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000
+        purchase_price:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000
+        product_id:
+          type: number
+          maximum: 2147483647
+        material_id:
+          type: number
+          maximum: 2147483647
+        supplier_item_codes:
+          type: array
+          minItems: 1
+          items:
+            type: string
+        internal_barcode:
+          type: string
+          minLength: 3
+          maxLength: 40
+        registered_barcode:
+          type: string
+          maxLength: 120
+        config_attributes:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required:
+            - config_name
+            - config_value
+            additionalProperties: false
+            properties:
+              config_name:
+                type: string
+              config_value:
+                type: string
+        custom_fields:
+          type: array
+          maxItems: 3
+          items:
+            title: CustomFieldValueDto
+            type: object
+            properties:
+              field_name:
+                type: string
+              field_value:
+                type: string
+            required:
+            - field_name
+            - field_value
+            additionalProperties: false
+        lead_time:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        minimum_order_quantity:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+      additionalProperties: false
+    VariantUpdateDto:
+      title: VariantUpdateDto
+      type: object
+      properties:
+        sku:
+          type: string
+          nullable: true
+          minLength: 1
+        sales_price:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000
+        purchase_price:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000
+        supplier_item_codes:
+          type: array
+          minItems: 0
+          items:
+            type: string
+        internal_barcode:
+          type: string
+          nullable: true
+          minLength: 3
+          maxLength: 40
+        registered_barcode:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 120
+        config_attributes:
+          type: array
+          items:
+            title: ConfigAttributeDto
+            type: object
+            properties:
+              config_name:
+                type: string
+                nullable: false
+                minLength: 1
+              config_value:
+                type: string
+                nullable: false
+                minLength: 1
+            required:
+            - config_name
+            - config_value
+            additionalProperties: false
+          nullable: false
+        custom_fields:
+          type: array
+          items:
+            title: CustomFieldValueDto
+            type: object
+            properties:
+              field_name:
+                type: string
+              field_value:
+                type: string
+            required:
+            - field_name
+            - field_value
+            additionalProperties: false
+          nullable: false
+        lead_time:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        minimum_order_quantity:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+      additionalProperties: false

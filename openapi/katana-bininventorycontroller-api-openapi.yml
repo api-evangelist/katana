@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController BinInventoryController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: BinInventoryController
+paths:
+  /bin_inventory:
+    get:
+      x-controller-name: BinInventoryController
+      x-operation-name: findAndPaginate
+      tags:
+      - BinInventoryController
+      responses:
+        '200':
+          description: Return value of BinInventoryController.findAndPaginate
+      operationId: BinInventoryController.findAndPaginate
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: granularity
+        in: query
+        schema:
+          type: string
+          enum:
+          - VARIANT
+          - BATCH
+          - SERIAL_NUMBER
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: bin_location_id
+        in: query
+        schema:
+          type: string
+          pattern: ^(\d+|null)$
+      - name: batch_id
+        in: query
+        schema:
+          type: string
+          pattern: ^(\d+|null)$
+      - name: serial_number_id
+        in: query
+        schema:
+          type: string
+          pattern: ^(\d+|null)$

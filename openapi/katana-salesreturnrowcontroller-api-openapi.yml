@@ -1,0 +1,248 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SalesReturnRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SalesReturnRowController
+paths:
+  /sales_return_rows/{id}/unassigned_batch_transactions:
+    get:
+      x-controller-name: SalesReturnRowController
+      x-operation-name: getUnassignedBatchTransactions
+      tags:
+      - SalesReturnRowController
+      responses:
+        '200':
+          description: Return value of SalesReturnRowController.getUnassignedBatchTransactions
+      operationId: SalesReturnRowController.getUnassignedBatchTransactions
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /sales_return_rows/{id}:
+    patch:
+      x-controller-name: SalesReturnRowController
+      x-operation-name: updateById
+      tags:
+      - SalesReturnRowController
+      responses:
+        '200':
+          description: Return value of SalesReturnRowController.updateById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesReturnRowPatchDto'
+        required: true
+        x-parameter-index: 1
+      operationId: SalesReturnRowController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: SalesReturnRowController
+      x-operation-name: getById
+      tags:
+      - SalesReturnRowController
+      responses:
+        '200':
+          description: Return value of SalesReturnRowController.getById
+      operationId: SalesReturnRowController.getById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+    delete:
+      x-controller-name: SalesReturnRowController
+      x-operation-name: deleteById
+      tags:
+      - SalesReturnRowController
+      responses:
+        '200':
+          description: Return value of SalesReturnRowController.deleteById
+      operationId: SalesReturnRowController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /sales_return_rows:
+    post:
+      x-controller-name: SalesReturnRowController
+      x-operation-name: create
+      tags:
+      - SalesReturnRowController
+      responses:
+        '200':
+          description: Return value of SalesReturnRowController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesReturnRowCreateDto'
+        description: Data to create Sales return row
+      operationId: SalesReturnRowController.create
+    get:
+      x-controller-name: SalesReturnRowController
+      x-operation-name: findAndPaginate
+      tags:
+      - SalesReturnRowController
+      responses:
+        '200':
+          description: Return value of SalesReturnRowController.findAndPaginate
+      operationId: SalesReturnRowController.findAndPaginate
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: sales_return_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: sales_order_row_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: reason_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: restock_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+components:
+  schemas:
+    SalesReturnRowCreateDto:
+      title: SalesReturnRowCreateDto
+      type: object
+      properties:
+        sales_return_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        variant_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        fulfillment_row_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+        restock_location_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        reason_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+      required:
+      - sales_return_id
+      - variant_id
+      - fulfillment_row_id
+      - quantity
+      additionalProperties: false
+    SalesReturnRowPatchDto:
+      title: SalesReturnRowPatchDto
+      type: object
+      properties:
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+        restock_location_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        reason_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        batch_transactions:
+          type: array
+          items:
+            title: CreateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            - quantity
+            additionalProperties: false
+          nullable: false
+      additionalProperties: false

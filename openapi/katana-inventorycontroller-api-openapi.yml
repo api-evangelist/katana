@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController InventoryController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: InventoryController
+paths:
+  /inventory:
+    get:
+      x-controller-name: InventoryController
+      x-operation-name: getInventories
+      tags:
+      - InventoryController
+      responses:
+        '200':
+          description: Return value of InventoryController.getInventories
+      operationId: InventoryController.getInventories
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: variant_id
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_archived
+        in: query
+        schema:
+          type: boolean
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - variant
+            - location
+  /inventory_movements:
+    get:
+      x-controller-name: InventoryController
+      x-operation-name: getInventoryMovements
+      tags:
+      - InventoryController
+      responses:
+        '200':
+          description: Return value of InventoryController.getInventoryMovements
+      operationId: InventoryController.getInventoryMovements
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: variant_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: resource_type
+        in: query
+        schema:
+          type: string
+          enum:
+          - PurchaseOrderRow
+          - PurchaseOrderRecipeRow
+          - SalesOrderRow
+          - ProductionIngredient
+          - Production
+          - StockAdjustmentRow
+          - StockTransferRow
+          - SystemGenerated
+      - name: resource_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: caused_by_order_no
+        in: query
+        schema:
+          type: string
+      - name: caused_by_resource_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true

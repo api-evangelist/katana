@@ -1,0 +1,218 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController BomRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: BomRowController
+paths:
+  /bom_rows/batch/create:
+    post:
+      x-controller-name: BomRowController
+      x-operation-name: createBomRowsBatch
+      tags:
+      - BomRowController
+      responses:
+        '200':
+          description: Return value of BomRowController.createBomRowsBatch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBomRowsBatchDto'
+        required: true
+      operationId: BomRowController.createBomRowsBatch
+  /bom_rows/{id}:
+    patch:
+      x-controller-name: BomRowController
+      x-operation-name: updateBomRow
+      tags:
+      - BomRowController
+      responses:
+        '200':
+          description: Return value of BomRowController.updateBomRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BomRowUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: BomRowController.updateBomRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+    delete:
+      x-controller-name: BomRowController
+      x-operation-name: deleteBomRow
+      tags:
+      - BomRowController
+      responses:
+        '200':
+          description: Return value of BomRowController.deleteBomRow
+      operationId: BomRowController.deleteBomRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+  /bom_rows:
+    post:
+      x-controller-name: BomRowController
+      x-operation-name: createBomRow
+      tags:
+      - BomRowController
+      responses:
+        '200':
+          description: Return value of BomRowController.createBomRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BomRowCreateDto'
+        required: true
+      operationId: BomRowController.createBomRow
+    get:
+      x-controller-name: BomRowController
+      x-operation-name: getBomRows
+      tags:
+      - BomRowController
+      responses:
+        '200':
+          description: Return value of BomRowController.getBomRows
+      operationId: BomRowController.getBomRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: id
+        in: query
+        schema:
+          type: string
+      - name: product_variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: product_item_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: ingredient_variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+components:
+  schemas:
+    BomRowCreateDto:
+      title: BomRowCreateDto
+      type: object
+      properties:
+        product_item_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        product_variant_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        ingredient_variant_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        quantity:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000000000
+        notes:
+          type: string
+          nullable: true
+          maxLength: 255
+      required:
+      - product_item_id
+      - product_variant_id
+      - ingredient_variant_id
+      additionalProperties: false
+    BomRowUpdateDto:
+      title: BomRowUpdateDto
+      type: object
+      properties:
+        ingredient_variant_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        quantity:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100000000000000000
+        notes:
+          type: string
+          nullable: true
+          maxLength: 255
+      additionalProperties: false
+    CreateBomRowsBatchDto:
+      title: CreateBomRowsBatchDto
+      type: object
+      properties:
+        data:
+          type: array
+          minItems: 1
+          maxItems: 250
+          items:
+            $ref: '#/components/schemas/BomRowCreateDto'
+            definitions:
+              BomRowCreateDto:
+                title: BomRowCreateDto
+                type: object
+                properties:
+                  product_item_id:
+                    type: integer
+                    minimum: 1
+                    maximum: 2147483647
+                  product_variant_id:
+                    type: integer
+                    minimum: 1
+                    maximum: 2147483647
+                  ingredient_variant_id:
+                    type: integer
+                    minimum: 1
+                    maximum: 2147483647
+                  quantity:
+                    type: number
+                    nullable: true
+                    minimum: 0
+                    maximum: 100000000000000000
+                  notes:
+                    type: string
+                    nullable: true
+                    maxLength: 255
+                required:
+                - product_item_id
+                - product_variant_id
+                - ingredient_variant_id
+                additionalProperties: false
+      required:
+      - data
+      additionalProperties: false

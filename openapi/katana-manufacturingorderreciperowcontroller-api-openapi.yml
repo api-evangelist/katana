@@ -1,0 +1,293 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController ManufacturingOrderRecipeRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: ManufacturingOrderRecipeRowController
+paths:
+  /manufacturing_order_recipe_rows/{id}:
+    patch:
+      x-controller-name: ManufacturingOrderRecipeRowController
+      x-operation-name: updateManufacturingRecipeRow
+      tags:
+      - ManufacturingOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderRecipeRowController.updateManufacturingRecipeRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateManufacturingOrderRecipeRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: ManufacturingOrderRecipeRowController.updateManufacturingRecipeRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: ManufacturingOrderRecipeRowController
+      x-operation-name: findManufacturingOrderRecipeRowById
+      tags:
+      - ManufacturingOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRowById
+      operationId: ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRowById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: ManufacturingOrderRecipeRowController
+      x-operation-name: deleteManufacturingOrderRecipeRow
+      tags:
+      - ManufacturingOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderRecipeRowController.deleteManufacturingOrderRecipeRow
+      operationId: ManufacturingOrderRecipeRowController.deleteManufacturingOrderRecipeRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /manufacturing_order_recipe_rows:
+    post:
+      x-controller-name: ManufacturingOrderRecipeRowController
+      x-operation-name: createManufacturingOrderRecipeRow
+      tags:
+      - ManufacturingOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderRecipeRowController.createManufacturingOrderRecipeRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateManufacturingOrderRecipeRowDto'
+        required: true
+      operationId: ManufacturingOrderRecipeRowController.createManufacturingOrderRecipeRow
+    get:
+      x-controller-name: ManufacturingOrderRecipeRowController
+      x-operation-name: findManufacturingOrderRecipeRows
+      tags:
+      - ManufacturingOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRows
+      operationId: ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: manufacturing_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: ingredient_availability
+        in: query
+        schema:
+          enum:
+          - PROCESSED
+          - IN_STOCK
+          - NOT_AVAILABLE
+          - EXPECTED
+          - NO_RECIPE
+          - NOT_APPLICABLE
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateBatchTransactionForManufacturingOrderDto:
+      title: CreateBatchTransactionForManufacturingOrderDto
+      type: object
+      properties:
+        batch_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        quantity:
+          type: number
+          maximum: 100000000000000000
+          minimum: 1.0e-05
+      required:
+      - batch_id
+      - quantity
+      additionalProperties: false
+    UpdateManufacturingOrderRecipeRowDto:
+      title: UpdateManufacturingOrderRecipeRowDto
+      type: object
+      properties:
+        variant_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        notes:
+          type: string
+          maxLength: 255
+          nullable: true
+        planned_quantity_per_unit:
+          type: number
+          maximum: 10000000000000000
+          minimum: 1.0e-05
+        total_actual_quantity:
+          type: number
+          nullable: true
+          maximum: 10000000000000000
+          minimum: 0
+        batch_transactions:
+          type: array
+          items:
+            title: CreateBatchTransactionForManufacturingOrderDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+                minimum: 1
+              quantity:
+                type: number
+                maximum: 100000000000000000
+                minimum: 1.0e-05
+            required:
+            - batch_id
+            - quantity
+            additionalProperties: false
+        traceability:
+          type: array
+          items:
+            title: TraceabilityInputItemDtoExcluding_serial_number_id_
+            type: object
+            description: '(tsType: Omit<TraceabilityInputItemDto, ''serial_number_id''>, schemaOptions: { exclude: [ ''serial_number_id'' ] })'
+            properties:
+              batch_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              bin_location_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                allOf:
+                - anyOf:
+                  - type: number
+                  - type: string
+                    pattern: ^(-|)[0-9]+?\.?[0-9]*$
+                - anyOf:
+                  - type: number
+                    not:
+                      const: 0
+                  - type: string
+                    not:
+                      pattern: ^(-|)[0]+?\.?[0]*$
+            additionalProperties: false
+            x-typescript-type: Omit<TraceabilityInputItemDto, 'serial_number_id'>
+      additionalProperties: false
+    CreateManufacturingOrderRecipeRowDto:
+      title: CreateManufacturingOrderRecipeRowDto
+      type: object
+      properties:
+        manufacturing_order_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        variant_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        notes:
+          type: string
+          maxLength: 255
+        planned_quantity_per_unit:
+          type: number
+          maximum: 1000000000000000
+          minimum: 1.0e-05
+        total_actual_quantity:
+          type: number
+          maximum: 1000000000000000
+          minimum: 0
+        batch_transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateBatchTransactionForManufacturingOrderDto'
+        traceability:
+          type: array
+          items:
+            title: TraceabilityInputItemDtoExcluding_serial_number_id_
+            type: object
+            description: '(tsType: Omit<TraceabilityInputItemDto, ''serial_number_id''>, schemaOptions: { exclude: [ ''serial_number_id'' ] })'
+            properties:
+              batch_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              bin_location_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                allOf:
+                - anyOf:
+                  - type: number
+                  - type: string
+                    pattern: ^(-|)[0-9]+?\.?[0-9]*$
+                - anyOf:
+                  - type: number
+                    not:
+                      const: 0
+                  - type: string
+                    not:
+                      pattern: ^(-|)[0]+?\.?[0]*$
+            additionalProperties: false
+            x-typescript-type: Omit<TraceabilityInputItemDto, 'serial_number_id'>
+      required:
+      - manufacturing_order_id
+      - variant_id
+      - planned_quantity_per_unit
+      additionalProperties: false

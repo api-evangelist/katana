@@ -1,0 +1,231 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController StockAdjustmentController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: StockAdjustmentController
+paths:
+  /stock_adjustments/{id}:
+    patch:
+      x-controller-name: StockAdjustmentController
+      x-operation-name: updateStockAdjustment
+      tags:
+      - StockAdjustmentController
+      responses:
+        '200':
+          description: Return value of StockAdjustmentController.updateStockAdjustment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStockAdjustmentDto'
+        required: true
+        x-parameter-index: 1
+      operationId: StockAdjustmentController.updateStockAdjustment
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: StockAdjustmentController
+      x-operation-name: deleteStockAdjustment
+      tags:
+      - StockAdjustmentController
+      responses:
+        '200':
+          description: Return value of StockAdjustmentController.deleteStockAdjustment
+      operationId: StockAdjustmentController.deleteStockAdjustment
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /stock_adjustments:
+    post:
+      x-controller-name: StockAdjustmentController
+      x-operation-name: createStockAdjustment
+      tags:
+      - StockAdjustmentController
+      responses:
+        '200':
+          description: Return value of StockAdjustmentController.createStockAdjustment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStockAdjustmentDto'
+        required: true
+      operationId: StockAdjustmentController.createStockAdjustment
+    get:
+      x-controller-name: StockAdjustmentController
+      x-operation-name: findStockAdjustments
+      tags:
+      - StockAdjustmentController
+      responses:
+        '200':
+          description: Return value of StockAdjustmentController.findStockAdjustments
+      operationId: StockAdjustmentController.findStockAdjustments
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: stock_adjustment_number
+        in: query
+        schema:
+          type: string
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateStockAdjustmentDto:
+      title: CreateStockAdjustmentDto
+      type: object
+      properties:
+        stock_adjustment_number:
+          type: string
+        stock_adjustment_date:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        reason:
+          type: string
+        stock_adjustment_rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStockAdjustmentRowDto'
+        additional_info:
+          type: string
+          nullable: true
+      required:
+      - stock_adjustment_number
+      - location_id
+      - stock_adjustment_rows
+      additionalProperties: false
+    CreateBatchTransactionV2Dto:
+      title: CreateBatchTransactionV2Dto
+      type: object
+      properties:
+        batch_id:
+          type: integer
+          nullable: true
+          maximum: 2147483647
+        quantity:
+          type: number
+      required:
+      - batch_id
+      - quantity
+      additionalProperties: false
+    UpdateStockAdjustmentDto:
+      title: UpdateStockAdjustmentDto
+      type: object
+      properties:
+        stock_adjustment_number:
+          type: string
+          minLength: 1
+        stock_adjustment_date:
+          type: string
+        reason:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        additional_info:
+          type: string
+          nullable: true
+      additionalProperties: false
+    StockAdjustmentTraceabilityInputDto:
+      title: StockAdjustmentTraceabilityInputDto
+      type: object
+      properties:
+        batch_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+            - type: string
+              pattern: ^(-|)[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      required:
+      - quantity
+      additionalProperties: false
+    CreateStockAdjustmentRowDto:
+      title: CreateStockAdjustmentRowDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        cost_per_unit:
+          type: number
+          maximum: 1000000000000000000
+          minimum: 0
+        batch_transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateBatchTransactionV2Dto'
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/StockAdjustmentTraceabilityInputDto'
+      required:
+      - quantity
+      - variant_id
+      additionalProperties: false

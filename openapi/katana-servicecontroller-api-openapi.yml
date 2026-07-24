@@ -1,0 +1,255 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController ServiceController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: ServiceController
+paths:
+  /services/{id}:
+    patch:
+      x-controller-name: ServiceController
+      x-operation-name: updateService
+      tags:
+      - ServiceController
+      responses:
+        '200':
+          description: Return value of ServiceController.updateService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceDto'
+        required: true
+        x-parameter-index: 1
+      operationId: ServiceController.updateService
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: ServiceController
+      x-operation-name: getService
+      tags:
+      - ServiceController
+      responses:
+        '200':
+          description: Return value of ServiceController.getService
+      operationId: ServiceController.getService
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: ServiceController
+      x-operation-name: deleteService
+      tags:
+      - ServiceController
+      responses:
+        '200':
+          description: Return value of ServiceController.deleteService
+      operationId: ServiceController.deleteService
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /services:
+    post:
+      x-controller-name: ServiceController
+      x-operation-name: createService
+      tags:
+      - ServiceController
+      responses:
+        '200':
+          description: Return value of ServiceController.createService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateServiceDto'
+        required: true
+      operationId: ServiceController.createService
+    get:
+      x-controller-name: ServiceController
+      x-operation-name: getAllServices
+      tags:
+      - ServiceController
+      responses:
+        '200':
+          description: Return value of ServiceController.getAllServices
+      operationId: ServiceController.getAllServices
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: uom
+        in: query
+        schema:
+          type: string
+      - name: category_name
+        in: query
+        schema:
+          type: string
+      - name: is_sellable
+        in: query
+        schema:
+          type: boolean
+      - name: include_archived
+        in: query
+        schema:
+          type: boolean
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    UpdateServiceDto:
+      title: UpdateServiceDto
+      type: object
+      properties:
+        name:
+          type: string
+        category_name:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 35
+        is_sellable:
+          type: boolean
+        is_archived:
+          type: boolean
+        uom:
+          type: string
+        default_cost:
+          type: number
+          nullable: true
+        sales_price:
+          type: number
+          nullable: true
+        custom_field_collection_id:
+          type: integer
+          nullable: true
+          maximum: 2147483647
+          minimum: 1
+        sku:
+          type: string
+          nullable: true
+          minLength: 1
+        additional_info:
+          type: string
+          nullable: true
+          minLength: 1
+        custom_fields:
+          type: array
+          items:
+            title: CustomFieldValueDto
+            type: object
+            properties:
+              field_name:
+                type: string
+              field_value:
+                type: string
+            required:
+            - field_name
+            - field_value
+            additionalProperties: false
+          nullable: false
+      additionalProperties: false
+    CreateServiceDto:
+      title: CreateServiceDto
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        uom:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 7
+        category_name:
+          type: string
+          minLength: 1
+        is_sellable:
+          type: boolean
+        additional_info:
+          type: string
+        variants:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            title: CreateServiceVariantDto
+            type: object
+            properties:
+              sku:
+                type: string
+                minLength: 1
+              sales_price:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 100000000000
+              default_cost:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 100000000000
+              custom_fields:
+                type: array
+                maxItems: 3
+                items:
+                  title: CustomFieldValueDto
+                  type: object
+                  properties:
+                    field_name:
+                      type: string
+                    field_value:
+                      type: string
+                  required:
+                  - field_name
+                  - field_value
+                  additionalProperties: false
+            additionalProperties: false
+        custom_field_collection_id:
+          type: number
+          nullable: true
+      required:
+      - name
+      - variants
+      additionalProperties: false

@@ -1,0 +1,259 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController StockTransferController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: StockTransferController
+paths:
+  /stock_transfers/{id}/status:
+    patch:
+      x-controller-name: StockTransferController
+      x-operation-name: updateStockTransferStatus
+      tags:
+      - StockTransferController
+      responses:
+        '200':
+          description: Return value of StockTransferController.updateStockTransferStatus
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStockTransferStatusDto'
+        required: true
+        x-parameter-index: 1
+      operationId: StockTransferController.updateStockTransferStatus
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /stock_transfers/{id}:
+    patch:
+      x-controller-name: StockTransferController
+      x-operation-name: updateStockTransfer
+      tags:
+      - StockTransferController
+      responses:
+        '200':
+          description: Return value of StockTransferController.updateStockTransfer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStockTransferDto'
+        required: true
+        x-parameter-index: 1
+      operationId: StockTransferController.updateStockTransfer
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: StockTransferController
+      x-operation-name: deleteStockTransfer
+      tags:
+      - StockTransferController
+      responses:
+        '200':
+          description: Return value of StockTransferController.deleteStockTransfer
+      operationId: StockTransferController.deleteStockTransfer
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /stock_transfers:
+    post:
+      x-controller-name: StockTransferController
+      x-operation-name: createStockTransfer
+      tags:
+      - StockTransferController
+      responses:
+        '200':
+          description: Return value of StockTransferController.createStockTransfer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStockTransferDto'
+        required: true
+      operationId: StockTransferController.createStockTransfer
+    get:
+      x-controller-name: StockTransferController
+      x-operation-name: findStockTransfers
+      tags:
+      - StockTransferController
+      responses:
+        '200':
+          description: Return value of StockTransferController.findStockTransfers
+      operationId: StockTransferController.findStockTransfers
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: stock_transfer_number
+        in: query
+        schema:
+          type: string
+      - name: source_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: target_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    UpdateStockTransferDto:
+      title: UpdateStockTransferDto
+      type: object
+      properties:
+        stock_transfer_number:
+          type: string
+        transfer_date:
+          type: string
+        order_created_date:
+          type: string
+          nullable: true
+        expected_arrival_date:
+          type: string
+          nullable: true
+        additional_info:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CreateStockTransferDto:
+      title: CreateStockTransferDto
+      type: object
+      properties:
+        stock_transfer_number:
+          type: string
+        source_location_id:
+          type: integer
+          maximum: 2147483647
+        target_location_id:
+          type: integer
+          maximum: 2147483647
+        transfer_date:
+          type: string
+        order_created_date:
+          type: string
+          nullable: true
+        expected_arrival_date:
+          type: string
+          nullable: true
+        additional_info:
+          type: string
+          nullable: true
+        stock_transfer_rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStockTransferRowDto'
+      required:
+      - stock_transfer_number
+      - source_location_id
+      - target_location_id
+      - stock_transfer_rows
+      additionalProperties: false
+    UpdateStockTransferStatusDto:
+      title: UpdateStockTransferStatusDto
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - draft
+          - received
+          - inTransit
+      additionalProperties: false
+    CreateStockTransferRowDto:
+      title: CreateStockTransferRowDto
+      type: object
+      properties:
+        quantity:
+          type: string
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        batch_transactions:
+          type: array
+          items:
+            type: object
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceabilityInputItemDto'
+      required:
+      - quantity
+      - variant_id
+      additionalProperties: false
+    TraceabilityInputItemDto:
+      title: TraceabilityInputItemDto
+      type: object
+      properties:
+        batch_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+            - type: string
+              pattern: ^(-|)[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false

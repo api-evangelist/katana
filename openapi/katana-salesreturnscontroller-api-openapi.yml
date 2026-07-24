@@ -1,0 +1,270 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SalesReturnsController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SalesReturnsController
+paths:
+  /sales_returns/return_reasons:
+    get:
+      x-controller-name: SalesReturnsController
+      x-operation-name: getReturnReasons
+      tags:
+      - SalesReturnsController
+      responses:
+        '200':
+          description: Return value of SalesReturnsController.getReturnReasons
+      operationId: SalesReturnsController.getReturnReasons
+  /sales_returns/{id}:
+    patch:
+      x-controller-name: SalesReturnsController
+      x-operation-name: updateById
+      tags:
+      - SalesReturnsController
+      responses:
+        '200':
+          description: Return value of SalesReturnsController.updateById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesReturnPatchDto'
+        required: true
+        x-parameter-index: 1
+      operationId: SalesReturnsController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: SalesReturnsController
+      x-operation-name: findById
+      tags:
+      - SalesReturnsController
+      responses:
+        '200':
+          description: Return value of SalesReturnsController.findById
+      operationId: SalesReturnsController.findById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+    delete:
+      x-controller-name: SalesReturnsController
+      x-operation-name: deleteById
+      tags:
+      - SalesReturnsController
+      responses:
+        '200':
+          description: Return value of SalesReturnsController.deleteById
+      operationId: SalesReturnsController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /sales_returns:
+    post:
+      x-controller-name: SalesReturnsController
+      x-operation-name: create
+      tags:
+      - SalesReturnsController
+      responses:
+        '200':
+          description: Return value of SalesReturnsController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSalesReturnDto'
+        description: Data to create Sales return
+      operationId: SalesReturnsController.create
+    get:
+      x-controller-name: SalesReturnsController
+      x-operation-name: findAndPaginate
+      tags:
+      - SalesReturnsController
+      responses:
+        '200':
+          description: Return value of SalesReturnsController.findAndPaginate
+      operationId: SalesReturnsController.findAndPaginate
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: return_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: order_no
+        in: query
+        schema:
+          type: string
+      - name: sales_order_no
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          enum:
+          - NOT_RETURNED
+          - RETURNED_ALL
+          - RESTOCKED_ALL
+          type: string
+      - name: refund_status
+        in: query
+        schema:
+          enum:
+          - NOT_REFUNDED
+          - REFUNDED
+          - PARTIALLY_REFUNDED
+          type: string
+      - name: order_created_date_min
+        in: query
+        schema:
+          type: string
+      - name: order_created_date_max
+        in: query
+        schema:
+          type: string
+      - name: order_return_date_min
+        in: query
+        schema:
+          type: string
+      - name: order_return_date_max
+        in: query
+        schema:
+          type: string
+components:
+  schemas:
+    SalesReturnPatchDto:
+      title: SalesReturnPatchDto
+      type: object
+      properties:
+        order_no:
+          type: string
+          nullable: false
+          minLength: 1
+        order_created_date:
+          type: string
+          format: date
+          nullable: false
+        return_location_id:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        additional_info:
+          type: string
+          nullable: true
+          maxLength: 255
+        return_date:
+          type: string
+          format: date
+          nullable: false
+        status:
+          type: string
+          nullable: false
+          enum:
+          - NOT_RETURNED
+          - RETURNED_ALL
+          - RESTOCKED_ALL
+        tracking_number:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 256
+        tracking_number_url:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 2048
+        tracking_carrier:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 256
+        tracking_method:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 256
+      additionalProperties: false
+    CreateSalesReturnDto:
+      title: CreateSalesReturnDto
+      type: object
+      properties:
+        sales_order_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        order_created_date:
+          type: string
+          format: date
+          nullable: false
+        return_location_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        order_no:
+          type: string
+          nullable: false
+          minLength: 1
+        additional_info:
+          type: string
+          maxLength: 255
+        tracking_number:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 256
+        tracking_number_url:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 2048
+        tracking_carrier:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 256
+        tracking_method:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 256
+      required:
+      - sales_order_id
+      - return_location_id
+      additionalProperties: false

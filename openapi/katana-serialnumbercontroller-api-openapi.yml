@@ -1,0 +1,149 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SerialNumberController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SerialNumberController
+paths:
+  /serial_numbers/serial_numbers_stock:
+    get:
+      x-controller-name: SerialNumberController
+      x-operation-name: list
+      tags:
+      - SerialNumberController
+      responses:
+        '200':
+          description: Return value of SerialNumberController.list
+      operationId: SerialNumberController.list
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /serial_numbers:
+    post:
+      x-controller-name: SerialNumberController
+      x-operation-name: addSerialNumbersToEntity
+      tags:
+      - SerialNumberController
+      responses:
+        '200':
+          description: Return value of SerialNumberController.addSerialNumbersToEntity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddSerialNumbersToEntityDto'
+        required: true
+      operationId: SerialNumberController.addSerialNumbersToEntity
+    get:
+      x-controller-name: SerialNumberController
+      x-operation-name: find
+      tags:
+      - SerialNumberController
+      responses:
+        '200':
+          description: Return value of SerialNumberController.find
+      operationId: SerialNumberController.find
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: resource_type
+        in: query
+        schema:
+          enum:
+          - ManufacturingOrder
+          - SalesOrderRow
+          - Production
+          - SalesOrderFulfillmentRow
+          - StockAdjustmentRow
+          - StockTransferRow
+          - PurchaseOrderRow
+          type: string
+      - name: resource_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+    delete:
+      x-controller-name: SerialNumberController
+      x-operation-name: deleteFromEntity
+      tags:
+      - SerialNumberController
+      responses:
+        '200':
+          description: Return value of SerialNumberController.deleteFromEntity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteSerialNumberDto'
+        required: true
+      operationId: SerialNumberController.deleteFromEntity
+components:
+  schemas:
+    DeleteSerialNumberDto:
+      title: DeleteSerialNumberDto
+      type: object
+      properties:
+        resource_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        resource_type:
+          type: string
+          enum:
+          - ManufacturingOrder
+          - SalesOrderRow
+          - Production
+          - SalesOrderFulfillmentRow
+          - StockAdjustmentRow
+          - StockTransferRow
+          - PurchaseOrderRow
+        ids:
+          type: array
+          items:
+            type: number
+      required:
+      - resource_id
+      - resource_type
+      - ids
+      additionalProperties: false
+    AddSerialNumbersToEntityDto:
+      title: AddSerialNumbersToEntityDto
+      type: object
+      properties:
+        resource_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        resource_type:
+          type: string
+          enum:
+          - ManufacturingOrder
+          - Production
+          - StockAdjustmentRow
+          - StockTransferRow
+          - PurchaseOrderRow
+          - SalesOrderRow
+        serial_numbers:
+          type: array
+          items:
+            type: string
+      required:
+      - resource_id
+      additionalProperties: false

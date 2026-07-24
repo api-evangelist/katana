@@ -1,0 +1,147 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SalesOrderShippingFeeController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SalesOrderShippingFeeController
+paths:
+  /sales_order_shipping_fee/{id}:
+    patch:
+      x-controller-name: SalesOrderShippingFeeController
+      x-operation-name: updateShippingFee
+      tags:
+      - SalesOrderShippingFeeController
+      responses:
+        '200':
+          description: Return value of SalesOrderShippingFeeController.updateShippingFee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateShippingFeeDto'
+        required: true
+        x-parameter-index: 1
+      operationId: SalesOrderShippingFeeController.updateShippingFee
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: SalesOrderShippingFeeController
+      x-operation-name: getShippingFee
+      tags:
+      - SalesOrderShippingFeeController
+      responses:
+        '200':
+          description: Return value of SalesOrderShippingFeeController.getShippingFee
+      operationId: SalesOrderShippingFeeController.getShippingFee
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: SalesOrderShippingFeeController
+      x-operation-name: deleteShippingFee
+      tags:
+      - SalesOrderShippingFeeController
+      responses:
+        '200':
+          description: Return value of SalesOrderShippingFeeController.deleteShippingFee
+      operationId: SalesOrderShippingFeeController.deleteShippingFee
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /sales_order_shipping_fee:
+    post:
+      x-controller-name: SalesOrderShippingFeeController
+      x-operation-name: addShippingFee
+      tags:
+      - SalesOrderShippingFeeController
+      responses:
+        '200':
+          description: Return value of SalesOrderShippingFeeController.addShippingFee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddShippingFeeDto'
+        required: true
+      operationId: SalesOrderShippingFeeController.addShippingFee
+    get:
+      x-controller-name: SalesOrderShippingFeeController
+      x-operation-name: getAllShippingFees
+      tags:
+      - SalesOrderShippingFeeController
+      responses:
+        '200':
+          description: Return value of SalesOrderShippingFeeController.getAllShippingFees
+      operationId: SalesOrderShippingFeeController.getAllShippingFees
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: sales_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    UpdateShippingFeeDto:
+      title: UpdateShippingFeeDto
+      type: object
+      properties:
+        description:
+          type: string
+        amount:
+          type: string
+        tax_rate_id:
+          type: number
+      required:
+      - amount
+      additionalProperties: false
+    AddShippingFeeDto:
+      title: AddShippingFeeDto
+      type: object
+      properties:
+        sales_order_id:
+          type: number
+        description:
+          type: string
+        amount:
+          type: string
+        tax_rate_id:
+          type: number
+      required:
+      - sales_order_id
+      - amount
+      additionalProperties: false

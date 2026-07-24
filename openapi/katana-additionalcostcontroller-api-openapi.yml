@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: AdditionalCostController
+paths:
+  /additional_costs:
+    get:
+      x-controller-name: AdditionalCostController
+      x-operation-name: getAdditionalCosts
+      tags:
+      - AdditionalCostController
+      responses:
+        '200':
+          description: Return value of AdditionalCostController.getAdditionalCosts
+      operationId: AdditionalCostController.getAdditionalCosts
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean

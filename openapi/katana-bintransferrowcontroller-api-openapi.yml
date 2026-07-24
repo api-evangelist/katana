@@ -1,0 +1,254 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController BinTransferRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: BinTransferRowController
+paths:
+  /bin_transfer_rows/{id}:
+    patch:
+      x-controller-name: BinTransferRowController
+      x-operation-name: updateById
+      tags:
+      - BinTransferRowController
+      responses:
+        '200':
+          description: Return value of BinTransferRowController.updateById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBinTransferRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: BinTransferRowController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: BinTransferRowController
+      x-operation-name: findById
+      tags:
+      - BinTransferRowController
+      responses:
+        '200':
+          description: Return value of BinTransferRowController.findById
+      operationId: BinTransferRowController.findById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: BinTransferRowController
+      x-operation-name: deleteById
+      tags:
+      - BinTransferRowController
+      responses:
+        '200':
+          description: Return value of BinTransferRowController.deleteById
+      operationId: BinTransferRowController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /bin_transfer_rows:
+    post:
+      x-controller-name: BinTransferRowController
+      x-operation-name: create
+      tags:
+      - BinTransferRowController
+      responses:
+        '200':
+          description: Return value of BinTransferRowController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBinTransferRowDto'
+        required: true
+      operationId: BinTransferRowController.create
+    get:
+      x-controller-name: BinTransferRowController
+      x-operation-name: findAndPaginate
+      tags:
+      - BinTransferRowController
+      responses:
+        '200':
+          description: Return value of BinTransferRowController.findAndPaginate
+      operationId: BinTransferRowController.findAndPaginate
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: bin_transfer_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: source_bin_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: target_bin_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateBinTransferRowDto:
+      title: CreateBinTransferRowDto
+      type: object
+      properties:
+        variant_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+        source_bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        target_bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceabilityInputDto'
+        bin_transfer_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+      required:
+      - variant_id
+      - quantity
+      - bin_transfer_id
+      additionalProperties: false
+    TraceabilityInputDto:
+      title: TraceabilityInputDto
+      type: object
+      properties:
+        batch_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false
+    UpdateBinTransferRowDto:
+      title: UpdateBinTransferRowDto
+      type: object
+      properties:
+        variant_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+        source_bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        target_bin_location_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceabilityInputDto'
+      additionalProperties: false

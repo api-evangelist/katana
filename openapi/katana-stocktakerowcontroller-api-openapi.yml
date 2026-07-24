@@ -1,0 +1,184 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController StocktakeRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: StocktakeRowController
+paths:
+  /stocktake_rows/{id}:
+    patch:
+      x-controller-name: StocktakeRowController
+      x-operation-name: updateById
+      tags:
+      - StocktakeRowController
+      responses:
+        '200':
+          description: Updated stocktake row
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStocktakeRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: StocktakeRowController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+    delete:
+      x-controller-name: StocktakeRowController
+      x-operation-name: deleteById
+      tags:
+      - StocktakeRowController
+      responses:
+        '204':
+          description: Row delete success
+      operationId: StocktakeRowController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /stocktake_rows:
+    post:
+      x-controller-name: StocktakeRowController
+      x-operation-name: createStocktakeRows
+      tags:
+      - StocktakeRowController
+      responses:
+        '200':
+          description: Return value of StocktakeRowController.createStocktakeRows
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStocktakeRowsDto'
+        required: true
+      operationId: StocktakeRowController.createStocktakeRows
+    get:
+      x-controller-name: StocktakeRowController
+      x-operation-name: findStocktakeRows
+      tags:
+      - StocktakeRowController
+      responses:
+        '200':
+          description: Return value of StocktakeRowController.findStocktakeRows
+      operationId: StocktakeRowController.findStocktakeRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: stocktake_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: batch_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: bin_location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateStocktakeRowsDto:
+      title: CreateStocktakeRowsDto
+      type: object
+      properties:
+        stocktake_id:
+          type: integer
+          maximum: 2147483647
+        stocktake_rows:
+          type: array
+          items:
+            title: CreateStocktakeRowDto
+            type: object
+            properties:
+              variant_id:
+                type: integer
+                maximum: 2147483647
+              batch_id:
+                type: integer
+                nullable: true
+                maximum: 2147483647
+              bin_location_id:
+                type: integer
+                nullable: true
+                maximum: 2147483647
+              notes:
+                type: string
+                nullable: true
+              counted_quantity:
+                type: number
+                nullable: true
+                maximum: 2147483647
+            required:
+            - variant_id
+            additionalProperties: false
+      required:
+      - stocktake_id
+      additionalProperties: false
+    UpdateStocktakeRowDto:
+      title: UpdateStocktakeRowDto
+      type: object
+      properties:
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        batch_id:
+          type: integer
+          nullable: true
+          maximum: 2147483647
+        bin_location_id:
+          type: integer
+          nullable: true
+          maximum: 2147483647
+        notes:
+          type: string
+          nullable: true
+        counted_quantity:
+          type: number
+          nullable: true
+          maximum: 2147483647
+      additionalProperties: false

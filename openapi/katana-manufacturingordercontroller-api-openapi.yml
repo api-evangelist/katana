@@ -1,0 +1,343 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController ManufacturingOrderController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: ManufacturingOrderController
+paths:
+  /manufacturing_orders/{id}:
+    patch:
+      x-controller-name: ManufacturingOrderController
+      x-operation-name: updateManufacturingOrder
+      tags:
+      - ManufacturingOrderController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderController.updateManufacturingOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateManufacturingOrderDto'
+        required: true
+        x-parameter-index: 1
+      operationId: ManufacturingOrderController.updateManufacturingOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: ManufacturingOrderController
+      x-operation-name: getManufacturingOrder
+      tags:
+      - ManufacturingOrderController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderController.getManufacturingOrder
+      operationId: ManufacturingOrderController.getManufacturingOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: ManufacturingOrderController
+      x-operation-name: deleteManufacturingOrder
+      tags:
+      - ManufacturingOrderController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderController.deleteManufacturingOrder
+      operationId: ManufacturingOrderController.deleteManufacturingOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /manufacturing_orders:
+    post:
+      x-controller-name: ManufacturingOrderController
+      x-operation-name: createManufacturingOrder
+      tags:
+      - ManufacturingOrderController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderController.createManufacturingOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateManufacturingOrderDto'
+        required: true
+      operationId: ManufacturingOrderController.createManufacturingOrder
+    get:
+      x-controller-name: ManufacturingOrderController
+      x-operation-name: getManufacturingOrders
+      tags:
+      - ManufacturingOrderController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderController.getManufacturingOrders
+      operationId: ManufacturingOrderController.getManufacturingOrders
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: status
+        in: query
+        schema:
+          enum:
+          - NOT_STARTED
+          - BLOCKED
+          - IN_PROGRESS
+          - PARTIALLY_COMPLETED
+          - DONE
+          type: string
+      - name: order_no
+        in: query
+        schema:
+          type: string
+      - name: location_id
+        in: query
+        schema:
+          type: number
+          maximum: 2147483647
+      - name: is_linked_to_sales_order
+        in: query
+        schema:
+          type: boolean
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateManufacturingOrderDto:
+      title: CreateManufacturingOrderDto
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: false
+          enum:
+          - NOT_STARTED
+        order_no:
+          type: string
+          nullable: false
+          minLength: 1
+        variant_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        planned_quantity:
+          type: number
+          nullable: false
+          minimum: 1.0e-05
+          maximum: 1000000000000000
+        actual_quantity:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 1000000000000000
+        batch_transactions:
+          type: array
+          items:
+            title: CreateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            - quantity
+            additionalProperties: false
+          nullable: false
+        traceability:
+          type: array
+          items:
+            title: TraceabilityInputItemDtoExcluding_bin_location_id_
+            type: object
+            description: '(tsType: Omit<TraceabilityInputItemDto, ''bin_location_id''>, schemaOptions: { exclude: [ ''bin_location_id'' ] })'
+            properties:
+              batch_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              serial_number_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                allOf:
+                - anyOf:
+                  - type: number
+                  - type: string
+                    pattern: ^(-|)[0-9]+?\.?[0-9]*$
+                - anyOf:
+                  - type: number
+                    not:
+                      const: 0
+                  - type: string
+                    not:
+                      pattern: ^(-|)[0]+?\.?[0]*$
+            additionalProperties: false
+            x-typescript-type: Omit<TraceabilityInputItemDto, 'bin_location_id'>
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        order_created_date:
+          type: string
+          nullable: false
+          minLength: 1
+        production_deadline_date:
+          type: string
+          nullable: false
+          minLength: 1
+        additional_info:
+          type: string
+          nullable: true
+          minLength: 1
+      required:
+      - variant_id
+      - planned_quantity
+      - location_id
+      additionalProperties: false
+    UpdateManufacturingOrderDto:
+      title: UpdateManufacturingOrderDto
+      type: object
+      properties:
+        status:
+          type: string
+          nullable: false
+          enum:
+          - NOT_STARTED
+          - BLOCKED
+          - IN_PROGRESS
+          - PARTIALLY_COMPLETED
+          - DONE
+        order_no:
+          type: string
+          nullable: false
+          minLength: 1
+        variant_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        planned_quantity:
+          type: number
+          nullable: false
+          minimum: 1.0e-05
+          maximum: 1000000000000000
+        actual_quantity:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 1000000000000000
+        batch_transactions:
+          type: array
+          items:
+            title: CreateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            - quantity
+            additionalProperties: false
+          nullable: false
+        traceability:
+          type: array
+          items:
+            title: TraceabilityInputItemDtoExcluding_bin_location_id_
+            type: object
+            description: '(tsType: Omit<TraceabilityInputItemDto, ''bin_location_id''>, schemaOptions: { exclude: [ ''bin_location_id'' ] })'
+            properties:
+              batch_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              serial_number_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                allOf:
+                - anyOf:
+                  - type: number
+                  - type: string
+                    pattern: ^(-|)[0-9]+?\.?[0-9]*$
+                - anyOf:
+                  - type: number
+                    not:
+                      const: 0
+                  - type: string
+                    not:
+                      pattern: ^(-|)[0]+?\.?[0]*$
+            additionalProperties: false
+            x-typescript-type: Omit<TraceabilityInputItemDto, 'bin_location_id'>
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        order_created_date:
+          type: string
+          nullable: false
+          minLength: 1
+        production_deadline_date:
+          type: string
+          nullable: false
+          minLength: 1
+        done_date:
+          type: string
+          nullable: false
+          minLength: 1
+        additional_info:
+          type: string
+          nullable: true
+          minLength: 1
+      additionalProperties: false

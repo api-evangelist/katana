@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController BinLocationController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: BinLocationController
+paths:
+  /bin_locations/{id}:
+    patch:
+      x-controller-name: BinLocationController
+      x-operation-name: updateBinLocation
+      tags:
+      - BinLocationController
+      responses:
+        '200':
+          description: Return value of BinLocationController.updateBinLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BinLocationUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: BinLocationController.updateBinLocation
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: BinLocationController
+      x-operation-name: deleteBinLocation
+      tags:
+      - BinLocationController
+      responses:
+        '200':
+          description: Return value of BinLocationController.deleteBinLocation
+      operationId: BinLocationController.deleteBinLocation
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /bin_locations:
+    post:
+      x-controller-name: BinLocationController
+      x-operation-name: createBinLocation
+      tags:
+      - BinLocationController
+      responses:
+        '200':
+          description: Return value of BinLocationController.createBinLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BinLocationCreateDto'
+        required: true
+      operationId: BinLocationController.createBinLocation
+    get:
+      x-controller-name: BinLocationController
+      x-operation-name: findBinLocations
+      tags:
+      - BinLocationController
+      responses:
+        '200':
+          description: Return value of BinLocationController.findBinLocations
+      operationId: BinLocationController.findBinLocations
+      parameters:
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: bin_name
+        in: query
+        schema:
+          type: string
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    BinLocationUpdateDto:
+      title: BinLocationUpdateDto
+      type: object
+      properties:
+        bin_name:
+          type: string
+          nullable: false
+          minLength: 1
+      required:
+      - bin_name
+      additionalProperties: false
+    BinLocationCreateDto:
+      title: BinLocationCreateDto
+      type: object
+      properties:
+        bin_name:
+          type: string
+          nullable: false
+          minLength: 1
+        location_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - bin_name
+      - location_id
+      additionalProperties: false

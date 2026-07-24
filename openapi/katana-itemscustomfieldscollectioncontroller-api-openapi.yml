@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController ItemsCustomFieldsCollectionController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: ItemsCustomFieldsCollectionController
+paths:
+  /custom_fields_collections:
+    get:
+      x-controller-name: ItemsCustomFieldsCollectionController
+      x-operation-name: getAllCollections
+      tags:
+      - ItemsCustomFieldsCollectionController
+      responses:
+        '200':
+          description: Return value of ItemsCustomFieldsCollectionController.getAllCollections
+      operationId: ItemsCustomFieldsCollectionController.getAllCollections

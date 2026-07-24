@@ -1,0 +1,139 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController ManufacturingOrderProductionIngredientController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: ManufacturingOrderProductionIngredientController
+paths:
+  /manufacturing_order_production_ingredients/{id}:
+    patch:
+      x-controller-name: ManufacturingOrderProductionIngredientController
+      x-operation-name: updateManufacturingOrderProductionIngredient
+      tags:
+      - ManufacturingOrderProductionIngredientController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderProductionIngredientController.updateManufacturingOrderProductionIngredient
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateManufacturingOrderProductionIngredientDto'
+        required: true
+        x-parameter-index: 1
+      operationId: ManufacturingOrderProductionIngredientController.updateManufacturingOrderProductionIngredient
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /manufacturing_order_production_ingredients:
+    get:
+      x-controller-name: ManufacturingOrderProductionIngredientController
+      x-operation-name: find
+      tags:
+      - ManufacturingOrderProductionIngredientController
+      responses:
+        '200':
+          description: Return value of ManufacturingOrderProductionIngredientController.find
+      operationId: ManufacturingOrderProductionIngredientController.find
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: manufacturing_order_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: production_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    UpdateManufacturingOrderProductionIngredientDto:
+      title: UpdateManufacturingOrderProductionIngredientDto
+      type: object
+      properties:
+        batch_transactions:
+          type: array
+          items:
+            title: UpdateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            additionalProperties: false
+          nullable: false
+        traceability:
+          type: array
+          items:
+            title: TraceabilityInputItemDtoExcluding_serial_number_id_
+            type: object
+            description: '(tsType: Omit<TraceabilityInputItemDto, ''serial_number_id''>, schemaOptions: { exclude: [ ''serial_number_id'' ] })'
+            properties:
+              batch_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              bin_location_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                allOf:
+                - anyOf:
+                  - type: number
+                  - type: string
+                    pattern: ^(-|)[0-9]+?\.?[0-9]*$
+                - anyOf:
+                  - type: number
+                    not:
+                      const: 0
+                  - type: string
+                    not:
+                      pattern: ^(-|)[0]+?\.?[0]*$
+            additionalProperties: false
+            x-typescript-type: Omit<TraceabilityInputItemDto, 'serial_number_id'>
+      additionalProperties: false

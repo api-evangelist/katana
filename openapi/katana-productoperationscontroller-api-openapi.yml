@@ -1,0 +1,290 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController ProductOperationsController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: ProductOperationsController
+paths:
+  /product_operation_rerank:
+    post:
+      x-controller-name: ProductOperationsController
+      x-operation-name: reRankOperationRow
+      tags:
+      - ProductOperationsController
+      responses:
+        '200':
+          description: Return value of ProductOperationsController.reRankOperationRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductOperationRowRankDto'
+        required: true
+      operationId: ProductOperationsController.reRankOperationRow
+  /product_operation_rows/{id}:
+    patch:
+      x-controller-name: ProductOperationsController
+      x-operation-name: updateProductOperationRow
+      tags:
+      - ProductOperationsController
+      responses:
+        '200':
+          description: Return value of ProductOperationsController.updateProductOperationRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductOperationRowUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: ProductOperationsController.updateProductOperationRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: ProductOperationsController
+      x-operation-name: deleteProductOperationRow
+      tags:
+      - ProductOperationsController
+      responses:
+        '200':
+          description: Return value of ProductOperationsController.deleteProductOperationRow
+      operationId: ProductOperationsController.deleteProductOperationRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /product_operation_rows:
+    post:
+      x-controller-name: ProductOperationsController
+      x-operation-name: createProductOperationRows
+      tags:
+      - ProductOperationsController
+      responses:
+        '200':
+          description: Return value of ProductOperationsController.createProductOperationRows
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductOperationCreateDto'
+        required: true
+      operationId: ProductOperationsController.createProductOperationRows
+    get:
+      x-controller-name: ProductOperationsController
+      x-operation-name: getProductOperationRows
+      tags:
+      - ProductOperationsController
+      responses:
+        '200':
+          description: Return value of ProductOperationsController.getProductOperationRows
+      operationId: ProductOperationsController.getProductOperationRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: product_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: product_operation_row_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: product_variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: operation_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: operation_name
+        in: query
+        schema:
+          type: string
+      - name: resource_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: resource_name
+        in: query
+        schema:
+          type: string
+components:
+  schemas:
+    ProductOperationRowUpdateDto:
+      title: ProductOperationRowUpdateDto
+      type: object
+      properties:
+        operation_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        operation_name:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 256
+        resource_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        resource_name:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 256
+        cost_parameter:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        cost_per_hour:
+          type: number
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        planned_time_per_unit:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        planned_time_parameter:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        type:
+          type: string
+          nullable: false
+          enum:
+          - process
+          - setup
+          - perUnit
+          - fixed
+      additionalProperties: false
+    ProductOperationCreateDto:
+      title: ProductOperationCreateDto
+      type: object
+      properties:
+        keep_current_rows:
+          type: boolean
+          default: false
+          nullable: false
+        rows:
+          type: array
+          items:
+            title: ProductOperationRowCreateDto
+            type: object
+            properties:
+              product_variant_id:
+                type: integer
+                nullable: false
+                maximum: 2147483647
+                minimum: 1
+              operation_id:
+                type: integer
+                nullable: false
+                maximum: 2147483647
+                minimum: 1
+              operation_name:
+                type: string
+                nullable: false
+                minLength: 1
+                maxLength: 256
+              resource_id:
+                type: integer
+                nullable: false
+                maximum: 2147483647
+                minimum: 1
+              resource_name:
+                type: string
+                nullable: false
+                minLength: 1
+                maxLength: 256
+              cost_per_hour:
+                type: number
+                nullable: false
+                minimum: 0
+                maximum: 2147483647
+              cost_parameter:
+                type: number
+                nullable: false
+                minimum: 0
+                maximum: 2147483647
+              planned_time_per_unit:
+                type: integer
+                nullable: false
+                minimum: 0
+                maximum: 2147483647
+              planned_time_parameter:
+                type: integer
+                nullable: false
+                minimum: 0
+                maximum: 2147483647
+              type:
+                type: string
+                nullable: false
+                enum:
+                - process
+                - setup
+                - perUnit
+                - fixed
+            required:
+            - product_variant_id
+            additionalProperties: false
+          nullable: false
+      required:
+      - rows
+      additionalProperties: false
+    ProductOperationRowRankDto:
+      title: ProductOperationRowRankDto
+      type: object
+      properties:
+        rank_product_operation_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        preceding_product_operation_id:
+          type: integer
+          nullable: false
+          maximum: 2147483647
+          minimum: 1
+        should_group:
+          type: boolean
+          default: false
+          nullable: false
+      required:
+      - rank_product_operation_id
+      additionalProperties: false

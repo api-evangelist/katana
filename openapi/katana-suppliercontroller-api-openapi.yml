@@ -1,0 +1,195 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SupplierController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SupplierController
+paths:
+  /suppliers/{id}:
+    patch:
+      x-controller-name: SupplierController
+      x-operation-name: updateSupplier
+      tags:
+      - SupplierController
+      responses:
+        '200':
+          description: Return value of SupplierController.updateSupplier
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupplierUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: SupplierController.updateSupplier
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: SupplierController
+      x-operation-name: deleteSupplier
+      tags:
+      - SupplierController
+      responses:
+        '200':
+          description: Return value of SupplierController.deleteSupplier
+      operationId: SupplierController.deleteSupplier
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /suppliers:
+    post:
+      x-controller-name: SupplierController
+      x-operation-name: createSupplier
+      tags:
+      - SupplierController
+      responses:
+        '200':
+          description: Return value of SupplierController.createSupplier
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupplierCreateDto'
+        required: true
+      operationId: SupplierController.createSupplier
+    get:
+      x-controller-name: SupplierController
+      x-operation-name: getAllSuppliers
+      tags:
+      - SupplierController
+      responses:
+        '200':
+          description: Return value of SupplierController.getAllSuppliers
+      operationId: SupplierController.getAllSuppliers
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: email
+        in: query
+        schema:
+          type: string
+      - name: phone
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    SupplierUpdateDto:
+      title: SupplierUpdateDto
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: false
+          minLength: 1
+        email:
+          type: string
+          nullable: true
+          minLength: 1
+        phone:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 30
+        comment:
+          type: string
+          nullable: true
+          minLength: 1
+        currency:
+          type: string
+          nullable: false
+          minLength: 1
+      additionalProperties: false
+    SupplierCreateDto:
+      title: SupplierCreateDto
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: false
+          minLength: 1
+        email:
+          type: string
+          nullable: true
+          minLength: 1
+        phone:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 30
+        comment:
+          type: string
+          nullable: true
+          minLength: 1
+        currency:
+          type: string
+          nullable: false
+          minLength: 1
+        addresses:
+          type: array
+          items:
+            title: SupplierAddressNestedCreateDto
+            type: object
+            properties:
+              line_1:
+                type: string
+                nullable: true
+              line_2:
+                type: string
+                nullable: true
+              city:
+                type: string
+                nullable: true
+              state:
+                type: string
+                nullable: true
+              zip:
+                type: string
+                nullable: true
+              country:
+                type: string
+                nullable: true
+            additionalProperties: false
+      required:
+      - name
+      additionalProperties: false

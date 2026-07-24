@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SalesOrderAccountingMetadataController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SalesOrderAccountingMetadataController
+paths:
+  /sales_order_accounting_metadata:
+    get:
+      x-controller-name: SalesOrderAccountingMetadataController
+      x-operation-name: getAllSalesOrderAccountingMetadata
+      tags:
+      - SalesOrderAccountingMetadataController
+      responses:
+        '200':
+          description: Return value of SalesOrderAccountingMetadataController.getAllSalesOrderAccountingMetadata
+      operationId: SalesOrderAccountingMetadataController.getAllSalesOrderAccountingMetadata
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: sales_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: fulfillment_id
+        in: query
+        schema:
+          type: integer
+          format: int32

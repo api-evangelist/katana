@@ -1,0 +1,274 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController CustomerController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: CustomerController
+paths:
+  /customers/{id}:
+    patch:
+      x-controller-name: CustomerController
+      x-operation-name: updateVariant
+      tags:
+      - CustomerController
+      responses:
+        '200':
+          description: Return value of CustomerController.updateVariant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: CustomerController.updateVariant
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: CustomerController
+      x-operation-name: deleteCustomer
+      tags:
+      - CustomerController
+      responses:
+        '200':
+          description: Return value of CustomerController.deleteCustomer
+      operationId: CustomerController.deleteCustomer
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /customers:
+    post:
+      x-controller-name: CustomerController
+      x-operation-name: createCustomer
+      tags:
+      - CustomerController
+      responses:
+        '200':
+          description: Return value of CustomerController.createCustomer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomerDto'
+        required: true
+      operationId: CustomerController.createCustomer
+    get:
+      x-controller-name: CustomerController
+      x-operation-name: getAllCustomers
+      tags:
+      - CustomerController
+      responses:
+        '200':
+          description: Return value of CustomerController.getAllCustomers
+      operationId: CustomerController.getAllCustomers
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: first_name
+        in: query
+        schema:
+          type: string
+      - name: last_name
+        in: query
+        schema:
+          type: string
+      - name: company
+        in: query
+        schema:
+          type: string
+      - name: email
+        in: query
+        schema:
+          type: string
+      - name: reference_id
+        in: query
+        schema:
+          type: string
+      - name: category
+        in: query
+        schema:
+          type: string
+      - name: currency
+        in: query
+        schema:
+          type: string
+      - name: phone
+        in: query
+        schema:
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreateCustomerDto:
+      title: CreateCustomerDto
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        first_name:
+          type: string
+        last_name:
+          type: string
+        company:
+          type: string
+        email:
+          type: string
+        reference_id:
+          type: string
+        category:
+          type: string
+        currency:
+          type: string
+        phone:
+          type: string
+        comment:
+          type: string
+        discount_rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100
+        addresses:
+          type: array
+          items:
+            title: CustomerAddressInCustomerCreateDto
+            type: object
+            properties:
+              entity_type:
+                type: string
+                enum:
+                - billing
+                - shipping
+              first_name:
+                type: string
+                nullable: true
+              last_name:
+                type: string
+                nullable: true
+              company:
+                type: string
+                nullable: true
+              phone:
+                type: string
+                nullable: true
+              line_1:
+                type: string
+                nullable: true
+              line_2:
+                type: string
+                nullable: true
+              city:
+                type: string
+                nullable: true
+              state:
+                type: string
+                nullable: true
+              zip:
+                type: string
+                nullable: true
+              country:
+                type: string
+                nullable: true
+              default:
+                type: boolean
+            required:
+            - entity_type
+            additionalProperties: false
+      required:
+      - name
+      additionalProperties: false
+    CustomerUpdateDto:
+      title: CustomerUpdateDto
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          minLength: 1
+        first_name:
+          type: string
+          nullable: true
+          minLength: 1
+        last_name:
+          type: string
+          nullable: true
+          minLength: 1
+        company:
+          type: string
+          nullable: true
+          minLength: 1
+        email:
+          type: string
+          nullable: true
+          minLength: 1
+        reference_id:
+          type: string
+          nullable: true
+          minLength: 1
+        category:
+          type: string
+          nullable: true
+          minLength: 1
+        currency:
+          type: string
+          nullable: true
+          minLength: 1
+        phone:
+          type: string
+          nullable: true
+          minLength: 1
+        comment:
+          type: string
+          nullable: true
+          minLength: 1
+        default_shipping_id:
+          type: integer
+          nullable: true
+          maximum: 2147483647
+          minimum: 1
+        discount_rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 100
+      additionalProperties: false

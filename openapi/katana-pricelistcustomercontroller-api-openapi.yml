@@ -1,0 +1,149 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PriceListCustomerController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PriceListCustomerController
+paths:
+  /price_list_customers/{id}:
+    patch:
+      x-controller-name: PriceListCustomerController
+      x-operation-name: updateById
+      tags:
+      - PriceListCustomerController
+      responses:
+        '200':
+          description: Return value of PriceListCustomerController.updateById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePriceListCustomerDto'
+        required: true
+        x-parameter-index: 1
+      operationId: PriceListCustomerController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: PriceListCustomerController
+      x-operation-name: findById
+      tags:
+      - PriceListCustomerController
+      responses:
+        '200':
+          description: Return value of PriceListCustomerController.findById
+      operationId: PriceListCustomerController.findById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: PriceListCustomerController
+      x-operation-name: deleteById
+      tags:
+      - PriceListCustomerController
+      responses:
+        '204':
+          description: Price list customer delete success
+      operationId: PriceListCustomerController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /price_list_customers:
+    post:
+      x-controller-name: PriceListCustomerController
+      x-operation-name: create
+      tags:
+      - PriceListCustomerController
+      responses:
+        '200':
+          description: Return value of PriceListCustomerController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePriceListCustomersDto'
+        required: true
+      operationId: PriceListCustomerController.create
+    get:
+      x-controller-name: PriceListCustomerController
+      x-operation-name: findAndPaginate
+      tags:
+      - PriceListCustomerController
+      responses:
+        '200':
+          description: Return value of PriceListCustomerController.findAndPaginate
+      operationId: PriceListCustomerController.findAndPaginate
+      parameters:
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: customer_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: price_list_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+components:
+  schemas:
+    CreatePriceListCustomersDto:
+      title: CreatePriceListCustomersDto
+      type: object
+      properties:
+        price_list_id:
+          type: number
+        price_list_customers:
+          type: array
+          items:
+            title: CreatePriceListCustomerDto
+            type: object
+            properties:
+              customer_id:
+                type: number
+            required:
+            - customer_id
+            additionalProperties: false
+      required:
+      - price_list_id
+      - price_list_customers
+      additionalProperties: false
+    UpdatePriceListCustomerDto:
+      title: UpdatePriceListCustomerDto
+      type: object
+      properties:
+        customer_id:
+          type: number
+      required:
+      - customer_id
+      additionalProperties: false

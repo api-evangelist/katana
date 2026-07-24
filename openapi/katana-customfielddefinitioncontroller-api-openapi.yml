@@ -1,0 +1,160 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController CustomFieldDefinitionController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: CustomFieldDefinitionController
+paths:
+  /custom_field_definitions/{id}:
+    patch:
+      x-controller-name: CustomFieldDefinitionController
+      x-operation-name: update
+      tags:
+      - CustomFieldDefinitionController
+      responses:
+        '200':
+          description: Return value of CustomFieldDefinitionController.update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomFieldDefinitionDto'
+        required: true
+        x-parameter-index: 1
+      operationId: CustomFieldDefinitionController.update
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+    get:
+      x-controller-name: CustomFieldDefinitionController
+      x-operation-name: getById
+      tags:
+      - CustomFieldDefinitionController
+      responses:
+        '200':
+          description: Return value of CustomFieldDefinitionController.getById
+      operationId: CustomFieldDefinitionController.getById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+    delete:
+      x-controller-name: CustomFieldDefinitionController
+      x-operation-name: deleteById
+      tags:
+      - CustomFieldDefinitionController
+      responses:
+        '200':
+          description: Return value of CustomFieldDefinitionController.deleteById
+      operationId: CustomFieldDefinitionController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+  /custom_field_definitions:
+    post:
+      x-controller-name: CustomFieldDefinitionController
+      x-operation-name: create
+      tags:
+      - CustomFieldDefinitionController
+      responses:
+        '200':
+          description: Return value of CustomFieldDefinitionController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomFieldDefinitionDto'
+        required: true
+      operationId: CustomFieldDefinitionController.create
+    get:
+      x-controller-name: CustomFieldDefinitionController
+      x-operation-name: getAll
+      tags:
+      - CustomFieldDefinitionController
+      responses:
+        '200':
+          description: Return value of CustomFieldDefinitionController.getAll
+      operationId: CustomFieldDefinitionController.getAll
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: label
+        in: query
+        schema:
+          type: string
+      - name: field_type
+        in: query
+        schema:
+          type: string
+      - name: entity_type
+        in: query
+        schema:
+          type: string
+components:
+  schemas:
+    UpdateCustomFieldDefinitionDto:
+      title: UpdateCustomFieldDefinitionDto
+      type: object
+      properties:
+        label:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+          nullable: true
+        options:
+          type: object
+          nullable: true
+      additionalProperties: false
+    CreateCustomFieldDefinitionDto:
+      title: CreateCustomFieldDefinitionDto
+      type: object
+      properties:
+        label:
+          type: string
+          maxLength: 255
+        field_type:
+          type: string
+          maxLength: 50
+        entity_type:
+          type: string
+          maxLength: 50
+        source:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+          nullable: true
+        options:
+          type: object
+          nullable: true
+      required:
+      - label
+      - field_type
+      - entity_type
+      - source
+      additionalProperties: false

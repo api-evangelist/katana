@@ -1,0 +1,199 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PoAdditionalCostRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PoAdditionalCostRowController
+paths:
+  /po_additional_cost_rows/{id}:
+    patch:
+      x-controller-name: PoAdditionalCostRowController
+      x-operation-name: updatePoAdditionalCostRow
+      tags:
+      - PoAdditionalCostRowController
+      responses:
+        '200':
+          description: Return value of PoAdditionalCostRowController.updatePoAdditionalCostRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePoAdditionalCostRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: PoAdditionalCostRowController.updatePoAdditionalCostRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: PoAdditionalCostRowController
+      x-operation-name: getPoAdditionalCostRow
+      tags:
+      - PoAdditionalCostRowController
+      responses:
+        '200':
+          description: Return value of PoAdditionalCostRowController.getPoAdditionalCostRow
+      operationId: PoAdditionalCostRowController.getPoAdditionalCostRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: PoAdditionalCostRowController
+      x-operation-name: deletePoAdditionalCostRow
+      tags:
+      - PoAdditionalCostRowController
+      responses:
+        '200':
+          description: Return value of PoAdditionalCostRowController.deletePoAdditionalCostRow
+      operationId: PoAdditionalCostRowController.deletePoAdditionalCostRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /po_additional_cost_rows:
+    post:
+      x-controller-name: PoAdditionalCostRowController
+      x-operation-name: createPoAdditionalCostRow
+      tags:
+      - PoAdditionalCostRowController
+      responses:
+        '200':
+          description: Return value of PoAdditionalCostRowController.createPoAdditionalCostRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePoAdditionalCostRowDto'
+        required: true
+      operationId: PoAdditionalCostRowController.createPoAdditionalCostRow
+    get:
+      x-controller-name: PoAdditionalCostRowController
+      x-operation-name: getPoAdditionalCostRows
+      tags:
+      - PoAdditionalCostRowController
+      responses:
+        '200':
+          description: Return value of PoAdditionalCostRowController.getPoAdditionalCostRows
+      operationId: PoAdditionalCostRowController.getPoAdditionalCostRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: group_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: additional_cost_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: distribution_method
+        in: query
+        schema:
+          enum:
+          - BY_VALUE
+          - NON_DISTRIBUTED
+          type: string
+      - name: tax_rate_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: currency
+        in: query
+        schema:
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreatePoAdditionalCostRowDto:
+      title: CreatePoAdditionalCostRowDto
+      type: object
+      properties:
+        additional_cost_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        group_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        tax_rate_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        price:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        distribution_method:
+          type: string
+          enum:
+          - BY_VALUE
+          - NON_DISTRIBUTED
+      required:
+      - additional_cost_id
+      - group_id
+      - tax_rate_id
+      - price
+      additionalProperties: false
+    UpdatePoAdditionalCostRowDto:
+      title: UpdatePoAdditionalCostRowDto
+      type: object
+      properties:
+        additional_cost_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        tax_rate_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        price:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        distribution_method:
+          type: string
+          enum:
+          - BY_VALUE
+          - NON_DISTRIBUTED
+      additionalProperties: false

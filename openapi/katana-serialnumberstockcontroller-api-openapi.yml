@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController SerialNumberStockController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: SerialNumberStockController
+paths:
+  /serial_numbers_stock:
+    get:
+      x-controller-name: SerialNumberStockController
+      x-operation-name: list
+      tags:
+      - SerialNumberStockController
+      responses:
+        '200':
+          description: Return value of SerialNumberStockController.list
+      operationId: SerialNumberStockController.list
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true

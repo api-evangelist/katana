@@ -1,0 +1,127 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController RecipeController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: RecipeController
+paths:
+  /recipes/{id}:
+    delete:
+      x-controller-name: RecipeController
+      x-operation-name: deleteRecipeById
+      tags:
+      - RecipeController
+      responses:
+        '200':
+          description: Return value of RecipeController.deleteRecipeById
+      operationId: RecipeController.deleteRecipeById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+        required: true
+  /recipes:
+    post:
+      x-controller-name: RecipeController
+      x-operation-name: createRecipeRow
+      tags:
+      - RecipeController
+      responses:
+        '200':
+          description: Return value of RecipeController.createRecipeRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecipeRowCreateManyDto'
+        required: true
+      operationId: RecipeController.createRecipeRow
+    get:
+      x-controller-name: RecipeController
+      x-operation-name: getAllRecipes
+      tags:
+      - RecipeController
+      responses:
+        '200':
+          description: Return value of RecipeController.getAllRecipes
+      operationId: RecipeController.getAllRecipes
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: product_variant_ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: recipe_row_id
+        in: query
+        schema:
+          type: string
+      - name: product_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: ingredient_variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+components:
+  schemas:
+    RecipeRowCreateManyDto:
+      title: RecipeRowCreateManyDto
+      type: object
+      properties:
+        rows:
+          type: array
+          minItems: 1
+          maxItems: 150
+          items:
+            title: RecipeRowCreateDto
+            type: object
+            properties:
+              product_variant_id:
+                type: integer
+                minimum: 0
+                maximum: 2147483647
+              ingredient_variant_id:
+                type: integer
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                type: number
+                minimum: 0
+                maximum: 10000000000000000
+              notes:
+                type: string
+                maxLength: 255
+            required:
+            - product_variant_id
+            - ingredient_variant_id
+            - quantity
+            additionalProperties: false
+        keep_current_rows:
+          type: boolean
+      required:
+      - rows
+      additionalProperties: false

@@ -1,0 +1,366 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController MaterialController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: MaterialController
+paths:
+  /materials/{id}:
+    patch:
+      x-controller-name: MaterialController
+      x-operation-name: updateMaterial
+      tags:
+      - MaterialController
+      responses:
+        '200':
+          description: Return value of MaterialController.updateMaterial
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaterialUpdateDto'
+        required: true
+        x-parameter-index: 1
+      operationId: MaterialController.updateMaterial
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: MaterialController
+      x-operation-name: getMaterial
+      tags:
+      - MaterialController
+      responses:
+        '200':
+          description: Return value of MaterialController.getMaterial
+      operationId: MaterialController.getMaterial
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - supplier
+    delete:
+      x-controller-name: MaterialController
+      x-operation-name: deleteManufacturingOrder
+      tags:
+      - MaterialController
+      responses:
+        '200':
+          description: Return value of MaterialController.deleteManufacturingOrder
+      operationId: MaterialController.deleteManufacturingOrder
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /materials:
+    post:
+      x-controller-name: MaterialController
+      x-operation-name: createMaterial
+      tags:
+      - MaterialController
+      responses:
+        '200':
+          description: Return value of MaterialController.createMaterial
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMaterialDto'
+        required: true
+      operationId: MaterialController.createMaterial
+    get:
+      x-controller-name: MaterialController
+      x-operation-name: getAllMaterials
+      tags:
+      - MaterialController
+      responses:
+        '200':
+          description: Return value of MaterialController.getAllMaterials
+      operationId: MaterialController.getAllMaterials
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: category_name
+        in: query
+        schema:
+          type: string
+      - name: is_sellable
+        in: query
+        schema:
+          type: boolean
+      - name: uom
+        in: query
+        schema:
+          type: string
+      - name: default_supplier_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: batch_tracked
+        in: query
+        schema:
+          type: string
+      - name: purchase_uom
+        in: query
+        schema:
+          type: string
+      - name: purchase_uom_conversion_rate
+        in: query
+        schema:
+          type: number
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+      - name: include_archived
+        in: query
+        schema:
+          type: boolean
+      - name: extend
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - supplier
+components:
+  schemas:
+    CreateMaterialDto:
+      title: CreateMaterialDto
+      type: object
+      properties:
+        name:
+          type: string
+        uom:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 7
+        category_name:
+          type: string
+        default_supplier_id:
+          type: number
+        purchase_uom:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 7
+        purchase_uom_conversion_rate:
+          type: number
+        batch_tracked:
+          type: boolean
+        variants:
+          type: array
+          minItems: 1
+          items:
+            title: CreateMaterialVariantDto
+            type: object
+            properties:
+              sku:
+                type: string
+              purchase_price:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 100000000000
+              internal_barcode:
+                type: string
+                minLength: 3
+                maxLength: 40
+              registered_barcode:
+                type: string
+                minLength: 3
+                maxLength: 40
+              supplier_item_codes:
+                type: array
+                items:
+                  type: string
+              config_attributes:
+                type: array
+                minItems: 1
+                items:
+                  title: CreateVariantAttributesDto
+                  type: object
+                  properties:
+                    config_name:
+                      type: string
+                    config_value:
+                      type: string
+                  required:
+                  - config_name
+                  - config_value
+                  additionalProperties: false
+              custom_fields:
+                type: array
+                maxItems: 3
+                items:
+                  title: CustomFieldValueDto
+                  type: object
+                  properties:
+                    field_name:
+                      type: string
+                    field_value:
+                      type: string
+                  required:
+                  - field_name
+                  - field_value
+                  additionalProperties: false
+              lead_time:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              minimum_order_quantity:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+            additionalProperties: false
+        configs:
+          type: array
+          minItems: 1
+          maxItems: 10
+          items:
+            title: CreateMaterialConfigDto
+            type: object
+            properties:
+              name:
+                type: string
+              values:
+                type: array
+                items:
+                  type: string
+            required:
+            - name
+            - values
+            additionalProperties: false
+        additional_info:
+          type: string
+        custom_field_collection_id:
+          type: number
+          nullable: true
+        is_sellable:
+          type: boolean
+      required:
+      - name
+      - variants
+      additionalProperties: false
+    MaterialUpdateDto:
+      title: MaterialUpdateDto
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 256
+        uom:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 7
+        category_name:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 35
+        default_supplier_id:
+          type: integer
+          nullable: true
+          maximum: 2147483647
+          minimum: 1
+        purchase_uom:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 7
+        purchase_uom_conversion_rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        batch_tracked:
+          type: boolean
+          default: false
+          nullable: false
+        is_sellable:
+          type: boolean
+          default: false
+          nullable: false
+        is_archived:
+          type: boolean
+          default: false
+          nullable: false
+        configs:
+          type: array
+          items:
+            title: ItemVariantConfigDto
+            type: object
+            properties:
+              id:
+                type: number
+              name:
+                type: string
+              values:
+                type: array
+                items:
+                  type: string
+            required:
+            - values
+            additionalProperties: false
+          minItems: 1
+          maxItems: 10
+        additional_info:
+          type: string
+          nullable: true
+          minLength: 1
+        custom_field_collection_id:
+          type: number
+          nullable: true
+      additionalProperties: false

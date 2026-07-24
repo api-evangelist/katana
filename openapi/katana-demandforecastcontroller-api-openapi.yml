@@ -1,0 +1,123 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController DemandForecastController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: DemandForecastController
+paths:
+  /demand_forecasts:
+    post:
+      x-controller-name: DemandForecastController
+      x-operation-name: updateDemandForecast
+      tags:
+      - DemandForecastController
+      responses:
+        '200':
+          description: Return value of DemandForecastController.updateDemandForecast
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DemandForecastUpdateDto'
+        required: true
+      operationId: DemandForecastController.updateDemandForecast
+    get:
+      x-controller-name: DemandForecastController
+      x-operation-name: findDemandForecast
+      tags:
+      - DemandForecastController
+      responses:
+        '200':
+          description: Return value of DemandForecastController.findDemandForecast
+      operationId: DemandForecastController.findDemandForecast
+      parameters:
+      - name: variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: DemandForecastController
+      x-operation-name: clearDemandForecast
+      tags:
+      - DemandForecastController
+      responses:
+        '200':
+          description: Return value of DemandForecastController.clearDemandForecast
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DemandForecastClearDto'
+        required: true
+      operationId: DemandForecastController.clearDemandForecast
+components:
+  schemas:
+    DemandForecastClearDto:
+      title: DemandForecastClearDto
+      type: object
+      properties:
+        variant_id:
+          type: number
+        location_id:
+          type: number
+        periods:
+          type: array
+          items:
+            title: DemandForecastClearPeriod
+            type: object
+            properties:
+              period_start:
+                type: string
+              period_end:
+                type: string
+            required:
+            - period_start
+            - period_end
+            additionalProperties: false
+      required:
+      - variant_id
+      - location_id
+      - periods
+      additionalProperties: false
+    DemandForecastUpdateDto:
+      title: DemandForecastUpdateDto
+      type: object
+      properties:
+        variant_id:
+          type: number
+        location_id:
+          type: number
+        periods:
+          type: array
+          items:
+            title: DemandForecastUpdatePeriod
+            type: object
+            properties:
+              period_start:
+                type: string
+              period_end:
+                type: string
+              committed:
+                type: string
+            required:
+            - period_start
+            - period_end
+            - committed
+            additionalProperties: false
+      required:
+      - variant_id
+      - location_id
+      - periods
+      additionalProperties: false

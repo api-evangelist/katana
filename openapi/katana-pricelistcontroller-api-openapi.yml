@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PriceListController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PriceListController
+paths:
+  /price_lists/{id}:
+    patch:
+      x-controller-name: PriceListController
+      x-operation-name: updateById
+      tags:
+      - PriceListController
+      responses:
+        '200':
+          description: Return value of PriceListController.updateById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceListPatchDto'
+        required: true
+        x-parameter-index: 1
+      operationId: PriceListController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: PriceListController
+      x-operation-name: findById
+      tags:
+      - PriceListController
+      responses:
+        '200':
+          description: Return value of PriceListController.findById
+      operationId: PriceListController.findById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: PriceListController
+      x-operation-name: deleteById
+      tags:
+      - PriceListController
+      responses:
+        '204':
+          description: Price list delete success
+      operationId: PriceListController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: number
+        required: true
+  /price_lists:
+    post:
+      x-controller-name: PriceListController
+      x-operation-name: create
+      tags:
+      - PriceListController
+      responses:
+        '200':
+          description: Return value of PriceListController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceListCreateDto'
+        required: true
+      operationId: PriceListController.create
+    get:
+      x-controller-name: PriceListController
+      x-operation-name: findAndPaginate
+      tags:
+      - PriceListController
+      responses:
+        '200':
+          description: Return value of PriceListController.findAndPaginate
+      operationId: PriceListController.findAndPaginate
+      parameters:
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: is_active
+        in: query
+        schema:
+          type: boolean
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+components:
+  schemas:
+    PriceListCreateDto:
+      title: PriceListCreateDto
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: false
+          maxLength: 100
+      required:
+      - name
+      additionalProperties: false
+    PriceListPatchDto:
+      title: PriceListPatchDto
+      type: object
+      properties:
+        name:
+          type: string
+        is_active:
+          type: boolean
+      additionalProperties: false

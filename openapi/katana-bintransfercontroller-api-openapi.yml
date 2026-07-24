@@ -1,0 +1,333 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController BinTransferController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: BinTransferController
+paths:
+  /bin_transfers/{id}/status:
+    patch:
+      x-controller-name: BinTransferController
+      x-operation-name: updateStatus
+      tags:
+      - BinTransferController
+      responses:
+        '200':
+          description: Return value of BinTransferController.updateStatus
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBinTransferStatusDto'
+        required: true
+        x-parameter-index: 1
+      operationId: BinTransferController.updateStatus
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /bin_transfers/{id}:
+    patch:
+      x-controller-name: BinTransferController
+      x-operation-name: updateById
+      tags:
+      - BinTransferController
+      responses:
+        '200':
+          description: Return value of BinTransferController.updateById
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBinTransferDto'
+        required: true
+        x-parameter-index: 1
+      operationId: BinTransferController.updateById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: BinTransferController
+      x-operation-name: findById
+      tags:
+      - BinTransferController
+      responses:
+        '200':
+          description: Return value of BinTransferController.findById
+      operationId: BinTransferController.findById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: BinTransferController
+      x-operation-name: deleteById
+      tags:
+      - BinTransferController
+      responses:
+        '200':
+          description: Return value of BinTransferController.deleteById
+      operationId: BinTransferController.deleteById
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /bin_transfers:
+    post:
+      x-controller-name: BinTransferController
+      x-operation-name: create
+      tags:
+      - BinTransferController
+      responses:
+        '200':
+          description: Return value of BinTransferController.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBinTransferDto'
+        required: true
+      operationId: BinTransferController.create
+    get:
+      x-controller-name: BinTransferController
+      x-operation-name: findAndPaginate
+      tags:
+      - BinTransferController
+      responses:
+        '200':
+          description: Return value of BinTransferController.findAndPaginate
+      operationId: BinTransferController.findAndPaginate
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: bin_transfer_number
+        in: query
+        schema:
+          type: string
+      - name: location_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: status
+        in: query
+        schema:
+          enum:
+          - CREATED
+          - IN_TRANSIT
+          - DONE
+          type: string
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    UpdateBinTransferStatusDto:
+      title: UpdateBinTransferStatusDto
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - CREATED
+          - IN_TRANSIT
+          - DONE
+      required:
+      - status
+      additionalProperties: false
+    TraceabilityInputDto:
+      title: TraceabilityInputDto
+      type: object
+      properties:
+        batch_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false
+    CreateBinTransferDto:
+      title: CreateBinTransferDto
+      type: object
+      properties:
+        bin_transfer_number:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 255
+        location_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        created_date:
+          type: string
+          format: date-time
+          nullable: true
+        additional_info:
+          type: string
+          nullable: true
+          minLength: 0
+        bin_transfer_rows:
+          type: array
+          maxItems: 250
+          items:
+            title: CreateNestedBinTransferRowDto
+            type: object
+            properties:
+              variant_id:
+                type: integer
+                nullable: false
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                allOf:
+                - anyOf:
+                  - type: number
+                    minimum: 0
+                  - type: string
+                    pattern: ^[0-9]+?\.?[0-9]*$
+                - anyOf:
+                  - type: number
+                    not:
+                      const: 0
+                  - type: string
+                    not:
+                      pattern: ^(-|)[0]+?\.?[0]*$
+              source_bin_location_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              target_bin_location_id:
+                type: number
+                nullable: true
+                minimum: 0
+                maximum: 2147483647
+              traceability:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TraceabilityInputDto'
+            required:
+            - variant_id
+            - quantity
+            definitions:
+              TraceabilityInputDto:
+                title: TraceabilityInputDto
+                type: object
+                properties:
+                  batch_id:
+                    type: number
+                    nullable: true
+                    minimum: 0
+                    maximum: 2147483647
+                  serial_number_id:
+                    type: number
+                    nullable: true
+                    minimum: 0
+                    maximum: 2147483647
+                  quantity:
+                    allOf:
+                    - anyOf:
+                      - type: number
+                        minimum: 0
+                      - type: string
+                        pattern: ^[0-9]+?\.?[0-9]*$
+                    - anyOf:
+                      - type: number
+                        not:
+                          const: 0
+                      - type: string
+                        not:
+                          pattern: ^(-|)[0]+?\.?[0]*$
+                additionalProperties: false
+            additionalProperties: false
+      required:
+      - location_id
+      additionalProperties: false
+    UpdateBinTransferDto:
+      title: UpdateBinTransferDto
+      type: object
+      properties:
+        bin_transfer_number:
+          type: string
+          nullable: false
+          minLength: 1
+          maxLength: 255
+        location_id:
+          type: integer
+          nullable: false
+          minimum: 0
+          maximum: 2147483647
+        created_date:
+          type: string
+          format: date-time
+          nullable: true
+        departed_at:
+          type: string
+          format: date-time
+          nullable: true
+        arrived_at:
+          type: string
+          format: date-time
+          nullable: true
+        additional_info:
+          type: string
+          nullable: true
+          minLength: 0
+      additionalProperties: false

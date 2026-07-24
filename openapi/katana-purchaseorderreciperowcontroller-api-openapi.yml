@@ -1,0 +1,196 @@
+openapi: 3.0.0
+info:
+  title: katana-api-gateway AdditionalCostController PurchaseOrderRecipeRowController API
+  version: 0.0.1
+  description: public api
+  contact: {}
+servers:
+- url: https://api.katanamrp.com/v1
+tags:
+- name: PurchaseOrderRecipeRowController
+paths:
+  /outsourced_purchase_order_recipe_rows/{id}:
+    patch:
+      x-controller-name: PurchaseOrderRecipeRowController
+      x-operation-name: updatePurchaseOrderRecipeRow
+      tags:
+      - PurchaseOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRecipeRowController.updatePurchaseOrderRecipeRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePurchaseOrderRecipeRowDto'
+        required: true
+        x-parameter-index: 1
+      operationId: PurchaseOrderRecipeRowController.updatePurchaseOrderRecipeRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    get:
+      x-controller-name: PurchaseOrderRecipeRowController
+      x-operation-name: getPurchaseOrderRecipeRow
+      tags:
+      - PurchaseOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRow
+      operationId: PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+    delete:
+      x-controller-name: PurchaseOrderRecipeRowController
+      x-operation-name: deletePurchaseOrderRecipeRow
+      tags:
+      - PurchaseOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRecipeRowController.deletePurchaseOrderRecipeRow
+      operationId: PurchaseOrderRecipeRowController.deletePurchaseOrderRecipeRow
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+          format: int32
+        required: true
+  /outsourced_purchase_order_recipe_rows:
+    post:
+      x-controller-name: PurchaseOrderRecipeRowController
+      x-operation-name: createPurchaseOrderRecipeRow
+      tags:
+      - PurchaseOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRecipeRowController.createPurchaseOrderRecipeRow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePurchaseOrderRecipeRowDto'
+        required: true
+      operationId: PurchaseOrderRecipeRowController.createPurchaseOrderRecipeRow
+    get:
+      x-controller-name: PurchaseOrderRecipeRowController
+      x-operation-name: getPurchaseOrderRecipeRows
+      tags:
+      - PurchaseOrderRecipeRowController
+      responses:
+        '200':
+          description: Return value of PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRows
+      operationId: PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRows
+      parameters:
+      - name: pagination
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: dateFilter
+        in: query
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      - name: ids
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            maximum: 2147483647
+      - name: purchase_order_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: purchase_order_row_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: ingredient_variant_id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: include_deleted
+        in: query
+        schema:
+          type: boolean
+components:
+  schemas:
+    CreatePurchaseOrderRecipeRowDto:
+      title: CreatePurchaseOrderRecipeRowDto
+      type: object
+      properties:
+        purchase_order_row_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        ingredient_variant_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        planned_quantity_per_unit:
+          type: number
+          maximum: 100000000000000000
+          minimum: 0
+          exclusiveMinimum: true
+        notes:
+          type: string
+        batch_transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateBatchTransactionDto'
+      required:
+      - purchase_order_row_id
+      - ingredient_variant_id
+      - planned_quantity_per_unit
+      additionalProperties: false
+    UpdatePurchaseOrderRecipeRowDto:
+      title: UpdatePurchaseOrderRecipeRowDto
+      type: object
+      properties:
+        ingredient_variant_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        planned_quantity_per_unit:
+          type: number
+          maximum: 100000000000000000
+          minimum: 0
+          exclusiveMinimum: true
+        notes:
+          type: string
+        batch_transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateBatchTransactionDto'
+      additionalProperties: false
+    CreateBatchTransactionDto:
+      title: CreateBatchTransactionDto
+      type: object
+      properties:
+        batch_id:
+          type: integer
+          maximum: 2147483647
+        quantity:
+          type: number
+      required:
+      - batch_id
+      - quantity
+      additionalProperties: false
