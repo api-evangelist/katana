@@ -1,27 +1,794 @@
 aid: katana
 name: Katana
-description: 'Katana is a company surfaced as a portfolio company of northzone and added to the API Evangelist
-  network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Katana is a cloud manufacturing ERP and inventory management platform for
+  product businesses. It gives makers and small-to-midsize manufacturers
+  real-time inventory control across multiple locations and sales channels,
+  production and manufacturing-order planning, purchasing and demand
+  forecasting, warehouse and bin management with barcode workflows, and lot/
+  serial-number traceability. Katana connects to Shopify, Amazon, QuickBooks
+  Online, Xero, WooCommerce, BigCommerce, HubSpot and 50+ other tools, and
+  exposes a full REST API (documented with OpenAPI 3.0) plus HMAC-signed
+  webhooks so integrators can sync sales orders, purchase orders, manufacturing
+  orders, products, variants, materials and stock programmatically. Added to the
+  API Evangelist network as a portfolio company of Northzone and enriched from
+  its public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/katana/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - northzone
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: real-api-enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Enterprise
-apis: []
+- Inventory
+- Manufacturing
+- ERP
+- Supply Chain
+- Warehouse Management
+- Order Management
+image: https://katanamrp.com
+apis:
+- aid: katana:katana-additionalcostcontroller-api
+  name: Katana AdditionalCostController API
+  description: >-
+    The AdditionalCostController API from Katana — 1 operation(s) for additionalcostcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - AdditionalCostController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-additionalcostcontroller-api-openapi.yml
+- aid: katana:katana-batchcontroller-api
+  name: Katana BatchController API
+  description: The BatchController API from Katana — 1 operation(s) for batchcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - BatchController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-batchcontroller-api-openapi.yml
+- aid: katana:katana-batchstockcontroller-api
+  name: Katana BatchStockController API
+  description: The BatchStockController API from Katana — 2 operation(s) for batchstockcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - BatchStockController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-batchstockcontroller-api-openapi.yml
+- aid: katana:katana-bininventorycontroller-api
+  name: Katana BinInventoryController API
+  description: The BinInventoryController API from Katana — 1 operation(s) for bininventorycontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - BinInventoryController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-bininventorycontroller-api-openapi.yml
+- aid: katana:katana-binlocationcontroller-api
+  name: Katana BinLocationController API
+  description: The BinLocationController API from Katana — 2 operation(s) for binlocationcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - BinLocationController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-binlocationcontroller-api-openapi.yml
+- aid: katana:katana-bintransfercontroller-api
+  name: Katana BinTransferController API
+  description: The BinTransferController API from Katana — 3 operation(s) for bintransfercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - BinTransferController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-bintransfercontroller-api-openapi.yml
+- aid: katana:katana-bintransferrowcontroller-api
+  name: Katana BinTransferRowController API
+  description: >-
+    The BinTransferRowController API from Katana — 2 operation(s) for bintransferrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - BinTransferRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-bintransferrowcontroller-api-openapi.yml
+- aid: katana:katana-bomrowcontroller-api
+  name: Katana BomRowController API
+  description: The BomRowController API from Katana — 3 operation(s) for bomrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - BomRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-bomrowcontroller-api-openapi.yml
+- aid: katana:katana-customeraddresscontroller-api
+  name: Katana CustomerAddressController API
+  description: >-
+    The CustomerAddressController API from Katana — 2 operation(s) for customeraddresscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - CustomerAddressController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-customeraddresscontroller-api-openapi.yml
+- aid: katana:katana-customercontroller-api
+  name: Katana CustomerController API
+  description: The CustomerController API from Katana — 2 operation(s) for customercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - CustomerController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-customercontroller-api-openapi.yml
+- aid: katana:katana-customfielddefinitioncontroller-api
+  name: Katana CustomFieldDefinitionController API
+  description: >-
+    The CustomFieldDefinitionController API from Katana — 2 operation(s) for customfielddefinitioncontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - CustomFieldDefinitionController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-customfielddefinitioncontroller-api-openapi.yml
+- aid: katana:katana-customsalesordercontroller-api
+  name: Katana CustomSalesOrderController API
+  description: >-
+    The CustomSalesOrderController API from Katana — 1 operation(s) for customsalesordercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - CustomSalesOrderController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-customsalesordercontroller-api-openapi.yml
+- aid: katana:katana-demandforecastcontroller-api
+  name: Katana DemandForecastController API
+  description: >-
+    The DemandForecastController API from Katana — 1 operation(s) for demandforecastcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - DemandForecastController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-demandforecastcontroller-api-openapi.yml
+- aid: katana:katana-factorycontroller-api
+  name: Katana FactoryController API
+  description: The FactoryController API from Katana — 1 operation(s) for factorycontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - FactoryController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-factorycontroller-api-openapi.yml
+- aid: katana:katana-inventorycontroller-api
+  name: Katana InventoryController API
+  description: The InventoryController API from Katana — 2 operation(s) for inventorycontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - InventoryController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-inventorycontroller-api-openapi.yml
+- aid: katana:katana-inventorysafetystocklevelcontroller-api
+  name: Katana InventorySafetyStockLevelController API
+  description: >-
+    The InventorySafetyStockLevelController API from Katana — 2 operation(s) for inventorysafetystocklevelcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - InventorySafetyStockLevelController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-inventorysafetystocklevelcontroller-api-openapi.yml
+- aid: katana:katana-itemscustomfieldscollectioncontroller-api
+  name: Katana ItemsCustomFieldsCollectionController API
+  description: >-
+    The ItemsCustomFieldsCollectionController API from Katana — 1 operation(s) for itemscustomfieldscollectioncontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ItemsCustomFieldsCollectionController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-itemscustomfieldscollectioncontroller-api-openapi.yml
+- aid: katana:katana-locationcontroller-api
+  name: Katana LocationController API
+  description: The LocationController API from Katana — 2 operation(s) for locationcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - LocationController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-locationcontroller-api-openapi.yml
+- aid: katana:katana-maketoordermocontroller-api
+  name: Katana MakeToOrderMOController API
+  description: >-
+    The MakeToOrderMOController API from Katana — 3 operation(s) for maketoordermocontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - MakeToOrderMOController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-maketoordermocontroller-api-openapi.yml
+- aid: katana:katana-manufacturingordercontroller-api
+  name: Katana ManufacturingOrderController API
+  description: >-
+    The ManufacturingOrderController API from Katana — 2 operation(s) for manufacturingordercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ManufacturingOrderController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-manufacturingordercontroller-api-openapi.yml
+- aid: katana:katana-manufacturingorderoperationrowcontroller-api
+  name: Katana ManufacturingOrderOperationRowController API
+  description: >-
+    The ManufacturingOrderOperationRowController API from Katana — 2 operation(s) for manufacturingorderoperationrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ManufacturingOrderOperationRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-manufacturingorderoperationrowcontroller-api-openapi.yml
+- aid: katana:katana-manufacturingorderproductioncontroller-api
+  name: Katana ManufacturingOrderProductionController API
+  description: >-
+    The ManufacturingOrderProductionController API from Katana — 2 operation(s) for manufacturingorderproductioncontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ManufacturingOrderProductionController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-manufacturingorderproductioncontroller-api-openapi.yml
+- aid: katana:katana-manufacturingorderproductioningredientcontroller-api
+  name: Katana ManufacturingOrderProductionIngredientController API
+  description: >-
+    The ManufacturingOrderProductionIngredientController API from Katana — 2 operation(s) for manufacturingorderproductioningredientcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ManufacturingOrderProductionIngredientController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-manufacturingorderproductioningredientcontroller-api-openapi.yml
+- aid: katana:katana-manufacturingorderreciperowcontroller-api
+  name: Katana ManufacturingOrderRecipeRowController API
+  description: >-
+    The ManufacturingOrderRecipeRowController API from Katana — 2 operation(s) for manufacturingorderreciperowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ManufacturingOrderRecipeRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-manufacturingorderreciperowcontroller-api-openapi.yml
+- aid: katana:katana-materialcontroller-api
+  name: Katana MaterialController API
+  description: The MaterialController API from Katana — 2 operation(s) for materialcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - MaterialController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-materialcontroller-api-openapi.yml
+- aid: katana:katana-negativestocklatestmovementcontroller-api
+  name: Katana NegativeStockLatestMovementController API
+  description: >-
+    The NegativeStockLatestMovementController API from Katana — 1 operation(s) for negativestocklatestmovementcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - NegativeStockLatestMovementController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-negativestocklatestmovementcontroller-api-openapi.yml
+- aid: katana:katana-operatorscontroller-api
+  name: Katana OperatorsController API
+  description: The OperatorsController API from Katana — 1 operation(s) for operatorscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - OperatorsController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-operatorscontroller-api-openapi.yml
+- aid: katana:katana-poadditionalcostrowcontroller-api
+  name: Katana PoAdditionalCostRowController API
+  description: >-
+    The PoAdditionalCostRowController API from Katana — 2 operation(s) for poadditionalcostrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PoAdditionalCostRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-poadditionalcostrowcontroller-api-openapi.yml
+- aid: katana:katana-pricelistcontroller-api
+  name: Katana PriceListController API
+  description: The PriceListController API from Katana — 2 operation(s) for pricelistcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PriceListController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-pricelistcontroller-api-openapi.yml
+- aid: katana:katana-pricelistcustomercontroller-api
+  name: Katana PriceListCustomerController API
+  description: >-
+    The PriceListCustomerController API from Katana — 2 operation(s) for pricelistcustomercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PriceListCustomerController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-pricelistcustomercontroller-api-openapi.yml
+- aid: katana:katana-pricelistrowcontroller-api
+  name: Katana PriceListRowController API
+  description: The PriceListRowController API from Katana — 2 operation(s) for pricelistrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PriceListRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-pricelistrowcontroller-api-openapi.yml
+- aid: katana:katana-productcontroller-api
+  name: Katana ProductController API
+  description: The ProductController API from Katana — 2 operation(s) for productcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ProductController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-productcontroller-api-openapi.yml
+- aid: katana:katana-productoperationscontroller-api
+  name: Katana ProductOperationsController API
+  description: >-
+    The ProductOperationsController API from Katana — 3 operation(s) for productoperationscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ProductOperationsController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-productoperationscontroller-api-openapi.yml
+- aid: katana:katana-purchaseorderaccountingmetadatacontroller-api
+  name: Katana PurchaseOrderAccountingMetadataController API
+  description: >-
+    The PurchaseOrderAccountingMetadataController API from Katana — 1 operation(s) for purchaseorderaccountingmetadatacontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PurchaseOrderAccountingMetadataController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-purchaseorderaccountingmetadatacontroller-api-openapi.yml
+- aid: katana:katana-purchaseordercontroller-api
+  name: Katana PurchaseOrderController API
+  description: >-
+    The PurchaseOrderController API from Katana — 2 operation(s) for purchaseordercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PurchaseOrderController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-purchaseordercontroller-api-openapi.yml
+- aid: katana:katana-purchaseorderreceivecontroller-api
+  name: Katana PurchaseOrderReceiveController API
+  description: >-
+    The PurchaseOrderReceiveController API from Katana — 1 operation(s) for purchaseorderreceivecontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PurchaseOrderReceiveController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-purchaseorderreceivecontroller-api-openapi.yml
+- aid: katana:katana-purchaseorderreciperowcontroller-api
+  name: Katana PurchaseOrderRecipeRowController API
+  description: >-
+    The PurchaseOrderRecipeRowController API from Katana — 2 operation(s) for purchaseorderreciperowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PurchaseOrderRecipeRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-purchaseorderreciperowcontroller-api-openapi.yml
+- aid: katana:katana-purchaseorderrowcontroller-api
+  name: Katana PurchaseOrderRowController API
+  description: >-
+    The PurchaseOrderRowController API from Katana — 2 operation(s) for purchaseorderrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - PurchaseOrderRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-purchaseorderrowcontroller-api-openapi.yml
+- aid: katana:katana-recipecontroller-api
+  name: Katana RecipeController API
+  description: The RecipeController API from Katana — 2 operation(s) for recipecontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - RecipeController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-recipecontroller-api-openapi.yml
+- aid: katana:katana-reciperowcontroller-api
+  name: Katana RecipeRowController API
+  description: The RecipeRowController API from Katana — 1 operation(s) for reciperowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - RecipeRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-reciperowcontroller-api-openapi.yml
+- aid: katana:katana-salesorderaccountingmetadatacontroller-api
+  name: Katana SalesOrderAccountingMetadataController API
+  description: >-
+    The SalesOrderAccountingMetadataController API from Katana — 1 operation(s) for salesorderaccountingmetadatacontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesOrderAccountingMetadataController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesorderaccountingmetadatacontroller-api-openapi.yml
+- aid: katana:katana-salesorderaddresscontroller-api
+  name: Katana SalesOrderAddressController API
+  description: >-
+    The SalesOrderAddressController API from Katana — 2 operation(s) for salesorderaddresscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesOrderAddressController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesorderaddresscontroller-api-openapi.yml
+- aid: katana:katana-salesordercontroller-api
+  name: Katana SalesOrderController API
+  description: The SalesOrderController API from Katana — 4 operation(s) for salesordercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesOrderController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesordercontroller-api-openapi.yml
+- aid: katana:katana-salesorderfulfillmentcontroller-api
+  name: Katana SalesOrderFulfillmentController API
+  description: >-
+    The SalesOrderFulfillmentController API from Katana — 2 operation(s) for salesorderfulfillmentcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesOrderFulfillmentController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesorderfulfillmentcontroller-api-openapi.yml
+- aid: katana:katana-salesorderrowcontroller-api
+  name: Katana SalesOrderRowController API
+  description: >-
+    The SalesOrderRowController API from Katana — 3 operation(s) for salesorderrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesOrderRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesorderrowcontroller-api-openapi.yml
+- aid: katana:katana-salesordershippingfeecontroller-api
+  name: Katana SalesOrderShippingFeeController API
+  description: >-
+    The SalesOrderShippingFeeController API from Katana — 2 operation(s) for salesordershippingfeecontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesOrderShippingFeeController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesordershippingfeecontroller-api-openapi.yml
+- aid: katana:katana-salesreturnrowcontroller-api
+  name: Katana SalesReturnRowController API
+  description: >-
+    The SalesReturnRowController API from Katana — 3 operation(s) for salesreturnrowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesReturnRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesreturnrowcontroller-api-openapi.yml
+- aid: katana:katana-salesreturnscontroller-api
+  name: Katana SalesReturnsController API
+  description: The SalesReturnsController API from Katana — 3 operation(s) for salesreturnscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SalesReturnsController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-salesreturnscontroller-api-openapi.yml
+- aid: katana:katana-serialnumbercontroller-api
+  name: Katana SerialNumberController API
+  description: The SerialNumberController API from Katana — 2 operation(s) for serialnumbercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SerialNumberController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-serialnumbercontroller-api-openapi.yml
+- aid: katana:katana-serialnumberstockcontroller-api
+  name: Katana SerialNumberStockController API
+  description: >-
+    The SerialNumberStockController API from Katana — 1 operation(s) for serialnumberstockcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SerialNumberStockController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-serialnumberstockcontroller-api-openapi.yml
+- aid: katana:katana-servicecontroller-api
+  name: Katana ServiceController API
+  description: The ServiceController API from Katana — 2 operation(s) for servicecontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - ServiceController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-servicecontroller-api-openapi.yml
+- aid: katana:katana-stockadjustmentcontroller-api
+  name: Katana StockAdjustmentController API
+  description: >-
+    The StockAdjustmentController API from Katana — 2 operation(s) for stockadjustmentcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - StockAdjustmentController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-stockadjustmentcontroller-api-openapi.yml
+- aid: katana:katana-stocktakecontroller-api
+  name: Katana StocktakeController API
+  description: The StocktakeController API from Katana — 2 operation(s) for stocktakecontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - StocktakeController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-stocktakecontroller-api-openapi.yml
+- aid: katana:katana-stocktakerowcontroller-api
+  name: Katana StocktakeRowController API
+  description: The StocktakeRowController API from Katana — 2 operation(s) for stocktakerowcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - StocktakeRowController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-stocktakerowcontroller-api-openapi.yml
+- aid: katana:katana-stocktransfercontroller-api
+  name: Katana StockTransferController API
+  description: >-
+    The StockTransferController API from Katana — 3 operation(s) for stocktransfercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - StockTransferController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-stocktransfercontroller-api-openapi.yml
+- aid: katana:katana-supplieraddresscontroller-api
+  name: Katana SupplierAddressController API
+  description: >-
+    The SupplierAddressController API from Katana — 2 operation(s) for supplieraddresscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SupplierAddressController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-supplieraddresscontroller-api-openapi.yml
+- aid: katana:katana-suppliercontroller-api
+  name: Katana SupplierController API
+  description: The SupplierController API from Katana — 2 operation(s) for suppliercontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - SupplierController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-suppliercontroller-api-openapi.yml
+- aid: katana:katana-taxratecontroller-api
+  name: Katana TaxRateController API
+  description: The TaxRateController API from Katana — 1 operation(s) for taxratecontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - TaxRateController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-taxratecontroller-api-openapi.yml
+- aid: katana:katana-unlinkvariantbinlocationcontroller-api
+  name: Katana UnlinkVariantBinLocationController API
+  description: >-
+    The UnlinkVariantBinLocationController API from Katana — 1 operation(s) for unlinkvariantbinlocationcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - UnlinkVariantBinLocationController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-unlinkvariantbinlocationcontroller-api-openapi.yml
+- aid: katana:katana-userscontroller-api
+  name: Katana UsersController API
+  description: The UsersController API from Katana — 2 operation(s) for userscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - UsersController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-userscontroller-api-openapi.yml
+- aid: katana:katana-variantbinlocationcontroller-api
+  name: Katana VariantBinLocationController API
+  description: >-
+    The VariantBinLocationController API from Katana — 1 operation(s) for variantbinlocationcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - VariantBinLocationController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-variantbinlocationcontroller-api-openapi.yml
+- aid: katana:katana-variantcontroller-api
+  name: Katana VariantController API
+  description: The VariantController API from Katana — 2 operation(s) for variantcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - VariantController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-variantcontroller-api-openapi.yml
+- aid: katana:katana-webhookcontroller-api
+  name: Katana WebhookController API
+  description: The WebhookController API from Katana — 2 operation(s) for webhookcontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - WebhookController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-webhookcontroller-api-openapi.yml
+- aid: katana:katana-webhooklogscontroller-api
+  name: Katana WebhookLogsController API
+  description: The WebhookLogsController API from Katana — 1 operation(s) for webhooklogscontroller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - WebhookLogsController
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-webhooklogscontroller-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DeveloperPortal
+  url: https://developer.katanamrp.com/
+- type: Documentation
+  url: https://developer.katanamrp.com/docs
+- type: APIReference
+  url: https://developer.katanamrp.com/reference
+- type: GettingStarted
+  url: https://developer.katanamrp.com/docs/getting-started
+- type: Support
+  url: https://support.katanamrp.com/en/
+- type: Blog
+  url: https://katanamrp.com/blog/
+- type: Pricing
+  url: https://katanamrp.com/pricing/
+- type: SignUp
+  url: https://katanamrp.com/talk-to-sales/
+- type: Login
+  url: https://factory.katanamrp.com
+- type: TermsOfService
+  url: https://katanamrp.com/service-terms/
+- type: PrivacyPolicy
+  url: https://katanamrp.com/privacy-policy/
+- type: StatusPage
+  url: https://status.katanamrp.com
+- type: ChangeLog
+  url: changelog/katana-changelog.yml
+- type: Authentication
+  url: authentication/katana-authentication.yml
+- type: Conventions
+  url: conventions/katana-conventions.yml
+- type: RateLimits
+  url: rate-limits/katana-rate-limits.yml
+- type: ErrorCatalog
+  url: errors/katana-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/katana-lifecycle.yml
+- type: Webhooks
+  url: asyncapi/katana-webhooks.yml
+- type: MCPServer
+  url: mcp/katana-mcp.yml
+- type: LLMsTxt
+  url: llms/katana-llms.txt
+- type: Overlay
+  url: overlays/katana-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/katana-conformance.yml
+- type: Compliance
+  url: https://katanamrp.com/security/
+- type: TrustCenter
+  url: security/katana-trust-center.yml
+- type: DataModel
+  url: data-model/katana-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/katana-agentic-access.yml
+- type: DomainSecurity
+  url: security/katana-domain-security.yml
 - type: Website
   url: https://katanamrp.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
