@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/ on Katana hosts
+note: >-
+  No .well-known discovery documents are published. All probed paths returned
+  404 across the API, marketing, and developer hosts. Recorded as a negative
+  result (no WellKnown pointer wired in apis.yml).
+hosts:
+- host: https://api.katanamrp.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://katanamrp.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+- host: https://developer.katanamrp.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}

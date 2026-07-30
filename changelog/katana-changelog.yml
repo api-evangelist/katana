@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.katanamrp.com/changelog
+scheme: dated-entries
+current_version: v1
+note: >-
+  Katana publishes a dated developer changelog (ReadMe-hosted). The live
+  changelog is the source of truth; the recent window below captures verified
+  entry headlines. Exact per-entry dates should be read from the live page.
+recent_dates_observed:
+- '2026-07-17'
+- '2026-07-03'
+- '2026-06-15'
+- '2026-06-14'
+- '2026-06-09'
+- '2026-04-28'
+- '2026-04-07'
+- '2026-02-26'
+entries:
+- title: '`reference` field now available on Purchase Order additional cost rows'
+  type: addition
+- title: New .approved webhook events for sales orders, purchase orders, and outsourced purchase orders
+  type: addition
+- title: 'Unbatched stock is now represented as batch_id: null in Stock Transfer rows'
+  type: change
+- title: Purchase Order Row level location now available
+  type: addition
+- title: 'Unbatched stock is now represented as batch_id: null in Purchase Order rows and recipe rows'
+  type: change
+- title: 'Unbatched stock is now represented as batch_id: null in Stock Adjustments'
+  type: change
+- title: Services endpoints added
+  type: addition
+- title: Sales Return endpoints added
+  type: addition
+- title: BOM row model added
+  type: addition
+- title: 'Breaking change: recipe/BOM logic changed, including a field/endpoint removal'
+  type: breaking

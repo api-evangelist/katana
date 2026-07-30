@@ -1,0 +1,13 @@
+generated: '2026-07-19'
+method: searched
+probe: false
+url: https://katanamrp.com/security/
+certifications:
+- SOC 2
+- GDPR
+evidence:
+- source: https://katanamrp.com/security/
+  keywords:
+  - soc 2
+  - gdpr
+  note: SOC 2 and GDPR compliance stated on the Katana security page (verified via fetch).

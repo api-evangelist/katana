@@ -1,0 +1,36 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Katana
+providerId: katana
+generated: '2026-07-19'
+method: searched
+created: '2026-07-19'
+modified: '2026-07-19'
+tags:
+- Rate Limiting
+- Inventory
+description: >-
+  Katana API enforces a default limit of 60 requests per 60 seconds. Every
+  response carries the current quota in X-Ratelimit-* headers; exceeding the
+  limit returns 429 with a Retry-After header (seconds to wait).
+sources:
+- https://developer.katanamrp.com/reference/api-rate-limiting
+headers:
+  limit: X-Ratelimit-Limit
+  remaining: X-Ratelimit-Remaining
+  reset: X-Ratelimit-Reset
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+limits:
+- name: Default API limit
+  scope: application
+  metric: requests_per_window
+  limit: 60
+  timeFrame: 60s
+  window_seconds: 60
+notes: >-
+  X-Ratelimit-Reset is a timestamp in milliseconds since epoch when the quota
+  resets. Katana recommends client-side throttling (e.g. one request per second)
+  and honoring Retry-After on 429.

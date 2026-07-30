@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.katanamrp.com/changelog
+api: openapi/katana-openapi-original.json
+versioning:
+  scheme: uri-path
+  current: v1
+  base_url: https://api.katanamrp.com/v1
+  docs: https://developer.katanamrp.com/reference/api-introduction
+changelog: https://developer.katanamrp.com/changelog
+status_page: https://status.katanamrp.com
+product_updates: https://katanamrp.com/news/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal deprecation/sunset policy is published. Some endpoints are marked
+    Beta/feature-flagged in the reference (e.g. custom field definitions, gated
+    behind support@katanamrp.com).
+sla:
+  url: null
+  uptime_target: null
+deprecated_operations: []

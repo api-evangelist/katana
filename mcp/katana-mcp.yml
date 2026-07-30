@@ -1,0 +1,1142 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/katana-openapi-original.json
+note: 'No official hosted Katana MCP server was found. This is a candidate tool list derived one-per-operation from the published
+  OpenAPI (226 operations). Auth: Bearer API key (see authentication/katana-authentication.yml).'
+server:
+  name: katana
+  transport: stdio
+  auth: bearer-api-key
+tool_count: 226
+tools:
+- name: AdditionalCostController.getAdditionalCosts
+  method: GET
+  path: /additional_costs
+  description: GET /additional_costs
+  source_operation: openapi/katana-openapi-original.json#AdditionalCostController.getAdditionalCosts
+- name: BatchStockController.updateBatchStock
+  method: PATCH
+  path: /batch_stocks/{id}
+  description: PATCH /batch_stocks/{id}
+  source_operation: openapi/katana-openapi-original.json#BatchStockController.updateBatchStock
+- name: BatchStockController.getBatchStock
+  method: GET
+  path: /batch_stocks
+  description: GET /batch_stocks
+  source_operation: openapi/katana-openapi-original.json#BatchStockController.getBatchStock
+- name: BatchController.createBatch
+  method: POST
+  path: /batches
+  description: POST /batches
+  source_operation: openapi/katana-openapi-original.json#BatchController.createBatch
+- name: BinInventoryController.findAndPaginate
+  method: GET
+  path: /bin_inventory
+  description: GET /bin_inventory
+  source_operation: openapi/katana-openapi-original.json#BinInventoryController.findAndPaginate
+- name: BinLocationController.updateBinLocation
+  method: PATCH
+  path: /bin_locations/{id}
+  description: PATCH /bin_locations/{id}
+  source_operation: openapi/katana-openapi-original.json#BinLocationController.updateBinLocation
+- name: BinLocationController.deleteBinLocation
+  method: DELETE
+  path: /bin_locations/{id}
+  description: DELETE /bin_locations/{id}
+  source_operation: openapi/katana-openapi-original.json#BinLocationController.deleteBinLocation
+- name: BinLocationController.createBinLocation
+  method: POST
+  path: /bin_locations
+  description: POST /bin_locations
+  source_operation: openapi/katana-openapi-original.json#BinLocationController.createBinLocation
+- name: BinLocationController.findBinLocations
+  method: GET
+  path: /bin_locations
+  description: GET /bin_locations
+  source_operation: openapi/katana-openapi-original.json#BinLocationController.findBinLocations
+- name: BinTransferRowController.updateById
+  method: PATCH
+  path: /bin_transfer_rows/{id}
+  description: PATCH /bin_transfer_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#BinTransferRowController.updateById
+- name: BinTransferRowController.findById
+  method: GET
+  path: /bin_transfer_rows/{id}
+  description: GET /bin_transfer_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#BinTransferRowController.findById
+- name: BinTransferRowController.deleteById
+  method: DELETE
+  path: /bin_transfer_rows/{id}
+  description: DELETE /bin_transfer_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#BinTransferRowController.deleteById
+- name: BinTransferRowController.create
+  method: POST
+  path: /bin_transfer_rows
+  description: POST /bin_transfer_rows
+  source_operation: openapi/katana-openapi-original.json#BinTransferRowController.create
+- name: BinTransferRowController.findAndPaginate
+  method: GET
+  path: /bin_transfer_rows
+  description: GET /bin_transfer_rows
+  source_operation: openapi/katana-openapi-original.json#BinTransferRowController.findAndPaginate
+- name: BinTransferController.updateStatus
+  method: PATCH
+  path: /bin_transfers/{id}/status
+  description: PATCH /bin_transfers/{id}/status
+  source_operation: openapi/katana-openapi-original.json#BinTransferController.updateStatus
+- name: BinTransferController.updateById
+  method: PATCH
+  path: /bin_transfers/{id}
+  description: PATCH /bin_transfers/{id}
+  source_operation: openapi/katana-openapi-original.json#BinTransferController.updateById
+- name: BinTransferController.findById
+  method: GET
+  path: /bin_transfers/{id}
+  description: GET /bin_transfers/{id}
+  source_operation: openapi/katana-openapi-original.json#BinTransferController.findById
+- name: BinTransferController.deleteById
+  method: DELETE
+  path: /bin_transfers/{id}
+  description: DELETE /bin_transfers/{id}
+  source_operation: openapi/katana-openapi-original.json#BinTransferController.deleteById
+- name: BinTransferController.create
+  method: POST
+  path: /bin_transfers
+  description: POST /bin_transfers
+  source_operation: openapi/katana-openapi-original.json#BinTransferController.create
+- name: BinTransferController.findAndPaginate
+  method: GET
+  path: /bin_transfers
+  description: GET /bin_transfers
+  source_operation: openapi/katana-openapi-original.json#BinTransferController.findAndPaginate
+- name: BomRowController.createBomRowsBatch
+  method: POST
+  path: /bom_rows/batch/create
+  description: POST /bom_rows/batch/create
+  source_operation: openapi/katana-openapi-original.json#BomRowController.createBomRowsBatch
+- name: BomRowController.updateBomRow
+  method: PATCH
+  path: /bom_rows/{id}
+  description: PATCH /bom_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#BomRowController.updateBomRow
+- name: BomRowController.deleteBomRow
+  method: DELETE
+  path: /bom_rows/{id}
+  description: DELETE /bom_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#BomRowController.deleteBomRow
+- name: BomRowController.createBomRow
+  method: POST
+  path: /bom_rows
+  description: POST /bom_rows
+  source_operation: openapi/katana-openapi-original.json#BomRowController.createBomRow
+- name: BomRowController.getBomRows
+  method: GET
+  path: /bom_rows
+  description: GET /bom_rows
+  source_operation: openapi/katana-openapi-original.json#BomRowController.getBomRows
+- name: CustomFieldDefinitionController.update
+  method: PATCH
+  path: /custom_field_definitions/{id}
+  description: PATCH /custom_field_definitions/{id}
+  source_operation: openapi/katana-openapi-original.json#CustomFieldDefinitionController.update
+- name: CustomFieldDefinitionController.getById
+  method: GET
+  path: /custom_field_definitions/{id}
+  description: GET /custom_field_definitions/{id}
+  source_operation: openapi/katana-openapi-original.json#CustomFieldDefinitionController.getById
+- name: CustomFieldDefinitionController.deleteById
+  method: DELETE
+  path: /custom_field_definitions/{id}
+  description: DELETE /custom_field_definitions/{id}
+  source_operation: openapi/katana-openapi-original.json#CustomFieldDefinitionController.deleteById
+- name: CustomFieldDefinitionController.create
+  method: POST
+  path: /custom_field_definitions
+  description: POST /custom_field_definitions
+  source_operation: openapi/katana-openapi-original.json#CustomFieldDefinitionController.create
+- name: CustomFieldDefinitionController.getAll
+  method: GET
+  path: /custom_field_definitions
+  description: GET /custom_field_definitions
+  source_operation: openapi/katana-openapi-original.json#CustomFieldDefinitionController.getAll
+- name: ItemsCustomFieldsCollectionController.getAllCollections
+  method: GET
+  path: /custom_fields_collections
+  description: GET /custom_fields_collections
+  source_operation: openapi/katana-openapi-original.json#ItemsCustomFieldsCollectionController.getAllCollections
+- name: CustomerAddressController.updateCustomerAddress
+  method: PATCH
+  path: /customer_addresses/{id}
+  description: PATCH /customer_addresses/{id}
+  source_operation: openapi/katana-openapi-original.json#CustomerAddressController.updateCustomerAddress
+- name: CustomerAddressController.deleteCustomerAddress
+  method: DELETE
+  path: /customer_addresses/{id}
+  description: DELETE /customer_addresses/{id}
+  source_operation: openapi/katana-openapi-original.json#CustomerAddressController.deleteCustomerAddress
+- name: CustomerAddressController.createCustomerAddress
+  method: POST
+  path: /customer_addresses
+  description: POST /customer_addresses
+  source_operation: openapi/katana-openapi-original.json#CustomerAddressController.createCustomerAddress
+- name: CustomerAddressController.getAllCustomerAddresses
+  method: GET
+  path: /customer_addresses
+  description: GET /customer_addresses
+  source_operation: openapi/katana-openapi-original.json#CustomerAddressController.getAllCustomerAddresses
+- name: CustomerController.updateVariant
+  method: PATCH
+  path: /customers/{id}
+  description: PATCH /customers/{id}
+  source_operation: openapi/katana-openapi-original.json#CustomerController.updateVariant
+- name: CustomerController.deleteCustomer
+  method: DELETE
+  path: /customers/{id}
+  description: DELETE /customers/{id}
+  source_operation: openapi/katana-openapi-original.json#CustomerController.deleteCustomer
+- name: CustomerController.createCustomer
+  method: POST
+  path: /customers
+  description: POST /customers
+  source_operation: openapi/katana-openapi-original.json#CustomerController.createCustomer
+- name: CustomerController.getAllCustomers
+  method: GET
+  path: /customers
+  description: GET /customers
+  source_operation: openapi/katana-openapi-original.json#CustomerController.getAllCustomers
+- name: DemandForecastController.updateDemandForecast
+  method: POST
+  path: /demand_forecasts
+  description: POST /demand_forecasts
+  source_operation: openapi/katana-openapi-original.json#DemandForecastController.updateDemandForecast
+- name: DemandForecastController.findDemandForecast
+  method: GET
+  path: /demand_forecasts
+  description: GET /demand_forecasts
+  source_operation: openapi/katana-openapi-original.json#DemandForecastController.findDemandForecast
+- name: DemandForecastController.clearDemandForecast
+  method: DELETE
+  path: /demand_forecasts
+  description: DELETE /demand_forecasts
+  source_operation: openapi/katana-openapi-original.json#DemandForecastController.clearDemandForecast
+- name: FactoryController.getFactory
+  method: GET
+  path: /factory
+  description: GET /factory
+  source_operation: openapi/katana-openapi-original.json#FactoryController.getFactory
+- name: InventoryController.getInventories
+  method: GET
+  path: /inventory
+  description: GET /inventory
+  source_operation: openapi/katana-openapi-original.json#InventoryController.getInventories
+- name: InventoryController.getInventoryMovements
+  method: GET
+  path: /inventory_movements
+  description: GET /inventory_movements
+  source_operation: openapi/katana-openapi-original.json#InventoryController.getInventoryMovements
+- name: InventorySafetyStockLevelController.createInventoryReorderPoint
+  method: POST
+  path: /inventory_reorder_points
+  description: POST /inventory_reorder_points
+  source_operation: openapi/katana-openapi-original.json#InventorySafetyStockLevelController.createInventoryReorderPoint
+- name: InventorySafetyStockLevelController.createInventorySafetyStockLevel
+  method: POST
+  path: /inventory_safety_stock_levels
+  description: POST /inventory_safety_stock_levels
+  source_operation: openapi/katana-openapi-original.json#InventorySafetyStockLevelController.createInventorySafetyStockLevel
+- name: LocationController.getLocation
+  method: GET
+  path: /locations/{id}
+  description: GET /locations/{id}
+  source_operation: openapi/katana-openapi-original.json#LocationController.getLocation
+- name: LocationController.getAllLocations
+  method: GET
+  path: /locations
+  description: GET /locations
+  source_operation: openapi/katana-openapi-original.json#LocationController.getAllLocations
+- name: MakeToOrderMOController.createMTO
+  method: POST
+  path: /manufacturing_order_make_to_order
+  description: POST /manufacturing_order_make_to_order
+  source_operation: openapi/katana-openapi-original.json#MakeToOrderMOController.createMTO
+- name: ManufacturingOrderOperationRowController.updateManufacturingOrderOperationRow
+  method: PATCH
+  path: /manufacturing_order_operation_rows/{id}
+  description: PATCH /manufacturing_order_operation_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderOperationRowController.updateManufacturingOrderOperationRow
+- name: ManufacturingOrderOperationRowController.retrieveManufacturingOrderOperationRow
+  method: GET
+  path: /manufacturing_order_operation_rows/{id}
+  description: GET /manufacturing_order_operation_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderOperationRowController.retrieveManufacturingOrderOperationRow
+- name: ManufacturingOrderOperationRowController.deleteManufacturingOrderOperationRow
+  method: DELETE
+  path: /manufacturing_order_operation_rows/{id}
+  description: DELETE /manufacturing_order_operation_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderOperationRowController.deleteManufacturingOrderOperationRow
+- name: ManufacturingOrderOperationRowController.createManufacturingOrderOperationRow
+  method: POST
+  path: /manufacturing_order_operation_rows
+  description: POST /manufacturing_order_operation_rows
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderOperationRowController.createManufacturingOrderOperationRow
+- name: ManufacturingOrderOperationRowController.getManufacturingOrderOperationRows
+  method: GET
+  path: /manufacturing_order_operation_rows
+  description: GET /manufacturing_order_operation_rows
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderOperationRowController.getManufacturingOrderOperationRows
+- name: ManufacturingOrderProductionIngredientController.updateManufacturingOrderProductionIngredient
+  method: PATCH
+  path: /manufacturing_order_production_ingredients/{id}
+  description: PATCH /manufacturing_order_production_ingredients/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderProductionIngredientController.updateManufacturingOrderProductionIngredient
+- name: ManufacturingOrderProductionIngredientController.find
+  method: GET
+  path: /manufacturing_order_production_ingredients
+  description: GET /manufacturing_order_production_ingredients
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderProductionIngredientController.find
+- name: ManufacturingOrderProductionController.update
+  method: PATCH
+  path: /manufacturing_order_productions/{id}
+  description: PATCH /manufacturing_order_productions/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderProductionController.update
+- name: ManufacturingOrderProductionController.findById
+  method: GET
+  path: /manufacturing_order_productions/{id}
+  description: GET /manufacturing_order_productions/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderProductionController.findById
+- name: ManufacturingOrderProductionController.deleteManufacturingOrderProduction
+  method: DELETE
+  path: /manufacturing_order_productions/{id}
+  description: DELETE /manufacturing_order_productions/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderProductionController.deleteManufacturingOrderProduction
+- name: ManufacturingOrderProductionController.completePartially
+  method: POST
+  path: /manufacturing_order_productions
+  description: POST /manufacturing_order_productions
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderProductionController.completePartially
+- name: ManufacturingOrderProductionController.find
+  method: GET
+  path: /manufacturing_order_productions
+  description: GET /manufacturing_order_productions
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderProductionController.find
+- name: ManufacturingOrderRecipeRowController.updateManufacturingRecipeRow
+  method: PATCH
+  path: /manufacturing_order_recipe_rows/{id}
+  description: PATCH /manufacturing_order_recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderRecipeRowController.updateManufacturingRecipeRow
+- name: ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRowById
+  method: GET
+  path: /manufacturing_order_recipe_rows/{id}
+  description: GET /manufacturing_order_recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRowById
+- name: ManufacturingOrderRecipeRowController.deleteManufacturingOrderRecipeRow
+  method: DELETE
+  path: /manufacturing_order_recipe_rows/{id}
+  description: DELETE /manufacturing_order_recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderRecipeRowController.deleteManufacturingOrderRecipeRow
+- name: ManufacturingOrderRecipeRowController.createManufacturingOrderRecipeRow
+  method: POST
+  path: /manufacturing_order_recipe_rows
+  description: POST /manufacturing_order_recipe_rows
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderRecipeRowController.createManufacturingOrderRecipeRow
+- name: ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRows
+  method: GET
+  path: /manufacturing_order_recipe_rows
+  description: GET /manufacturing_order_recipe_rows
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRows
+- name: MakeToOrderMOController.rerank
+  method: POST
+  path: /manufacturing_order_rerank
+  description: POST /manufacturing_order_rerank
+  source_operation: openapi/katana-openapi-original.json#MakeToOrderMOController.rerank
+- name: MakeToOrderMOController.unlink
+  method: POST
+  path: /manufacturing_order_unlink
+  description: POST /manufacturing_order_unlink
+  source_operation: openapi/katana-openapi-original.json#MakeToOrderMOController.unlink
+- name: ManufacturingOrderController.updateManufacturingOrder
+  method: PATCH
+  path: /manufacturing_orders/{id}
+  description: PATCH /manufacturing_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderController.updateManufacturingOrder
+- name: ManufacturingOrderController.getManufacturingOrder
+  method: GET
+  path: /manufacturing_orders/{id}
+  description: GET /manufacturing_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderController.getManufacturingOrder
+- name: ManufacturingOrderController.deleteManufacturingOrder
+  method: DELETE
+  path: /manufacturing_orders/{id}
+  description: DELETE /manufacturing_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderController.deleteManufacturingOrder
+- name: ManufacturingOrderController.createManufacturingOrder
+  method: POST
+  path: /manufacturing_orders
+  description: POST /manufacturing_orders
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderController.createManufacturingOrder
+- name: ManufacturingOrderController.getManufacturingOrders
+  method: GET
+  path: /manufacturing_orders
+  description: GET /manufacturing_orders
+  source_operation: openapi/katana-openapi-original.json#ManufacturingOrderController.getManufacturingOrders
+- name: MaterialController.updateMaterial
+  method: PATCH
+  path: /materials/{id}
+  description: PATCH /materials/{id}
+  source_operation: openapi/katana-openapi-original.json#MaterialController.updateMaterial
+- name: MaterialController.getMaterial
+  method: GET
+  path: /materials/{id}
+  description: GET /materials/{id}
+  source_operation: openapi/katana-openapi-original.json#MaterialController.getMaterial
+- name: MaterialController.deleteManufacturingOrder
+  method: DELETE
+  path: /materials/{id}
+  description: DELETE /materials/{id}
+  source_operation: openapi/katana-openapi-original.json#MaterialController.deleteManufacturingOrder
+- name: MaterialController.createMaterial
+  method: POST
+  path: /materials
+  description: POST /materials
+  source_operation: openapi/katana-openapi-original.json#MaterialController.createMaterial
+- name: MaterialController.getAllMaterials
+  method: GET
+  path: /materials
+  description: GET /materials
+  source_operation: openapi/katana-openapi-original.json#MaterialController.getAllMaterials
+- name: NegativeStockLatestMovementController.getAllNegativeStockLatestMovements
+  method: GET
+  path: /negative_stock
+  description: GET /negative_stock
+  source_operation: openapi/katana-openapi-original.json#NegativeStockLatestMovementController.getAllNegativeStockLatestMovements
+- name: OperatorsController.find
+  method: GET
+  path: /operators
+  description: GET /operators
+  source_operation: openapi/katana-openapi-original.json#OperatorsController.find
+- name: PurchaseOrderRecipeRowController.updatePurchaseOrderRecipeRow
+  method: PATCH
+  path: /outsourced_purchase_order_recipe_rows/{id}
+  description: PATCH /outsourced_purchase_order_recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRecipeRowController.updatePurchaseOrderRecipeRow
+- name: PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRow
+  method: GET
+  path: /outsourced_purchase_order_recipe_rows/{id}
+  description: GET /outsourced_purchase_order_recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRow
+- name: PurchaseOrderRecipeRowController.deletePurchaseOrderRecipeRow
+  method: DELETE
+  path: /outsourced_purchase_order_recipe_rows/{id}
+  description: DELETE /outsourced_purchase_order_recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRecipeRowController.deletePurchaseOrderRecipeRow
+- name: PurchaseOrderRecipeRowController.createPurchaseOrderRecipeRow
+  method: POST
+  path: /outsourced_purchase_order_recipe_rows
+  description: POST /outsourced_purchase_order_recipe_rows
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRecipeRowController.createPurchaseOrderRecipeRow
+- name: PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRows
+  method: GET
+  path: /outsourced_purchase_order_recipe_rows
+  description: GET /outsourced_purchase_order_recipe_rows
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRows
+- name: PoAdditionalCostRowController.updatePoAdditionalCostRow
+  method: PATCH
+  path: /po_additional_cost_rows/{id}
+  description: PATCH /po_additional_cost_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PoAdditionalCostRowController.updatePoAdditionalCostRow
+- name: PoAdditionalCostRowController.getPoAdditionalCostRow
+  method: GET
+  path: /po_additional_cost_rows/{id}
+  description: GET /po_additional_cost_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PoAdditionalCostRowController.getPoAdditionalCostRow
+- name: PoAdditionalCostRowController.deletePoAdditionalCostRow
+  method: DELETE
+  path: /po_additional_cost_rows/{id}
+  description: DELETE /po_additional_cost_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PoAdditionalCostRowController.deletePoAdditionalCostRow
+- name: PoAdditionalCostRowController.createPoAdditionalCostRow
+  method: POST
+  path: /po_additional_cost_rows
+  description: POST /po_additional_cost_rows
+  source_operation: openapi/katana-openapi-original.json#PoAdditionalCostRowController.createPoAdditionalCostRow
+- name: PoAdditionalCostRowController.getPoAdditionalCostRows
+  method: GET
+  path: /po_additional_cost_rows
+  description: GET /po_additional_cost_rows
+  source_operation: openapi/katana-openapi-original.json#PoAdditionalCostRowController.getPoAdditionalCostRows
+- name: PriceListCustomerController.updateById
+  method: PATCH
+  path: /price_list_customers/{id}
+  description: PATCH /price_list_customers/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListCustomerController.updateById
+- name: PriceListCustomerController.findById
+  method: GET
+  path: /price_list_customers/{id}
+  description: GET /price_list_customers/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListCustomerController.findById
+- name: PriceListCustomerController.deleteById
+  method: DELETE
+  path: /price_list_customers/{id}
+  description: DELETE /price_list_customers/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListCustomerController.deleteById
+- name: PriceListCustomerController.create
+  method: POST
+  path: /price_list_customers
+  description: POST /price_list_customers
+  source_operation: openapi/katana-openapi-original.json#PriceListCustomerController.create
+- name: PriceListCustomerController.findAndPaginate
+  method: GET
+  path: /price_list_customers
+  description: GET /price_list_customers
+  source_operation: openapi/katana-openapi-original.json#PriceListCustomerController.findAndPaginate
+- name: PriceListRowController.updateById
+  method: PATCH
+  path: /price_list_rows/{id}
+  description: PATCH /price_list_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListRowController.updateById
+- name: PriceListRowController.findById
+  method: GET
+  path: /price_list_rows/{id}
+  description: GET /price_list_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListRowController.findById
+- name: PriceListRowController.deleteById
+  method: DELETE
+  path: /price_list_rows/{id}
+  description: DELETE /price_list_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListRowController.deleteById
+- name: PriceListRowController.create
+  method: POST
+  path: /price_list_rows
+  description: POST /price_list_rows
+  source_operation: openapi/katana-openapi-original.json#PriceListRowController.create
+- name: PriceListRowController.findAndPaginate
+  method: GET
+  path: /price_list_rows
+  description: GET /price_list_rows
+  source_operation: openapi/katana-openapi-original.json#PriceListRowController.findAndPaginate
+- name: PriceListController.updateById
+  method: PATCH
+  path: /price_lists/{id}
+  description: PATCH /price_lists/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListController.updateById
+- name: PriceListController.findById
+  method: GET
+  path: /price_lists/{id}
+  description: GET /price_lists/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListController.findById
+- name: PriceListController.deleteById
+  method: DELETE
+  path: /price_lists/{id}
+  description: DELETE /price_lists/{id}
+  source_operation: openapi/katana-openapi-original.json#PriceListController.deleteById
+- name: PriceListController.create
+  method: POST
+  path: /price_lists
+  description: POST /price_lists
+  source_operation: openapi/katana-openapi-original.json#PriceListController.create
+- name: PriceListController.findAndPaginate
+  method: GET
+  path: /price_lists
+  description: GET /price_lists
+  source_operation: openapi/katana-openapi-original.json#PriceListController.findAndPaginate
+- name: ProductOperationsController.reRankOperationRow
+  method: POST
+  path: /product_operation_rerank
+  description: POST /product_operation_rerank
+  source_operation: openapi/katana-openapi-original.json#ProductOperationsController.reRankOperationRow
+- name: ProductOperationsController.updateProductOperationRow
+  method: PATCH
+  path: /product_operation_rows/{id}
+  description: PATCH /product_operation_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ProductOperationsController.updateProductOperationRow
+- name: ProductOperationsController.deleteProductOperationRow
+  method: DELETE
+  path: /product_operation_rows/{id}
+  description: DELETE /product_operation_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#ProductOperationsController.deleteProductOperationRow
+- name: ProductOperationsController.createProductOperationRows
+  method: POST
+  path: /product_operation_rows
+  description: POST /product_operation_rows
+  source_operation: openapi/katana-openapi-original.json#ProductOperationsController.createProductOperationRows
+- name: ProductOperationsController.getProductOperationRows
+  method: GET
+  path: /product_operation_rows
+  description: GET /product_operation_rows
+  source_operation: openapi/katana-openapi-original.json#ProductOperationsController.getProductOperationRows
+- name: ProductController.updateProduct
+  method: PATCH
+  path: /products/{id}
+  description: PATCH /products/{id}
+  source_operation: openapi/katana-openapi-original.json#ProductController.updateProduct
+- name: ProductController.getProduct
+  method: GET
+  path: /products/{id}
+  description: GET /products/{id}
+  source_operation: openapi/katana-openapi-original.json#ProductController.getProduct
+- name: ProductController.deleteProduct
+  method: DELETE
+  path: /products/{id}
+  description: DELETE /products/{id}
+  source_operation: openapi/katana-openapi-original.json#ProductController.deleteProduct
+- name: ProductController.createProduct
+  method: POST
+  path: /products
+  description: POST /products
+  source_operation: openapi/katana-openapi-original.json#ProductController.createProduct
+- name: ProductController.getAllProducts
+  method: GET
+  path: /products
+  description: GET /products
+  source_operation: openapi/katana-openapi-original.json#ProductController.getAllProducts
+- name: PurchaseOrderAccountingMetadataController.getAllPurchaseOrderAccountingMetadata
+  method: GET
+  path: /purchase_order_accounting_metadata
+  description: GET /purchase_order_accounting_metadata
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderAccountingMetadataController.getAllPurchaseOrderAccountingMetadata
+- name: PurchaseOrderReceiveController.receivePartially
+  method: POST
+  path: /purchase_order_receive
+  description: POST /purchase_order_receive
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderReceiveController.receivePartially
+- name: PurchaseOrderRowController.updatePurchaseOrderRow
+  method: PATCH
+  path: /purchase_order_rows/{id}
+  description: PATCH /purchase_order_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRowController.updatePurchaseOrderRow
+- name: PurchaseOrderRowController.getPurchaseOrderRow
+  method: GET
+  path: /purchase_order_rows/{id}
+  description: GET /purchase_order_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRowController.getPurchaseOrderRow
+- name: PurchaseOrderRowController.deletePurchaseOrderRow
+  method: DELETE
+  path: /purchase_order_rows/{id}
+  description: DELETE /purchase_order_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRowController.deletePurchaseOrderRow
+- name: PurchaseOrderRowController.addPurchaseOrderRow
+  method: POST
+  path: /purchase_order_rows
+  description: POST /purchase_order_rows
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRowController.addPurchaseOrderRow
+- name: PurchaseOrderRowController.getPurchaseOrderRows
+  method: GET
+  path: /purchase_order_rows
+  description: GET /purchase_order_rows
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderRowController.getPurchaseOrderRows
+- name: PurchaseOrderController.updatePurchaseOrder
+  method: PATCH
+  path: /purchase_orders/{id}
+  description: PATCH /purchase_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderController.updatePurchaseOrder
+- name: PurchaseOrderController.getPurchaseOrder
+  method: GET
+  path: /purchase_orders/{id}
+  description: GET /purchase_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderController.getPurchaseOrder
+- name: PurchaseOrderController.deletePurchaseOrder
+  method: DELETE
+  path: /purchase_orders/{id}
+  description: DELETE /purchase_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderController.deletePurchaseOrder
+- name: PurchaseOrderController.createPurchaseOrder
+  method: POST
+  path: /purchase_orders
+  description: POST /purchase_orders
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderController.createPurchaseOrder
+- name: PurchaseOrderController.getPurchaseOrders
+  method: GET
+  path: /purchase_orders
+  description: GET /purchase_orders
+  source_operation: openapi/katana-openapi-original.json#PurchaseOrderController.getPurchaseOrders
+- name: RecipeRowController.updateRecipeRow
+  method: PATCH
+  path: /recipe_rows/{id}
+  description: PATCH /recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#RecipeRowController.updateRecipeRow
+- name: RecipeRowController.deleteRecipeRow
+  method: DELETE
+  path: /recipe_rows/{id}
+  description: DELETE /recipe_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#RecipeRowController.deleteRecipeRow
+- name: RecipeController.deleteRecipeById
+  method: DELETE
+  path: /recipes/{id}
+  description: DELETE /recipes/{id}
+  source_operation: openapi/katana-openapi-original.json#RecipeController.deleteRecipeById
+- name: RecipeController.createRecipeRow
+  method: POST
+  path: /recipes
+  description: POST /recipes
+  source_operation: openapi/katana-openapi-original.json#RecipeController.createRecipeRow
+- name: RecipeController.getAllRecipes
+  method: GET
+  path: /recipes
+  description: GET /recipes
+  source_operation: openapi/katana-openapi-original.json#RecipeController.getAllRecipes
+- name: SalesOrderAccountingMetadataController.getAllSalesOrderAccountingMetadata
+  method: GET
+  path: /sales_order_accounting_metadata
+  description: GET /sales_order_accounting_metadata
+  source_operation: openapi/katana-openapi-original.json#SalesOrderAccountingMetadataController.getAllSalesOrderAccountingMetadata
+- name: SalesOrderAddressController.updateById
+  method: PATCH
+  path: /sales_order_addresses/{id}
+  description: PATCH /sales_order_addresses/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderAddressController.updateById
+- name: SalesOrderAddressController.deleteById
+  method: DELETE
+  path: /sales_order_addresses/{id}
+  description: DELETE /sales_order_addresses/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderAddressController.deleteById
+- name: SalesOrderAddressController.createAddress
+  method: POST
+  path: /sales_order_addresses
+  description: POST /sales_order_addresses
+  source_operation: openapi/katana-openapi-original.json#SalesOrderAddressController.createAddress
+- name: SalesOrderAddressController.getAllSalesOrderAddresses
+  method: GET
+  path: /sales_order_addresses
+  description: GET /sales_order_addresses
+  source_operation: openapi/katana-openapi-original.json#SalesOrderAddressController.getAllSalesOrderAddresses
+- name: SalesOrderFulfillmentController.updateSalesOrderFulfillment
+  method: PATCH
+  path: /sales_order_fulfillments/{id}
+  description: PATCH /sales_order_fulfillments/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderFulfillmentController.updateSalesOrderFulfillment
+- name: SalesOrderFulfillmentController.getSalesOrderFulfillment
+  method: GET
+  path: /sales_order_fulfillments/{id}
+  description: GET /sales_order_fulfillments/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderFulfillmentController.getSalesOrderFulfillment
+- name: SalesOrderFulfillmentController.deleteSalesOrderFulfillment
+  method: DELETE
+  path: /sales_order_fulfillments/{id}
+  description: DELETE /sales_order_fulfillments/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderFulfillmentController.deleteSalesOrderFulfillment
+- name: SalesOrderFulfillmentController.createSalesOrderFulfillment
+  method: POST
+  path: /sales_order_fulfillments
+  description: POST /sales_order_fulfillments
+  source_operation: openapi/katana-openapi-original.json#SalesOrderFulfillmentController.createSalesOrderFulfillment
+- name: SalesOrderFulfillmentController.getAllSalesOrderFulfillments
+  method: GET
+  path: /sales_order_fulfillments
+  description: GET /sales_order_fulfillments
+  source_operation: openapi/katana-openapi-original.json#SalesOrderFulfillmentController.getAllSalesOrderFulfillments
+- name: CustomSalesOrderController.rerank
+  method: POST
+  path: /sales_order_rerank
+  description: POST /sales_order_rerank
+  source_operation: openapi/katana-openapi-original.json#CustomSalesOrderController.rerank
+- name: SalesOrderRowController.searchSalesOrderRows
+  method: POST
+  path: /sales_order_rows/search
+  description: POST /sales_order_rows/search
+  source_operation: openapi/katana-openapi-original.json#SalesOrderRowController.searchSalesOrderRows
+- name: SalesOrderRowController.updateSalesOrderRow
+  method: PATCH
+  path: /sales_order_rows/{id}
+  description: PATCH /sales_order_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderRowController.updateSalesOrderRow
+- name: SalesOrderRowController.findById
+  method: GET
+  path: /sales_order_rows/{id}
+  description: GET /sales_order_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderRowController.findById
+- name: SalesOrderRowController.deleteSalesOrderRow
+  method: DELETE
+  path: /sales_order_rows/{id}
+  description: DELETE /sales_order_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderRowController.deleteSalesOrderRow
+- name: SalesOrderRowController.createSalesOrderRow
+  method: POST
+  path: /sales_order_rows
+  description: POST /sales_order_rows
+  source_operation: openapi/katana-openapi-original.json#SalesOrderRowController.createSalesOrderRow
+- name: SalesOrderRowController.findAllSalesOrders
+  method: GET
+  path: /sales_order_rows
+  description: GET /sales_order_rows
+  source_operation: openapi/katana-openapi-original.json#SalesOrderRowController.findAllSalesOrders
+- name: SalesOrderShippingFeeController.updateShippingFee
+  method: PATCH
+  path: /sales_order_shipping_fee/{id}
+  description: PATCH /sales_order_shipping_fee/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderShippingFeeController.updateShippingFee
+- name: SalesOrderShippingFeeController.getShippingFee
+  method: GET
+  path: /sales_order_shipping_fee/{id}
+  description: GET /sales_order_shipping_fee/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderShippingFeeController.getShippingFee
+- name: SalesOrderShippingFeeController.deleteShippingFee
+  method: DELETE
+  path: /sales_order_shipping_fee/{id}
+  description: DELETE /sales_order_shipping_fee/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderShippingFeeController.deleteShippingFee
+- name: SalesOrderShippingFeeController.addShippingFee
+  method: POST
+  path: /sales_order_shipping_fee
+  description: POST /sales_order_shipping_fee
+  source_operation: openapi/katana-openapi-original.json#SalesOrderShippingFeeController.addShippingFee
+- name: SalesOrderShippingFeeController.getAllShippingFees
+  method: GET
+  path: /sales_order_shipping_fee
+  description: GET /sales_order_shipping_fee
+  source_operation: openapi/katana-openapi-original.json#SalesOrderShippingFeeController.getAllShippingFees
+- name: SalesOrderController.searchSalesOrders
+  method: POST
+  path: /sales_orders/search
+  description: POST /sales_orders/search
+  source_operation: openapi/katana-openapi-original.json#SalesOrderController.searchSalesOrders
+- name: SalesOrderController.getReturnableItems
+  method: GET
+  path: /sales_orders/{id}/returnable_items
+  description: GET /sales_orders/{id}/returnable_items
+  source_operation: openapi/katana-openapi-original.json#SalesOrderController.getReturnableItems
+- name: SalesOrderController.updateSalesOrder
+  method: PATCH
+  path: /sales_orders/{id}
+  description: PATCH /sales_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderController.updateSalesOrder
+- name: SalesOrderController.getSalesOrder
+  method: GET
+  path: /sales_orders/{id}
+  description: GET /sales_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderController.getSalesOrder
+- name: SalesOrderController.deleteSalesOrder
+  method: DELETE
+  path: /sales_orders/{id}
+  description: DELETE /sales_orders/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesOrderController.deleteSalesOrder
+- name: SalesOrderController.createSalesOrder
+  method: POST
+  path: /sales_orders
+  description: POST /sales_orders
+  source_operation: openapi/katana-openapi-original.json#SalesOrderController.createSalesOrder
+- name: SalesOrderController.getAllSalesOrders
+  method: GET
+  path: /sales_orders
+  description: GET /sales_orders
+  source_operation: openapi/katana-openapi-original.json#SalesOrderController.getAllSalesOrders
+- name: SalesReturnRowController.getUnassignedBatchTransactions
+  method: GET
+  path: /sales_return_rows/{id}/unassigned_batch_transactions
+  description: GET /sales_return_rows/{id}/unassigned_batch_transactions
+  source_operation: openapi/katana-openapi-original.json#SalesReturnRowController.getUnassignedBatchTransactions
+- name: SalesReturnRowController.updateById
+  method: PATCH
+  path: /sales_return_rows/{id}
+  description: PATCH /sales_return_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesReturnRowController.updateById
+- name: SalesReturnRowController.getById
+  method: GET
+  path: /sales_return_rows/{id}
+  description: GET /sales_return_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesReturnRowController.getById
+- name: SalesReturnRowController.deleteById
+  method: DELETE
+  path: /sales_return_rows/{id}
+  description: DELETE /sales_return_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesReturnRowController.deleteById
+- name: SalesReturnRowController.create
+  method: POST
+  path: /sales_return_rows
+  description: POST /sales_return_rows
+  source_operation: openapi/katana-openapi-original.json#SalesReturnRowController.create
+- name: SalesReturnRowController.findAndPaginate
+  method: GET
+  path: /sales_return_rows
+  description: GET /sales_return_rows
+  source_operation: openapi/katana-openapi-original.json#SalesReturnRowController.findAndPaginate
+- name: SalesReturnsController.getReturnReasons
+  method: GET
+  path: /sales_returns/return_reasons
+  description: GET /sales_returns/return_reasons
+  source_operation: openapi/katana-openapi-original.json#SalesReturnsController.getReturnReasons
+- name: SalesReturnsController.updateById
+  method: PATCH
+  path: /sales_returns/{id}
+  description: PATCH /sales_returns/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesReturnsController.updateById
+- name: SalesReturnsController.findById
+  method: GET
+  path: /sales_returns/{id}
+  description: GET /sales_returns/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesReturnsController.findById
+- name: SalesReturnsController.deleteById
+  method: DELETE
+  path: /sales_returns/{id}
+  description: DELETE /sales_returns/{id}
+  source_operation: openapi/katana-openapi-original.json#SalesReturnsController.deleteById
+- name: SalesReturnsController.create
+  method: POST
+  path: /sales_returns
+  description: POST /sales_returns
+  source_operation: openapi/katana-openapi-original.json#SalesReturnsController.create
+- name: SalesReturnsController.findAndPaginate
+  method: GET
+  path: /sales_returns
+  description: GET /sales_returns
+  source_operation: openapi/katana-openapi-original.json#SalesReturnsController.findAndPaginate
+- name: SerialNumberController.list
+  method: GET
+  path: /serial_numbers/serial_numbers_stock
+  description: GET /serial_numbers/serial_numbers_stock
+  source_operation: openapi/katana-openapi-original.json#SerialNumberController.list
+- name: SerialNumberController.addSerialNumbersToEntity
+  method: POST
+  path: /serial_numbers
+  description: POST /serial_numbers
+  source_operation: openapi/katana-openapi-original.json#SerialNumberController.addSerialNumbersToEntity
+- name: SerialNumberController.find
+  method: GET
+  path: /serial_numbers
+  description: GET /serial_numbers
+  source_operation: openapi/katana-openapi-original.json#SerialNumberController.find
+- name: SerialNumberController.deleteFromEntity
+  method: DELETE
+  path: /serial_numbers
+  description: DELETE /serial_numbers
+  source_operation: openapi/katana-openapi-original.json#SerialNumberController.deleteFromEntity
+- name: SerialNumberStockController.list
+  method: GET
+  path: /serial_numbers_stock
+  description: GET /serial_numbers_stock
+  source_operation: openapi/katana-openapi-original.json#SerialNumberStockController.list
+- name: ServiceController.updateService
+  method: PATCH
+  path: /services/{id}
+  description: PATCH /services/{id}
+  source_operation: openapi/katana-openapi-original.json#ServiceController.updateService
+- name: ServiceController.getService
+  method: GET
+  path: /services/{id}
+  description: GET /services/{id}
+  source_operation: openapi/katana-openapi-original.json#ServiceController.getService
+- name: ServiceController.deleteService
+  method: DELETE
+  path: /services/{id}
+  description: DELETE /services/{id}
+  source_operation: openapi/katana-openapi-original.json#ServiceController.deleteService
+- name: ServiceController.createService
+  method: POST
+  path: /services
+  description: POST /services
+  source_operation: openapi/katana-openapi-original.json#ServiceController.createService
+- name: ServiceController.getAllServices
+  method: GET
+  path: /services
+  description: GET /services
+  source_operation: openapi/katana-openapi-original.json#ServiceController.getAllServices
+- name: StockAdjustmentController.updateStockAdjustment
+  method: PATCH
+  path: /stock_adjustments/{id}
+  description: PATCH /stock_adjustments/{id}
+  source_operation: openapi/katana-openapi-original.json#StockAdjustmentController.updateStockAdjustment
+- name: StockAdjustmentController.deleteStockAdjustment
+  method: DELETE
+  path: /stock_adjustments/{id}
+  description: DELETE /stock_adjustments/{id}
+  source_operation: openapi/katana-openapi-original.json#StockAdjustmentController.deleteStockAdjustment
+- name: StockAdjustmentController.createStockAdjustment
+  method: POST
+  path: /stock_adjustments
+  description: POST /stock_adjustments
+  source_operation: openapi/katana-openapi-original.json#StockAdjustmentController.createStockAdjustment
+- name: StockAdjustmentController.findStockAdjustments
+  method: GET
+  path: /stock_adjustments
+  description: GET /stock_adjustments
+  source_operation: openapi/katana-openapi-original.json#StockAdjustmentController.findStockAdjustments
+- name: StockTransferController.updateStockTransferStatus
+  method: PATCH
+  path: /stock_transfers/{id}/status
+  description: PATCH /stock_transfers/{id}/status
+  source_operation: openapi/katana-openapi-original.json#StockTransferController.updateStockTransferStatus
+- name: StockTransferController.updateStockTransfer
+  method: PATCH
+  path: /stock_transfers/{id}
+  description: PATCH /stock_transfers/{id}
+  source_operation: openapi/katana-openapi-original.json#StockTransferController.updateStockTransfer
+- name: StockTransferController.deleteStockTransfer
+  method: DELETE
+  path: /stock_transfers/{id}
+  description: DELETE /stock_transfers/{id}
+  source_operation: openapi/katana-openapi-original.json#StockTransferController.deleteStockTransfer
+- name: StockTransferController.createStockTransfer
+  method: POST
+  path: /stock_transfers
+  description: POST /stock_transfers
+  source_operation: openapi/katana-openapi-original.json#StockTransferController.createStockTransfer
+- name: StockTransferController.findStockTransfers
+  method: GET
+  path: /stock_transfers
+  description: GET /stock_transfers
+  source_operation: openapi/katana-openapi-original.json#StockTransferController.findStockTransfers
+- name: StocktakeRowController.updateById
+  method: PATCH
+  path: /stocktake_rows/{id}
+  description: PATCH /stocktake_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#StocktakeRowController.updateById
+- name: StocktakeRowController.deleteById
+  method: DELETE
+  path: /stocktake_rows/{id}
+  description: DELETE /stocktake_rows/{id}
+  source_operation: openapi/katana-openapi-original.json#StocktakeRowController.deleteById
+- name: StocktakeRowController.createStocktakeRows
+  method: POST
+  path: /stocktake_rows
+  description: POST /stocktake_rows
+  source_operation: openapi/katana-openapi-original.json#StocktakeRowController.createStocktakeRows
+- name: StocktakeRowController.findStocktakeRows
+  method: GET
+  path: /stocktake_rows
+  description: GET /stocktake_rows
+  source_operation: openapi/katana-openapi-original.json#StocktakeRowController.findStocktakeRows
+- name: StocktakeController.updateById
+  method: PATCH
+  path: /stocktakes/{id}
+  description: PATCH /stocktakes/{id}
+  source_operation: openapi/katana-openapi-original.json#StocktakeController.updateById
+- name: StocktakeController.deleteById
+  method: DELETE
+  path: /stocktakes/{id}
+  description: DELETE /stocktakes/{id}
+  source_operation: openapi/katana-openapi-original.json#StocktakeController.deleteById
+- name: StocktakeController.createStocktake
+  method: POST
+  path: /stocktakes
+  description: POST /stocktakes
+  source_operation: openapi/katana-openapi-original.json#StocktakeController.createStocktake
+- name: StocktakeController.findStocktakes
+  method: GET
+  path: /stocktakes
+  description: GET /stocktakes
+  source_operation: openapi/katana-openapi-original.json#StocktakeController.findStocktakes
+- name: SupplierAddressController.updateSupplierAddress
+  method: PATCH
+  path: /supplier_addresses/{id}
+  description: PATCH /supplier_addresses/{id}
+  source_operation: openapi/katana-openapi-original.json#SupplierAddressController.updateSupplierAddress
+- name: SupplierAddressController.deleteSupplierAddress
+  method: DELETE
+  path: /supplier_addresses/{id}
+  description: DELETE /supplier_addresses/{id}
+  source_operation: openapi/katana-openapi-original.json#SupplierAddressController.deleteSupplierAddress
+- name: SupplierAddressController.createSupplierAddress
+  method: POST
+  path: /supplier_addresses
+  description: POST /supplier_addresses
+  source_operation: openapi/katana-openapi-original.json#SupplierAddressController.createSupplierAddress
+- name: SupplierAddressController.getAllSupplierAddresses
+  method: GET
+  path: /supplier_addresses
+  description: GET /supplier_addresses
+  source_operation: openapi/katana-openapi-original.json#SupplierAddressController.getAllSupplierAddresses
+- name: SupplierController.updateSupplier
+  method: PATCH
+  path: /suppliers/{id}
+  description: PATCH /suppliers/{id}
+  source_operation: openapi/katana-openapi-original.json#SupplierController.updateSupplier
+- name: SupplierController.deleteSupplier
+  method: DELETE
+  path: /suppliers/{id}
+  description: DELETE /suppliers/{id}
+  source_operation: openapi/katana-openapi-original.json#SupplierController.deleteSupplier
+- name: SupplierController.createSupplier
+  method: POST
+  path: /suppliers
+  description: POST /suppliers
+  source_operation: openapi/katana-openapi-original.json#SupplierController.createSupplier
+- name: SupplierController.getAllSuppliers
+  method: GET
+  path: /suppliers
+  description: GET /suppliers
+  source_operation: openapi/katana-openapi-original.json#SupplierController.getAllSuppliers
+- name: TaxRateController.createTaxRate
+  method: POST
+  path: /tax_rates
+  description: POST /tax_rates
+  source_operation: openapi/katana-openapi-original.json#TaxRateController.createTaxRate
+- name: TaxRateController.getAllTaxRates
+  method: GET
+  path: /tax_rates
+  description: GET /tax_rates
+  source_operation: openapi/katana-openapi-original.json#TaxRateController.getAllTaxRates
+- name: UnlinkVariantBinLocationController.unlinkBinLocations
+  method: POST
+  path: /unlink_variant_bin_locations
+  description: POST /unlink_variant_bin_locations
+  source_operation: openapi/katana-openapi-original.json#UnlinkVariantBinLocationController.unlinkBinLocations
+- name: UsersController.getUserInfo
+  method: GET
+  path: /user_info
+  description: GET /user_info
+  source_operation: openapi/katana-openapi-original.json#UsersController.getUserInfo
+- name: UsersController.getAllUsers
+  method: GET
+  path: /users
+  description: GET /users
+  source_operation: openapi/katana-openapi-original.json#UsersController.getAllUsers
+- name: VariantBinLocationController.bulkUpsertVariantBinLocations
+  method: POST
+  path: /variant_bin_locations
+  description: POST /variant_bin_locations
+  source_operation: openapi/katana-openapi-original.json#VariantBinLocationController.bulkUpsertVariantBinLocations
+- name: VariantController.updateVariant
+  method: PATCH
+  path: /variants/{id}
+  description: PATCH /variants/{id}
+  source_operation: openapi/katana-openapi-original.json#VariantController.updateVariant
+- name: VariantController.getVariant
+  method: GET
+  path: /variants/{id}
+  description: GET /variants/{id}
+  source_operation: openapi/katana-openapi-original.json#VariantController.getVariant
+- name: VariantController.deleteManufacturingOrder
+  method: DELETE
+  path: /variants/{id}
+  description: DELETE /variants/{id}
+  source_operation: openapi/katana-openapi-original.json#VariantController.deleteManufacturingOrder
+- name: VariantController.createVariant
+  method: POST
+  path: /variants
+  description: POST /variants
+  source_operation: openapi/katana-openapi-original.json#VariantController.createVariant
+- name: VariantController.getAllVariants
+  method: GET
+  path: /variants
+  description: GET /variants
+  source_operation: openapi/katana-openapi-original.json#VariantController.getAllVariants
+- name: WebhookLogsController.exportWebhookLogs
+  method: POST
+  path: /webhook_logs_export
+  description: POST /webhook_logs_export
+  source_operation: openapi/katana-openapi-original.json#WebhookLogsController.exportWebhookLogs
+- name: WebhookController.updateWebhook
+  method: PATCH
+  path: /webhooks/{id}
+  description: PATCH /webhooks/{id}
+  source_operation: openapi/katana-openapi-original.json#WebhookController.updateWebhook
+- name: WebhookController.getWebhook
+  method: GET
+  path: /webhooks/{id}
+  description: GET /webhooks/{id}
+  source_operation: openapi/katana-openapi-original.json#WebhookController.getWebhook
+- name: WebhookController.deleteWebhook
+  method: DELETE
+  path: /webhooks/{id}
+  description: DELETE /webhooks/{id}
+  source_operation: openapi/katana-openapi-original.json#WebhookController.deleteWebhook
+- name: WebhookController.createWebhook
+  method: POST
+  path: /webhooks
+  description: POST /webhooks
+  source_operation: openapi/katana-openapi-original.json#WebhookController.createWebhook
+- name: WebhookController.getAllWebhooks
+  method: GET
+  path: /webhooks
+  description: GET /webhooks
+  source_operation: openapi/katana-openapi-original.json#WebhookController.getAllWebhooks

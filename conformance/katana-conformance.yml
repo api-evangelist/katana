@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: https://katanamrp.com/security/
+api: openapi/katana-openapi-original.json
+standards:
+- id: soc2
+  conforms: true
+  evidence: SOC 2 stated on https://katanamrp.com/security/
+- id: gdpr
+  conforms: true
+  evidence: GDPR compliance stated on https://katanamrp.com/security/
+- id: oauth2
+  conforms: false
+  evidence: Authentication is a Bearer API key, not OAuth2.
+- id: openapi-3
+  conforms: true
+  evidence: Full OpenAPI 3.0 published at https://api.katanamrp.com/v1/openapi.json
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are plain HTTP status + JSON; no application/problem+json.
+- id: webhooks-hmac
+  conforms: true
+  evidence: Webhook deliveries signed with HMAC-SHA256 (x-sha2-signature header).
+- id: rate-limit-headers
+  conforms: true
+  evidence: X-Ratelimit-Limit/Remaining/Reset + Retry-After on 429.
+compliance_program:
+  url: https://katanamrp.com/security/
+  certifications:
+  - SOC 2
+  - GDPR

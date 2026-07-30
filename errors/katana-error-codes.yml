@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.katanamrp.com/reference/api-rate-limiting
+docs: https://developer.katanamrp.com/reference/api-introduction
+api: openapi/katana-openapi-original.json
+format: http-status
+envelope:
+  note: >-
+    The published OpenAPI declares only 200/204 success responses (no error
+    schemas). The error behavior below is captured from the Katana developer
+    docs. Errors are returned as JSON with the standard HTTP status code.
+errors:
+- status: 400
+  title: Bad Request
+  meaning: The request was malformed or missing required parameters.
+  remediation: Validate the request body/query against the OpenAPI schema before sending.
+- status: 401
+  title: Unauthorized
+  meaning: >-
+    API key is incorrect, outdated, or missing. Katana returns 401 for any
+    authentication failure.
+  remediation: >-
+    Send a valid key as `Authorization: Bearer <api key>`; regenerate the key in
+    Settings > API if it was revoked.
+- status: 404
+  title: Not Found
+  meaning: The requested resource does not exist or is not accessible to this account.
+  remediation: Verify the resource id and that it belongs to your factory.
+- status: 422
+  title: Unprocessable Entity
+  meaning: >-
+    A business rule was violated (e.g. a bin-transfer status timestamp falls
+    inside an inventory lock window, or a field is not editable in the current
+    status).
+  remediation: Adjust the payload to satisfy the documented state/transition constraints.
+- status: 429
+  title: Too Many Requests
+  meaning: >-
+    Rate limit exceeded (default 60 requests / 60 seconds). Response includes a
+    Retry-After header (seconds to wait).
+  remediation: >-
+    Throttle client requests, watch X-Ratelimit-Remaining, and pause for the
+    Retry-After duration before retrying.

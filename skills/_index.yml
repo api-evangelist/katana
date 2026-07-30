@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: generated
+api: openapi/katana-openapi-original.json
+skills:
+- file: katana-sales-order.md
+  name: Create and track a Katana sales order
+  api: openapi/katana-openapi-original.json
+  operations: [CustomerController.createCustomer, SalesOrderController.createSalesOrder, SalesOrderController.getSalesOrder, SalesOrderController.getAllSalesOrders]
+- file: katana-manufacturing-order.md
+  name: Run a Katana manufacturing order
+  api: openapi/katana-openapi-original.json
+  operations: [ManufacturingOrderController.createManufacturingOrder, ManufacturingOrderController.getManufacturingOrder, ManufacturingOrderProductionController.completePartially, InventoryController.getInventories]
+- file: katana-purchase-and-receive.md
+  name: Purchase from a supplier and receive stock in Katana
+  api: openapi/katana-openapi-original.json
+  operations: [SupplierController.createSupplier, PurchaseOrderController.createPurchaseOrder, PurchaseOrderReceiveController.receivePartially, PurchaseOrderController.getPurchaseOrder]

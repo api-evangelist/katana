@@ -1,0 +1,25 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Katana API
+  version: 1.0.0
+extends: openapi/katana-openapi-original.json
+generated: '2026-07-19'
+method: generated
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: katana
+    x-apievangelist-auth: bearer-api-key
+    x-apievangelist-base-url: https://api.katanamrp.com/v1
+    x-apievangelist-docs: https://developer.katanamrp.com/
+    x-apievangelist-rate-limit: 60 requests / 60 seconds
+- target: $
+  update:
+    x-apievangelist-notes: >-
+      The published spec declares no securitySchemes and no tags. Auth is an
+      account-scoped API key sent as `Authorization: Bearer <api key>` (captured
+      in authentication/katana-authentication.yml). List responses are wrapped in
+      a top-level `data` array. Webhooks (HMAC-SHA256 signed) are documented but
+      not modeled as OpenAPI webhooks (see asyncapi/katana-webhooks.yml).
+    x-apievangelist-webhooks: asyncapi/katana-webhooks.yml
+    x-apievangelist-conventions: conventions/katana-conventions.yml

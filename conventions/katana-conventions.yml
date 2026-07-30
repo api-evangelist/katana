@@ -1,0 +1,65 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.katanamrp.com/reference/api-rate-limiting
+docs: https://developer.katanamrp.com/reference/api-introduction
+api: openapi/katana-openapi-original.json
+summary: >-
+  Cross-cutting request/response semantics for the Katana API v1, captured from
+  the developer docs and derived from the OpenAPI. REST/JSON over HTTPS, single
+  base URL https://api.katanamrp.com/v1, Bearer API-key auth, list responses
+  wrapped in a top-level `data` array, and X-RateLimit-* signaling.
+authentication:
+  style: bearer-api-key
+  header: Authorization
+  detail: See authentication/katana-authentication.yml
+base_url: https://api.katanamrp.com/v1
+media_type: application/json
+response_envelope:
+  style: data-wrapped
+  list_field: data
+  detail: >-
+    Collection endpoints return a JSON object with a top-level `data` array of
+    resource objects. Single-resource endpoints return the object directly.
+identifiers:
+  style: integer
+  detail: Resource ids are integers (e.g. sales order id 1700504, variant_id 4162087).
+pagination:
+  style: page-number
+  params:
+  - name: limit
+    detail: Page size (documented in the object reference; defaults apply per resource).
+  - name: page
+    detail: 1-based page index.
+  sort: >-
+    Many list endpoints return newest-first (most recent resource first); some
+    (batch stock) sort by location_id ASC, variant_id ASC, batch_id DESC.
+  note: >-
+    Pagination parameters are documented in the reference but are not enumerated
+    as parameters in the published OpenAPI.
+idempotency:
+  supported: false
+  detail: >-
+    Katana does not document an idempotency-key mechanism and the OpenAPI
+    declares no Idempotency-Key parameter. Writes are not idempotent; clients
+    must guard against duplicate submission themselves.
+rate_limiting:
+  default: 60 requests per 60 seconds
+  signal_headers:
+  - X-Ratelimit-Limit
+  - X-Ratelimit-Remaining
+  - X-Ratelimit-Reset
+  over_limit_status: 429
+  retry_header: Retry-After
+  detail: See rate-limits and errors artifacts. Reset is epoch-milliseconds.
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: Version is pinned in the path (/v1). See lifecycle/katana-lifecycle.yml.
+webhooks:
+  supported: true
+  detail: HMAC-SHA256 signed event delivery. See asyncapi/katana-webhooks.yml
+cross_links:
+  errors: errors/katana-error-codes.yml
+  lifecycle: lifecycle/katana-lifecycle.yml
+  authentication: authentication/katana-authentication.yml
+  webhooks: asyncapi/katana-webhooks.yml

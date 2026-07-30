@@ -1,0 +1,126 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.katanamrp.com/reference/webhooks
+spec_type: Webhooks
+api: openapi/katana-openapi-original.json
+summary: Katana delivers real-time events to subscriber HTTP endpoints. Webhooks are registered via the
+  API (POST /webhooks). Each registered webhook returns a single secret token used to compute an HMAC-SHA256
+  signature; every delivery carries an x-sha2-signature header for verification and an X-Katana-Retry-Num
+  header (1-3) on graceful retries.
+management:
+  register_operation: WebhookController.createWebhook
+  list_operation: WebhookController.getAllWebhooks
+  get_operation: WebhookController.getWebhook
+  update_operation: WebhookController.updateWebhook
+  delete_operation: WebhookController.deleteWebhook
+  logs_export_operation: WebhookLogsController.exportWebhookLogs
+  endpoints:
+  - /webhooks
+  - /webhooks/{id}
+  - /webhook_logs_export
+security:
+  signature_header: x-sha2-signature
+  algorithm: HMAC-SHA256
+  secret_source: token field returned in the create-webhook API response body
+  retry_header: X-Katana-Retry-Num
+  max_attempts: 3
+delivery:
+  transport: HTTPS POST
+  payload_fields:
+  - resource_type
+  - action
+  - object
+  object_fields:
+  - id
+  - status
+  - href
+  note: href is omitted on sales_order.deleted and product_recipe_row.deleted events.
+event_count: 59
+event_groups:
+- group: current_inventory
+  events:
+  - current_inventory.material_out_of_stock
+  - current_inventory.material_updated
+  - current_inventory.product_out_of_stock
+  - current_inventory.product_updated
+- group: manufacturing_order
+  events:
+  - manufacturing_order.blocked
+  - manufacturing_order.created
+  - manufacturing_order.deleted
+  - manufacturing_order.done
+  - manufacturing_order.in_progress
+  - manufacturing_order.updated
+- group: manufacturing_order_operation_row
+  events:
+  - manufacturing_order_operation_row.blocked
+  - manufacturing_order_operation_row.completed
+  - manufacturing_order_operation_row.created
+  - manufacturing_order_operation_row.deleted
+  - manufacturing_order_operation_row.in_progress
+  - manufacturing_order_operation_row.paused
+  - manufacturing_order_operation_row.updated
+- group: manufacturing_order_recipe_row
+  events:
+  - manufacturing_order_recipe_row.created
+  - manufacturing_order_recipe_row.deleted
+  - manufacturing_order_recipe_row.ingredients_in_stock
+  - manufacturing_order_recipe_row.updated
+- group: material
+  events:
+  - material.created
+  - material.deleted
+  - material.updated
+- group: outsourced_purchase_order
+  events:
+  - outsourced_purchase_order.created
+  - outsourced_purchase_order.deleted
+  - outsourced_purchase_order.received
+  - outsourced_purchase_order.updated
+- group: outsourced_purchase_order_recipe_row
+  events:
+  - outsourced_purchase_order_recipe_row.created
+  - outsourced_purchase_order_recipe_row.deleted
+  - outsourced_purchase_order_recipe_row.updated
+- group: outsourced_purchase_order_row
+  events:
+  - outsourced_purchase_order_row.created
+  - outsourced_purchase_order_row.deleted
+  - outsourced_purchase_order_row.received
+  - outsourced_purchase_order_row.updated
+- group: product
+  events:
+  - product.created
+  - product.deleted
+  - product.updated
+- group: product_recipe_row
+  events:
+  - product_recipe_row.created
+  - product_recipe_row.deleted
+  - product_recipe_row.updated
+- group: purchase_order
+  events:
+  - purchase_order.created
+  - purchase_order.deleted
+  - purchase_order.partially_received
+  - purchase_order.received
+  - purchase_order.updated
+- group: purchase_order_row
+  events:
+  - purchase_order_row.created
+  - purchase_order_row.deleted
+  - purchase_order_row.received
+  - purchase_order_row.updated
+- group: sales_order
+  events:
+  - sales_order.availability_updated
+  - sales_order.created
+  - sales_order.deleted
+  - sales_order.delivered
+  - sales_order.packed
+  - sales_order.updated
+- group: variant
+  events:
+  - variant.created
+  - variant.deleted
+  - variant.updated
