@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController PriceListRowController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PriceListRowController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PriceListRowController.findById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/price_list_rows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PriceListRowController.updateById",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.katanamrp.com/v1/price_list_rows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "PriceListRowController.deleteById",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.katanamrp.com/v1/price_list_rows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PriceListRowController.findAndPaginate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/price_list_rows",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "variant_ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "price_list_ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PriceListRowController.create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/price_list_rows",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

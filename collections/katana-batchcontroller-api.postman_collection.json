@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "2904bc16-1335-4c84-ba5f-71dc0ff974c1",
+      "name": "BatchController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f71ef32e-84d6-4493-a85f-df700a7aac77",
+          "name": "Batch Controller.create Batch",
+          "request": {
+            "name": "Batch Controller.create Batch",
+            "description": {},
+            "url": {
+              "path": [
+                "batches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batch_number\": \"<string>\",\n  \"variant_id\": \"<number>\",\n  \"batch_created_date\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"batch_barcode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1dd98844-582d-4e6d-9c36-7ff66e179104",
+              "name": "Return value of BatchController.createBatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"batch_number\": \"<string>\",\n  \"variant_id\": \"<number>\",\n  \"batch_created_date\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"batch_barcode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5aa52ba9-3e69-4616-9f96-9c2db4730730",
+    "name": "katana-api-gateway AdditionalCostController BatchController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

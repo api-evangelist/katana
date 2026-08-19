@@ -1,0 +1,579 @@
+{
+  "item": [
+    {
+      "id": "e517ce20-03b3-4510-b341-5d209ed10e93",
+      "name": "PurchaseOrderController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c5e7be61-dc44-4bd1-86b9-77abc76dc1fe",
+          "name": "Purchase Order Controller.update Purchase Order",
+          "request": {
+            "name": "Purchase Order Controller.update Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_no\": \"<string>\",\n  \"supplier_id\": \"<integer>\",\n  \"currency\": \"<string>\",\n  \"status\": \"<string>\",\n  \"expected_arrival_date\": \"<string>\",\n  \"order_created_date\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"tracking_location_id\": \"<integer>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ad37a45-9e83-4aff-ab79-dc4cb0dfc969",
+              "name": "Return value of PurchaseOrderController.updatePurchaseOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_no\": \"<string>\",\n  \"supplier_id\": \"<integer>\",\n  \"currency\": \"<string>\",\n  \"status\": \"<string>\",\n  \"expected_arrival_date\": \"<string>\",\n  \"order_created_date\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"tracking_location_id\": \"<integer>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6a4833e-336b-48cf-983e-c784924763e2",
+          "name": "Purchase Order Controller.get Purchase Order",
+          "request": {
+            "name": "Purchase Order Controller.get Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f00af350-c1ea-4ced-8bfe-5504ac91d4ca",
+              "name": "Return value of PurchaseOrderController.getPurchaseOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ced9c04-af51-4bef-a28f-0e04dfc31b05",
+          "name": "Purchase Order Controller.delete Purchase Order",
+          "request": {
+            "name": "Purchase Order Controller.delete Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3b9b394-9e4c-4743-bc6e-825eee89ef3d",
+              "name": "Return value of PurchaseOrderController.deletePurchaseOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0aafecef-62a9-444e-9178-ed849bf1bd75",
+          "name": "Purchase Order Controller.create Purchase Order",
+          "request": {
+            "name": "Purchase Order Controller.create Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase_orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"supplier_id\": \"<integer>\",\n  \"location_id\": \"<integer>\",\n  \"purchase_order_rows\": [\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"price_per_unit\": \"<number>\",\n      \"tax_rate_id\": \"<integer>\",\n      \"purchase_uom_conversion_rate\": \"<number>\",\n      \"purchase_uom\": \"<string>\",\n      \"tax_rate\": \"<string>\",\n      \"tax_name\": \"<string>\",\n      \"arrival_date\": \"<string>\",\n      \"location_id\": \"<integer>\"\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"price_per_unit\": \"<number>\",\n      \"tax_rate_id\": \"<integer>\",\n      \"purchase_uom_conversion_rate\": \"<number>\",\n      \"purchase_uom\": \"<string>\",\n      \"tax_rate\": \"<string>\",\n      \"tax_name\": \"<string>\",\n      \"arrival_date\": \"<string>\",\n      \"location_id\": \"<integer>\"\n    }\n  ],\n  \"order_no\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"status\": \"<string>\",\n  \"expected_arrival_date\": \"<date>\",\n  \"order_created_date\": \"<date>\",\n  \"tracking_location_id\": \"<integer>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9e644466-496c-474d-beeb-72244791c384",
+              "name": "Return value of PurchaseOrderController.createPurchaseOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase_orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"supplier_id\": \"<integer>\",\n  \"location_id\": \"<integer>\",\n  \"purchase_order_rows\": [\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"price_per_unit\": \"<number>\",\n      \"tax_rate_id\": \"<integer>\",\n      \"purchase_uom_conversion_rate\": \"<number>\",\n      \"purchase_uom\": \"<string>\",\n      \"tax_rate\": \"<string>\",\n      \"tax_name\": \"<string>\",\n      \"arrival_date\": \"<string>\",\n      \"location_id\": \"<integer>\"\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"price_per_unit\": \"<number>\",\n      \"tax_rate_id\": \"<integer>\",\n      \"purchase_uom_conversion_rate\": \"<number>\",\n      \"purchase_uom\": \"<string>\",\n      \"tax_rate\": \"<string>\",\n      \"tax_name\": \"<string>\",\n      \"arrival_date\": \"<string>\",\n      \"location_id\": \"<integer>\"\n    }\n  ],\n  \"order_no\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"status\": \"<string>\",\n  \"expected_arrival_date\": \"<date>\",\n  \"order_created_date\": \"<date>\",\n  \"tracking_location_id\": \"<integer>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f14b50d8-3f49-4fae-9ca4-6313239c288d",
+          "name": "Purchase Order Controller.get Purchase Orders",
+          "request": {
+            "name": "Purchase Order Controller.get Purchase Orders",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase_orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_no",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "billing_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "last_document_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "supplier_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "entity_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27c5d553-57cf-4d0c-a4dd-93f914a8ef70",
+              "name": "Return value of PurchaseOrderController.getPurchaseOrders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase_orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "billing_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "last_document_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supplier_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "entity_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "009b6e5f-46ed-4695-b647-db0944085468",
+    "name": "katana-api-gateway AdditionalCostController PurchaseOrderController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

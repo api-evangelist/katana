@@ -1,0 +1,107 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController LocationController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "LocationController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "LocationController.getLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/locations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "LocationController.getAllLocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/locations",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "legal_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_primary",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sales_allowed",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "manufacturing_allowed",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "purchases_allowed",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rank",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

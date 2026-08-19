@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController PurchaseOrderController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PurchaseOrderController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PurchaseOrderController.getPurchaseOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/purchase_orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "extend",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PurchaseOrderController.updatePurchaseOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.katanamrp.com/v1/purchase_orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "PurchaseOrderController.deletePurchaseOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.katanamrp.com/v1/purchase_orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PurchaseOrderController.getPurchaseOrders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/purchase_orders",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_no",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "billing_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "last_document_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "supplier_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tracking_location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "extend",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PurchaseOrderController.createPurchaseOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/purchase_orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

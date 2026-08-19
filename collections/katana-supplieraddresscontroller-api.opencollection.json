@@ -1,0 +1,137 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController SupplierAddressController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SupplierAddressController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SupplierAddressController.updateSupplierAddress",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.katanamrp.com/v1/supplier_addresses/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "SupplierAddressController.deleteSupplierAddress",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.katanamrp.com/v1/supplier_addresses/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "SupplierAddressController.getAllSupplierAddresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/supplier_addresses",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "supplier_ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "line_1",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "line_2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "zip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "SupplierAddressController.createSupplierAddress",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/supplier_addresses",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

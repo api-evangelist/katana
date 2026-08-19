@@ -1,0 +1,184 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController VariantController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VariantController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "VariantController.getVariant",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/variants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "extend",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "VariantController.updateVariant",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.katanamrp.com/v1/variants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "VariantController.deleteManufacturingOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.katanamrp.com/v1/variants/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "VariantController.getAllVariants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/variants",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "product_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "material_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sku",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sales_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "purchase_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "internal_barcode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "registered_barcode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "abc_classification",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "supplier_item_codes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_archived",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "extend",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "VariantController.createVariant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/variants",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,272 @@
+{
+  "item": [
+    {
+      "id": "51d6d704-4adf-4459-aba2-a2cc3af585da",
+      "name": "ManufacturingOrderProductionIngredientController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0570d80d-589d-4dae-bdda-8916385f7ea8",
+          "name": "Manufacturing Order Production Ingredient Controller.update Manufacturing Order Production Ingredient",
+          "request": {
+            "name": "Manufacturing Order Production Ingredient Controller.update Manufacturing Order Production Ingredient",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_production_ingredients",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da7cdd85-6d87-4134-932b-24cb88606453",
+              "name": "Return value of ManufacturingOrderProductionIngredientController.updateManufacturingOrderProductionIngredient",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_production_ingredients",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd6a9c18-be41-4c83-927e-414a6e4cecbd",
+          "name": "Manufacturing Order Production Ingredient Controller.find",
+          "request": {
+            "name": "Manufacturing Order Production Ingredient Controller.find",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_production_ingredients"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manufacturing_order_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manufacturing_order_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "production_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "production_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "524d6465-f06f-4d41-812f-db26b876b1ee",
+              "name": "Return value of ManufacturingOrderProductionIngredientController.find",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_production_ingredients"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "manufacturing_order_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "manufacturing_order_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "production_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "production_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ec34a584-16c7-44c8-962e-60e8acf38187",
+    "name": "katana-api-gateway AdditionalCostController ManufacturingOrderProductionIngredientController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

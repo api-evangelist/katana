@@ -1,0 +1,134 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController ManufacturingOrderRecipeRowController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ManufacturingOrderRecipeRowController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRowById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/manufacturing_order_recipe_rows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ManufacturingOrderRecipeRowController.updateManufacturingRecipeRow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.katanamrp.com/v1/manufacturing_order_recipe_rows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "ManufacturingOrderRecipeRowController.deleteManufacturingOrderRecipeRow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.katanamrp.com/v1/manufacturing_order_recipe_rows/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/manufacturing_order_recipe_rows",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "manufacturing_order_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "variant_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ingredient_availability",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ManufacturingOrderRecipeRowController.createManufacturingOrderRecipeRow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/manufacturing_order_recipe_rows",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

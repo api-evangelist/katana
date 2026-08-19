@@ -1,0 +1,155 @@
+{
+  "item": [
+    {
+      "id": "3609fc0c-b3b4-4c1a-a5bb-9a013f681004",
+      "name": "BinInventoryController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d06624ea-b348-4ec1-aa31-48b4e4b7c893",
+          "name": "Bin Inventory Controller.find And Paginate",
+          "request": {
+            "name": "Bin Inventory Controller.find And Paginate",
+            "description": {},
+            "url": {
+              "path": [
+                "bin_inventory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "granularity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bin_location_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "serial_number_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1dab060d-864e-4e32-baeb-645c50554cad",
+              "name": "Return value of BinInventoryController.findAndPaginate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bin_inventory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "bin_location_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "batch_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "serial_number_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "077d8a14-e4fc-4090-9f7b-b41f741badb7",
+    "name": "katana-api-gateway AdditionalCostController BinInventoryController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

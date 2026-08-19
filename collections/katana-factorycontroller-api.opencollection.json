@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController FactoryController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FactoryController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "FactoryController.getFactory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/factory"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

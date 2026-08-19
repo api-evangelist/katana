@@ -1,0 +1,641 @@
+{
+  "item": [
+    {
+      "id": "69c54f74-81ec-4147-821f-d4477fb2a893",
+      "name": "SalesOrderRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e98365b5-a084-458a-93f1-5f5c20fecb64",
+          "name": "Sales Order Row Controller.search Sales Order Rows",
+          "request": {
+            "name": "Sales Order Row Controller.search Sales Order Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_rows",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter\": {\n    \"where\": {\n      \"and\": [\n        {\n          \"key_0\": false,\n          \"key_1\": 4652.497457600737,\n          \"key_2\": false,\n          \"key_3\": 6432.648058282127\n        },\n        {\n          \"key_0\": false\n        }\n      ],\n      \"or\": [\n        {\n          \"key_0\": \"string\",\n          \"key_1\": true\n        },\n        {\n          \"key_0\": 8003.520294603396\n        }\n      ],\n      \"id\": \"<string>\",\n      \"sales_order_id\": \"<string>\",\n      \"variant_id\": \"<string>\",\n      \"location_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"price_per_unit\": \"<string>\",\n      \"total_discount\": \"<string>\",\n      \"tax_rate\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"product_availability\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"delivery_date\": \"<string>\",\n      \"shipping_date\": \"<string>\",\n      \"custom_fields\": \"<string>\"\n    },\n    \"order\": \"<string>\",\n    \"limit\": \"<integer>\",\n    \"page\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2a9157fd-2b77-4cef-8365-195c6b696712",
+              "name": "Return value of SalesOrderRowController.searchSalesOrderRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_rows",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter\": {\n    \"where\": {\n      \"and\": [\n        {\n          \"key_0\": \"string\",\n          \"key_1\": 3274\n        },\n        {\n          \"key_0\": 9347.11011710712\n        }\n      ],\n      \"or\": [\n        {\n          \"key_0\": \"string\"\n        },\n        {\n          \"key_0\": \"string\",\n          \"key_1\": 3684\n        }\n      ],\n      \"id\": \"<string>\",\n      \"sales_order_id\": \"<string>\",\n      \"variant_id\": \"<string>\",\n      \"location_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"price_per_unit\": \"<string>\",\n      \"total_discount\": \"<string>\",\n      \"tax_rate\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"product_availability\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"updated_at\": \"<string>\",\n      \"delivery_date\": \"<string>\",\n      \"shipping_date\": \"<string>\",\n      \"custom_fields\": \"<string>\"\n    },\n    \"order\": \"<string>\",\n    \"limit\": \"<integer>\",\n    \"page\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75b3a728-7ed4-447f-93ce-0f1598a76d73",
+          "name": "Sales Order Row Controller.update Sales Order Row",
+          "request": {
+            "name": "Sales Order Row Controller.update Sales Order Row",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": \"<number>\",\n  \"variant_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"location_id\": \"<integer>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"serial_number_transactions\": [\n    {\n      \"serial_number_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"serial_number_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"attributes\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"price_per_unit\": \"<number>\",\n  \"total_discount\": \"<number>\",\n  \"custom_fields\": {\n    \"key_0\": 4113\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd3cd0fb-70e3-430e-a145-d40857d6151b",
+              "name": "Return value of SalesOrderRowController.updateSalesOrderRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<number>\",\n  \"variant_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"location_id\": \"<integer>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"serial_number_transactions\": [\n    {\n      \"serial_number_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"serial_number_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"attributes\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"price_per_unit\": \"<number>\",\n  \"total_discount\": \"<number>\",\n  \"custom_fields\": {\n    \"key_0\": \"string\",\n    \"key_1\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "724de89e-3834-4d08-8d9b-74a0ca1845f9",
+          "name": "Sales Order Row Controller.find By Id",
+          "request": {
+            "name": "Sales Order Row Controller.find By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f499ba8e-093a-4eb0-82ce-1a91197aee27",
+              "name": "Return value of SalesOrderRowController.findById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d5770859-6512-416a-94b0-1f69b779a41e",
+          "name": "Sales Order Row Controller.delete Sales Order Row",
+          "request": {
+            "name": "Sales Order Row Controller.delete Sales Order Row",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d65d7d64-187b-4124-bd91-45551d9fc2d0",
+              "name": "Return value of SalesOrderRowController.deleteSalesOrderRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38c7c285-6b83-4892-a21d-3bc5d2957b36",
+          "name": "Sales Order Row Controller.create Sales Order Row",
+          "request": {
+            "name": "Sales Order Row Controller.create Sales Order Row",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": \"<number>\",\n  \"variant_id\": \"<integer>\",\n  \"sales_order_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"location_id\": \"<integer>\",\n  \"attributes\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"total_discount\": \"<number>\",\n  \"price_per_unit\": \"<number>\",\n  \"custom_fields\": {\n    \"key_0\": true,\n    \"key_1\": 9785,\n    \"key_2\": 8610\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd45596c-6cc4-409a-9476-5bab51147519",
+              "name": "Return value of SalesOrderRowController.createSalesOrderRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<number>\",\n  \"variant_id\": \"<integer>\",\n  \"sales_order_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"location_id\": \"<integer>\",\n  \"attributes\": [\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"total_discount\": \"<number>\",\n  \"price_per_unit\": \"<number>\",\n  \"custom_fields\": {\n    \"key_0\": false,\n    \"key_1\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b119e011-39f8-4db8-8e3c-0124787e0208",
+          "name": "Sales Order Row Controller.find All Sales Orders",
+          "request": {
+            "name": "Sales Order Row Controller.find All Sales Orders",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_order_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_order_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tax_rate_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "linked_manufacturing_order_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_availability",
+                  "value": "<string>"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b06d275-acba-43fc-a4bf-54cb36607336",
+              "name": "Return value of SalesOrderRowController.findAllSalesOrders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sales_order_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sales_order_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "tax_rate_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "linked_manufacturing_order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "product_availability",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0bc59403-c220-4042-b00e-5f9b33d8aec4",
+    "name": "katana-api-gateway AdditionalCostController SalesOrderRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,501 @@
+{
+  "item": [
+    {
+      "id": "ddbb267e-7552-40e5-8f47-d9aec0787402",
+      "name": "ProductOperationsController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "016dc9d9-083a-46d2-a2fe-eb3bfcd205ca",
+          "name": "Product Operations Controller.re Rank Operation Row",
+          "request": {
+            "name": "Product Operations Controller.re Rank Operation Row",
+            "description": {},
+            "url": {
+              "path": [
+                "product_operation_rerank"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rank_product_operation_id\": \"<integer>\",\n  \"preceding_product_operation_id\": \"<integer>\",\n  \"should_group\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bc586eb9-d20c-4eb3-bb8b-453dd921d962",
+              "name": "Return value of ProductOperationsController.reRankOperationRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product_operation_rerank"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"rank_product_operation_id\": \"<integer>\",\n  \"preceding_product_operation_id\": \"<integer>\",\n  \"should_group\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90227b38-2867-47e8-acdd-b21ec48fc7cd",
+          "name": "Product Operations Controller.update Product Operation Row",
+          "request": {
+            "name": "Product Operations Controller.update Product Operation Row",
+            "description": {},
+            "url": {
+              "path": [
+                "product_operation_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"operation_id\": \"<integer>\",\n  \"operation_name\": \"<string>\",\n  \"resource_id\": \"<integer>\",\n  \"resource_name\": \"<string>\",\n  \"cost_parameter\": \"<number>\",\n  \"cost_per_hour\": \"<number>\",\n  \"planned_time_per_unit\": \"<integer>\",\n  \"planned_time_parameter\": \"<integer>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4c36a1f6-d1b7-4d51-81c5-2528eafafbe1",
+              "name": "Return value of ProductOperationsController.updateProductOperationRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product_operation_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"operation_id\": \"<integer>\",\n  \"operation_name\": \"<string>\",\n  \"resource_id\": \"<integer>\",\n  \"resource_name\": \"<string>\",\n  \"cost_parameter\": \"<number>\",\n  \"cost_per_hour\": \"<number>\",\n  \"planned_time_per_unit\": \"<integer>\",\n  \"planned_time_parameter\": \"<integer>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57ef2e85-4aa1-4db2-bacd-615b2727ca78",
+          "name": "Product Operations Controller.delete Product Operation Row",
+          "request": {
+            "name": "Product Operations Controller.delete Product Operation Row",
+            "description": {},
+            "url": {
+              "path": [
+                "product_operation_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b74ab986-37fa-4a14-84ab-1a396a54a95e",
+              "name": "Return value of ProductOperationsController.deleteProductOperationRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product_operation_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f8738cc-287c-44ef-967c-32be9be298a4",
+          "name": "Product Operations Controller.create Product Operation Rows",
+          "request": {
+            "name": "Product Operations Controller.create Product Operation Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "product_operation_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rows\": [\n    {\n      \"product_variant_id\": \"<integer>\",\n      \"operation_id\": \"<integer>\",\n      \"operation_name\": \"<string>\",\n      \"resource_id\": \"<integer>\",\n      \"resource_name\": \"<string>\",\n      \"cost_per_hour\": \"<number>\",\n      \"cost_parameter\": \"<number>\",\n      \"planned_time_per_unit\": \"<integer>\",\n      \"planned_time_parameter\": \"<integer>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"product_variant_id\": \"<integer>\",\n      \"operation_id\": \"<integer>\",\n      \"operation_name\": \"<string>\",\n      \"resource_id\": \"<integer>\",\n      \"resource_name\": \"<string>\",\n      \"cost_per_hour\": \"<number>\",\n      \"cost_parameter\": \"<number>\",\n      \"planned_time_per_unit\": \"<integer>\",\n      \"planned_time_parameter\": \"<integer>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"keep_current_rows\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "53667236-c5cd-4603-9099-5b30afa144a2",
+              "name": "Return value of ProductOperationsController.createProductOperationRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product_operation_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"rows\": [\n    {\n      \"product_variant_id\": \"<integer>\",\n      \"operation_id\": \"<integer>\",\n      \"operation_name\": \"<string>\",\n      \"resource_id\": \"<integer>\",\n      \"resource_name\": \"<string>\",\n      \"cost_per_hour\": \"<number>\",\n      \"cost_parameter\": \"<number>\",\n      \"planned_time_per_unit\": \"<integer>\",\n      \"planned_time_parameter\": \"<integer>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"product_variant_id\": \"<integer>\",\n      \"operation_id\": \"<integer>\",\n      \"operation_name\": \"<string>\",\n      \"resource_id\": \"<integer>\",\n      \"resource_name\": \"<string>\",\n      \"cost_per_hour\": \"<number>\",\n      \"cost_parameter\": \"<number>\",\n      \"planned_time_per_unit\": \"<integer>\",\n      \"planned_time_parameter\": \"<integer>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"keep_current_rows\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb4ce3f3-f1c6-46ae-be72-d71b2cab2d0b",
+          "name": "Product Operations Controller.get Product Operation Rows",
+          "request": {
+            "name": "Product Operations Controller.get Product Operation Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "product_operation_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "product_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_operation_row_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "operation_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "operation_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resource_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "resource_name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "285256e9-1460-4430-a627-a4fd12b1e0d0",
+              "name": "Return value of ProductOperationsController.getProductOperationRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "product_operation_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "product_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "product_operation_row_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "product_variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "operation_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "operation_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resource_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "resource_name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "91668829-12eb-4c54-8dfe-d5d2e6985418",
+    "name": "katana-api-gateway AdditionalCostController ProductOperationsController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

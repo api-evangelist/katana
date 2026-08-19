@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController NegativeStockLatestMovementController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NegativeStockLatestMovementController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "NegativeStockLatestMovementController.getAllNegativeStockLatestMovements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/negative_stock",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "variant_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latest_negative_stock_date_max",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latest_negative_stock_date_min",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sku",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

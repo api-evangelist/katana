@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController ItemsCustomFieldsCollectionController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ItemsCustomFieldsCollectionController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ItemsCustomFieldsCollectionController.getAllCollections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/custom_fields_collections"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

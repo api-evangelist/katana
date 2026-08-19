@@ -1,0 +1,589 @@
+{
+  "item": [
+    {
+      "id": "5a213fdf-c0d6-4315-9da1-f0de29bbc5c8",
+      "name": "SalesReturnsController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "55df2e54-d35b-4843-b0f9-0f65ff073ca8",
+          "name": "Sales Returns Controller.get Return Reasons",
+          "request": {
+            "name": "Sales Returns Controller.get Return Reasons",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_returns",
+                "return_reasons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdfbda41-1ab1-43ef-828d-0b3a4f3fa9e2",
+              "name": "Return value of SalesReturnsController.getReturnReasons",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_returns",
+                    "return_reasons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b43911e1-a17e-435a-b730-e982c58ca801",
+          "name": "Sales Returns Controller.update By Id",
+          "request": {
+            "name": "Sales Returns Controller.update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_returns",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_no\": \"<string>\",\n  \"order_created_date\": \"<date>\",\n  \"return_location_id\": \"<number>\",\n  \"additional_info\": \"<string>\",\n  \"return_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_number_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6f5d8321-fd75-4560-aa95-65341094f057",
+              "name": "Return value of SalesReturnsController.updateById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_returns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_no\": \"<string>\",\n  \"order_created_date\": \"<date>\",\n  \"return_location_id\": \"<number>\",\n  \"additional_info\": \"<string>\",\n  \"return_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_number_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eeb6a151-6a47-4e9a-bbd6-f32fe622eba0",
+          "name": "Sales Returns Controller.find By Id",
+          "request": {
+            "name": "Sales Returns Controller.find By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_returns",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30882e25-1eac-4d0f-9a6d-1cc88e556075",
+              "name": "Return value of SalesReturnsController.findById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_returns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ed86a3a-d274-4c22-a5ba-829ff3ac630c",
+          "name": "Sales Returns Controller.delete By Id",
+          "request": {
+            "name": "Sales Returns Controller.delete By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_returns",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7d798f11-b2ce-46e9-a8e6-ee489c4bea6e",
+              "name": "Return value of SalesReturnsController.deleteById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_returns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "089660f5-6f10-49cc-ade4-46333eb01936",
+          "name": "Sales Returns Controller.create",
+          "request": {
+            "name": "Sales Returns Controller.create",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_returns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sales_order_id\": \"<integer>\",\n  \"return_location_id\": \"<integer>\",\n  \"order_created_date\": \"<date>\",\n  \"order_no\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_number_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba10d818-14c6-4670-88a3-0edde9e03f26",
+              "name": "Return value of SalesReturnsController.create",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_returns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sales_order_id\": \"<integer>\",\n  \"return_location_id\": \"<integer>\",\n  \"order_created_date\": \"<date>\",\n  \"order_no\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_number_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e98800e-9d0b-4e71-8377-1d75a5898dec",
+          "name": "Sales Returns Controller.find And Paginate",
+          "request": {
+            "name": "Sales Returns Controller.find And Paginate",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_returns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "return_location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_no",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_order_no",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "refund_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_created_date_min",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_created_date_max",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_return_date_min",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_return_date_max",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a909b237-34db-4cdd-a121-2d6dabc20b4d",
+              "name": "Return value of SalesReturnsController.findAndPaginate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_returns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "return_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sales_order_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "refund_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_created_date_min",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_created_date_max",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_return_date_min",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_return_date_max",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ed6a463b-6f43-4934-bc8b-90209dcb3f26",
+    "name": "katana-api-gateway AdditionalCostController SalesReturnsController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

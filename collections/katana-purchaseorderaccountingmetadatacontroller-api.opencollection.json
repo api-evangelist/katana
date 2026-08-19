@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController PurchaseOrderAccountingMetadataController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PurchaseOrderAccountingMetadataController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PurchaseOrderAccountingMetadataController.getAllPurchaseOrderAccountingMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/purchase_order_accounting_metadata",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "purchase_order_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "received_items_group_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,512 @@
+{
+  "item": [
+    {
+      "id": "df1c4eb6-3dcc-4cbd-bcd4-6fc58be79d2d",
+      "name": "StockTransferController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9009239b-9e03-4a4f-ad91-533c224d68ac",
+          "name": "Stock Transfer Controller.update Stock Transfer Status",
+          "request": {
+            "name": "Stock Transfer Controller.update Stock Transfer Status",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_transfers",
+                ":id",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95eaff23-99ad-43f6-8c85-15a00cb82a3b",
+              "name": "Return value of StockTransferController.updateStockTransferStatus",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_transfers",
+                    ":id",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05c64a48-0f8d-448a-9619-072cca6db73c",
+          "name": "Stock Transfer Controller.update Stock Transfer",
+          "request": {
+            "name": "Stock Transfer Controller.update Stock Transfer",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_transfers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stock_transfer_number\": \"<string>\",\n  \"transfer_date\": \"<string>\",\n  \"order_created_date\": \"<string>\",\n  \"expected_arrival_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a1a3b22-facd-4ec9-94a5-cdf8c9661755",
+              "name": "Return value of StockTransferController.updateStockTransfer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_transfers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stock_transfer_number\": \"<string>\",\n  \"transfer_date\": \"<string>\",\n  \"order_created_date\": \"<string>\",\n  \"expected_arrival_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a22d2b90-6b0f-4a23-8d4f-569eacae1789",
+          "name": "Stock Transfer Controller.delete Stock Transfer",
+          "request": {
+            "name": "Stock Transfer Controller.delete Stock Transfer",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_transfers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4dedc883-58c0-495d-a815-d387cb7cd284",
+              "name": "Return value of StockTransferController.deleteStockTransfer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_transfers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "273a175c-43fe-4466-8a7d-269fb1caaf9b",
+          "name": "Stock Transfer Controller.create Stock Transfer",
+          "request": {
+            "name": "Stock Transfer Controller.create Stock Transfer",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_transfers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stock_transfer_number\": \"<string>\",\n  \"source_location_id\": \"<integer>\",\n  \"target_location_id\": \"<integer>\",\n  \"stock_transfer_rows\": [\n    {\n      \"quantity\": \"<string>\",\n      \"variant_id\": \"<integer>\",\n      \"batch_transactions\": [\n        \"<object>\",\n        \"<object>\"\n      ],\n      \"traceability\": [\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        }\n      ]\n    },\n    {\n      \"quantity\": \"<string>\",\n      \"variant_id\": \"<integer>\",\n      \"batch_transactions\": [\n        \"<object>\",\n        \"<object>\"\n      ],\n      \"traceability\": [\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        }\n      ]\n    }\n  ],\n  \"transfer_date\": \"<string>\",\n  \"order_created_date\": \"<string>\",\n  \"expected_arrival_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0483d550-135e-4347-87c1-4aaf31721e55",
+              "name": "Return value of StockTransferController.createStockTransfer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_transfers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stock_transfer_number\": \"<string>\",\n  \"source_location_id\": \"<integer>\",\n  \"target_location_id\": \"<integer>\",\n  \"stock_transfer_rows\": [\n    {\n      \"quantity\": \"<string>\",\n      \"variant_id\": \"<integer>\",\n      \"batch_transactions\": [\n        \"<object>\",\n        \"<object>\"\n      ],\n      \"traceability\": [\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        }\n      ]\n    },\n    {\n      \"quantity\": \"<string>\",\n      \"variant_id\": \"<integer>\",\n      \"batch_transactions\": [\n        \"<object>\",\n        \"<object>\"\n      ],\n      \"traceability\": [\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        }\n      ]\n    }\n  ],\n  \"transfer_date\": \"<string>\",\n  \"order_created_date\": \"<string>\",\n  \"expected_arrival_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a6cd6d83-882c-46ed-9020-da04bd9e33d2",
+          "name": "Stock Transfer Controller.find Stock Transfers",
+          "request": {
+            "name": "Stock Transfer Controller.find Stock Transfers",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_transfers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stock_transfer_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "source_location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "target_location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d09da423-9759-47fb-80cd-90eb8c14415f",
+              "name": "Return value of StockTransferController.findStockTransfers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_transfers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "stock_transfer_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "target_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dc3529fd-a3ec-46e8-9101-4448a317980e",
+    "name": "katana-api-gateway AdditionalCostController StockTransferController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

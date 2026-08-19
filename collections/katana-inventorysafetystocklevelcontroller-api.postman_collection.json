@@ -1,0 +1,188 @@
+{
+  "item": [
+    {
+      "id": "9a5b4dfb-d0b9-487f-9df7-7a86cced0ce7",
+      "name": "InventorySafetyStockLevelController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5584b7f0-5b86-4ee9-bf38-6b7cec284d7e",
+          "name": "Inventory Safety Stock Level Controller.create Inventory Reorder Point",
+          "request": {
+            "name": "Inventory Safety Stock Level Controller.create Inventory Reorder Point",
+            "description": {},
+            "url": {
+              "path": [
+                "inventory_reorder_points"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"value\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ebe96d62-8a90-4462-be04-cdb69bbaa2ad",
+              "name": "Return value of InventorySafetyStockLevelController.createInventoryReorderPoint",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventory_reorder_points"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"value\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ba259097-547f-4e1c-bdf8-e08cfd6c73a6",
+          "name": "Inventory Safety Stock Level Controller.create Inventory Safety Stock Level",
+          "request": {
+            "name": "Inventory Safety Stock Level Controller.create Inventory Safety Stock Level",
+            "description": {},
+            "url": {
+              "path": [
+                "inventory_safety_stock_levels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"value\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f2c7403b-ee22-432b-b4e4-ff95f61df314",
+              "name": "Return value of InventorySafetyStockLevelController.createInventorySafetyStockLevel",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventory_safety_stock_levels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"value\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "90775aea-e050-4fbf-b4a6-6ef38efa50cf",
+    "name": "katana-api-gateway AdditionalCostController InventorySafetyStockLevelController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

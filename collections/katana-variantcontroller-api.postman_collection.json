@@ -1,0 +1,615 @@
+{
+  "item": [
+    {
+      "id": "5e4ee13e-f246-4ba2-a7b0-977bab3872cd",
+      "name": "VariantController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "68b1cb88-dd56-494a-8358-ecb27c886f22",
+          "name": "Variant Controller.update Variant",
+          "request": {
+            "name": "Variant Controller.update Variant",
+            "description": {},
+            "url": {
+              "path": [
+                "variants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"<string>\",\n  \"sales_price\": \"<number>\",\n  \"purchase_price\": \"<number>\",\n  \"supplier_item_codes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"internal_barcode\": \"<string>\",\n  \"registered_barcode\": \"<string>\",\n  \"config_attributes\": [\n    {\n      \"config_name\": \"<string>\",\n      \"config_value\": \"<string>\"\n    },\n    {\n      \"config_name\": \"<string>\",\n      \"config_value\": \"<string>\"\n    }\n  ],\n  \"custom_fields\": [\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    },\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    }\n  ],\n  \"lead_time\": \"<number>\",\n  \"minimum_order_quantity\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7052f7ab-03af-4714-b6a5-049be75c17d3",
+              "name": "Return value of VariantController.updateVariant",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "variants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sku\": \"<string>\",\n  \"sales_price\": \"<number>\",\n  \"purchase_price\": \"<number>\",\n  \"supplier_item_codes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"internal_barcode\": \"<string>\",\n  \"registered_barcode\": \"<string>\",\n  \"config_attributes\": [\n    {\n      \"config_name\": \"<string>\",\n      \"config_value\": \"<string>\"\n    },\n    {\n      \"config_name\": \"<string>\",\n      \"config_value\": \"<string>\"\n    }\n  ],\n  \"custom_fields\": [\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    },\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    }\n  ],\n  \"lead_time\": \"<number>\",\n  \"minimum_order_quantity\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d608ef7-a21a-4a64-b5f8-018fe49e0161",
+          "name": "Variant Controller.get Variant",
+          "request": {
+            "name": "Variant Controller.get Variant",
+            "description": {},
+            "url": {
+              "path": [
+                "variants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a822e3d-7431-4c06-9ea7-5c1b9c56d859",
+              "name": "Return value of VariantController.getVariant",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "variants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61705101-eaa3-4c5f-addb-7acf19411894",
+          "name": "Variant Controller.delete Manufacturing Order",
+          "request": {
+            "name": "Variant Controller.delete Manufacturing Order",
+            "description": {},
+            "url": {
+              "path": [
+                "variants",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2e58f5ce-c562-47a7-b66c-8479a820b661",
+              "name": "Return value of VariantController.deleteManufacturingOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "variants",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a635425-07c3-452e-8f62-67b4ebe9e770",
+          "name": "Variant Controller.create Variant",
+          "request": {
+            "name": "Variant Controller.create Variant",
+            "description": {},
+            "url": {
+              "path": [
+                "variants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"<string>\",\n  \"sales_price\": \"<number>\",\n  \"purchase_price\": \"<number>\",\n  \"product_id\": \"<number>\",\n  \"material_id\": \"<number>\",\n  \"supplier_item_codes\": [\n    \"<string>\"\n  ],\n  \"internal_barcode\": \"<string>\",\n  \"registered_barcode\": \"<string>\",\n  \"config_attributes\": [\n    {\n      \"config_name\": \"<string>\",\n      \"config_value\": \"<string>\"\n    }\n  ],\n  \"custom_fields\": [\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    },\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    }\n  ],\n  \"lead_time\": \"<number>\",\n  \"minimum_order_quantity\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c8813862-1a7a-4297-9eaa-22b562c4ba39",
+              "name": "Return value of VariantController.createVariant",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "variants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sku\": \"<string>\",\n  \"sales_price\": \"<number>\",\n  \"purchase_price\": \"<number>\",\n  \"product_id\": \"<number>\",\n  \"material_id\": \"<number>\",\n  \"supplier_item_codes\": [\n    \"<string>\"\n  ],\n  \"internal_barcode\": \"<string>\",\n  \"registered_barcode\": \"<string>\",\n  \"config_attributes\": [\n    {\n      \"config_name\": \"<string>\",\n      \"config_value\": \"<string>\"\n    }\n  ],\n  \"custom_fields\": [\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    },\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    }\n  ],\n  \"lead_time\": \"<number>\",\n  \"minimum_order_quantity\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e55b3c95-f260-46b1-b4bc-1123c9af1301",
+          "name": "Variant Controller.get All Variants",
+          "request": {
+            "name": "Variant Controller.get All Variants",
+            "description": {},
+            "url": {
+              "path": [
+                "variants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "material_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_price",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_price",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "internal_barcode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "registered_barcode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "abc_classification",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "supplier_item_codes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "supplier_item_codes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_archived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83d43fa6-7d97-46c1-969f-e0b12057fe39",
+              "name": "Return value of VariantController.getAllVariants",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "variants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "product_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "material_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sales_price",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "purchase_price",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "internal_barcode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "registered_barcode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "abc_classification",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supplier_item_codes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "supplier_item_codes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "include_archived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8b456191-1774-4e37-9ee6-3a01d11c62a9",
+    "name": "katana-api-gateway AdditionalCostController VariantController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

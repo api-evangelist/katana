@@ -1,0 +1,269 @@
+{
+  "item": [
+    {
+      "id": "82cb8f2f-c07c-4762-bab4-3185a6578b07",
+      "name": "BatchStockController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2e3a609f-d99b-4fca-b3f0-e57255ae03a2",
+          "name": "Batch Stock Controller.update Batch Stock",
+          "request": {
+            "name": "Batch Stock Controller.update Batch Stock",
+            "description": {},
+            "url": {
+              "path": [
+                "batch_stocks",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batch_number\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"batch_created_date\": \"<string>\",\n  \"batch_barcode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "97daabca-1c06-40f2-a561-40bd5ab86ef8",
+              "name": "Return value of BatchStockController.updateBatchStock",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch_stocks",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"batch_number\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"batch_created_date\": \"<string>\",\n  \"batch_barcode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbe1ca67-122d-4996-9729-f43a12629945",
+          "name": "Batch Stock Controller.get Batch Stock",
+          "request": {
+            "name": "Batch Stock Controller.get Batch Stock",
+            "description": {},
+            "url": {
+              "path": [
+                "batch_stocks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_barcode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_empty",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_created_at_max",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_created_at_min",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b441d63-9e48-48e9-92f4-aea5cfdc90dd",
+              "name": "Return value of BatchStockController.getBatchStock",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch_stocks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "batch_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "batch_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "batch_barcode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_empty",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "batch_created_at_max",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "batch_created_at_min",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "33a742de-fd09-4b00-8438-2145ae80ccf3",
+    "name": "katana-api-gateway AdditionalCostController BatchStockController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

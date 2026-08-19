@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "9ed2eef6-171a-4376-908a-9868f3065922",
+      "name": "WebhookLogsController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d8d3d4e-fae7-46e9-86f6-3739feb49d1f",
+          "name": "Webhook Logs Controller.export Webhook Logs",
+          "request": {
+            "name": "Webhook Logs Controller.export Webhook Logs",
+            "description": {},
+            "url": {
+              "path": [
+                "webhook_logs_export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"webhook_id\": \"<integer>\",\n  \"event\": \"<string>\",\n  \"status_code\": \"<integer>\",\n  \"delivered\": false,\n  \"created_at_min\": \"<date>\",\n  \"created_at_max\": \"<date>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd5135ea-2ff1-4858-b2da-07c715432677",
+              "name": "Return value of WebhookLogsController.exportWebhookLogs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "webhook_logs_export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"webhook_id\": \"<integer>\",\n  \"event\": \"<string>\",\n  \"status_code\": \"<integer>\",\n  \"delivered\": false,\n  \"created_at_min\": \"<date>\",\n  \"created_at_max\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bafa015f-d1ce-46ed-94c6-dfc1dee4209b",
+    "name": "katana-api-gateway AdditionalCostController WebhookLogsController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

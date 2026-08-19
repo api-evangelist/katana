@@ -1,0 +1,432 @@
+{
+  "item": [
+    {
+      "id": "1c01c256-8be7-45da-9054-cf652df51fa9",
+      "name": "StocktakeRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf37c466-b59d-4e82-809e-6cf480cafd5d",
+          "name": "Stocktake Row Controller.update By Id",
+          "request": {
+            "name": "Stocktake Row Controller.update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktake_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"batch_id\": \"<integer>\",\n  \"bin_location_id\": \"<integer>\",\n  \"notes\": \"<string>\",\n  \"counted_quantity\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f2ccf72-4326-459b-a8ef-11438d34667f",
+              "name": "Updated stocktake row",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktake_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"batch_id\": \"<integer>\",\n  \"bin_location_id\": \"<integer>\",\n  \"notes\": \"<string>\",\n  \"counted_quantity\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eaa3ea97-4d83-4fe7-bc65-6cfa7c272fb8",
+          "name": "Stocktake Row Controller.delete By Id",
+          "request": {
+            "name": "Stocktake Row Controller.delete By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktake_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca09a161-23f1-40b5-a45f-8f55f10f3bb9",
+              "name": "Row delete success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktake_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b11a487-2dd0-4309-b930-6e2cff9c5763",
+          "name": "Stocktake Row Controller.create Stocktake Rows",
+          "request": {
+            "name": "Stocktake Row Controller.create Stocktake Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktake_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stocktake_id\": \"<integer>\",\n  \"stocktake_rows\": [\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    },\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "29905332-b291-441a-823e-027cfb79c82c",
+              "name": "Return value of StocktakeRowController.createStocktakeRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktake_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stocktake_id\": \"<integer>\",\n  \"stocktake_rows\": [\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    },\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9dab769b-00ef-45d2-aa74-023e320afa35",
+          "name": "Stocktake Row Controller.find Stocktake Rows",
+          "request": {
+            "name": "Stocktake Row Controller.find Stocktake Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktake_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stocktake_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stocktake_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bin_location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "251b2f7b-2a5e-4961-bde4-178c0c221c5a",
+              "name": "Return value of StocktakeRowController.findStocktakeRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktake_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "stocktake_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "stocktake_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "batch_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "bin_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b4683326-6d86-4456-bc01-f8b32d2cbdc5",
+    "name": "katana-api-gateway AdditionalCostController StocktakeRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

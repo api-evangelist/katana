@@ -1,0 +1,475 @@
+{
+  "item": [
+    {
+      "id": "9779e875-46eb-45e6-9af5-d8de1933d942",
+      "name": "PriceListCustomerController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8654ad5d-b0de-4619-8f33-0d18dbf9fd10",
+          "name": "Price List Customer Controller.update By Id",
+          "request": {
+            "name": "Price List Customer Controller.update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aad39525-7678-401d-88bb-6dbc783d2be7",
+              "name": "Return value of PriceListCustomerController.updateById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "489307fe-d71b-4c13-8db9-c8cead6b2a7e",
+          "name": "Price List Customer Controller.find By Id",
+          "request": {
+            "name": "Price List Customer Controller.find By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfa41aa1-5c8c-4dc8-8f73-fffb9a4af264",
+              "name": "Return value of PriceListCustomerController.findById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "236925b3-037f-4772-a0b8-0fd5fe0cb40f",
+          "name": "Price List Customer Controller.delete By Id",
+          "request": {
+            "name": "Price List Customer Controller.delete By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bfbf353e-5a57-4629-a6f2-5459275c1c7f",
+              "name": "Price list customer delete success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "767a370e-030a-430a-a93f-86d0680b2dd8",
+          "name": "Price List Customer Controller.create",
+          "request": {
+            "name": "Price List Customer Controller.create",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price_list_id\": \"<number>\",\n  \"price_list_customers\": [\n    {\n      \"customer_id\": \"<number>\"\n    },\n    {\n      \"customer_id\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "347e464e-8422-4e04-ad96-ebc738eee90e",
+              "name": "Return value of PriceListCustomerController.create",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"price_list_id\": \"<number>\",\n  \"price_list_customers\": [\n    {\n      \"customer_id\": \"<number>\"\n    },\n    {\n      \"customer_id\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e3249e9-d087-409d-ba70-538feaf05a16",
+          "name": "Price List Customer Controller.find And Paginate",
+          "request": {
+            "name": "Price List Customer Controller.find And Paginate",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "price_list_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "price_list_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "12ef8e8b-5426-4e9a-b174-0e1e7629492a",
+              "name": "Return value of PriceListCustomerController.findAndPaginate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "price_list_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "price_list_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b6f9e98c-4d4f-4fe2-a61c-2c68b81edd8d",
+    "name": "katana-api-gateway AdditionalCostController PriceListCustomerController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

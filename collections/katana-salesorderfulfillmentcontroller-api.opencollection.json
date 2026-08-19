@@ -1,0 +1,159 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController SalesOrderFulfillmentController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SalesOrderFulfillmentController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SalesOrderFulfillmentController.getSalesOrderFulfillment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/sales_order_fulfillments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "SalesOrderFulfillmentController.updateSalesOrderFulfillment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.katanamrp.com/v1/sales_order_fulfillments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "SalesOrderFulfillmentController.deleteSalesOrderFulfillment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.katanamrp.com/v1/sales_order_fulfillments/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "SalesOrderFulfillmentController.getAllSalesOrderFulfillments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/sales_order_fulfillments",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "picked_date_min",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tracking_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tracking_url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tracking_carrier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tracking_method",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sales_order_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "invoice_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "SalesOrderFulfillmentController.createSalesOrderFulfillment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/sales_order_fulfillments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

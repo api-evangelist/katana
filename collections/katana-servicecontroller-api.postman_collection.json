@@ -1,0 +1,505 @@
+{
+  "item": [
+    {
+      "id": "dd5dd8ab-c26f-4e36-8b9f-fa2f9098cf86",
+      "name": "ServiceController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8346ab3e-3422-451c-8e36-31fb4b76548d",
+          "name": "Service Controller.update Service",
+          "request": {
+            "name": "Service Controller.update Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_sellable\": \"<boolean>\",\n  \"is_archived\": \"<boolean>\",\n  \"uom\": \"<string>\",\n  \"default_cost\": \"<number>\",\n  \"sales_price\": \"<number>\",\n  \"custom_field_collection_id\": \"<integer>\",\n  \"sku\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"custom_fields\": [\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    },\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26d40c0c-ec44-4b8b-b79c-76daab9308e5",
+              "name": "Return value of ServiceController.updateService",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_sellable\": \"<boolean>\",\n  \"is_archived\": \"<boolean>\",\n  \"uom\": \"<string>\",\n  \"default_cost\": \"<number>\",\n  \"sales_price\": \"<number>\",\n  \"custom_field_collection_id\": \"<integer>\",\n  \"sku\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"custom_fields\": [\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    },\n    {\n      \"field_name\": \"<string>\",\n      \"field_value\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6f6bfaea-8c57-46ed-9857-334e63d0a0cd",
+          "name": "Service Controller.get Service",
+          "request": {
+            "name": "Service Controller.get Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "025384db-648c-47fb-8f87-feb25f93f576",
+              "name": "Return value of ServiceController.getService",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94c3137b-6f7e-401a-9568-3cd86e81de48",
+          "name": "Service Controller.delete Service",
+          "request": {
+            "name": "Service Controller.delete Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ac071c2-a89d-4ddc-80d6-1f07e162f549",
+              "name": "Return value of ServiceController.deleteService",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a6c0a06-bbee-4148-83c5-6c13d2ce22c8",
+          "name": "Service Controller.create Service",
+          "request": {
+            "name": "Service Controller.create Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"variants\": [\n    {\n      \"sku\": \"<string>\",\n      \"sales_price\": \"<number>\",\n      \"default_cost\": \"<number>\",\n      \"custom_fields\": [\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        },\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_sellable\": \"<boolean>\",\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d916b7ff-e7f0-474c-89fe-8182aa7dfd70",
+              "name": "Return value of ServiceController.createService",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"variants\": [\n    {\n      \"sku\": \"<string>\",\n      \"sales_price\": \"<number>\",\n      \"default_cost\": \"<number>\",\n      \"custom_fields\": [\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        },\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_sellable\": \"<boolean>\",\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8d4a2e4-fa19-48a5-aa16-95681a47909e",
+          "name": "Service Controller.get All Services",
+          "request": {
+            "name": "Service Controller.get All Services",
+            "description": {},
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "uom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_sellable",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_archived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb2f7061-d336-4906-8f8e-f8f0d0906b2a",
+              "name": "Return value of ServiceController.getAllServices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_sellable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "include_archived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5b9431ff-5b18-4d36-ab63-9803b3c3dbb2",
+    "name": "katana-api-gateway AdditionalCostController ServiceController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

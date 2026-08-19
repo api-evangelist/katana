@@ -1,0 +1,164 @@
+{
+  "item": [
+    {
+      "id": "0160460d-ea8a-41f3-b29d-48c2ee786d5a",
+      "name": "NegativeStockLatestMovementController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "feb7b2ce-b41e-425c-bac6-b4ea70e63b47",
+          "name": "Negative Stock Latest Movement Controller.get All Negative Stock Latest Movements",
+          "request": {
+            "name": "Negative Stock Latest Movement Controller.get All Negative Stock Latest Movements",
+            "description": {},
+            "url": {
+              "path": [
+                "negative_stock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "latest_negative_stock_date_max",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "latest_negative_stock_date_min",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32e21c3e-8457-462e-a578-6061fa61ffa1",
+              "name": "Return value of NegativeStockLatestMovementController.getAllNegativeStockLatestMovements",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "negative_stock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "latest_negative_stock_date_max",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "latest_negative_stock_date_min",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3d11e2ba-216e-4003-85c4-0ee139b185b0",
+    "name": "katana-api-gateway AdditionalCostController NegativeStockLatestMovementController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

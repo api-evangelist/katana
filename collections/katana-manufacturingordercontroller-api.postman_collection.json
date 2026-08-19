@@ -1,0 +1,496 @@
+{
+  "item": [
+    {
+      "id": "94a34832-45f2-4bad-9868-02ad1b42a740",
+      "name": "ManufacturingOrderController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "493aa15b-f038-4940-9513-3aa518fded41",
+          "name": "Manufacturing Order Controller.update Manufacturing Order",
+          "request": {
+            "name": "Manufacturing Order Controller.update Manufacturing Order",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<string>\",\n  \"order_no\": \"<string>\",\n  \"variant_id\": \"<integer>\",\n  \"planned_quantity\": \"<number>\",\n  \"actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"location_id\": \"<integer>\",\n  \"order_created_date\": \"<string>\",\n  \"production_deadline_date\": \"<string>\",\n  \"done_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d674fefb-3d50-4f2d-a079-9c41c0cc96ac",
+              "name": "Return value of ManufacturingOrderController.updateManufacturingOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"order_no\": \"<string>\",\n  \"variant_id\": \"<integer>\",\n  \"planned_quantity\": \"<number>\",\n  \"actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"location_id\": \"<integer>\",\n  \"order_created_date\": \"<string>\",\n  \"production_deadline_date\": \"<string>\",\n  \"done_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1538e231-d023-47d4-a88a-536068308fd1",
+          "name": "Manufacturing Order Controller.get Manufacturing Order",
+          "request": {
+            "name": "Manufacturing Order Controller.get Manufacturing Order",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec52502e-2be5-4d3b-9151-98238c2e2a63",
+              "name": "Return value of ManufacturingOrderController.getManufacturingOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3175de6e-0843-4c46-8a04-8e14ae66b1c1",
+          "name": "Manufacturing Order Controller.delete Manufacturing Order",
+          "request": {
+            "name": "Manufacturing Order Controller.delete Manufacturing Order",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1c7dfd9-6a78-4a7e-a092-fd854756910c",
+              "name": "Return value of ManufacturingOrderController.deleteManufacturingOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93a8d809-d677-41db-88bc-4cc51ba53fba",
+          "name": "Manufacturing Order Controller.create Manufacturing Order",
+          "request": {
+            "name": "Manufacturing Order Controller.create Manufacturing Order",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"planned_quantity\": \"<number>\",\n  \"location_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"order_no\": \"<string>\",\n  \"actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"order_created_date\": \"<string>\",\n  \"production_deadline_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0cb600b4-138d-4fd9-ab78-0be53def43e5",
+              "name": "Return value of ManufacturingOrderController.createManufacturingOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"planned_quantity\": \"<number>\",\n  \"location_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"order_no\": \"<string>\",\n  \"actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"order_created_date\": \"<string>\",\n  \"production_deadline_date\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "24e37e26-3573-4885-a7cc-43e6cd70c894",
+          "name": "Manufacturing Order Controller.get Manufacturing Orders",
+          "request": {
+            "name": "Manufacturing Order Controller.get Manufacturing Orders",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_no",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_linked_to_sales_order",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab6a403b-435e-4fa2-87cf-2b91fd4f12e5",
+              "name": "Return value of ManufacturingOrderController.getManufacturingOrders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_no",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "is_linked_to_sales_order",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3640f71c-aa06-4cc2-849f-5a8d24fadc00",
+    "name": "katana-api-gateway AdditionalCostController ManufacturingOrderController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

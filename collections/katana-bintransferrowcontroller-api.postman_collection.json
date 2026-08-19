@@ -1,0 +1,496 @@
+{
+  "item": [
+    {
+      "id": "89d474c9-5a04-4c80-b8f5-5958e08bf39a",
+      "name": "BinTransferRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23d774a2-1e40-45c5-a394-17d8ada11c0f",
+          "name": "Bin Transfer Row Controller.update By Id",
+          "request": {
+            "name": "Bin Transfer Row Controller.update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "bin_transfer_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"source_bin_location_id\": \"<number>\",\n  \"target_bin_location_id\": \"<number>\",\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "409492f0-18db-4cb0-ae16-b598a1d57613",
+              "name": "Return value of BinTransferRowController.updateById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bin_transfer_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"source_bin_location_id\": \"<number>\",\n  \"target_bin_location_id\": \"<number>\",\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bd7c29b-7ea4-47af-a2c8-5ffa392ff7c4",
+          "name": "Bin Transfer Row Controller.find By Id",
+          "request": {
+            "name": "Bin Transfer Row Controller.find By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "bin_transfer_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "007bd880-17bd-4de0-a11e-245f71ada413",
+              "name": "Return value of BinTransferRowController.findById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bin_transfer_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "06513f3b-c973-4e55-868e-f840bf507390",
+          "name": "Bin Transfer Row Controller.delete By Id",
+          "request": {
+            "name": "Bin Transfer Row Controller.delete By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "bin_transfer_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5997c5f3-4cfc-4fc2-b78c-237c3194ff07",
+              "name": "Return value of BinTransferRowController.deleteById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bin_transfer_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e96e885f-b5e9-4ae4-aae7-1995d4d815c2",
+          "name": "Bin Transfer Row Controller.create",
+          "request": {
+            "name": "Bin Transfer Row Controller.create",
+            "description": {},
+            "url": {
+              "path": [
+                "bin_transfer_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"bin_transfer_id\": \"<integer>\",\n  \"source_bin_location_id\": \"<number>\",\n  \"target_bin_location_id\": \"<number>\",\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e837ff3-6626-42da-8953-000044eac773",
+              "name": "Return value of BinTransferRowController.create",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bin_transfer_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"bin_transfer_id\": \"<integer>\",\n  \"source_bin_location_id\": \"<number>\",\n  \"target_bin_location_id\": \"<number>\",\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"serial_number_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "685851d7-1c23-4f0d-b5c1-97a03afab943",
+          "name": "Bin Transfer Row Controller.find And Paginate",
+          "request": {
+            "name": "Bin Transfer Row Controller.find And Paginate",
+            "description": {},
+            "url": {
+              "path": [
+                "bin_transfer_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bin_transfer_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "source_bin_location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "target_bin_location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8f03102-7014-4827-b7c2-72b36ae7274c",
+              "name": "Return value of BinTransferRowController.findAndPaginate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bin_transfer_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "bin_transfer_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "source_bin_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "target_bin_location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "244661c2-c3cc-4e8a-a716-b6fae2897a50",
+    "name": "katana-api-gateway AdditionalCostController BinTransferRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

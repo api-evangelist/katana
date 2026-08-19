@@ -1,0 +1,32 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController UnlinkVariantBinLocationController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UnlinkVariantBinLocationController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UnlinkVariantBinLocationController.unlinkBinLocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/unlink_variant_bin_locations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

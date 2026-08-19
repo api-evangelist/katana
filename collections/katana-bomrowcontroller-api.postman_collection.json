@@ -1,0 +1,478 @@
+{
+  "item": [
+    {
+      "id": "208c7ba7-02c4-4ce6-9f49-c76d1e5480a0",
+      "name": "BomRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fdd75ef2-b981-47ad-8c74-5f1cb269055c",
+          "name": "Bom Row Controller.create Bom Rows Batch",
+          "request": {
+            "name": "Bom Row Controller.create Bom Rows Batch",
+            "description": {},
+            "url": {
+              "path": [
+                "bom_rows",
+                "batch",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": [\n    {\n      \"product_item_id\": \"<integer>\",\n      \"product_variant_id\": \"<integer>\",\n      \"ingredient_variant_id\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"notes\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3456e76f-df37-46ad-bfe4-282e1ef933ea",
+              "name": "Return value of BomRowController.createBomRowsBatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bom_rows",
+                    "batch",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": [\n    {\n      \"product_item_id\": \"<integer>\",\n      \"product_variant_id\": \"<integer>\",\n      \"ingredient_variant_id\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"notes\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0655a622-48eb-475f-84ba-f965047904f7",
+          "name": "Bom Row Controller.update Bom Row",
+          "request": {
+            "name": "Bom Row Controller.update Bom Row",
+            "description": {},
+            "url": {
+              "path": [
+                "bom_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ingredient_variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "088e9496-b363-4296-85b5-bf9c5dc4c504",
+              "name": "Return value of BomRowController.updateBomRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bom_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ingredient_variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"notes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cec93f3f-ed47-446f-aa20-a6c4bdfe3e2c",
+          "name": "Bom Row Controller.delete Bom Row",
+          "request": {
+            "name": "Bom Row Controller.delete Bom Row",
+            "description": {},
+            "url": {
+              "path": [
+                "bom_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "deff4afc-af01-43e6-ac60-4da5b3303bb1",
+              "name": "Return value of BomRowController.deleteBomRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bom_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fcc2711a-ae73-49b3-a280-8a60126db3e4",
+          "name": "Bom Row Controller.create Bom Row",
+          "request": {
+            "name": "Bom Row Controller.create Bom Row",
+            "description": {},
+            "url": {
+              "path": [
+                "bom_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"product_item_id\": \"<integer>\",\n  \"product_variant_id\": \"<integer>\",\n  \"ingredient_variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"notes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "92b4a46f-db7d-4221-a086-b04db2a06da7",
+              "name": "Return value of BomRowController.createBomRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bom_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"product_item_id\": \"<integer>\",\n  \"product_variant_id\": \"<integer>\",\n  \"ingredient_variant_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"notes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86205a92-a751-4842-b271-9abd02c2ac9d",
+          "name": "Bom Row Controller.get Bom Rows",
+          "request": {
+            "name": "Bom Row Controller.get Bom Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "bom_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_item_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ingredient_variant_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "989917e8-8a4c-4175-816d-642ac9884fe2",
+              "name": "Return value of BomRowController.getBomRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bom_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "product_item_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ingredient_variant_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bb3c20ae-9370-41b4-8ff3-46bebbe771d4",
+    "name": "katana-api-gateway AdditionalCostController BomRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

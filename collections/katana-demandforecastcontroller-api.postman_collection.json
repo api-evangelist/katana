@@ -1,0 +1,265 @@
+{
+  "item": [
+    {
+      "id": "221cfee4-0b96-4704-a2e8-caea41b23f92",
+      "name": "DemandForecastController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bbc97bdd-308b-4e84-8ffb-924907c13194",
+          "name": "Demand Forecast Controller.update Demand Forecast",
+          "request": {
+            "name": "Demand Forecast Controller.update Demand Forecast",
+            "description": {},
+            "url": {
+              "path": [
+                "demand_forecasts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<number>\",\n  \"location_id\": \"<number>\",\n  \"periods\": [\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\",\n      \"committed\": \"<string>\"\n    },\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\",\n      \"committed\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "999302ef-7c8e-4d85-b0b6-3874c734bb45",
+              "name": "Return value of DemandForecastController.updateDemandForecast",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "demand_forecasts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<number>\",\n  \"location_id\": \"<number>\",\n  \"periods\": [\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\",\n      \"committed\": \"<string>\"\n    },\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\",\n      \"committed\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "213f0969-caee-4157-9947-3cc7178af6f0",
+          "name": "Demand Forecast Controller.find Demand Forecast",
+          "request": {
+            "name": "Demand Forecast Controller.find Demand Forecast",
+            "description": {},
+            "url": {
+              "path": [
+                "demand_forecasts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ef257669-3c5f-4b1c-a953-2d55a6effca4",
+              "name": "Return value of DemandForecastController.findDemandForecast",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "demand_forecasts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a779f7a-043f-46e8-9e1b-834da313df2c",
+          "name": "Demand Forecast Controller.clear Demand Forecast",
+          "request": {
+            "name": "Demand Forecast Controller.clear Demand Forecast",
+            "description": {},
+            "url": {
+              "path": [
+                "demand_forecasts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<number>\",\n  \"location_id\": \"<number>\",\n  \"periods\": [\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\"\n    },\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f05478fe-1600-4848-b37d-37343108623c",
+              "name": "Return value of DemandForecastController.clearDemandForecast",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "demand_forecasts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<number>\",\n  \"location_id\": \"<number>\",\n  \"periods\": [\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\"\n    },\n    {\n      \"period_start\": \"<string>\",\n      \"period_end\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "46be718d-90e0-4892-96cd-21e9bb521045",
+    "name": "katana-api-gateway AdditionalCostController DemandForecastController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

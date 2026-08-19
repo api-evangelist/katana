@@ -1,0 +1,475 @@
+{
+  "item": [
+    {
+      "id": "91f69534-a86f-483b-8893-656338307919",
+      "name": "PriceListRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "634f8455-8487-4aaa-a692-f3f215e112b7",
+          "name": "Price List Row Controller.update By Id",
+          "request": {
+            "name": "Price List Row Controller.update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<number>\",\n  \"adjustment_method\": \"<string>\",\n  \"amount\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a5e4e065-1c07-4dff-bf91-28c76ff564c4",
+              "name": "Return value of PriceListRowController.updateById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<number>\",\n  \"adjustment_method\": \"<string>\",\n  \"amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60f33b8f-cb72-4ac2-94a2-3e7f8b2ecc5b",
+          "name": "Price List Row Controller.find By Id",
+          "request": {
+            "name": "Price List Row Controller.find By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ada3a9a6-af93-4058-a915-6954d0b2ff9e",
+              "name": "Return value of PriceListRowController.findById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6934619e-ef52-4baa-aa84-5341ac2a0e93",
+          "name": "Price List Row Controller.delete By Id",
+          "request": {
+            "name": "Price List Row Controller.delete By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bdb31d6e-453f-468f-a1ef-6104a3d42be2",
+              "name": "Price list row delete success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8bff427-aca8-4903-9fa1-48c9611d213f",
+          "name": "Price List Row Controller.create",
+          "request": {
+            "name": "Price List Row Controller.create",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price_list_id\": \"<number>\",\n  \"price_list_rows\": [\n    {\n      \"variant_id\": \"<number>\",\n      \"adjustment_method\": \"<string>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"variant_id\": \"<number>\",\n      \"adjustment_method\": \"<string>\",\n      \"amount\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c1676672-69e5-4d10-9f08-abb9027bbfc9",
+              "name": "Return value of PriceListRowController.create",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"price_list_id\": \"<number>\",\n  \"price_list_rows\": [\n    {\n      \"variant_id\": \"<number>\",\n      \"adjustment_method\": \"<string>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"variant_id\": \"<number>\",\n      \"adjustment_method\": \"<string>\",\n      \"amount\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4108c13-5ef4-41d8-a0fd-73484b0daaf4",
+          "name": "Price List Row Controller.find And Paginate",
+          "request": {
+            "name": "Price List Row Controller.find And Paginate",
+            "description": {},
+            "url": {
+              "path": [
+                "price_list_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "price_list_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "price_list_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85d7f878-6b6d-4119-af84-5c5ce41e12cc",
+              "name": "Return value of PriceListRowController.findAndPaginate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "price_list_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "price_list_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "price_list_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b75ac633-59cd-4990-92ae-c35223f0977c",
+    "name": "katana-api-gateway AdditionalCostController PriceListRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

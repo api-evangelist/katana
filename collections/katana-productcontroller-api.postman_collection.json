@@ -1,0 +1,624 @@
+{
+  "item": [
+    {
+      "id": "21f5a9d1-c1e7-4d03-95b3-44b393c16943",
+      "name": "ProductController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "66476b04-b567-4f82-b437-c5ee279c1d0b",
+          "name": "Product Controller.update Product",
+          "request": {
+            "name": "Product Controller.update Product",
+            "description": {},
+            "url": {
+              "path": [
+                "products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_producible\": false,\n  \"default_supplier_id\": \"<integer>\",\n  \"is_purchasable\": false,\n  \"is_auto_assembly\": false,\n  \"is_sellable\": false,\n  \"is_archived\": false,\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"batch_tracked\": false,\n  \"serial_tracked\": false,\n  \"operations_in_sequence\": false,\n  \"configs\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"id\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "78635f13-f02c-4b3d-8b26-8c1ee6aa0eef",
+              "name": "Return value of ProductController.updateProduct",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_producible\": false,\n  \"default_supplier_id\": \"<integer>\",\n  \"is_purchasable\": false,\n  \"is_auto_assembly\": false,\n  \"is_sellable\": false,\n  \"is_archived\": false,\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"batch_tracked\": false,\n  \"serial_tracked\": false,\n  \"operations_in_sequence\": false,\n  \"configs\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"id\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ebcf7c9-894a-4c6e-bafd-126cbb05107d",
+          "name": "Product Controller.get Product",
+          "request": {
+            "name": "Product Controller.get Product",
+            "description": {},
+            "url": {
+              "path": [
+                "products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "183081a5-505e-423e-9a8c-1aeeb07e5762",
+              "name": "Return value of ProductController.getProduct",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27715b92-146d-4567-9fd8-9a828e4dddc0",
+          "name": "Product Controller.delete Product",
+          "request": {
+            "name": "Product Controller.delete Product",
+            "description": {},
+            "url": {
+              "path": [
+                "products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f47a4c1-3abf-43e4-903e-886506d68252",
+              "name": "Return value of ProductController.deleteProduct",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1024a5cc-ca97-453c-bfee-ebe5b7156487",
+          "name": "Product Controller.create Product",
+          "request": {
+            "name": "Product Controller.create Product",
+            "description": {},
+            "url": {
+              "path": [
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"variants\": [\n    {\n      \"sku\": \"<string>\",\n      \"purchase_price\": \"<number>\",\n      \"sales_price\": \"<number>\",\n      \"internal_barcode\": \"<string>\",\n      \"registered_barcode\": \"<string>\",\n      \"supplier_item_codes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"config_attributes\": [\n        {\n          \"config_name\": \"<string>\",\n          \"config_value\": \"<string>\"\n        }\n      ],\n      \"custom_fields\": [\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        },\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        }\n      ],\n      \"lead_time\": \"<number>\",\n      \"minimum_order_quantity\": \"<number>\"\n    }\n  ],\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_producible\": \"<boolean>\",\n  \"is_purchasable\": \"<boolean>\",\n  \"is_auto_assembly\": \"<boolean>\",\n  \"default_supplier_id\": \"<integer>\",\n  \"additional_info\": \"<string>\",\n  \"batch_tracked\": false,\n  \"serial_tracked\": false,\n  \"operations_in_sequence\": false,\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"configs\": [\n    {\n      \"name\": \"<string>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"custom_field_collection_id\": \"<number>\",\n  \"is_sellable\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d5ecbe23-1874-4255-bda9-fbdee92f8f64",
+              "name": "Return value of ProductController.createProduct",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"variants\": [\n    {\n      \"sku\": \"<string>\",\n      \"purchase_price\": \"<number>\",\n      \"sales_price\": \"<number>\",\n      \"internal_barcode\": \"<string>\",\n      \"registered_barcode\": \"<string>\",\n      \"supplier_item_codes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"config_attributes\": [\n        {\n          \"config_name\": \"<string>\",\n          \"config_value\": \"<string>\"\n        }\n      ],\n      \"custom_fields\": [\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        },\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        }\n      ],\n      \"lead_time\": \"<number>\",\n      \"minimum_order_quantity\": \"<number>\"\n    }\n  ],\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"is_producible\": \"<boolean>\",\n  \"is_purchasable\": \"<boolean>\",\n  \"is_auto_assembly\": \"<boolean>\",\n  \"default_supplier_id\": \"<integer>\",\n  \"additional_info\": \"<string>\",\n  \"batch_tracked\": false,\n  \"serial_tracked\": false,\n  \"operations_in_sequence\": false,\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"configs\": [\n    {\n      \"name\": \"<string>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"custom_field_collection_id\": \"<number>\",\n  \"is_sellable\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c607daaf-4761-45d3-9cc7-8a7edbf32d43",
+          "name": "Product Controller.get All Products",
+          "request": {
+            "name": "Product Controller.get All Products",
+            "description": {},
+            "url": {
+              "path": [
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "uom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_sellable",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_producible",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_purchasable",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_auto_assembly",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "default_supplier_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_tracked",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "serial_tracked",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "operations_in_sequence",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_uom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_uom_conversion_rate",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_archived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9119c1ad-339d-42aa-9164-74c7f5f72e1b",
+              "name": "Return value of ProductController.getAllProducts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_sellable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_producible",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_purchasable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "is_auto_assembly",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "default_supplier_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "batch_tracked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "serial_tracked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "operations_in_sequence",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "purchase_uom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "purchase_uom_conversion_rate",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "include_archived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "53f4ea4a-8543-4718-892c-636fb98159b1",
+    "name": "katana-api-gateway AdditionalCostController ProductController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

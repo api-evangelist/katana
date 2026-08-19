@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController SalesOrderAccountingMetadataController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SalesOrderAccountingMetadataController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SalesOrderAccountingMetadataController.getAllSalesOrderAccountingMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/sales_order_accounting_metadata",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sales_order_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fulfillment_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,579 @@
+{
+  "item": [
+    {
+      "id": "548c4894-68e2-4cb8-9b63-13eb3ec689c1",
+      "name": "MaterialController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74f78ce1-1420-4c82-8811-c3fe54e7a009",
+          "name": "Material Controller.update Material",
+          "request": {
+            "name": "Material Controller.update Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"default_supplier_id\": \"<integer>\",\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"batch_tracked\": false,\n  \"is_sellable\": false,\n  \"is_archived\": false,\n  \"configs\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"id\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fbd17c7b-f074-4ebd-9407-d2494e69f372",
+              "name": "Return value of MaterialController.updateMaterial",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"default_supplier_id\": \"<integer>\",\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"batch_tracked\": false,\n  \"is_sellable\": false,\n  \"is_archived\": false,\n  \"configs\": [\n    {\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"id\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bcafefc1-b898-4f4a-b506-0aafc5e74f12",
+          "name": "Material Controller.get Material",
+          "request": {
+            "name": "Material Controller.get Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7854e667-ce53-41aa-bbad-381d009b251a",
+              "name": "Return value of MaterialController.getMaterial",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13a82d0d-edcf-4708-a030-9025a8d5d1fe",
+          "name": "Material Controller.delete Manufacturing Order",
+          "request": {
+            "name": "Material Controller.delete Manufacturing Order",
+            "description": {},
+            "url": {
+              "path": [
+                "materials",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8128f9fd-a855-451c-a078-d080beb7f4d2",
+              "name": "Return value of MaterialController.deleteManufacturingOrder",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d836814-75c9-4f7e-b74f-ecfa52e85d03",
+          "name": "Material Controller.create Material",
+          "request": {
+            "name": "Material Controller.create Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"variants\": [\n    {\n      \"sku\": \"<string>\",\n      \"purchase_price\": \"<number>\",\n      \"internal_barcode\": \"<string>\",\n      \"registered_barcode\": \"<string>\",\n      \"supplier_item_codes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"config_attributes\": [\n        {\n          \"config_name\": \"<string>\",\n          \"config_value\": \"<string>\"\n        }\n      ],\n      \"custom_fields\": [\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        },\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        }\n      ],\n      \"lead_time\": \"<number>\",\n      \"minimum_order_quantity\": \"<number>\"\n    }\n  ],\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"default_supplier_id\": \"<number>\",\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"batch_tracked\": \"<boolean>\",\n  \"configs\": [\n    {\n      \"name\": \"<string>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\",\n  \"is_sellable\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8fefd36f-dcc2-49d2-b1e3-0cbd85202a97",
+              "name": "Return value of MaterialController.createMaterial",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"variants\": [\n    {\n      \"sku\": \"<string>\",\n      \"purchase_price\": \"<number>\",\n      \"internal_barcode\": \"<string>\",\n      \"registered_barcode\": \"<string>\",\n      \"supplier_item_codes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"config_attributes\": [\n        {\n          \"config_name\": \"<string>\",\n          \"config_value\": \"<string>\"\n        }\n      ],\n      \"custom_fields\": [\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        },\n        {\n          \"field_name\": \"<string>\",\n          \"field_value\": \"<string>\"\n        }\n      ],\n      \"lead_time\": \"<number>\",\n      \"minimum_order_quantity\": \"<number>\"\n    }\n  ],\n  \"uom\": \"<string>\",\n  \"category_name\": \"<string>\",\n  \"default_supplier_id\": \"<number>\",\n  \"purchase_uom\": \"<string>\",\n  \"purchase_uom_conversion_rate\": \"<number>\",\n  \"batch_tracked\": \"<boolean>\",\n  \"configs\": [\n    {\n      \"name\": \"<string>\",\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"additional_info\": \"<string>\",\n  \"custom_field_collection_id\": \"<number>\",\n  \"is_sellable\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8de42fc8-1476-4bcf-8cdd-fd4820292db8",
+          "name": "Material Controller.get All Materials",
+          "request": {
+            "name": "Material Controller.get All Materials",
+            "description": {},
+            "url": {
+              "path": [
+                "materials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_sellable",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "uom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "default_supplier_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "batch_tracked",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_uom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_uom_conversion_rate",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_archived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "extend",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98baf006-1537-4993-872f-bfa4481d52f5",
+              "name": "Return value of MaterialController.getAllMaterials",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_sellable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "uom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "default_supplier_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "batch_tracked",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "purchase_uom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "purchase_uom_conversion_rate",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "include_archived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "extend",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c6838aa6-b3e4-4ddf-92a6-7758c9184270",
+    "name": "katana-api-gateway AdditionalCostController MaterialController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

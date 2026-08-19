@@ -1,0 +1,505 @@
+{
+  "item": [
+    {
+      "id": "4df1b0a4-826d-421c-8dbe-d8b88eea837f",
+      "name": "PoAdditionalCostRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca9a2a81-76f1-4d57-baef-e1daa8f86738",
+          "name": "Po Additional Cost Row Controller.update Po Additional Cost Row",
+          "request": {
+            "name": "Po Additional Cost Row Controller.update Po Additional Cost Row",
+            "description": {},
+            "url": {
+              "path": [
+                "po_additional_cost_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"additional_cost_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"price\": \"<number>\",\n  \"distribution_method\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "efc3d70d-983e-47df-b375-8c9be18e2ded",
+              "name": "Return value of PoAdditionalCostRowController.updatePoAdditionalCostRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po_additional_cost_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"additional_cost_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"price\": \"<number>\",\n  \"distribution_method\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "116214c3-2d22-487c-b440-596f08914ca0",
+          "name": "Po Additional Cost Row Controller.get Po Additional Cost Row",
+          "request": {
+            "name": "Po Additional Cost Row Controller.get Po Additional Cost Row",
+            "description": {},
+            "url": {
+              "path": [
+                "po_additional_cost_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba215c8f-47aa-45dc-925a-2e1fb4312742",
+              "name": "Return value of PoAdditionalCostRowController.getPoAdditionalCostRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po_additional_cost_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "660d7bef-d2c7-4733-93a6-c8ba02575480",
+          "name": "Po Additional Cost Row Controller.delete Po Additional Cost Row",
+          "request": {
+            "name": "Po Additional Cost Row Controller.delete Po Additional Cost Row",
+            "description": {},
+            "url": {
+              "path": [
+                "po_additional_cost_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a8fcb441-406d-4118-9949-056a151a9240",
+              "name": "Return value of PoAdditionalCostRowController.deletePoAdditionalCostRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po_additional_cost_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8762cd91-cb50-4eab-89a7-06c0be346e44",
+          "name": "Po Additional Cost Row Controller.create Po Additional Cost Row",
+          "request": {
+            "name": "Po Additional Cost Row Controller.create Po Additional Cost Row",
+            "description": {},
+            "url": {
+              "path": [
+                "po_additional_cost_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"additional_cost_id\": \"<integer>\",\n  \"group_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"price\": \"<number>\",\n  \"distribution_method\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4300da4c-9bd6-4f42-b21a-3dcd75a05bcc",
+              "name": "Return value of PoAdditionalCostRowController.createPoAdditionalCostRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po_additional_cost_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"additional_cost_id\": \"<integer>\",\n  \"group_id\": \"<integer>\",\n  \"tax_rate_id\": \"<integer>\",\n  \"price\": \"<number>\",\n  \"distribution_method\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f06017ee-8846-4e85-abc6-23939c7c7555",
+          "name": "Po Additional Cost Row Controller.get Po Additional Cost Rows",
+          "request": {
+            "name": "Po Additional Cost Row Controller.get Po Additional Cost Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "po_additional_cost_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "group_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "additional_cost_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "distribution_method",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tax_rate_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "738d892a-091f-46bf-a0b4-b792a566b9b2",
+              "name": "Return value of PoAdditionalCostRowController.getPoAdditionalCostRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "po_additional_cost_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "group_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "additional_cost_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "distribution_method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tax_rate_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "557ee333-c1cc-4efd-a803-770215533455",
+    "name": "katana-api-gateway AdditionalCostController PoAdditionalCostRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

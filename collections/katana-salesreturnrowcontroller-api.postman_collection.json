@@ -1,0 +1,571 @@
+{
+  "item": [
+    {
+      "id": "aac5b836-aa0a-4b66-ad9a-8ae5c0a10ffb",
+      "name": "SalesReturnRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "619011d9-9ac0-4946-844c-ce79e94d0d8e",
+          "name": "Sales Return Row Controller.get Unassigned Batch Transactions",
+          "request": {
+            "name": "Sales Return Row Controller.get Unassigned Batch Transactions",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_return_rows",
+                ":id",
+                "unassigned_batch_transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e3ba3c5-8545-4216-b7eb-3096cc4922d5",
+              "name": "Return value of SalesReturnRowController.getUnassignedBatchTransactions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_return_rows",
+                    ":id",
+                    "unassigned_batch_transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ea75f20-72d1-478d-b8e5-581be23c88ed",
+          "name": "Sales Return Row Controller.update By Id",
+          "request": {
+            "name": "Sales Return Row Controller.update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_return_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": \"<number>\",\n  \"restock_location_id\": \"<integer>\",\n  \"reason_id\": \"<integer>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "947fb49a-925b-4746-ac1d-82219b55a283",
+              "name": "Return value of SalesReturnRowController.updateById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_return_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quantity\": \"<number>\",\n  \"restock_location_id\": \"<integer>\",\n  \"reason_id\": \"<integer>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "baec28f4-f078-4c05-923d-a650ff0795c5",
+          "name": "Sales Return Row Controller.get By Id",
+          "request": {
+            "name": "Sales Return Row Controller.get By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_return_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6daf8b7-3293-42d4-935f-78211537dff4",
+              "name": "Return value of SalesReturnRowController.getById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_return_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c229ff8-e93a-45be-86b4-7b7bf8ed1137",
+          "name": "Sales Return Row Controller.delete By Id",
+          "request": {
+            "name": "Sales Return Row Controller.delete By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_return_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6f0dd028-2205-4b43-adca-ce20b014942b",
+              "name": "Return value of SalesReturnRowController.deleteById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_return_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15d42ffb-ac61-45cb-81f7-5257639f6da3",
+          "name": "Sales Return Row Controller.create",
+          "request": {
+            "name": "Sales Return Row Controller.create",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_return_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sales_return_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"fulfillment_row_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"restock_location_id\": \"<integer>\",\n  \"reason_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dd27fd2e-ffd7-412f-87ce-8dfc26ddeaca",
+              "name": "Return value of SalesReturnRowController.create",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_return_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sales_return_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"fulfillment_row_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"restock_location_id\": \"<integer>\",\n  \"reason_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55759686-a4b0-4e73-a9f8-1944d92440ad",
+          "name": "Sales Return Row Controller.find And Paginate",
+          "request": {
+            "name": "Sales Return Row Controller.find And Paginate",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_return_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_return_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_order_row_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reason_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "restock_location_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d9e4d11-75fd-41a1-a903-034880f19c2e",
+              "name": "Return value of SalesReturnRowController.findAndPaginate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_return_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sales_return_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sales_order_row_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reason_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "restock_location_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "30945799-7d2f-4798-9638-883895657a85",
+    "name": "katana-api-gateway AdditionalCostController SalesReturnRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

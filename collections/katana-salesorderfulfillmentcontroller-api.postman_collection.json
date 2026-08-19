@@ -1,0 +1,525 @@
+{
+  "item": [
+    {
+      "id": "f1805823-15a2-4b71-bf35-177d12dc6978",
+      "name": "SalesOrderFulfillmentController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5b366aa5-8775-4dbc-a258-fe79090519e2",
+          "name": "Sales Order Fulfillment Controller.update Sales Order Fulfillment",
+          "request": {
+            "name": "Sales Order Fulfillment Controller.update Sales Order Fulfillment",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_fulfillments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"picked_date\": \"<string>\",\n  \"status\": \"<string>\",\n  \"conversion_rate\": \"<number>\",\n  \"conversion_date\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\",\n  \"packer_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9a473008-1cd4-4956-a0e4-c4e7e6c6cf73",
+              "name": "Return value of SalesOrderFulfillmentController.updateSalesOrderFulfillment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_fulfillments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"picked_date\": \"<string>\",\n  \"status\": \"<string>\",\n  \"conversion_rate\": \"<number>\",\n  \"conversion_date\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\",\n  \"packer_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9bc0cc3-c953-4474-9970-d73aa6bcd37c",
+          "name": "Sales Order Fulfillment Controller.get Sales Order Fulfillment",
+          "request": {
+            "name": "Sales Order Fulfillment Controller.get Sales Order Fulfillment",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_fulfillments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53b88288-8e8d-405d-a304-b533a546946c",
+              "name": "Return value of SalesOrderFulfillmentController.getSalesOrderFulfillment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_fulfillments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3da7214e-407b-4c7c-94e1-065921c21f08",
+          "name": "Sales Order Fulfillment Controller.delete Sales Order Fulfillment",
+          "request": {
+            "name": "Sales Order Fulfillment Controller.delete Sales Order Fulfillment",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_fulfillments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "349c4514-ccb0-4df0-8f32-8d1cdca80ac1",
+              "name": "Return value of SalesOrderFulfillmentController.deleteSalesOrderFulfillment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_fulfillments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a4b28ba-8587-4a67-b571-96ad82ac8b3b",
+          "name": "Sales Order Fulfillment Controller.create Sales Order Fulfillment",
+          "request": {
+            "name": "Sales Order Fulfillment Controller.create Sales Order Fulfillment",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_fulfillments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sales_order_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"sales_order_fulfillment_rows\": [\n    {\n      \"sales_order_row_id\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"batch_transactions\": [\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        }\n      ],\n      \"serial_numbers\": [\n        \"<number>\",\n        \"<number>\"\n      ],\n      \"traceability\": [\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        }\n      ]\n    }\n  ],\n  \"picked_date\": \"<string>\",\n  \"conversion_rate\": \"<number>\",\n  \"conversion_date\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1ecf93f7-749f-421c-8928-8e8332e91ddf",
+              "name": "Return value of SalesOrderFulfillmentController.createSalesOrderFulfillment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_fulfillments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sales_order_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"sales_order_fulfillment_rows\": [\n    {\n      \"sales_order_row_id\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"batch_transactions\": [\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        }\n      ],\n      \"serial_numbers\": [\n        \"<number>\",\n        \"<number>\"\n      ],\n      \"traceability\": [\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\",\n          \"quantity\": \"<number>\"\n        }\n      ]\n    }\n  ],\n  \"picked_date\": \"<string>\",\n  \"conversion_rate\": \"<number>\",\n  \"conversion_date\": \"<string>\",\n  \"tracking_number\": \"<string>\",\n  \"tracking_url\": \"<string>\",\n  \"tracking_carrier\": \"<string>\",\n  \"tracking_method\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ac06869-cfb0-427c-9649-9dd7d14b3aef",
+          "name": "Sales Order Fulfillment Controller.get All Sales Order Fulfillments",
+          "request": {
+            "name": "Sales Order Fulfillment Controller.get All Sales Order Fulfillments",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_fulfillments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "picked_date_min",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_url",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_carrier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tracking_method",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_order_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "invoice_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74a6503f-a7a6-4b75-9549-48a606d74637",
+              "name": "Return value of SalesOrderFulfillmentController.getAllSalesOrderFulfillments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_fulfillments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "picked_date_min",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_carrier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tracking_method",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sales_order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "invoice_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7dd05ea8-fded-4128-bf26-56662244df29",
+    "name": "katana-api-gateway AdditionalCostController SalesOrderFulfillmentController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

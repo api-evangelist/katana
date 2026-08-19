@@ -1,0 +1,87 @@
+{
+  "item": [
+    {
+      "id": "927880f7-05ed-49c8-9450-6ba1b2bbece1",
+      "name": "ItemsCustomFieldsCollectionController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "10e24512-55b4-4eb7-bd6b-2715503020e4",
+          "name": "Items Custom Fields Collection Controller.get All Collections",
+          "request": {
+            "name": "Items Custom Fields Collection Controller.get All Collections",
+            "description": {},
+            "url": {
+              "path": [
+                "custom_fields_collections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59e186a3-cb5c-43b3-ab90-5cbcbb70a938",
+              "name": "Return value of ItemsCustomFieldsCollectionController.getAllCollections",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom_fields_collections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ff3a79b1-90d4-4785-9b83-474181b02c82",
+    "name": "katana-api-gateway AdditionalCostController ItemsCustomFieldsCollectionController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

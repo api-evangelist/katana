@@ -2,8 +2,8 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/katana-openapi-original.json
-note: 'No official hosted Katana MCP server was found. This is a candidate tool list derived one-per-operation from the published
-  OpenAPI (226 operations). Auth: Bearer API key (see authentication/katana-authentication.yml).'
+note: 'No official hosted Katana MCP server was found. This is a candidate tool list derived one-per-operation
+  from the published OpenAPI (226 operations). Auth: Bearer API key (see authentication/katana-authentication.yml).'
 server:
   name: katana
   transport: stdio
@@ -1140,3 +1140,9 @@ tools:
   path: /webhooks
   description: GET /webhooks
   source_operation: openapi/katana-openapi-original.json#WebhookController.getAllWebhooks
+deployment:
+  mode: none
+  verified: derived
+  tools: 226
+  checked: '2026-08-12'
+  source: catalog MCP census

@@ -1,0 +1,478 @@
+{
+  "item": [
+    {
+      "id": "83a7b813-0ca2-46ca-86f2-3de3c012716f",
+      "name": "ManufacturingOrderOperationRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "924bb383-8588-49e9-bfd4-49350d80a661",
+          "name": "Manufacturing Order Operation Row Controller.update Manufacturing Order Operation Row",
+          "request": {
+            "name": "Manufacturing Order Operation Row Controller.update Manufacturing Order Operation Row",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_operation_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"operation_id\": \"<integer>\",\n  \"operation_name\": \"<string>\",\n  \"resource_id\": \"<integer>\",\n  \"resource_name\": \"<string>\",\n  \"planned_time_per_unit\": \"<number>\",\n  \"planned_time_parameter\": \"<number>\",\n  \"total_actual_time\": \"<number>\",\n  \"cost_per_hour\": \"<number>\",\n  \"cost_parameter\": \"<number>\",\n  \"type\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assigned_operators\": [\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"completed_by_operators\": [\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d909feef-7ad3-4732-bd89-4c1b81dfb46a",
+              "name": "Return value of ManufacturingOrderOperationRowController.updateManufacturingOrderOperationRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_operation_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"operation_id\": \"<integer>\",\n  \"operation_name\": \"<string>\",\n  \"resource_id\": \"<integer>\",\n  \"resource_name\": \"<string>\",\n  \"planned_time_per_unit\": \"<number>\",\n  \"planned_time_parameter\": \"<number>\",\n  \"total_actual_time\": \"<number>\",\n  \"cost_per_hour\": \"<number>\",\n  \"cost_parameter\": \"<number>\",\n  \"type\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assigned_operators\": [\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"completed_by_operators\": [\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19cef009-687c-44fa-b3bd-23314565528a",
+          "name": "Manufacturing Order Operation Row Controller.retrieve Manufacturing Order Operation Row",
+          "request": {
+            "name": "Manufacturing Order Operation Row Controller.retrieve Manufacturing Order Operation Row",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_operation_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e0e93a9-feed-49a1-8ef8-da559f876193",
+              "name": "Return value of ManufacturingOrderOperationRowController.retrieveManufacturingOrderOperationRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_operation_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a303875-ee72-495d-80b3-1cd166b8276a",
+          "name": "Manufacturing Order Operation Row Controller.delete Manufacturing Order Operation Row",
+          "request": {
+            "name": "Manufacturing Order Operation Row Controller.delete Manufacturing Order Operation Row",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_operation_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1cb9bcb-eb4a-45b4-a753-e2058d4843e6",
+              "name": "Return value of ManufacturingOrderOperationRowController.deleteManufacturingOrderOperationRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_operation_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a024236e-7e65-4d37-9afe-498ff7b99c54",
+          "name": "Manufacturing Order Operation Row Controller.create Manufacturing Order Operation Row",
+          "request": {
+            "name": "Manufacturing Order Operation Row Controller.create Manufacturing Order Operation Row",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_operation_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"manufacturing_order_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"operation_id\": \"<integer>\",\n  \"operation_name\": \"<string>\",\n  \"resource_id\": \"<integer>\",\n  \"resource_name\": \"<string>\",\n  \"assigned_operators\": [\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"planned_time_per_unit\": \"<number>\",\n  \"planned_time_parameter\": \"<number>\",\n  \"cost_per_hour\": \"<number>\",\n  \"type\": \"<string>\",\n  \"cost_parameter\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e489f8ae-edb7-4499-a2a9-611088c73605",
+              "name": "Return value of ManufacturingOrderOperationRowController.createManufacturingOrderOperationRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_operation_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"manufacturing_order_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"operation_id\": \"<integer>\",\n  \"operation_name\": \"<string>\",\n  \"resource_id\": \"<integer>\",\n  \"resource_name\": \"<string>\",\n  \"assigned_operators\": [\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"operator_id\": \"<integer>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"planned_time_per_unit\": \"<number>\",\n  \"planned_time_parameter\": \"<number>\",\n  \"cost_per_hour\": \"<number>\",\n  \"type\": \"<string>\",\n  \"cost_parameter\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "adaded5c-4c7b-4b33-b42d-e6f528562f67",
+          "name": "Manufacturing Order Operation Row Controller.get Manufacturing Order Operation Rows",
+          "request": {
+            "name": "Manufacturing Order Operation Row Controller.get Manufacturing Order Operation Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_operation_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manufacturing_order_id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98f59a5b-d3cc-4d7a-bd85-e727446f626d",
+              "name": "Return value of ManufacturingOrderOperationRowController.getManufacturingOrderOperationRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_operation_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "manufacturing_order_id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "79aab6cf-23f3-48e5-907f-74e637f136f9",
+    "name": "katana-api-gateway AdditionalCostController ManufacturingOrderOperationRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

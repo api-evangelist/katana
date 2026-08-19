@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "029b74c6-be07-49e5-bacd-a61c5c9eacdd",
+      "name": "PurchaseOrderReceiveController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "098791eb-df49-49e6-b4b2-b097e0bc3f0b",
+          "name": "Purchase Order Receive Controller.receive Partially",
+          "request": {
+            "name": "Purchase Order Receive Controller.receive Partially",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase_order_receive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"purchase_order_row_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"received_date\": \"<date>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"location_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6257a313-8ed5-4850-b01a-aa52b4815187",
+              "name": "Return value of PurchaseOrderReceiveController.receivePartially",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase_order_receive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"purchase_order_row_id\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"received_date\": \"<date>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"location_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "193158b4-b180-4d60-911d-d09001970c8b",
+    "name": "katana-api-gateway AdditionalCostController PurchaseOrderReceiveController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

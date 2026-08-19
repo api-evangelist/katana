@@ -1,0 +1,285 @@
+{
+  "item": [
+    {
+      "id": "80a2215b-f7d8-458c-b5ef-3be796ca1a54",
+      "name": "LocationController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "10448868-dc6c-4c0c-9ec8-6f2c50f46f5b",
+          "name": "Location Controller.get Location",
+          "request": {
+            "name": "Location Controller.get Location",
+            "description": {},
+            "url": {
+              "path": [
+                "locations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0cba5fbf-e9f0-46e0-a53a-51e0dd860efc",
+              "name": "Return value of LocationController.getLocation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a1c5593-2db0-4d50-b7ea-bb81d96b78f0",
+          "name": "Location Controller.get All Locations",
+          "request": {
+            "name": "Location Controller.get All Locations",
+            "description": {},
+            "url": {
+              "path": [
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "legal_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is_primary",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_allowed",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manufacturing_allowed",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchases_allowed",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rank",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d97ea0d-b65c-46f5-8177-9d0410cf5e8e",
+              "name": "Return value of LocationController.getAllLocations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legal_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "is_primary",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sales_allowed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "manufacturing_allowed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "purchases_allowed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "rank",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3bb25996-5e44-4943-9ed7-414cbfabf855",
+    "name": "katana-api-gateway AdditionalCostController LocationController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

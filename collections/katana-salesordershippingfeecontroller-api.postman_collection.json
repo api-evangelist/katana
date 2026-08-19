@@ -1,0 +1,451 @@
+{
+  "item": [
+    {
+      "id": "137ad8bd-10ca-4f23-a4ce-bbe8672c30a6",
+      "name": "SalesOrderShippingFeeController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "141c9d0e-ca5c-4174-acd0-2e2b31921044",
+          "name": "Sales Order Shipping Fee Controller.update Shipping Fee",
+          "request": {
+            "name": "Sales Order Shipping Fee Controller.update Shipping Fee",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_shipping_fee",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2ee3ab6-7256-42c2-b87b-a36f0f6309e0",
+              "name": "Return value of SalesOrderShippingFeeController.updateShippingFee",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_shipping_fee",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed67b29f-4b7a-4ee2-aa67-84df4e4fc175",
+          "name": "Sales Order Shipping Fee Controller.get Shipping Fee",
+          "request": {
+            "name": "Sales Order Shipping Fee Controller.get Shipping Fee",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_shipping_fee",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0356aeff-768c-4c56-b0b8-162323dd1835",
+              "name": "Return value of SalesOrderShippingFeeController.getShippingFee",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_shipping_fee",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14717c3c-6c8e-4d54-b38f-72027e4bcc3a",
+          "name": "Sales Order Shipping Fee Controller.delete Shipping Fee",
+          "request": {
+            "name": "Sales Order Shipping Fee Controller.delete Shipping Fee",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_shipping_fee",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ffe833b-5686-4d0f-b7f3-f1297cc08b46",
+              "name": "Return value of SalesOrderShippingFeeController.deleteShippingFee",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_shipping_fee",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fde916ec-db13-4532-88cf-27187518b404",
+          "name": "Sales Order Shipping Fee Controller.add Shipping Fee",
+          "request": {
+            "name": "Sales Order Shipping Fee Controller.add Shipping Fee",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_shipping_fee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sales_order_id\": \"<number>\",\n  \"amount\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4953810-baca-4d10-ae76-e4440f44ca3e",
+              "name": "Return value of SalesOrderShippingFeeController.addShippingFee",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_shipping_fee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sales_order_id\": \"<number>\",\n  \"amount\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e97314e1-22f9-463a-9af9-2b24bdc9cc7d",
+          "name": "Sales Order Shipping Fee Controller.get All Shipping Fees",
+          "request": {
+            "name": "Sales Order Shipping Fee Controller.get All Shipping Fees",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_shipping_fee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_order_id",
+                  "value": "<integer>"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7733cc42-9dca-4853-ab0f-e6e33946b64f",
+              "name": "Return value of SalesOrderShippingFeeController.getAllShippingFees",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_shipping_fee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "sales_order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "754e6ddc-49bc-4653-83e8-85bf8be8da70",
+    "name": "katana-api-gateway AdditionalCostController SalesOrderShippingFeeController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

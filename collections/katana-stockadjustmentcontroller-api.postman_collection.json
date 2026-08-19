@@ -1,0 +1,405 @@
+{
+  "item": [
+    {
+      "id": "ff1c1f88-4acc-4b91-9311-c78f3e5fb191",
+      "name": "StockAdjustmentController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a5231e0-2b3c-4945-93d2-26bc4f409fad",
+          "name": "Stock Adjustment Controller.update Stock Adjustment",
+          "request": {
+            "name": "Stock Adjustment Controller.update Stock Adjustment",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_adjustments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stock_adjustment_number\": \"<string>\",\n  \"stock_adjustment_date\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8e1baba-e881-43b3-92fa-0592a0612c40",
+              "name": "Return value of StockAdjustmentController.updateStockAdjustment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_adjustments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stock_adjustment_number\": \"<string>\",\n  \"stock_adjustment_date\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3681f119-0ebe-47ef-94f9-75819211f99c",
+          "name": "Stock Adjustment Controller.delete Stock Adjustment",
+          "request": {
+            "name": "Stock Adjustment Controller.delete Stock Adjustment",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_adjustments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f797a913-b958-43bf-bdf5-efd90500212d",
+              "name": "Return value of StockAdjustmentController.deleteStockAdjustment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_adjustments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb992a46-f88b-477a-b2f2-de7a81c39353",
+          "name": "Stock Adjustment Controller.create Stock Adjustment",
+          "request": {
+            "name": "Stock Adjustment Controller.create Stock Adjustment",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_adjustments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stock_adjustment_number\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"stock_adjustment_rows\": [\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"cost_per_unit\": \"<number>\",\n      \"batch_transactions\": [\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        }\n      ],\n      \"traceability\": [\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        },\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        }\n      ]\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"cost_per_unit\": \"<number>\",\n      \"batch_transactions\": [\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        }\n      ],\n      \"traceability\": [\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        },\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        }\n      ]\n    }\n  ],\n  \"stock_adjustment_date\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db51dab3-ed90-4a46-b8ae-879b57971097",
+              "name": "Return value of StockAdjustmentController.createStockAdjustment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_adjustments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stock_adjustment_number\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"stock_adjustment_rows\": [\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"cost_per_unit\": \"<number>\",\n      \"batch_transactions\": [\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        }\n      ],\n      \"traceability\": [\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        },\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        }\n      ]\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"variant_id\": \"<integer>\",\n      \"cost_per_unit\": \"<number>\",\n      \"batch_transactions\": [\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        },\n        {\n          \"batch_id\": \"<integer>\",\n          \"quantity\": \"<number>\"\n        }\n      ],\n      \"traceability\": [\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        },\n        {\n          \"quantity\": \"<number>\",\n          \"batch_id\": \"<number>\",\n          \"serial_number_id\": \"<number>\",\n          \"bin_location_id\": \"<number>\"\n        }\n      ]\n    }\n  ],\n  \"stock_adjustment_date\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"additional_info\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5a7e636-e60e-443d-842c-07bc8664d7a1",
+          "name": "Stock Adjustment Controller.find Stock Adjustments",
+          "request": {
+            "name": "Stock Adjustment Controller.find Stock Adjustments",
+            "description": {},
+            "url": {
+              "path": [
+                "stock_adjustments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stock_adjustment_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e903e13-2b3d-47c0-8564-6648279c4b4a",
+              "name": "Return value of StockAdjustmentController.findStockAdjustments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stock_adjustments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "stock_adjustment_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e3143113-8382-4ef1-ad37-ffa32e607a62",
+    "name": "katana-api-gateway AdditionalCostController StockAdjustmentController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

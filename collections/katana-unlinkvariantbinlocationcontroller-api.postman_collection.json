@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "55dc9210-7c46-4a59-beab-bd5a97a48e5f",
+      "name": "UnlinkVariantBinLocationController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "41c7365e-1acb-4581-b868-dcbf6ed6c958",
+          "name": "Unlink Variant Bin Location Controller.unlink Bin Locations",
+          "request": {
+            "name": "Unlink Variant Bin Location Controller.unlink Bin Locations",
+            "description": {},
+            "url": {
+              "path": [
+                "unlink_variant_bin_locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"location_id\": \"<integer>\",\n    \"variant_id\": \"<integer>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "16a3cc2b-b459-4c92-aad6-4543e17abea3",
+              "name": "Unlink bin locations success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unlink_variant_bin_locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"location_id\": \"<integer>\",\n    \"variant_id\": \"<integer>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f40d768f-76f7-4d6c-bc6f-2fca734657f2",
+    "name": "katana-api-gateway AdditionalCostController UnlinkVariantBinLocationController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

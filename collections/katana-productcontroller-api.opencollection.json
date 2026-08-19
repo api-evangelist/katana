@@ -1,0 +1,199 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController ProductController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProductController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ProductController.getProduct",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "extend",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ProductController.updateProduct",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.katanamrp.com/v1/products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "ProductController.deleteProduct",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.katanamrp.com/v1/products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ProductController.getAllProducts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/products",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "uom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_sellable",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_producible",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_purchasable",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_auto_assembly",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "default_supplier_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "batch_tracked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "serial_tracked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "operations_in_sequence",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "purchase_uom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "purchase_uom_conversion_rate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_archived",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "extend",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ProductController.createProduct",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.katanamrp.com/v1/products",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

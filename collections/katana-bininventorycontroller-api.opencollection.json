@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "katana-api-gateway AdditionalCostController BinInventoryController API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BinInventoryController",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "BinInventoryController.findAndPaginate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.katanamrp.com/v1/bin_inventory",
+            "params": [
+              {
+                "name": "pagination",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "variant_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bin_location_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "batch_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "serial_number_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

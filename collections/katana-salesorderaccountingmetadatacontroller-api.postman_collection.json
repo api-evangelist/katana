@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "a5bec717-78f8-4895-bde9-ce0acbe79ab8",
+      "name": "SalesOrderAccountingMetadataController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a3814e2c-face-4469-852a-b2e7bfe8d564",
+          "name": "Sales Order Accounting Metadata Controller.get All Sales Order Accounting Metadata",
+          "request": {
+            "name": "Sales Order Accounting Metadata Controller.get All Sales Order Accounting Metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "sales_order_accounting_metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "sales_order_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fulfillment_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc8f1a6b-a1e8-485e-8033-b12106128336",
+              "name": "Return value of SalesOrderAccountingMetadataController.getAllSalesOrderAccountingMetadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sales_order_accounting_metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "sales_order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fulfillment_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "459a20b8-d155-4c31-9bfc-10621f891b37",
+    "name": "katana-api-gateway AdditionalCostController SalesOrderAccountingMetadataController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "item": [
+    {
+      "id": "80becd78-0b3d-4da6-a6e1-53270920d7cf",
+      "name": "ManufacturingOrderRecipeRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be485db2-1d6a-4cf3-8cc1-403acb3089bf",
+          "name": "Manufacturing Order Recipe Row Controller.update Manufacturing Recipe Row",
+          "request": {
+            "name": "Manufacturing Order Recipe Row Controller.update Manufacturing Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_recipe_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"notes\": \"<string>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"total_actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "88ab7928-d8d1-40cc-9cea-48d81b372323",
+              "name": "Return value of ManufacturingOrderRecipeRowController.updateManufacturingRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_recipe_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"variant_id\": \"<integer>\",\n  \"notes\": \"<string>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"total_actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e76c7727-a88b-4ad8-8817-a1ae8f9e976f",
+          "name": "Manufacturing Order Recipe Row Controller.find Manufacturing Order Recipe Row By Id",
+          "request": {
+            "name": "Manufacturing Order Recipe Row Controller.find Manufacturing Order Recipe Row By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_recipe_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3327a52-9da3-4456-9fcf-93ece66c4101",
+              "name": "Return value of ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRowById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_recipe_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf07a35e-871a-438e-b514-358b080e0aab",
+          "name": "Manufacturing Order Recipe Row Controller.delete Manufacturing Order Recipe Row",
+          "request": {
+            "name": "Manufacturing Order Recipe Row Controller.delete Manufacturing Order Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_recipe_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f1f785b-790f-47f2-8c40-1b2fb3732158",
+              "name": "Return value of ManufacturingOrderRecipeRowController.deleteManufacturingOrderRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_recipe_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ef7193b-2310-46d5-b1bf-804914bbc674",
+          "name": "Manufacturing Order Recipe Row Controller.create Manufacturing Order Recipe Row",
+          "request": {
+            "name": "Manufacturing Order Recipe Row Controller.create Manufacturing Order Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_recipe_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"manufacturing_order_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"notes\": \"<string>\",\n  \"total_actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f7c7527a-1d3c-4e37-96b9-ad1bf6866638",
+              "name": "Return value of ManufacturingOrderRecipeRowController.createManufacturingOrderRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_recipe_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"manufacturing_order_id\": \"<integer>\",\n  \"variant_id\": \"<integer>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"notes\": \"<string>\",\n  \"total_actual_quantity\": \"<number>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ],\n  \"traceability\": [\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<number>\",\n      \"bin_location_id\": \"<number>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "293a0d8a-949d-4672-8202-3786fee7d49a",
+          "name": "Manufacturing Order Recipe Row Controller.find Manufacturing Order Recipe Rows",
+          "request": {
+            "name": "Manufacturing Order Recipe Row Controller.find Manufacturing Order Recipe Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "manufacturing_order_recipe_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "manufacturing_order_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ingredient_availability",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4f15b8d-ff9f-430f-a19f-11ea4ba26230",
+              "name": "Return value of ManufacturingOrderRecipeRowController.findManufacturingOrderRecipeRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "manufacturing_order_recipe_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "manufacturing_order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ingredient_availability",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f39af20b-5150-4c55-94fe-cbd094c66777",
+    "name": "katana-api-gateway AdditionalCostController ManufacturingOrderRecipeRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

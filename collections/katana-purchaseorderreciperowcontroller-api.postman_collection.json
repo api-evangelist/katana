@@ -1,0 +1,487 @@
+{
+  "item": [
+    {
+      "id": "1b228814-9ce3-47b7-a84f-9a975b0b358d",
+      "name": "PurchaseOrderRecipeRowController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e6d6c27b-87cb-49c9-865a-e4cf596bc36d",
+          "name": "Purchase Order Recipe Row Controller.update Purchase Order Recipe Row",
+          "request": {
+            "name": "Purchase Order Recipe Row Controller.update Purchase Order Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "outsourced_purchase_order_recipe_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ingredient_variant_id\": \"<integer>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"notes\": \"<string>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "175ca7d1-29d5-42f0-bd7a-2de421e505d6",
+              "name": "Return value of PurchaseOrderRecipeRowController.updatePurchaseOrderRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "outsourced_purchase_order_recipe_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ingredient_variant_id\": \"<integer>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"notes\": \"<string>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19f36960-5727-4df7-abf7-b3b7f7df1344",
+          "name": "Purchase Order Recipe Row Controller.get Purchase Order Recipe Row",
+          "request": {
+            "name": "Purchase Order Recipe Row Controller.get Purchase Order Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "outsourced_purchase_order_recipe_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d784ecfd-954f-423c-a8c8-b0b5767b63bd",
+              "name": "Return value of PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "outsourced_purchase_order_recipe_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c23f836-9aed-424f-a761-fe77afcc7395",
+          "name": "Purchase Order Recipe Row Controller.delete Purchase Order Recipe Row",
+          "request": {
+            "name": "Purchase Order Recipe Row Controller.delete Purchase Order Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "outsourced_purchase_order_recipe_rows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92674ecc-44df-4545-9091-0eaf224b9784",
+              "name": "Return value of PurchaseOrderRecipeRowController.deletePurchaseOrderRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "outsourced_purchase_order_recipe_rows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b9e4897-2dae-4902-bb9b-d2af1e660662",
+          "name": "Purchase Order Recipe Row Controller.create Purchase Order Recipe Row",
+          "request": {
+            "name": "Purchase Order Recipe Row Controller.create Purchase Order Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "outsourced_purchase_order_recipe_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"purchase_order_row_id\": \"<integer>\",\n  \"ingredient_variant_id\": \"<integer>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"notes\": \"<string>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "feb19a39-fc53-4cba-8dff-ee3f0306f7c5",
+              "name": "Return value of PurchaseOrderRecipeRowController.createPurchaseOrderRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "outsourced_purchase_order_recipe_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"purchase_order_row_id\": \"<integer>\",\n  \"ingredient_variant_id\": \"<integer>\",\n  \"planned_quantity_per_unit\": \"<number>\",\n  \"notes\": \"<string>\",\n  \"batch_transactions\": [\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"batch_id\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a8c668e-f0ce-4e5a-84c1-dcb6de6cd782",
+          "name": "Purchase Order Recipe Row Controller.get Purchase Order Recipe Rows",
+          "request": {
+            "name": "Purchase Order Recipe Row Controller.get Purchase Order Recipe Rows",
+            "description": {},
+            "url": {
+              "path": [
+                "outsourced_purchase_order_recipe_rows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_order_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_order_row_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ingredient_variant_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e0b4a74-e757-4e6e-87d3-dd8256149df1",
+              "name": "Return value of PurchaseOrderRecipeRowController.getPurchaseOrderRecipeRows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "outsourced_purchase_order_recipe_rows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "purchase_order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "purchase_order_row_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ingredient_variant_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c2925ae8-fb01-416d-a95f-6478d04863e9",
+    "name": "katana-api-gateway AdditionalCostController PurchaseOrderRecipeRowController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

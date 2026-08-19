@@ -1,0 +1,423 @@
+{
+  "item": [
+    {
+      "id": "dc9501fb-0a99-488f-b49b-db2f68b77ea2",
+      "name": "StocktakeController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b536919b-a7da-410d-b73d-b68e507a4f85",
+          "name": "Stocktake Controller.update By Id",
+          "request": {
+            "name": "Stocktake Controller.update By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktakes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stocktake_number\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"created_date\": \"<string>\",\n  \"completed_date\": \"<string>\",\n  \"set_remaining_items_as_counted\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a7ceac20-347b-43e2-8a76-dfb3d9129019",
+              "name": "Stocktake update success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktakes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stocktake_number\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"status\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"created_date\": \"<string>\",\n  \"completed_date\": \"<string>\",\n  \"set_remaining_items_as_counted\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fc07f72-ae79-431b-b13b-51318525180f",
+          "name": "Stocktake Controller.delete By Id",
+          "request": {
+            "name": "Stocktake Controller.delete By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktakes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eb4fc67b-e19d-47c8-807d-0368e2a8528e",
+              "name": "Stocktake delete success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktakes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32732789-c338-4ebc-86c1-fd5494e98b66",
+          "name": "Stocktake Controller.create Stocktake",
+          "request": {
+            "name": "Stocktake Controller.create Stocktake",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktakes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stocktake_number\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"reason\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"created_date\": \"<string>\",\n  \"set_remaining_items_as_counted\": \"<boolean>\",\n  \"stocktake_rows\": [\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    },\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9814c3d3-1c54-4a7c-abfc-33269326737f",
+              "name": "Return value of StocktakeController.createStocktake",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktakes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stocktake_number\": \"<string>\",\n  \"location_id\": \"<integer>\",\n  \"reason\": \"<string>\",\n  \"additional_info\": \"<string>\",\n  \"created_date\": \"<string>\",\n  \"set_remaining_items_as_counted\": \"<boolean>\",\n  \"stocktake_rows\": [\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    },\n    {\n      \"variant_id\": \"<integer>\",\n      \"batch_id\": \"<integer>\",\n      \"bin_location_id\": \"<integer>\",\n      \"notes\": \"<string>\",\n      \"counted_quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd793320-796e-4719-b562-dde9030e8efc",
+          "name": "Stocktake Controller.find Stocktakes",
+          "request": {
+            "name": "Stocktake Controller.find Stocktakes",
+            "description": {},
+            "url": {
+              "path": [
+                "stocktakes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<integer>"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "stocktake_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stock_adjustment_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "location_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eb765195-138b-4043-924f-f9a5375a1a7f",
+              "name": "Return value of StocktakeController.findStocktakes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stocktakes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "stocktake_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stock_adjustment_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ea4815c4-f005-421e-b9c3-a32f1bf02b26",
+    "name": "katana-api-gateway AdditionalCostController StocktakeController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}

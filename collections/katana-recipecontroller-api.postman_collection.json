@@ -1,0 +1,309 @@
+{
+  "item": [
+    {
+      "id": "34ed0004-84c8-4297-8a1c-0a3a960ba925",
+      "name": "RecipeController",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "56204386-6064-4617-a695-ade2731c4def",
+          "name": "Recipe Controller.delete Recipe By Id",
+          "request": {
+            "name": "Recipe Controller.delete Recipe By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "recipes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f273eabf-76b1-4a24-9429-0d0747a0a3cb",
+              "name": "Return value of RecipeController.deleteRecipeById",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "recipes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4bce876-a0dd-4dd1-ad0e-e4b216a138a7",
+          "name": "Recipe Controller.create Recipe Row",
+          "request": {
+            "name": "Recipe Controller.create Recipe Row",
+            "description": {},
+            "url": {
+              "path": [
+                "recipes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rows\": [\n    {\n      \"product_variant_id\": \"<integer>\",\n      \"ingredient_variant_id\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"notes\": \"<string>\"\n    }\n  ],\n  \"keep_current_rows\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "419a41aa-dd93-4a51-9ac5-b6d7abd49a10",
+              "name": "Return value of RecipeController.createRecipeRow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "recipes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"rows\": [\n    {\n      \"product_variant_id\": \"<integer>\",\n      \"ingredient_variant_id\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"notes\": \"<string>\"\n    }\n  ],\n  \"keep_current_rows\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2b9d420-d4b5-4d0a-9859-b58ab763fe14",
+          "name": "Recipe Controller.get All Recipes",
+          "request": {
+            "name": "Recipe Controller.get All Recipes",
+            "description": {},
+            "url": {
+              "path": [
+                "recipes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "pagination",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "key": "dateFilter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "product_variant_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_variant_ids",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "recipe_row_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ingredient_variant_id",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a01f0c27-31b3-464d-b0f0-0539f2b4ec47",
+              "name": "Return value of RecipeController.getAllRecipes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "recipes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagination",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "product_variant_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "product_variant_ids",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "recipe_row_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "ingredient_variant_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.katanamrp.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d17ea4a1-2e6a-457a-ba91-f7d09c722745",
+    "name": "katana-api-gateway AdditionalCostController RecipeController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "public api",
+      "type": "text/plain"
+    }
+  }
+}
