@@ -145,6 +145,8 @@ apis:
   humanURL: https://developer.katanamrp.com/
   baseURL: https://api.katanamrp.com/v1
   tags:
+  - customer-controller
+  tags_raw:
   - CustomerController
   properties:
   - type: OpenAPI
