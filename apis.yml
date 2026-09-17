@@ -153,18 +153,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/katana-customeraddresscontroller-api-openapi.yml
-- aid: katana:katana-customercontroller-api
-  name: Katana CustomerController API
-  description: The CustomerController API from Katana — 2 operation(s) for customercontroller.
-  humanURL: https://developer.katanamrp.com/
-  baseURL: https://api.katanamrp.com/v1
-  tags:
-  - customer-controller
-  tags_raw:
-  - CustomerController
-  properties:
-  - type: OpenAPI
-    url: openapi/katana-customercontroller-api-openapi.yml
 - aid: katana:katana-customfielddefinitioncontroller-api
   name: Katana CustomFieldDefinitionController API
   description: >-
@@ -198,16 +186,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/katana-demandforecastcontroller-api-openapi.yml
-- aid: katana:katana-factorycontroller-api
-  name: Katana FactoryController API
-  description: The FactoryController API from Katana — 1 operation(s) for factorycontroller.
-  humanURL: https://developer.katanamrp.com/
-  baseURL: https://api.katanamrp.com/v1
-  tags:
-  - FactoryController
-  properties:
-  - type: OpenAPI
-    url: openapi/katana-factorycontroller-api-openapi.yml
 - aid: katana:katana-inventorycontroller-api
   name: Katana InventoryController API
   description: The InventoryController API from Katana — 2 operation(s) for inventorycontroller.
@@ -240,16 +218,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/katana-itemscustomfieldscollectioncontroller-api-openapi.yml
-- aid: katana:katana-locationcontroller-api
-  name: Katana LocationController API
-  description: The LocationController API from Katana — 2 operation(s) for locationcontroller.
-  humanURL: https://developer.katanamrp.com/
-  baseURL: https://api.katanamrp.com/v1
-  tags:
-  - LocationController
-  properties:
-  - type: OpenAPI
-    url: openapi/katana-locationcontroller-api-openapi.yml
 - aid: katana:katana-maketoordermocontroller-api
   name: Katana MakeToOrderMOController API
   description: >-
@@ -686,16 +654,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/katana-unlinkvariantbinlocationcontroller-api-openapi.yml
-- aid: katana:katana-userscontroller-api
-  name: Katana UsersController API
-  description: The UsersController API from Katana — 2 operation(s) for userscontroller.
-  humanURL: https://developer.katanamrp.com/
-  baseURL: https://api.katanamrp.com/v1
-  tags:
-  - UsersController
-  properties:
-  - type: OpenAPI
-    url: openapi/katana-userscontroller-api-openapi.yml
 - aid: katana:katana-variantbinlocationcontroller-api
   name: Katana VariantBinLocationController API
   description: >-
@@ -707,26 +665,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/katana-variantbinlocationcontroller-api-openapi.yml
-- aid: katana:katana-variantcontroller-api
-  name: Katana VariantController API
-  description: The VariantController API from Katana — 2 operation(s) for variantcontroller.
-  humanURL: https://developer.katanamrp.com/
-  baseURL: https://api.katanamrp.com/v1
-  tags:
-  - VariantController
-  properties:
-  - type: OpenAPI
-    url: openapi/katana-variantcontroller-api-openapi.yml
-- aid: katana:katana-webhookcontroller-api
-  name: Katana WebhookController API
-  description: The WebhookController API from Katana — 2 operation(s) for webhookcontroller.
-  humanURL: https://developer.katanamrp.com/
-  baseURL: https://api.katanamrp.com/v1
-  tags:
-  - WebhookController
-  properties:
-  - type: OpenAPI
-    url: openapi/katana-webhookcontroller-api-openapi.yml
 - aid: katana:katana-webhooklogscontroller-api
   name: Katana WebhookLogsController API
   description: The WebhookLogsController API from Katana — 1 operation(s) for webhooklogscontroller.
@@ -737,6 +675,66 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/katana-webhooklogscontroller-api-openapi.yml
+- aid: katana:katana-customer-controller-api
+  name: Katana Customer Controller API
+  description: The Customer Controller API from Katana — 2 operation(s) for customer controller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - Customer Controller
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-customer-controller-api-openapi.yml
+- aid: katana:katana-factory-controller-api
+  name: Katana Factory Controller API
+  description: The Factory Controller API from Katana — 1 operation(s) for factory controller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - Factory Controller
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-factory-controller-api-openapi.yml
+- aid: katana:katana-location-controller-api
+  name: Katana Location Controller API
+  description: The Location Controller API from Katana — 2 operation(s) for location controller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - Location Controller
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-location-controller-api-openapi.yml
+- aid: katana:katana-users-controller-api
+  name: Katana Users Controller API
+  description: The Users Controller API from Katana — 2 operation(s) for users controller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - Users Controller
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-users-controller-api-openapi.yml
+- aid: katana:katana-variant-controller-api
+  name: Katana Variant Controller API
+  description: The Variant Controller API from Katana — 2 operation(s) for variant controller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - Variant Controller
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-variant-controller-api-openapi.yml
+- aid: katana:katana-webhook-controller-api
+  name: Katana webhook controller API
+  description: The webhook controller API from Katana — 2 operation(s) for webhook controller.
+  humanURL: https://developer.katanamrp.com/
+  baseURL: https://api.katanamrp.com/v1
+  tags:
+  - webhook controller
+  properties:
+  - type: OpenAPI
+    url: openapi/katana-webhook-controller-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
