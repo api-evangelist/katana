@@ -681,6 +681,8 @@ apis:
   humanURL: https://developer.katanamrp.com/
   baseURL: https://api.katanamrp.com/v1
   tags:
+  - customer-controller
+  tags_raw:
   - Customer Controller
   properties:
   - type: OpenAPI
@@ -691,6 +693,8 @@ apis:
   humanURL: https://developer.katanamrp.com/
   baseURL: https://api.katanamrp.com/v1
   tags:
+  - FactoryController
+  tags_raw:
   - Factory Controller
   properties:
   - type: OpenAPI
@@ -711,6 +715,8 @@ apis:
   humanURL: https://developer.katanamrp.com/
   baseURL: https://api.katanamrp.com/v1
   tags:
+  - UsersController
+  tags_raw:
   - Users Controller
   properties:
   - type: OpenAPI
@@ -721,6 +727,8 @@ apis:
   humanURL: https://developer.katanamrp.com/
   baseURL: https://api.katanamrp.com/v1
   tags:
+  - VariantController
+  tags_raw:
   - Variant Controller
   properties:
   - type: OpenAPI
@@ -731,6 +739,8 @@ apis:
   humanURL: https://developer.katanamrp.com/
   baseURL: https://api.katanamrp.com/v1
   tags:
+  - WebhookController
+  tags_raw:
   - webhook controller
   properties:
   - type: OpenAPI
