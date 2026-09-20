@@ -1,0 +1,63 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://katanamrp.com/pricing/
+sources:
+- https://katanamrp.com/pricing/
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: tiered-subscription
+published: true
+note: Inventory/manufacturing SaaS pricing page; API access included in plans but not priced separately.
+  Usage elements (sales orders, locations) described without per-unit numbers.
+plan_count: 7
+currency: USD
+plans:
+- name: Free Plan
+  price_text: Free
+  period: none
+  included_quota: 30 SKUs, Unlimited users, Unlimited integrations, Unlimited locations, All Katana features
+    and add-ons, Access to Katana's API
+- name: Core Plan
+  price_text: Starts at $299 /month
+  price: 299
+  currency: USD
+  period: month
+  included_quota: Unlimited SKUs, Unlimited users, Unlimited integrations, 1 inventory location included,
+    24/7 support
+  overage: Add inventory locations as you go; billed based on number of sales orders delivered
+- name: Advantage Plan
+  price_text: Custom pricing
+  period: none
+  included_quota: Everything in Core, plus custom integrations, dashboards, automations, Dedicated Solutions
+    Engineer, SLA-backed maintenance
+- name: Manufacturing Management add-on
+  price_text: $199 / mo
+  price: 199
+  currency: USD
+  period: month
+  unit: add-on
+- name: Traceability add-on
+  price_text: $249/mo
+  price: 249
+  currency: USD
+  period: month
+  unit: add-on
+- name: Warehouse Management add-on
+  price_text: $149/mo
+  price: 149
+  currency: USD
+  period: month
+  unit: add-on
+- name: Onboarding
+  price_text: $2,000 (optional)
+  price: 2000
+  currency: USD
+  period: one-time
+  unit: onboarding package
+  included_quota: Included in Advantage
+rate_limit_statements:
+- Up to 30 SKUs Test unlimited SKUs for 15 days
