@@ -79,7 +79,8 @@ edges:
   reason: Stocktakes are physical inventory counts, which is precisely inventory accuracy management (cycle
     counts, physical inventory, discrepancy resolution).
 - tag: CustomerController
-  spec_file: katana-customercontroller-api-openapi.yml
+  spec_file: katana-customer-controller-api-openapi.yml
+  reanchored_from: katana-customercontroller-api-openapi.yml
   capability_id: BC-420.10
   capability_id_l1: BC-420
   capability_name: Customer Data Management
