@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 20
+edge_count: 24
 edges:
 - tag: PurchaseOrderController
   spec_file: katana-purchaseordercontroller-api-openapi.yml
@@ -153,6 +153,39 @@ edges:
   evidence: POST /customer_addresses  CustomerAddressController.createCustomerAddress
   reason: CRUD over customer address records is maintenance of customer master data attributes, i.e. Customer
     Data Management.
+- tag: BatchStockController
+  spec_file: katana-batchstockcontroller-api-openapi.yml
+  capability_id: BC-530
+  capability_id_l1: BC-530
+  capability_name: Inventory Management
+  confidence: 0.7
+  evidence: GET /batch_stocks  BatchStockController.getBatchStock; PATCH /batch_stocks/{id}  BatchStockController.updateBatchStock
+  reason: Reads and updates stock quantities held against inventory batches/lots — inventory record management.
+    No L2 asserted because the surface concerns on-hand batch stock rather than target levels, replenishment
+    or counting specifically.
+  recovered_from: sweep-20260829T005356Z-edges.json
+- tag: BinInventoryController
+  spec_file: katana-bininventorycontroller-api-openapi.yml
+  capability_id: BC-530
+  capability_id_l1: BC-530
+  capability_name: Inventory Management
+  confidence: 0.7
+  evidence: 'GET /bin_inventory  BinInventoryController.findAndPaginate; vendor: "warehouse and bin management
+    with barcode workflows"'
+  reason: Exposes inventory held at bin level within warehouses, i.e. stock visibility across storage
+    locations. L1 inventory management is well supported; the single paginated read does not identify
+    a narrower sub-capability.
+  recovered_from: sweep-20260829T005356Z-edges.json
+- tag: BinTransferController
+  spec_file: katana-bintransfercontroller-api-openapi.yml
+  capability_id: BC-530
+  capability_id_l1: BC-530
+  capability_name: Inventory Management
+  confidence: 0.7
+  evidence: POST /bin_transfers  BinTransferController.create; UpdateBinTransferStatusDto; TraceabilityInputDto
+  reason: Creates and progresses transfers of stock between bins/locations — internal inventory movement
+    management. L1 only as it spans warehouse movement rather than a specific L2.
+  recovered_from: sweep-20260829T005356Z-edges.json
 - tag: PriceListCustomerController
   spec_file: katana-pricelistcustomercontroller-api-openapi.yml
   capability_id: BC-440.20
@@ -172,6 +205,16 @@ edges:
   reason: Recording partial receipt of purchase order lines is a procure-to-pay receipting operation.
     Could alternatively be read as warehouse inbound putaway, but the endpoint is anchored on the purchase
     order rather than on dock/putaway operations, hence moderate confidence.
+- tag: RecipeController
+  spec_file: katana-recipecontroller-api-openapi.yml
+  capability_id: BC-820.30
+  capability_id_l1: BC-820
+  capability_name: Product Specification Management
+  confidence: 0.7
+  evidence: GET /recipes RecipeController.getAllRecipes; RecipeRowCreateManyDto
+  reason: In Katana a recipe is the bill of materials for a manufactured product; BOM definition falls
+    under Product Specification Management.
+  recovered_from: sweep-20260829T005356Z-edges.json
 - tag: SerialNumberController
   spec_file: katana-serialnumbercontroller-api-openapi.yml
   capability_id: BC-530
