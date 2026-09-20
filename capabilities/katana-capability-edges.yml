@@ -1,0 +1,200 @@
+slug: katana
+provider: Katana
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Transportation & Logistics
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 20
+edges:
+- tag: PurchaseOrderController
+  spec_file: katana-purchaseordercontroller-api-openapi.yml
+  capability_id: BC-500.30
+  capability_id_l1: BC-500
+  capability_name: Purchase Order Management
+  confidence: 0.95
+  evidence: POST /purchase_orders PurchaseOrderController.createPurchaseOrder; schemas CreatePurchaseOrderDto,
+    UpdatePurchaseOrderDto
+  reason: Full lifecycle CRUD over purchase orders is plainly purchase order creation, amendment and execution
+    within procurement; no other reading fits.
+- tag: PurchaseOrderRowController
+  spec_file: katana-purchaseorderrowcontroller-api-openapi.yml
+  capability_id: BC-500.30
+  capability_id_l1: BC-500
+  capability_name: Purchase Order Management
+  confidence: 0.9
+  evidence: POST /purchase_order_rows PurchaseOrderRowController.addPurchaseOrderRow; CreatePurchaseOrderRowWithPurchaseOrderIdDto
+  reason: Maintenance of purchase order line items is directly part of purchase order creation and maintenance
+    in procurement.
+- tag: DemandForecastController
+  spec_file: katana-demandforecastcontroller-api-openapi.yml
+  capability_id: BC-520.10
+  capability_id_l1: BC-520
+  capability_name: Demand Planning Management
+  confidence: 0.88
+  evidence: GET /demand_forecasts  DemandForecastController.findDemandForecast, DemandForecastUpdateDto
+  reason: Operations create, read and clear demand forecasts, which is exactly Demand Planning Management;
+    vendor description also cites 'purchasing and demand forecasting'.
+- tag: InventorySafetyStockLevelController
+  spec_file: katana-inventorysafetystocklevelcontroller-api-openapi.yml
+  capability_id: BC-530.10
+  capability_id_l1: BC-530
+  capability_name: Stock Level Management
+  confidence: 0.88
+  evidence: POST /inventory_reorder_points  InventorySafetyStockLevelController.createInventoryReorderPoint;
+    POST /inventory_safety_stock_levels
+  reason: Sets safety stock levels and reorder points, which is precisely Stock Level Management (target
+    stock, safety stock, reorder points).
+- tag: InventoryController
+  spec_file: katana-inventorycontroller-api-openapi.yml
+  capability_id: BC-530
+  capability_id_l1: BC-530
+  capability_name: Inventory Management
+  confidence: 0.85
+  evidence: GET /inventory  InventoryController.getInventories; GET /inventory_movements  InventoryController.getInventoryMovements
+  reason: Reads stock positions and inventory movement history — core Inventory Management; spans stock
+    levels and movement tracking so no single L2 is named.
+- tag: PriceListController
+  spec_file: katana-pricelistcontroller-api-openapi.yml
+  capability_id: BC-440.20
+  capability_id_l1: BC-440
+  capability_name: Price List Management
+  confidence: 0.85
+  evidence: POST /price_lists PriceListController.create; schemas PriceListCreateDto, PriceListPatchDto
+  reason: Explicit lifecycle management of price lists (create, read, update, delete), which is precisely
+    price book / price list maintenance.
+- tag: StocktakeController
+  spec_file: katana-stocktakecontroller-api-openapi.yml
+  capability_id: BC-530.40
+  capability_id_l1: BC-530
+  capability_name: Inventory Accuracy Management
+  confidence: 0.85
+  evidence: POST /stocktakes  StocktakeController.createStocktake
+  reason: Stocktakes are physical inventory counts, which is precisely inventory accuracy management (cycle
+    counts, physical inventory, discrepancy resolution).
+- tag: CustomerController
+  spec_file: katana-customercontroller-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.8
+  evidence: POST /customers  CustomerController.createCustomer, CreateCustomerDto
+  reason: Create/read/update/delete of customer records is customer master data maintenance; no selling
+    or service operations present, so Customer Data Management is the honest fit.
+- tag: PriceListRowController
+  spec_file: katana-pricelistrowcontroller-api-openapi.yml
+  capability_id: BC-440.20
+  capability_id_l1: BC-440
+  capability_name: Price List Management
+  confidence: 0.8
+  evidence: POST /price_list_rows PriceListRowController.create; CreatePriceListRowsDto
+  reason: CRUD over individual price line items within a price list — direct price book maintenance.
+- tag: StocktakeRowController
+  spec_file: katana-stocktakerowcontroller-api-openapi.yml
+  capability_id: BC-530.40
+  capability_id_l1: BC-530
+  capability_name: Inventory Accuracy Management
+  confidence: 0.8
+  evidence: POST /stocktake_rows  StocktakeRowController.createStocktakeRows
+  reason: Counted-line records within a stocktake document — the line-level surface of physical inventory
+    counting, i.e. inventory accuracy management.
+- tag: SalesOrderController
+  spec_file: katana-salesordercontroller-api-openapi.yml
+  capability_id: BC-520.40
+  capability_id_l1: BC-520
+  capability_name: Order Fulfilment Management
+  confidence: 0.75
+  evidence: POST /sales_orders SalesOrderController.createSalesOrder; GET /sales_orders/{id}/returnable_items
+  reason: Creation, amendment, search and returnable-item inspection of sales orders is customer order
+    capture and fulfilment orchestration in an inventory/ERP context. Some ambiguity with sales-side order
+    capture (BC-410), hence not higher.
+- tag: SalesOrderFulfillmentController
+  spec_file: katana-salesorderfulfillmentcontroller-api-openapi.yml
+  capability_id: BC-520.40
+  capability_id_l1: BC-520
+  capability_name: Order Fulfilment Management
+  confidence: 0.75
+  evidence: POST /sales_order_fulfillments  SalesOrderFulfillmentController.createSalesOrderFulfillment
+  reason: Operations create, update and delete fulfilment records against sales orders in an inventory/manufacturing
+    ERP, with traceability input items — this is order fulfilment orchestration, not freight capacity
+    or carrier work.
+- tag: StockAdjustmentController
+  spec_file: katana-stockadjustmentcontroller-api-openapi.yml
+  capability_id: BC-530.40
+  capability_id_l1: BC-530
+  capability_name: Inventory Accuracy Management
+  confidence: 0.75
+  evidence: POST /stock_adjustments  StockAdjustmentController.createStockAdjustment; CreateStockAdjustmentRowDto
+  reason: Stock adjustment postings correct on-hand quantities against records — inventory accuracy/discrepancy
+    resolution within inventory management.
+- tag: BomRowController
+  spec_file: katana-bomrowcontroller-api-openapi.yml
+  capability_id: BC-820.30
+  capability_id_l1: BC-820
+  capability_name: Product Specification Management
+  confidence: 0.72
+  evidence: POST /bom_rows  BomRowController.createBomRow, schema BomRowCreateDto
+  reason: BOM rows are bill-of-materials lines for manufactured products; CRUD on them maintains product
+    structure/specification, matching Product Specification Management (BOM definition). Slight ambiguity
+    between product spec and production planning framing keeps confidence moderate.
+- tag: CustomerAddressController
+  spec_file: katana-customeraddresscontroller-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.72
+  evidence: POST /customer_addresses  CustomerAddressController.createCustomerAddress
+  reason: CRUD over customer address records is maintenance of customer master data attributes, i.e. Customer
+    Data Management.
+- tag: PriceListCustomerController
+  spec_file: katana-pricelistcustomercontroller-api-openapi.yml
+  capability_id: BC-440.20
+  capability_id_l1: BC-440
+  capability_name: Price List Management
+  confidence: 0.7
+  evidence: POST /price_list_customers ... CreatePriceListCustomersDto
+  reason: Assignment of customers to price lists — part of price list administration (which customers
+    receive which prices). Slightly lower confidence as it also touches customer/segment pricing strategy.
+- tag: PurchaseOrderReceiveController
+  spec_file: katana-purchaseorderreceivecontroller-api-openapi.yml
+  capability_id: BC-500.40
+  capability_id_l1: BC-500
+  capability_name: Procure-to-Pay Operations Management
+  confidence: 0.7
+  evidence: POST /purchase_order_receive PurchaseOrderReceiveController.receivePartially; schema PurchaseOrderRowReceiveDto
+  reason: Recording partial receipt of purchase order lines is a procure-to-pay receipting operation.
+    Could alternatively be read as warehouse inbound putaway, but the endpoint is anchored on the purchase
+    order rather than on dock/putaway operations, hence moderate confidence.
+- tag: SerialNumberController
+  spec_file: katana-serialnumbercontroller-api-openapi.yml
+  capability_id: BC-530
+  capability_id_l1: BC-530
+  capability_name: Inventory Management
+  confidence: 0.7
+  evidence: GET /serial_numbers/serial_numbers_stock  SerialNumberController.list; AddSerialNumbersToEntityDto
+  reason: Serial-number assignment and serialised stock listing supports the vendor's stated 'lot/ serial-number
+    traceability' over inventory; maps to inventory management at L1, with no single L2 clearly named.
+- tag: StockTransferController
+  spec_file: katana-stocktransfercontroller-api-openapi.yml
+  capability_id: BC-530
+  capability_id_l1: BC-530
+  capability_name: Inventory Management
+  confidence: 0.7
+  evidence: POST /stock_transfers  StockTransferController.createStockTransfer; UpdateStockTransferStatusDto
+  reason: Creation and status tracking of stock transfers between the platform's multiple inventory locations
+    — inventory management across the network; no single L2 is cleanly named by the evidence.
+- tag: SupplierController
+  spec_file: katana-suppliercontroller-api-openapi.yml
+  capability_id: BC-510
+  capability_id_l1: BC-510
+  capability_name: Supplier Management
+  confidence: 0.7
+  evidence: POST /suppliers  SupplierController.createSupplier; GET /suppliers  SupplierController.getAllSuppliers
+  reason: Create/update/delete/list of suppliers is maintenance of the supplier record set in a manufacturing
+    ERP — Supplier Management. No evidence of scorecards, risk or onboarding workflow, so L2 left null.
