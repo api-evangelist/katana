@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController WebhookLogsController API
+  title: katana-api-gateway Webhook Logs Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -25,6 +25,8 @@ paths:
               $ref: '#/components/schemas/WebhookLogsExportDto'
         required: true
       operationId: WebhookLogsController.exportWebhookLogs
+      summary: Webhook logs controller export webhook logs
+      x-summary-source: derived
 components:
   schemas:
     WebhookLogsExportDto:
@@ -33,12 +35,10 @@ components:
       properties:
         webhook_id:
           type: integer
-          nullable: false
           maximum: 2147483647
           minimum: 1
         event:
           type: string
-          nullable: false
           enum:
           - sales_order.created
           - sales_order.packed
@@ -104,19 +104,15 @@ components:
           - product_recipe_row.updated
         status_code:
           type: integer
-          nullable: false
           minimum: 100
           maximum: 600
         delivered:
           type: boolean
           default: false
-          nullable: false
         created_at_min:
           type: string
           format: date
-          nullable: false
         created_at_max:
           type: string
           format: date
-          nullable: false
       additionalProperties: false

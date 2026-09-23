@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController RecipeController API
+  title: katana-api-gateway Recipe Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -25,6 +25,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Recipe controller delete recipe by id
+      x-summary-source: derived
   /recipes:
     post:
       x-controller-name: RecipeController
@@ -41,6 +43,8 @@ paths:
               $ref: '#/components/schemas/RecipeRowCreateManyDto'
         required: true
       operationId: RecipeController.createRecipeRow
+      summary: Recipe controller create recipe row
+      x-summary-source: derived
     get:
       x-controller-name: RecipeController
       x-operation-name: getAllRecipes
@@ -86,6 +90,8 @@ paths:
         schema:
           type: integer
           format: int32
+      summary: Recipe controller get all recipes
+      x-summary-source: derived
 components:
   schemas:
     RecipeRowCreateManyDto:

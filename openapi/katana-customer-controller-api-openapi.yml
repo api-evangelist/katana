@@ -1,20 +1,20 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController CustomerController API
+  title: katana-api-gateway Customer Controller API
   version: 0.0.1
   description: public api
   contact: {}
 servers:
 - url: https://api.katanamrp.com/v1
 tags:
-- name: CustomerController
+- name: Customer Controller
 paths:
   /customers/{id}:
     patch:
       x-controller-name: CustomerController
       x-operation-name: updateVariant
       tags:
-      - CustomerController
+      - Customer Controller
       responses:
         '200':
           description: Return value of CustomerController.updateVariant
@@ -33,11 +33,13 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Customer controller update variant
+      x-summary-source: derived
     delete:
       x-controller-name: CustomerController
       x-operation-name: deleteCustomer
       tags:
-      - CustomerController
+      - Customer Controller
       responses:
         '200':
           description: Return value of CustomerController.deleteCustomer
@@ -49,12 +51,14 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Customer controller delete customer
+      x-summary-source: derived
   /customers:
     post:
       x-controller-name: CustomerController
       x-operation-name: createCustomer
       tags:
-      - CustomerController
+      - Customer Controller
       responses:
         '200':
           description: Return value of CustomerController.createCustomer
@@ -65,11 +69,13 @@ paths:
               $ref: '#/components/schemas/CreateCustomerDto'
         required: true
       operationId: CustomerController.createCustomer
+      summary: Customer controller create customer
+      x-summary-source: derived
     get:
       x-controller-name: CustomerController
       x-operation-name: getAllCustomers
       tags:
-      - CustomerController
+      - Customer Controller
       responses:
         '200':
           description: Return value of CustomerController.getAllCustomers
@@ -136,6 +142,8 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Customer controller get all customers
+      x-summary-source: derived
 components:
   schemas:
     CreateCustomerDto:
@@ -164,8 +172,9 @@ components:
         comment:
           type: string
         discount_rate:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           minimum: 0
           maximum: 100
         addresses:
@@ -180,35 +189,45 @@ components:
                 - billing
                 - shipping
               first_name:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               last_name:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               company:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               phone:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               line_1:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               line_2:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               city:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               state:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               zip:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               country:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               default:
                 type: boolean
             required:
@@ -222,53 +241,65 @@ components:
       type: object
       properties:
         name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         first_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         last_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         company:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         email:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         reference_id:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         category:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         currency:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         phone:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         comment:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         default_shipping_id:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           maximum: 2147483647
           minimum: 1
         discount_rate:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           minimum: 0
           maximum: 100
       additionalProperties: false

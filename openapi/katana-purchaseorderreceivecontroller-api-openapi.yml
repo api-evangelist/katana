@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController PurchaseOrderReceiveController API
+  title: katana-api-gateway Purchase Order Receive Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -30,6 +30,8 @@ paths:
                 minItems: 1
         required: true
       operationId: PurchaseOrderReceiveController.receivePartially
+      summary: Purchase order receive controller receive partially
+      x-summary-source: derived
 components:
   schemas:
     PurchaseOrderRowReceiveDto:
@@ -52,8 +54,9 @@ components:
             type: object
             properties:
               batch_id:
-                type: integer
-                nullable: true
+                type:
+                - integer
+                - 'null'
                 maximum: 2147483647
               quantity:
                 type: number
@@ -64,7 +67,6 @@ components:
             additionalProperties: false
         location_id:
           type: integer
-          nullable: false
           maximum: 2147483647
           minimum: 1
       required:

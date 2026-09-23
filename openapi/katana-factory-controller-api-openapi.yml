@@ -1,21 +1,23 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController FactoryController API
+  title: katana-api-gateway Factory Controller API
   version: 0.0.1
   description: public api
   contact: {}
 servers:
 - url: https://api.katanamrp.com/v1
 tags:
-- name: FactoryController
+- name: Factory Controller
 paths:
   /factory:
     get:
       x-controller-name: FactoryController
       x-operation-name: getFactory
       tags:
-      - FactoryController
+      - Factory Controller
       responses:
         '200':
           description: Return value of FactoryController.getFactory
       operationId: FactoryController.getFactory
+      summary: Factory controller get factory
+      x-summary-source: derived

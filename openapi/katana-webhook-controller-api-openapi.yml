@@ -1,20 +1,20 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController WebhookController API
+  title: katana-api-gateway Webhook Controller API
   version: 0.0.1
   description: public api
   contact: {}
 servers:
 - url: https://api.katanamrp.com/v1
 tags:
-- name: WebhookController
+- name: webhook controller
 paths:
   /webhooks/{id}:
     patch:
       x-controller-name: WebhookController
       x-operation-name: updateWebhook
       tags:
-      - WebhookController
+      - webhook controller
       responses:
         '200':
           description: Return value of WebhookController.updateWebhook
@@ -32,11 +32,13 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Webhook controller update webhook
+      x-summary-source: derived
     get:
       x-controller-name: WebhookController
       x-operation-name: getWebhook
       tags:
-      - WebhookController
+      - webhook controller
       responses:
         '200':
           description: Return value of WebhookController.getWebhook
@@ -48,11 +50,13 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Webhook controller get webhook
+      x-summary-source: derived
     delete:
       x-controller-name: WebhookController
       x-operation-name: deleteWebhook
       tags:
-      - WebhookController
+      - webhook controller
       responses:
         '200':
           description: Return value of WebhookController.deleteWebhook
@@ -64,12 +68,14 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Webhook controller delete webhook
+      x-summary-source: derived
   /webhooks:
     post:
       x-controller-name: WebhookController
       x-operation-name: createWebhook
       tags:
-      - WebhookController
+      - webhook controller
       responses:
         '200':
           description: Return value of WebhookController.createWebhook
@@ -80,11 +86,13 @@ paths:
               $ref: '#/components/schemas/CreateWebhookDto'
         required: true
       operationId: WebhookController.createWebhook
+      summary: Webhook controller create webhook
+      x-summary-source: derived
     get:
       x-controller-name: WebhookController
       x-operation-name: getAllWebhooks
       tags:
-      - WebhookController
+      - webhook controller
       responses:
         '200':
           description: Return value of WebhookController.getAllWebhooks
@@ -112,87 +120,10 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Webhook controller get all webhooks
+      x-summary-source: derived
 components:
   schemas:
-    UpdateWebhookDto:
-      title: UpdateWebhookDto
-      type: object
-      properties:
-        url:
-          type: string
-          pattern: https://*
-        subscribed_events:
-          type: array
-          items:
-            type: string
-            enum:
-            - sales_order.created
-            - sales_order.packed
-            - sales_order.delivered
-            - sales_order.updated
-            - sales_order.approved
-            - sales_order.deleted
-            - sales_order.availability_updated
-            - purchase_order.created
-            - purchase_order.updated
-            - purchase_order.deleted
-            - purchase_order.partially_received
-            - purchase_order.received
-            - purchase_order.approved
-            - purchase_order_row.created
-            - purchase_order_row.received
-            - purchase_order_row.updated
-            - purchase_order_row.deleted
-            - outsourced_purchase_order.created
-            - outsourced_purchase_order.updated
-            - outsourced_purchase_order.deleted
-            - outsourced_purchase_order.received
-            - outsourced_purchase_order.approved
-            - outsourced_purchase_order_row.created
-            - outsourced_purchase_order_row.updated
-            - outsourced_purchase_order_row.deleted
-            - outsourced_purchase_order_row.received
-            - outsourced_purchase_order_recipe_row.created
-            - outsourced_purchase_order_recipe_row.updated
-            - outsourced_purchase_order_recipe_row.deleted
-            - manufacturing_order.created
-            - manufacturing_order.updated
-            - manufacturing_order.deleted
-            - manufacturing_order.in_progress
-            - manufacturing_order.blocked
-            - manufacturing_order.done
-            - manufacturing_order_recipe_row.created
-            - manufacturing_order_recipe_row.updated
-            - manufacturing_order_recipe_row.deleted
-            - manufacturing_order_recipe_row.ingredients_in_stock
-            - manufacturing_order_operation_row.created
-            - manufacturing_order_operation_row.updated
-            - manufacturing_order_operation_row.deleted
-            - manufacturing_order_operation_row.in_progress
-            - manufacturing_order_operation_row.paused
-            - manufacturing_order_operation_row.blocked
-            - manufacturing_order_operation_row.completed
-            - current_inventory.product_updated
-            - current_inventory.material_updated
-            - current_inventory.product_out_of_stock
-            - current_inventory.material_out_of_stock
-            - product.created
-            - product.updated
-            - product.deleted
-            - material.created
-            - material.updated
-            - material.deleted
-            - variant.created
-            - variant.updated
-            - variant.deleted
-            - product_recipe_row.created
-            - product_recipe_row.deleted
-            - product_recipe_row.updated
-        description:
-          type: string
-        enabled:
-          type: boolean
-      additionalProperties: false
     CreateWebhookDto:
       title: CreateWebhookDto
       type: object
@@ -274,4 +205,83 @@ components:
       required:
       - url
       - subscribed_events
+      additionalProperties: false
+    UpdateWebhookDto:
+      title: UpdateWebhookDto
+      type: object
+      properties:
+        url:
+          type: string
+          pattern: https://*
+        subscribed_events:
+          type: array
+          items:
+            type: string
+            enum:
+            - sales_order.created
+            - sales_order.packed
+            - sales_order.delivered
+            - sales_order.updated
+            - sales_order.approved
+            - sales_order.deleted
+            - sales_order.availability_updated
+            - purchase_order.created
+            - purchase_order.updated
+            - purchase_order.deleted
+            - purchase_order.partially_received
+            - purchase_order.received
+            - purchase_order.approved
+            - purchase_order_row.created
+            - purchase_order_row.received
+            - purchase_order_row.updated
+            - purchase_order_row.deleted
+            - outsourced_purchase_order.created
+            - outsourced_purchase_order.updated
+            - outsourced_purchase_order.deleted
+            - outsourced_purchase_order.received
+            - outsourced_purchase_order.approved
+            - outsourced_purchase_order_row.created
+            - outsourced_purchase_order_row.updated
+            - outsourced_purchase_order_row.deleted
+            - outsourced_purchase_order_row.received
+            - outsourced_purchase_order_recipe_row.created
+            - outsourced_purchase_order_recipe_row.updated
+            - outsourced_purchase_order_recipe_row.deleted
+            - manufacturing_order.created
+            - manufacturing_order.updated
+            - manufacturing_order.deleted
+            - manufacturing_order.in_progress
+            - manufacturing_order.blocked
+            - manufacturing_order.done
+            - manufacturing_order_recipe_row.created
+            - manufacturing_order_recipe_row.updated
+            - manufacturing_order_recipe_row.deleted
+            - manufacturing_order_recipe_row.ingredients_in_stock
+            - manufacturing_order_operation_row.created
+            - manufacturing_order_operation_row.updated
+            - manufacturing_order_operation_row.deleted
+            - manufacturing_order_operation_row.in_progress
+            - manufacturing_order_operation_row.paused
+            - manufacturing_order_operation_row.blocked
+            - manufacturing_order_operation_row.completed
+            - current_inventory.product_updated
+            - current_inventory.material_updated
+            - current_inventory.product_out_of_stock
+            - current_inventory.material_out_of_stock
+            - product.created
+            - product.updated
+            - product.deleted
+            - material.created
+            - material.updated
+            - material.deleted
+            - variant.created
+            - variant.updated
+            - variant.deleted
+            - product_recipe_row.created
+            - product_recipe_row.deleted
+            - product_recipe_row.updated
+        description:
+          type: string
+        enabled:
+          type: boolean
       additionalProperties: false

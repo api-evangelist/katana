@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController OperatorsController API
+  title: katana-api-gateway Operators Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -38,3 +38,5 @@ paths:
         in: query
         schema:
           type: number
+      summary: Operators controller find
+      x-summary-source: derived

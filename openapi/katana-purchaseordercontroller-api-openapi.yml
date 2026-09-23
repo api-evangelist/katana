@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController PurchaseOrderController API
+  title: katana-api-gateway Purchase Order Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -33,6 +33,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Purchase order controller update purchase order
+      x-summary-source: derived
     get:
       x-controller-name: PurchaseOrderController
       x-operation-name: getPurchaseOrder
@@ -57,6 +59,8 @@ paths:
             type: string
             enum:
             - supplier
+      summary: Purchase order controller get purchase order
+      x-summary-source: derived
     delete:
       x-controller-name: PurchaseOrderController
       x-operation-name: deletePurchaseOrder
@@ -73,6 +77,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Purchase order controller delete purchase order
+      x-summary-source: derived
   /purchase_orders:
     post:
       x-controller-name: PurchaseOrderController
@@ -89,6 +95,8 @@ paths:
               $ref: '#/components/schemas/CreatePurchaseOrderDto'
         required: true
       operationId: PurchaseOrderController.createPurchaseOrder
+      summary: Purchase order controller create purchase order
+      x-summary-source: derived
     get:
       x-controller-name: PurchaseOrderController
       x-operation-name: getPurchaseOrders
@@ -188,41 +196,10 @@ paths:
             type: string
             enum:
             - supplier
+      summary: Purchase order controller get purchase orders
+      x-summary-source: derived
 components:
   schemas:
-    UpdatePurchaseOrderDto:
-      title: UpdatePurchaseOrderDto
-      type: object
-      properties:
-        order_no:
-          type: string
-          minLength: 1
-        supplier_id:
-          type: integer
-          maximum: 2147483647
-        currency:
-          type: string
-          minLength: 1
-        status:
-          type: string
-          enum:
-          - DRAFT
-          - NOT_RECEIVED
-          - RECEIVED
-          - PARTIALLY_RECEIVED
-        expected_arrival_date:
-          type: string
-        order_created_date:
-          type: string
-        location_id:
-          type: integer
-          maximum: 2147483647
-        tracking_location_id:
-          type: integer
-          maximum: 2147483647
-        additional_info:
-          type: string
-      additionalProperties: false
     CreatePurchaseOrderDto:
       title: CreatePurchaseOrderDto
       type: object
@@ -281,13 +258,15 @@ components:
                 minimum: 0
                 maximum: 100000000000000000
               purchase_uom_conversion_rate:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 100000000000000000
               purchase_uom:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
                 minLength: 1
                 maxLength: 7
               tax_rate:
@@ -298,7 +277,6 @@ components:
                 type: string
               location_id:
                 type: integer
-                nullable: false
                 maximum: 2147483647
                 minimum: 1
             required:
@@ -310,4 +288,37 @@ components:
       - supplier_id
       - location_id
       - purchase_order_rows
+      additionalProperties: false
+    UpdatePurchaseOrderDto:
+      title: UpdatePurchaseOrderDto
+      type: object
+      properties:
+        order_no:
+          type: string
+          minLength: 1
+        supplier_id:
+          type: integer
+          maximum: 2147483647
+        currency:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          enum:
+          - DRAFT
+          - NOT_RECEIVED
+          - RECEIVED
+          - PARTIALLY_RECEIVED
+        expected_arrival_date:
+          type: string
+        order_created_date:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        tracking_location_id:
+          type: integer
+          maximum: 2147483647
+        additional_info:
+          type: string
       additionalProperties: false

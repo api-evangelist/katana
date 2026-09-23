@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController StocktakeController API
+  title: katana-api-gateway Stocktake Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -32,6 +32,8 @@ paths:
         schema:
           type: number
         required: true
+      summary: Stocktake controller update by id
+      x-summary-source: derived
     delete:
       x-controller-name: StocktakeController
       x-operation-name: deleteById
@@ -47,6 +49,8 @@ paths:
         schema:
           type: number
         required: true
+      summary: Stocktake controller delete by id
+      x-summary-source: derived
   /stocktakes:
     post:
       x-controller-name: StocktakeController
@@ -63,6 +67,8 @@ paths:
               $ref: '#/components/schemas/CreateStocktakeDto'
         required: true
       operationId: StocktakeController.createStocktake
+      summary: Stocktake controller create stocktake
+      x-summary-source: derived
     get:
       x-controller-name: StocktakeController
       x-operation-name: findStocktakes
@@ -120,6 +126,8 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Stocktake controller find stocktakes
+      x-summary-source: derived
 components:
   schemas:
     CreateStocktakeDto:
@@ -135,8 +143,9 @@ components:
           type: string
           maxLength: 540
         additional_info:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         created_date:
           type: string
         set_remaining_items_as_counted:
@@ -151,19 +160,23 @@ components:
                 type: integer
                 maximum: 2147483647
               batch_id:
-                type: integer
-                nullable: true
+                type:
+                - integer
+                - 'null'
                 maximum: 2147483647
               bin_location_id:
-                type: integer
-                nullable: true
+                type:
+                - integer
+                - 'null'
                 maximum: 2147483647
               notes:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               counted_quantity:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 maximum: 2147483647
             required:
             - variant_id
@@ -190,17 +203,20 @@ components:
           - COUNTED
           - COMPLETED
         reason:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           maxLength: 540
         additional_info:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         created_date:
           type: string
         completed_date:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         set_remaining_items_as_counted:
           type: boolean
       additionalProperties: false

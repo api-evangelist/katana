@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController MaterialController API
+  title: katana-api-gateway Material Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -33,6 +33,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Material controller update material
+      x-summary-source: derived
     get:
       x-controller-name: MaterialController
       x-operation-name: getMaterial
@@ -57,6 +59,8 @@ paths:
             type: string
             enum:
             - supplier
+      summary: Material controller get material
+      x-summary-source: derived
     delete:
       x-controller-name: MaterialController
       x-operation-name: deleteManufacturingOrder
@@ -73,6 +77,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Material controller delete manufacturing order
+      x-summary-source: derived
   /materials:
     post:
       x-controller-name: MaterialController
@@ -89,6 +95,8 @@ paths:
               $ref: '#/components/schemas/CreateMaterialDto'
         required: true
       operationId: MaterialController.createMaterial
+      summary: Material controller create material
+      x-summary-source: derived
     get:
       x-controller-name: MaterialController
       x-operation-name: getAllMaterials
@@ -169,8 +177,84 @@ paths:
             type: string
             enum:
             - supplier
+      summary: Material controller get all materials
+      x-summary-source: derived
 components:
   schemas:
+    MaterialUpdateDto:
+      title: MaterialUpdateDto
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 256
+        uom:
+          type: string
+          minLength: 1
+          maxLength: 7
+        category_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 35
+        default_supplier_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+          minimum: 1
+        purchase_uom:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 7
+        purchase_uom_conversion_rate:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        batch_tracked:
+          type: boolean
+          default: false
+        is_sellable:
+          type: boolean
+          default: false
+        is_archived:
+          type: boolean
+          default: false
+        configs:
+          type: array
+          items:
+            title: ItemVariantConfigDto
+            type: object
+            properties:
+              id:
+                type: number
+              name:
+                type: string
+              values:
+                type: array
+                items:
+                  type: string
+            required:
+            - values
+            additionalProperties: false
+          minItems: 1
+          maxItems: 10
+        additional_info:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        custom_field_collection_id:
+          type:
+          - number
+          - 'null'
+      additionalProperties: false
     CreateMaterialDto:
       title: CreateMaterialDto
       type: object
@@ -179,7 +263,6 @@ components:
           type: string
         uom:
           type: string
-          nullable: false
           minLength: 1
           maxLength: 7
         category_name:
@@ -187,8 +270,9 @@ components:
         default_supplier_id:
           type: number
         purchase_uom:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
           maxLength: 7
         purchase_uom_conversion_rate:
@@ -205,8 +289,9 @@ components:
               sku:
                 type: string
               purchase_price:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 100000000000
               internal_barcode:
@@ -252,13 +337,15 @@ components:
                   - field_value
                   additionalProperties: false
               lead_time:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 2147483647
               minimum_order_quantity:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 2147483647
             additionalProperties: false
@@ -283,84 +370,12 @@ components:
         additional_info:
           type: string
         custom_field_collection_id:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
         is_sellable:
           type: boolean
       required:
       - name
       - variants
-      additionalProperties: false
-    MaterialUpdateDto:
-      title: MaterialUpdateDto
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: false
-          minLength: 1
-          maxLength: 256
-        uom:
-          type: string
-          nullable: false
-          minLength: 1
-          maxLength: 7
-        category_name:
-          type: string
-          nullable: true
-          minLength: 1
-          maxLength: 35
-        default_supplier_id:
-          type: integer
-          nullable: true
-          maximum: 2147483647
-          minimum: 1
-        purchase_uom:
-          type: string
-          nullable: true
-          minLength: 1
-          maxLength: 7
-        purchase_uom_conversion_rate:
-          type: number
-          nullable: true
-          minimum: 0
-          maximum: 2147483647
-        batch_tracked:
-          type: boolean
-          default: false
-          nullable: false
-        is_sellable:
-          type: boolean
-          default: false
-          nullable: false
-        is_archived:
-          type: boolean
-          default: false
-          nullable: false
-        configs:
-          type: array
-          items:
-            title: ItemVariantConfigDto
-            type: object
-            properties:
-              id:
-                type: number
-              name:
-                type: string
-              values:
-                type: array
-                items:
-                  type: string
-            required:
-            - values
-            additionalProperties: false
-          minItems: 1
-          maxItems: 10
-        additional_info:
-          type: string
-          nullable: true
-          minLength: 1
-        custom_field_collection_id:
-          type: number
-          nullable: true
       additionalProperties: false

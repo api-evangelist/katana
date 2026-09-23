@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController RecipeRowController API
+  title: katana-api-gateway Recipe Row Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -32,6 +32,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Recipe row controller update recipe row
+      x-summary-source: derived
     delete:
       x-controller-name: RecipeRowController
       x-operation-name: deleteRecipeRow
@@ -47,6 +49,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Recipe row controller delete recipe row
+      x-summary-source: derived
 components:
   schemas:
     RecipeRowUpdateDto:

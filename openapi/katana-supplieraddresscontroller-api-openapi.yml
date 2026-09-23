@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController SupplierAddressController API
+  title: katana-api-gateway Supplier Address Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -33,6 +33,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Supplier address controller update supplier address
+      x-summary-source: derived
     delete:
       x-controller-name: SupplierAddressController
       x-operation-name: deleteSupplierAddress
@@ -49,6 +51,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Supplier address controller delete supplier address
+      x-summary-source: derived
   /supplier_addresses:
     post:
       x-controller-name: SupplierAddressController
@@ -65,6 +69,8 @@ paths:
               $ref: '#/components/schemas/SupplierAddressCreateDto'
         required: true
       operationId: SupplierAddressController.createSupplierAddress
+      summary: Supplier address controller create supplier address
+      x-summary-source: derived
     get:
       x-controller-name: SupplierAddressController
       x-operation-name: getAllSupplierAddresses
@@ -131,6 +137,8 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Supplier address controller get all supplier addresses
+      x-summary-source: derived
 components:
   schemas:
     SupplierAddressCreateDto:
@@ -138,26 +146,31 @@ components:
       type: object
       properties:
         line_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         line_2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         city:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         state:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         zip:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         supplier_id:
           type: integer
-          nullable: false
           maximum: 2147483647
           minimum: 1
       required:
@@ -168,27 +181,33 @@ components:
       type: object
       properties:
         line_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         line_2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         city:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         state:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         zip:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
       additionalProperties: false

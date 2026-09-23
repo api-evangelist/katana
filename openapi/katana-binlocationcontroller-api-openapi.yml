@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController BinLocationController API
+  title: katana-api-gateway Bin Location Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -33,6 +33,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Bin location controller update bin location
+      x-summary-source: derived
     delete:
       x-controller-name: BinLocationController
       x-operation-name: deleteBinLocation
@@ -49,6 +51,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Bin location controller delete bin location
+      x-summary-source: derived
   /bin_locations:
     post:
       x-controller-name: BinLocationController
@@ -65,6 +69,8 @@ paths:
               $ref: '#/components/schemas/BinLocationCreateDto'
         required: true
       operationId: BinLocationController.createBinLocation
+      summary: Bin location controller create bin location
+      x-summary-source: derived
     get:
       x-controller-name: BinLocationController
       x-operation-name: findBinLocations
@@ -101,33 +107,32 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Bin location controller find bin locations
+      x-summary-source: derived
 components:
   schemas:
-    BinLocationUpdateDto:
-      title: BinLocationUpdateDto
-      type: object
-      properties:
-        bin_name:
-          type: string
-          nullable: false
-          minLength: 1
-      required:
-      - bin_name
-      additionalProperties: false
     BinLocationCreateDto:
       title: BinLocationCreateDto
       type: object
       properties:
         bin_name:
           type: string
-          nullable: false
           minLength: 1
         location_id:
           type: integer
-          nullable: false
           maximum: 2147483647
           minimum: 1
       required:
       - bin_name
       - location_id
+      additionalProperties: false
+    BinLocationUpdateDto:
+      title: BinLocationUpdateDto
+      type: object
+      properties:
+        bin_name:
+          type: string
+          minLength: 1
+      required:
+      - bin_name
       additionalProperties: false

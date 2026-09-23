@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController BinInventoryController API
+  title: katana-api-gateway Bin Inventory Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -60,3 +60,5 @@ paths:
         schema:
           type: string
           pattern: ^(\d+|null)$
+      summary: Bin inventory controller find and paginate
+      x-summary-source: derived

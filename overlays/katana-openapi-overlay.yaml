@@ -3,8 +3,8 @@ info:
   title: API Evangelist enhancements for Katana API
   version: 1.0.0
 extends: openapi/katana-openapi-original.json
-generated: '2026-07-19'
-method: generated
+x-generated: '2026-07-19'
+x-method: generated
 actions:
 - target: $.info
   update:

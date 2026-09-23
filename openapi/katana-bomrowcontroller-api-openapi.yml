@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController BomRowController API
+  title: katana-api-gateway Bom Row Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -25,6 +25,8 @@ paths:
               $ref: '#/components/schemas/CreateBomRowsBatchDto'
         required: true
       operationId: BomRowController.createBomRowsBatch
+      summary: Bom row controller create bom rows batch
+      x-summary-source: derived
   /bom_rows/{id}:
     patch:
       x-controller-name: BomRowController
@@ -48,6 +50,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Bom row controller update bom row
+      x-summary-source: derived
     delete:
       x-controller-name: BomRowController
       x-operation-name: deleteBomRow
@@ -63,6 +67,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Bom row controller delete bom row
+      x-summary-source: derived
   /bom_rows:
     post:
       x-controller-name: BomRowController
@@ -79,6 +85,8 @@ paths:
               $ref: '#/components/schemas/BomRowCreateDto'
         required: true
       operationId: BomRowController.createBomRow
+      summary: Bom row controller create bom row
+      x-summary-source: derived
     get:
       x-controller-name: BomRowController
       x-operation-name: getBomRows
@@ -122,6 +130,8 @@ paths:
         schema:
           type: integer
           format: int32
+      summary: Bom row controller get bom rows
+      x-summary-source: derived
 components:
   schemas:
     BomRowCreateDto:
@@ -141,13 +151,15 @@ components:
           minimum: 1
           maximum: 2147483647
         quantity:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           minimum: 0
           maximum: 100000000000000000
         notes:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           maxLength: 255
       required:
       - product_item_id
@@ -163,13 +175,15 @@ components:
           minimum: 1
           maximum: 2147483647
         quantity:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           minimum: 0
           maximum: 100000000000000000
         notes:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           maxLength: 255
       additionalProperties: false
     CreateBomRowsBatchDto:
@@ -200,13 +214,15 @@ components:
                     minimum: 1
                     maximum: 2147483647
                   quantity:
-                    type: number
-                    nullable: true
+                    type:
+                    - number
+                    - 'null'
                     minimum: 0
                     maximum: 100000000000000000
                   notes:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     maxLength: 255
                 required:
                 - product_item_id

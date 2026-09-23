@@ -1,30 +1,32 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController UsersController API
+  title: katana-api-gateway Users Controller API
   version: 0.0.1
   description: public api
   contact: {}
 servers:
 - url: https://api.katanamrp.com/v1
 tags:
-- name: UsersController
+- name: Users Controller
 paths:
   /user_info:
     get:
       x-controller-name: UsersController
       x-operation-name: getUserInfo
       tags:
-      - UsersController
+      - Users Controller
       responses:
         '200':
           description: Return value of UsersController.getUserInfo
       operationId: UsersController.getUserInfo
+      summary: Users controller get user info
+      x-summary-source: derived
   /users:
     get:
       x-controller-name: UsersController
       x-operation-name: getAllUsers
       tags:
-      - UsersController
+      - Users Controller
       responses:
         '200':
           description: Return value of UsersController.getAllUsers
@@ -37,3 +39,5 @@ paths:
             schema:
               type: object
               additionalProperties: true
+      summary: Users controller get all users
+      x-summary-source: derived

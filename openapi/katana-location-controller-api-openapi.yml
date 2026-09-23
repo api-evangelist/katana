@@ -1,20 +1,20 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController LocationController API
+  title: katana-api-gateway Location Controller API
   version: 0.0.1
   description: public api
   contact: {}
 servers:
 - url: https://api.katanamrp.com/v1
 tags:
-- name: LocationController
+- name: Location Controller
 paths:
   /locations/{id}:
     get:
       x-controller-name: LocationController
       x-operation-name: getLocation
       tags:
-      - LocationController
+      - Location Controller
       responses:
         '200':
           description: Return value of LocationController.getLocation
@@ -26,12 +26,14 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Location controller get location
+      x-summary-source: derived
   /locations:
     get:
       x-controller-name: LocationController
       x-operation-name: getAllLocations
       tags:
-      - LocationController
+      - Location Controller
       responses:
         '200':
           description: Return value of LocationController.getAllLocations
@@ -94,3 +96,5 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Location controller get all locations
+      x-summary-source: derived

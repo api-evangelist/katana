@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController PurchaseOrderAccountingMetadataController API
+  title: katana-api-gateway Purchase Order Accounting Metadata…
   version: 0.0.1
   description: public api
   contact: {}
@@ -37,3 +37,5 @@ paths:
         schema:
           type: integer
           format: int32
+      summary: Purchase order accounting metadata controller get all purchase order accounting…
+      x-summary-source: derived

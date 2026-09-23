@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController InventoryController API
+  title: katana-api-gateway Inventory Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -52,6 +52,8 @@ paths:
             enum:
             - variant
             - location
+      summary: Inventory controller get inventories
+      x-summary-source: derived
   /inventory_movements:
     get:
       x-controller-name: InventoryController
@@ -123,3 +125,5 @@ paths:
             schema:
               type: object
               additionalProperties: true
+      summary: Inventory controller get inventory movements
+      x-summary-source: derived

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController InventorySafetyStockLevelController API
+  title: katana-api-gateway Inventory Safety Stock Level Controller…
   version: 0.0.1
   description: public api
   contact: {}
@@ -40,6 +40,8 @@ paths:
                   maximum: 100000000000000000
         required: true
       operationId: InventorySafetyStockLevelController.createInventoryReorderPoint
+      summary: Inventory safety stock level controller create inventory reorder point
+      x-summary-source: derived
   /inventory_safety_stock_levels:
     post:
       x-controller-name: InventorySafetyStockLevelController
@@ -71,3 +73,5 @@ paths:
                   maximum: 100000000000000000
         required: true
       operationId: InventorySafetyStockLevelController.createInventorySafetyStockLevel
+      summary: Inventory safety stock level controller create inventory safety stock level
+      x-summary-source: derived

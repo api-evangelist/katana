@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController StocktakeRowController API
+  title: katana-api-gateway Stocktake Row Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -32,6 +32,8 @@ paths:
         schema:
           type: number
         required: true
+      summary: Stocktake row controller update by id
+      x-summary-source: derived
     delete:
       x-controller-name: StocktakeRowController
       x-operation-name: deleteById
@@ -47,6 +49,8 @@ paths:
         schema:
           type: number
         required: true
+      summary: Stocktake row controller delete by id
+      x-summary-source: derived
   /stocktake_rows:
     post:
       x-controller-name: StocktakeRowController
@@ -63,6 +67,8 @@ paths:
               $ref: '#/components/schemas/CreateStocktakeRowsDto'
         required: true
       operationId: StocktakeRowController.createStocktakeRows
+      summary: Stocktake row controller create stocktake rows
+      x-summary-source: derived
     get:
       x-controller-name: StocktakeRowController
       x-operation-name: findStocktakeRows
@@ -120,6 +126,8 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Stocktake row controller find stocktake rows
+      x-summary-source: derived
 components:
   schemas:
     CreateStocktakeRowsDto:
@@ -139,19 +147,23 @@ components:
                 type: integer
                 maximum: 2147483647
               batch_id:
-                type: integer
-                nullable: true
+                type:
+                - integer
+                - 'null'
                 maximum: 2147483647
               bin_location_id:
-                type: integer
-                nullable: true
+                type:
+                - integer
+                - 'null'
                 maximum: 2147483647
               notes:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
               counted_quantity:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 maximum: 2147483647
             required:
             - variant_id
@@ -167,18 +179,22 @@ components:
           type: integer
           maximum: 2147483647
         batch_id:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           maximum: 2147483647
         bin_location_id:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           maximum: 2147483647
         notes:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         counted_quantity:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           maximum: 2147483647
       additionalProperties: false

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController ProductController API
+  title: katana-api-gateway Product Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -33,6 +33,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Product controller update product
+      x-summary-source: derived
     get:
       x-controller-name: ProductController
       x-operation-name: getProduct
@@ -57,6 +59,8 @@ paths:
             type: string
             enum:
             - supplier
+      summary: Product controller get product
+      x-summary-source: derived
     delete:
       x-controller-name: ProductController
       x-operation-name: deleteProduct
@@ -73,6 +77,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Product controller delete product
+      x-summary-source: derived
   /products:
     post:
       x-controller-name: ProductController
@@ -89,6 +95,8 @@ paths:
               $ref: '#/components/schemas/CreateProductDto'
         required: true
       operationId: ProductController.createProduct
+      summary: Product controller create product
+      x-summary-source: derived
     get:
       x-controller-name: ProductController
       x-operation-name: getAllProducts
@@ -189,6 +197,8 @@ paths:
             type: string
             enum:
             - supplier
+      summary: Product controller get all products
+      x-summary-source: derived
 components:
   schemas:
     ProductUpdateDto:
@@ -197,66 +207,60 @@ components:
       properties:
         name:
           type: string
-          nullable: false
           minLength: 1
           maxLength: 256
         uom:
           type: string
-          nullable: false
           minLength: 1
           maxLength: 7
         category_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
           maxLength: 35
         is_producible:
           type: boolean
           default: false
-          nullable: false
         default_supplier_id:
-          type: integer
-          nullable: true
+          type:
+          - integer
+          - 'null'
           maximum: 2147483647
           minimum: 1
         is_purchasable:
           type: boolean
           default: false
-          nullable: false
         is_auto_assembly:
           type: boolean
           default: false
-          nullable: false
         is_sellable:
           type: boolean
           default: false
-          nullable: false
         is_archived:
           type: boolean
           default: false
-          nullable: false
         purchase_uom:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
           maxLength: 7
         purchase_uom_conversion_rate:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           minimum: 0
           maximum: 2147483647
         batch_tracked:
           type: boolean
           default: false
-          nullable: false
         serial_tracked:
           type: boolean
           default: false
-          nullable: false
         operations_in_sequence:
           type: boolean
           default: false
-          nullable: false
         configs:
           type: array
           items:
@@ -277,12 +281,14 @@ components:
           minItems: 1
           maxItems: 10
         additional_info:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
         custom_field_collection_id:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
       additionalProperties: false
     CreateProductDto:
       title: CreateProductDto
@@ -293,7 +299,6 @@ components:
           minLength: 1
         uom:
           type: string
-          nullable: false
           minLength: 1
           maxLength: 7
         category_name:
@@ -313,18 +318,16 @@ components:
         batch_tracked:
           type: boolean
           default: false
-          nullable: false
         serial_tracked:
           type: boolean
           default: false
-          nullable: false
         operations_in_sequence:
           type: boolean
           default: false
-          nullable: false
         purchase_uom:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           minLength: 1
           maxLength: 7
         purchase_uom_conversion_rate:
@@ -359,13 +362,15 @@ components:
                 type: string
                 minLength: 1
               purchase_price:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 100000000000
               sales_price:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 100000000000
               internal_barcode:
@@ -413,19 +418,22 @@ components:
                   - field_value
                   additionalProperties: false
               lead_time:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 2147483647
               minimum_order_quantity:
-                type: number
-                nullable: true
+                type:
+                - number
+                - 'null'
                 minimum: 0
                 maximum: 2147483647
             additionalProperties: false
         custom_field_collection_id:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
         is_sellable:
           type: boolean
       required:

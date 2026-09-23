@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController MakeToOrderMOController API
+  title: katana-api-gateway Make To Order MO Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -25,6 +25,8 @@ paths:
               $ref: '#/components/schemas/CreateMakeToOrderManufacturingOrderDto'
         required: true
       operationId: MakeToOrderMOController.createMTO
+      summary: Make to order MO controller create MTO
+      x-summary-source: derived
   /manufacturing_order_rerank:
     post:
       x-controller-name: MakeToOrderMOController
@@ -41,6 +43,8 @@ paths:
               $ref: '#/components/schemas/RerankManufacturingOrderDto'
         required: true
       operationId: MakeToOrderMOController.rerank
+      summary: Make to order MO controller rerank
+      x-summary-source: derived
   /manufacturing_order_unlink:
     post:
       x-controller-name: MakeToOrderMOController
@@ -57,32 +61,20 @@ paths:
               $ref: '#/components/schemas/UnlinkManufacturingOrderDto'
         required: true
       operationId: MakeToOrderMOController.unlink
+      summary: Make to order MO controller unlink
+      x-summary-source: derived
 components:
   schemas:
-    CreateMakeToOrderManufacturingOrderDto:
-      title: CreateMakeToOrderManufacturingOrderDto
+    RerankPlaceDto:
+      title: RerankPlaceDto
       type: object
       properties:
-        sales_order_row_id:
+        before_id:
           type: integer
-          maximum: 2147483647
-        create_subassemblies:
-          type: boolean
-          default: false
-      required:
-      - sales_order_row_id
-      additionalProperties: false
-    UnlinkManufacturingOrderDto:
-      title: UnlinkManufacturingOrderDto
-      type: object
-      properties:
-        sales_order_row_id:
-          type: integer
-          nullable: false
           maximum: 2147483647
           minimum: 1
       required:
-      - sales_order_row_id
+      - before_id
       additionalProperties: false
     RerankManufacturingOrderDto:
       title: RerankManufacturingOrderDto
@@ -102,15 +94,27 @@ components:
       - order_ids
       - place
       additionalProperties: false
-    RerankPlaceDto:
-      title: RerankPlaceDto
+    UnlinkManufacturingOrderDto:
+      title: UnlinkManufacturingOrderDto
       type: object
       properties:
-        before_id:
+        sales_order_row_id:
           type: integer
-          nullable: false
           maximum: 2147483647
           minimum: 1
       required:
-      - before_id
+      - sales_order_row_id
+      additionalProperties: false
+    CreateMakeToOrderManufacturingOrderDto:
+      title: CreateMakeToOrderManufacturingOrderDto
+      type: object
+      properties:
+        sales_order_row_id:
+          type: integer
+          maximum: 2147483647
+        create_subassemblies:
+          type: boolean
+          default: false
+      required:
+      - sales_order_row_id
       additionalProperties: false

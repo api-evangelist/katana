@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController BatchStockController API
+  title: katana-api-gateway Batch Stock Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -32,6 +32,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Batch stock controller update batch stock
+      x-summary-source: derived
   /batch_stocks:
     get:
       x-controller-name: BatchStockController
@@ -85,6 +87,8 @@ paths:
         in: query
         schema:
           type: string
+      summary: Batch stock controller get batch stock
+      x-summary-source: derived
 components:
   schemas:
     UpdateBatchDto:
@@ -94,14 +98,17 @@ components:
         batch_number:
           type: string
         expiration_date:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         batch_created_date:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         batch_barcode:
-          type: string
+          type:
+          - string
+          - 'null'
           minLength: 3
           maxLength: 40
-          nullable: true
       additionalProperties: false

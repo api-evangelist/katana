@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController CustomerAddressController API
+  title: katana-api-gateway Customer Address Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -33,6 +33,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Customer address controller update customer address
+      x-summary-source: derived
     delete:
       x-controller-name: CustomerAddressController
       x-operation-name: deleteCustomerAddress
@@ -49,6 +51,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Customer address controller delete customer address
+      x-summary-source: derived
   /customer_addresses:
     post:
       x-controller-name: CustomerAddressController
@@ -65,6 +69,8 @@ paths:
               $ref: '#/components/schemas/CustomerAddressCreateDto'
         required: true
       operationId: CustomerAddressController.createCustomerAddress
+      summary: Customer address controller create customer address
+      x-summary-source: derived
     get:
       x-controller-name: CustomerAddressController
       x-operation-name: getAllCustomerAddresses
@@ -151,53 +157,10 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Customer address controller get all customer addresses
+      x-summary-source: derived
 components:
   schemas:
-    CustomerAddressUpdateDto:
-      title: CustomerAddressUpdateDto
-      type: object
-      properties:
-        first_name:
-          type: string
-          nullable: true
-          minLength: 1
-        last_name:
-          type: string
-          nullable: true
-          minLength: 1
-        company:
-          type: string
-          nullable: true
-          minLength: 1
-        phone:
-          type: string
-          nullable: true
-          minLength: 1
-        line_1:
-          type: string
-          nullable: true
-          minLength: 1
-        line_2:
-          type: string
-          nullable: true
-          minLength: 1
-        city:
-          type: string
-          nullable: true
-          minLength: 1
-        state:
-          type: string
-          nullable: true
-          minLength: 1
-        zip:
-          type: string
-          nullable: true
-          minLength: 1
-        country:
-          type: string
-          nullable: true
-          minLength: 1
-      additionalProperties: false
     CustomerAddressCreateDto:
       title: CustomerAddressCreateDto
       type: object
@@ -208,41 +171,105 @@ components:
           - billing
           - shipping
         first_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         last_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         company:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         phone:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         line_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         line_2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         city:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         state:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         zip:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         customer_id:
           type: integer
-          nullable: false
           maximum: 2147483647
           minimum: 1
       required:
       - entity_type
       - customer_id
+      additionalProperties: false
+    CustomerAddressUpdateDto:
+      title: CustomerAddressUpdateDto
+      type: object
+      properties:
+        first_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        last_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        company:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        phone:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        line_1:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        line_2:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        city:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        state:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        zip:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        country:
+          type:
+          - string
+          - 'null'
+          minLength: 1
       additionalProperties: false

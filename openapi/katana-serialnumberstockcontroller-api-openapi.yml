@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController SerialNumberStockController API
+  title: katana-api-gateway Serial Number Stock Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -27,3 +27,5 @@ paths:
             schema:
               type: object
               additionalProperties: true
+      summary: Serial number stock controller list
+      x-summary-source: derived

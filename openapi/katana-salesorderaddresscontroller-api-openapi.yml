@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController SalesOrderAddressController API
+  title: katana-api-gateway Sales Order Address Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -33,6 +33,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Sales order address controller update by id
+      x-summary-source: derived
     delete:
       x-controller-name: SalesOrderAddressController
       x-operation-name: deleteById
@@ -49,6 +51,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Sales order address controller delete by id
+      x-summary-source: derived
   /sales_order_addresses:
     post:
       x-controller-name: SalesOrderAddressController
@@ -65,6 +69,8 @@ paths:
               $ref: '#/components/schemas/CreateSalesOrderAddressDto'
         required: true
       operationId: SalesOrderAddressController.createAddress
+      summary: Sales order address controller create address
+      x-summary-source: derived
     get:
       x-controller-name: SalesOrderAddressController
       x-operation-name: getAllSalesOrderAddresses
@@ -151,6 +157,8 @@ paths:
         in: query
         schema:
           type: boolean
+      summary: Sales order address controller get all sales order addresses
+      x-summary-source: derived
 components:
   schemas:
     CreateSalesOrderAddressDto:
@@ -158,35 +166,45 @@ components:
       type: object
       properties:
         first_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         last_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         company:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         phone:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         line_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         line_2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         city:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         state:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         zip:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         entity_type:
           type: string
           enum:
@@ -204,33 +222,43 @@ components:
       type: object
       properties:
         first_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         last_name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         company:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         phone:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         line_1:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         line_2:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         city:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         state:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         zip:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         country:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController DemandForecastController API
+  title: katana-api-gateway Demand Forecast Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -25,6 +25,8 @@ paths:
               $ref: '#/components/schemas/DemandForecastUpdateDto'
         required: true
       operationId: DemandForecastController.updateDemandForecast
+      summary: Demand forecast controller update demand forecast
+      x-summary-source: derived
     get:
       x-controller-name: DemandForecastController
       x-operation-name: findDemandForecast
@@ -47,6 +49,8 @@ paths:
           type: integer
           format: int32
         required: true
+      summary: Demand forecast controller find demand forecast
+      x-summary-source: derived
     delete:
       x-controller-name: DemandForecastController
       x-operation-name: clearDemandForecast
@@ -62,6 +66,8 @@ paths:
               $ref: '#/components/schemas/DemandForecastClearDto'
         required: true
       operationId: DemandForecastController.clearDemandForecast
+      summary: Demand forecast controller clear demand forecast
+      x-summary-source: derived
 components:
   schemas:
     DemandForecastClearDto:

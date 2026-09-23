@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: katana-api-gateway AdditionalCostController CustomFieldDefinitionController API
+  title: katana-api-gateway Custom Field Definition Controller API
   version: 0.0.1
   description: public api
   contact: {}
@@ -32,6 +32,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Custom field definition controller update
+      x-summary-source: derived
     get:
       x-controller-name: CustomFieldDefinitionController
       x-operation-name: getById
@@ -47,6 +49,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Custom field definition controller get by id
+      x-summary-source: derived
     delete:
       x-controller-name: CustomFieldDefinitionController
       x-operation-name: deleteById
@@ -62,6 +66,8 @@ paths:
         schema:
           type: string
         required: true
+      summary: Custom field definition controller delete by id
+      x-summary-source: derived
   /custom_field_definitions:
     post:
       x-controller-name: CustomFieldDefinitionController
@@ -78,6 +84,8 @@ paths:
               $ref: '#/components/schemas/CreateCustomFieldDefinitionDto'
         required: true
       operationId: CustomFieldDefinitionController.create
+      summary: Custom field definition controller create
+      x-summary-source: derived
     get:
       x-controller-name: CustomFieldDefinitionController
       x-operation-name: getAll
@@ -114,6 +122,8 @@ paths:
         in: query
         schema:
           type: string
+      summary: Custom field definition controller get all
+      x-summary-source: derived
 components:
   schemas:
     UpdateCustomFieldDefinitionDto:
@@ -124,11 +134,13 @@ components:
           type: string
           maxLength: 255
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         options:
-          type: object
-          nullable: true
+          type:
+          - object
+          - 'null'
       additionalProperties: false
     CreateCustomFieldDefinitionDto:
       title: CreateCustomFieldDefinitionDto
@@ -147,11 +159,13 @@ components:
           type: string
           maxLength: 255
         description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         options:
-          type: object
-          nullable: true
+          type:
+          - object
+          - 'null'
       required:
       - label
       - field_type
