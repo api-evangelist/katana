@@ -126,22 +126,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdateCustomFieldDefinitionDto:
-      title: UpdateCustomFieldDefinitionDto
-      type: object
-      properties:
-        label:
-          type: string
-          maxLength: 255
-        description:
-          type:
-          - string
-          - 'null'
-        options:
-          type:
-          - object
-          - 'null'
-      additionalProperties: false
     CreateCustomFieldDefinitionDto:
       title: CreateCustomFieldDefinitionDto
       type: object
@@ -171,4 +155,20 @@ components:
       - field_type
       - entity_type
       - source
+      additionalProperties: false
+    UpdateCustomFieldDefinitionDto:
+      title: UpdateCustomFieldDefinitionDto
+      type: object
+      properties:
+        label:
+          type: string
+          maxLength: 255
+        description:
+          type:
+          - string
+          - 'null'
+        options:
+          type:
+          - object
+          - 'null'
       additionalProperties: false

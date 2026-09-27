@@ -146,6 +146,73 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CustomerUpdateDto:
+      title: CustomerUpdateDto
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        first_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        last_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        company:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        email:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        reference_id:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        category:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        currency:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        phone:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        comment:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        default_shipping_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+          minimum: 1
+        discount_rate:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 100
+      additionalProperties: false
     CreateCustomerDto:
       title: CreateCustomerDto
       type: object
@@ -235,71 +302,4 @@ components:
             additionalProperties: false
       required:
       - name
-      additionalProperties: false
-    CustomerUpdateDto:
-      title: CustomerUpdateDto
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        first_name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        last_name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        company:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        email:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        reference_id:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        category:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        currency:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        phone:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        comment:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        default_shipping_id:
-          type:
-          - integer
-          - 'null'
-          maximum: 2147483647
-          minimum: 1
-        discount_rate:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 100
       additionalProperties: false

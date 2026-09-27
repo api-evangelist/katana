@@ -150,17 +150,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdateStockTransferStatusDto:
-      title: UpdateStockTransferStatusDto
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - draft
-          - received
-          - inTransit
-      additionalProperties: false
     CreateStockTransferRowDto:
       title: CreateStockTransferRowDto
       type: object
@@ -183,26 +172,52 @@ components:
       - quantity
       - variant_id
       additionalProperties: false
-    UpdateStockTransferDto:
-      title: UpdateStockTransferDto
+    TraceabilityInputItemDto:
+      title: TraceabilityInputItemDto
       type: object
       properties:
-        stock_transfer_number:
+        batch_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        bin_location_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+            - type: string
+              pattern: ^(-|)[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false
+    UpdateStockTransferStatusDto:
+      title: UpdateStockTransferStatusDto
+      type: object
+      properties:
+        status:
           type: string
-        transfer_date:
-          type: string
-        order_created_date:
-          type:
-          - string
-          - 'null'
-        expected_arrival_date:
-          type:
-          - string
-          - 'null'
-        additional_info:
-          type:
-          - string
-          - 'null'
+          enum:
+          - draft
+          - received
+          - inTransit
       additionalProperties: false
     CreateStockTransferDto:
       title: CreateStockTransferDto
@@ -240,39 +255,24 @@ components:
       - target_location_id
       - stock_transfer_rows
       additionalProperties: false
-    TraceabilityInputItemDto:
-      title: TraceabilityInputItemDto
+    UpdateStockTransferDto:
+      title: UpdateStockTransferDto
       type: object
       properties:
-        batch_id:
+        stock_transfer_number:
+          type: string
+        transfer_date:
+          type: string
+        order_created_date:
           type:
-          - number
+          - string
           - 'null'
-          minimum: 0
-          maximum: 2147483647
-        serial_number_id:
+        expected_arrival_date:
           type:
-          - number
+          - string
           - 'null'
-          minimum: 0
-          maximum: 2147483647
-        bin_location_id:
+        additional_info:
           type:
-          - number
+          - string
           - 'null'
-          minimum: 0
-          maximum: 2147483647
-        quantity:
-          allOf:
-          - anyOf:
-            - type: number
-            - type: string
-              pattern: ^(-|)[0-9]+?\.?[0-9]*$
-          - anyOf:
-            - type: number
-              not:
-                const: 0
-            - type: string
-              not:
-                pattern: ^(-|)[0]+?\.?[0]*$
       additionalProperties: false

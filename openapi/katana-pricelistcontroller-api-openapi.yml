@@ -123,6 +123,15 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    PriceListPatchDto:
+      title: PriceListPatchDto
+      type: object
+      properties:
+        name:
+          type: string
+        is_active:
+          type: boolean
+      additionalProperties: false
     PriceListCreateDto:
       title: PriceListCreateDto
       type: object
@@ -132,13 +141,4 @@ components:
           maxLength: 100
       required:
       - name
-      additionalProperties: false
-    PriceListPatchDto:
-      title: PriceListPatchDto
-      type: object
-      properties:
-        name:
-          type: string
-        is_active:
-          type: boolean
       additionalProperties: false

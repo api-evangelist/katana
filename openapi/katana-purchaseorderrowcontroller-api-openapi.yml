@@ -152,6 +152,51 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdatePurchaseOrderRowDto:
+      title: UpdatePurchaseOrderRowDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          maximum: 100000000000000000
+          minimum: 0
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        tax_rate_id:
+          type: integer
+          maximum: 2147483647
+        price_per_unit:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        purchase_uom_conversion_rate:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 100000000000000000
+        purchase_uom:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 7
+        tax_rate:
+          type: string
+        tax_name:
+          type: string
+        received_date:
+          type: string
+          format: date-time
+        arrival_date:
+          type: string
+          format: date
+        location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+      additionalProperties: false
     CreatePurchaseOrderRowWithPurchaseOrderIdDto:
       title: CreatePurchaseOrderRowWithPurchaseOrderIdDto
       type: object
@@ -202,49 +247,4 @@ components:
       - variant_id
       - price_per_unit
       - purchase_order_id
-      additionalProperties: false
-    UpdatePurchaseOrderRowDto:
-      title: UpdatePurchaseOrderRowDto
-      type: object
-      properties:
-        quantity:
-          type: number
-          maximum: 100000000000000000
-          minimum: 0
-        variant_id:
-          type: integer
-          maximum: 2147483647
-        tax_rate_id:
-          type: integer
-          maximum: 2147483647
-        price_per_unit:
-          type: number
-          minimum: 0
-          maximum: 100000000000000000
-        purchase_uom_conversion_rate:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 100000000000000000
-        purchase_uom:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 7
-        tax_rate:
-          type: string
-        tax_name:
-          type: string
-        received_date:
-          type: string
-          format: date-time
-        arrival_date:
-          type: string
-          format: date
-        location_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
       additionalProperties: false

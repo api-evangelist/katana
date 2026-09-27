@@ -179,6 +179,45 @@ components:
               not:
                 pattern: ^(-|)[0]+?\.?[0]*$
       additionalProperties: false
+    UpdateBinTransferRowDto:
+      title: UpdateBinTransferRowDto
+      type: object
+      properties:
+        variant_id:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+        source_bin_location_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        target_bin_location_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceabilityInputDto'
+      additionalProperties: false
     CreateBinTransferRowDto:
       title: CreateBinTransferRowDto
       type: object
@@ -225,43 +264,4 @@ components:
       - variant_id
       - quantity
       - bin_transfer_id
-      additionalProperties: false
-    UpdateBinTransferRowDto:
-      title: UpdateBinTransferRowDto
-      type: object
-      properties:
-        variant_id:
-          type: integer
-          minimum: 0
-          maximum: 2147483647
-        quantity:
-          allOf:
-          - anyOf:
-            - type: number
-              minimum: 0
-            - type: string
-              pattern: ^[0-9]+?\.?[0-9]*$
-          - anyOf:
-            - type: number
-              not:
-                const: 0
-            - type: string
-              not:
-                pattern: ^(-|)[0]+?\.?[0]*$
-        source_bin_location_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        target_bin_location_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        traceability:
-          type: array
-          items:
-            $ref: '#/components/schemas/TraceabilityInputDto'
       additionalProperties: false

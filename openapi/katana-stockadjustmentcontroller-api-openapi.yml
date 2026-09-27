@@ -119,31 +119,31 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateStockAdjustmentRowDto:
-      title: CreateStockAdjustmentRowDto
+    CreateStockAdjustmentDto:
+      title: CreateStockAdjustmentDto
       type: object
       properties:
-        quantity:
-          type: number
-          maximum: 100000000000000000
-        variant_id:
+        stock_adjustment_number:
+          type: string
+        stock_adjustment_date:
+          type: string
+        location_id:
           type: integer
           maximum: 2147483647
-        cost_per_unit:
-          type: number
-          maximum: 1000000000000000000
-          minimum: 0
-        batch_transactions:
+        reason:
+          type: string
+        stock_adjustment_rows:
           type: array
           items:
-            $ref: '#/components/schemas/CreateBatchTransactionV2Dto'
-        traceability:
-          type: array
-          items:
-            $ref: '#/components/schemas/StockAdjustmentTraceabilityInputDto'
+            $ref: '#/components/schemas/CreateStockAdjustmentRowDto'
+        additional_info:
+          type:
+          - string
+          - 'null'
       required:
-      - quantity
-      - variant_id
+      - stock_adjustment_number
+      - location_id
+      - stock_adjustment_rows
       additionalProperties: false
     UpdateStockAdjustmentDto:
       title: UpdateStockAdjustmentDto
@@ -202,31 +202,31 @@ components:
       required:
       - quantity
       additionalProperties: false
-    CreateStockAdjustmentDto:
-      title: CreateStockAdjustmentDto
+    CreateStockAdjustmentRowDto:
+      title: CreateStockAdjustmentRowDto
       type: object
       properties:
-        stock_adjustment_number:
-          type: string
-        stock_adjustment_date:
-          type: string
-        location_id:
+        quantity:
+          type: number
+          maximum: 100000000000000000
+        variant_id:
           type: integer
           maximum: 2147483647
-        reason:
-          type: string
-        stock_adjustment_rows:
+        cost_per_unit:
+          type: number
+          maximum: 1000000000000000000
+          minimum: 0
+        batch_transactions:
           type: array
           items:
-            $ref: '#/components/schemas/CreateStockAdjustmentRowDto'
-        additional_info:
-          type:
-          - string
-          - 'null'
+            $ref: '#/components/schemas/CreateBatchTransactionV2Dto'
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/StockAdjustmentTraceabilityInputDto'
       required:
-      - stock_adjustment_number
-      - location_id
-      - stock_adjustment_rows
+      - quantity
+      - variant_id
       additionalProperties: false
     CreateBatchTransactionV2Dto:
       title: CreateBatchTransactionV2Dto

@@ -65,6 +65,17 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UnlinkManufacturingOrderDto:
+      title: UnlinkManufacturingOrderDto
+      type: object
+      properties:
+        sales_order_row_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - sales_order_row_id
+      additionalProperties: false
     RerankPlaceDto:
       title: RerankPlaceDto
       type: object
@@ -93,17 +104,6 @@ components:
       required:
       - order_ids
       - place
-      additionalProperties: false
-    UnlinkManufacturingOrderDto:
-      title: UnlinkManufacturingOrderDto
-      type: object
-      properties:
-        sales_order_row_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-      required:
-      - sales_order_row_id
       additionalProperties: false
     CreateMakeToOrderManufacturingOrderDto:
       title: CreateMakeToOrderManufacturingOrderDto
