@@ -126,19 +126,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdateShippingFeeDto:
-      title: UpdateShippingFeeDto
-      type: object
-      properties:
-        description:
-          type: string
-        amount:
-          type: string
-        tax_rate_id:
-          type: number
-      required:
-      - amount
-      additionalProperties: false
     AddShippingFeeDto:
       title: AddShippingFeeDto
       type: object
@@ -153,5 +140,18 @@ components:
           type: number
       required:
       - sales_order_id
+      - amount
+      additionalProperties: false
+    UpdateShippingFeeDto:
+      title: UpdateShippingFeeDto
+      type: object
+      properties:
+        description:
+          type: string
+        amount:
+          type: string
+        tax_rate_id:
+          type: number
+      required:
       - amount
       additionalProperties: false

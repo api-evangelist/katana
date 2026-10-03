@@ -201,95 +201,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ProductUpdateDto:
-      title: ProductUpdateDto
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-          maxLength: 256
-        uom:
-          type: string
-          minLength: 1
-          maxLength: 7
-        category_name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 35
-        is_producible:
-          type: boolean
-          default: false
-        default_supplier_id:
-          type:
-          - integer
-          - 'null'
-          maximum: 2147483647
-          minimum: 1
-        is_purchasable:
-          type: boolean
-          default: false
-        is_auto_assembly:
-          type: boolean
-          default: false
-        is_sellable:
-          type: boolean
-          default: false
-        is_archived:
-          type: boolean
-          default: false
-        purchase_uom:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 7
-        purchase_uom_conversion_rate:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        batch_tracked:
-          type: boolean
-          default: false
-        serial_tracked:
-          type: boolean
-          default: false
-        operations_in_sequence:
-          type: boolean
-          default: false
-        configs:
-          type: array
-          items:
-            title: ItemVariantConfigDto
-            type: object
-            properties:
-              id:
-                type: number
-              name:
-                type: string
-              values:
-                type: array
-                items:
-                  type: string
-            required:
-            - values
-            additionalProperties: false
-          minItems: 1
-          maxItems: 10
-        additional_info:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        custom_field_collection_id:
-          type:
-          - number
-          - 'null'
-      additionalProperties: false
     CreateProductDto:
       title: CreateProductDto
       type: object
@@ -439,4 +350,93 @@ components:
       required:
       - name
       - variants
+      additionalProperties: false
+    ProductUpdateDto:
+      title: ProductUpdateDto
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 256
+        uom:
+          type: string
+          minLength: 1
+          maxLength: 7
+        category_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 35
+        is_producible:
+          type: boolean
+          default: false
+        default_supplier_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+          minimum: 1
+        is_purchasable:
+          type: boolean
+          default: false
+        is_auto_assembly:
+          type: boolean
+          default: false
+        is_sellable:
+          type: boolean
+          default: false
+        is_archived:
+          type: boolean
+          default: false
+        purchase_uom:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 7
+        purchase_uom_conversion_rate:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        batch_tracked:
+          type: boolean
+          default: false
+        serial_tracked:
+          type: boolean
+          default: false
+        operations_in_sequence:
+          type: boolean
+          default: false
+        configs:
+          type: array
+          items:
+            title: ItemVariantConfigDto
+            type: object
+            properties:
+              id:
+                type: number
+              name:
+                type: string
+              values:
+                type: array
+                items:
+                  type: string
+            required:
+            - values
+            additionalProperties: false
+          minItems: 1
+          maxItems: 10
+        additional_info:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        custom_field_collection_id:
+          type:
+          - number
+          - 'null'
       additionalProperties: false

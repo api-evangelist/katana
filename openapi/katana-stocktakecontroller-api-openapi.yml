@@ -130,40 +130,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdateStocktakeDto:
-      title: UpdateStocktakeDto
-      type: object
-      properties:
-        stocktake_number:
-          type: string
-        location_id:
-          type: integer
-          maximum: 2147483647
-        status:
-          type: string
-          enum:
-          - NOT_STARTED
-          - IN_PROGRESS
-          - COUNTED
-          - COMPLETED
-        reason:
-          type:
-          - string
-          - 'null'
-          maxLength: 540
-        additional_info:
-          type:
-          - string
-          - 'null'
-        created_date:
-          type: string
-        completed_date:
-          type:
-          - string
-          - 'null'
-        set_remaining_items_as_counted:
-          type: boolean
-      additionalProperties: false
     CreateStocktakeDto:
       title: CreateStocktakeDto
       type: object
@@ -219,4 +185,38 @@ components:
       required:
       - stocktake_number
       - location_id
+      additionalProperties: false
+    UpdateStocktakeDto:
+      title: UpdateStocktakeDto
+      type: object
+      properties:
+        stocktake_number:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        status:
+          type: string
+          enum:
+          - NOT_STARTED
+          - IN_PROGRESS
+          - COUNTED
+          - COMPLETED
+        reason:
+          type:
+          - string
+          - 'null'
+          maxLength: 540
+        additional_info:
+          type:
+          - string
+          - 'null'
+        created_date:
+          type: string
+        completed_date:
+          type:
+          - string
+          - 'null'
+        set_remaining_items_as_counted:
+          type: boolean
       additionalProperties: false

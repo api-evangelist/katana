@@ -148,6 +148,63 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdateServiceDto:
+      title: UpdateServiceDto
+      type: object
+      properties:
+        name:
+          type: string
+        category_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 35
+        is_sellable:
+          type: boolean
+        is_archived:
+          type: boolean
+        uom:
+          type: string
+        default_cost:
+          type:
+          - number
+          - 'null'
+        sales_price:
+          type:
+          - number
+          - 'null'
+        custom_field_collection_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+          minimum: 1
+        sku:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        additional_info:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        custom_fields:
+          type: array
+          items:
+            title: CustomFieldValueDto
+            type: object
+            properties:
+              field_name:
+                type: string
+              field_value:
+                type: string
+            required:
+            - field_name
+            - field_value
+            additionalProperties: false
+      additionalProperties: false
     CreateServiceDto:
       title: CreateServiceDto
       type: object
@@ -212,61 +269,4 @@ components:
       required:
       - name
       - variants
-      additionalProperties: false
-    UpdateServiceDto:
-      title: UpdateServiceDto
-      type: object
-      properties:
-        name:
-          type: string
-        category_name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 35
-        is_sellable:
-          type: boolean
-        is_archived:
-          type: boolean
-        uom:
-          type: string
-        default_cost:
-          type:
-          - number
-          - 'null'
-        sales_price:
-          type:
-          - number
-          - 'null'
-        custom_field_collection_id:
-          type:
-          - integer
-          - 'null'
-          maximum: 2147483647
-          minimum: 1
-        sku:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        additional_info:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        custom_fields:
-          type: array
-          items:
-            title: CustomFieldValueDto
-            type: object
-            properties:
-              field_name:
-                type: string
-              field_value:
-                type: string
-            required:
-            - field_name
-            - field_value
-            additionalProperties: false
       additionalProperties: false

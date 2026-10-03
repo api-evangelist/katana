@@ -70,33 +70,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    DemandForecastClearDto:
-      title: DemandForecastClearDto
-      type: object
-      properties:
-        variant_id:
-          type: number
-        location_id:
-          type: number
-        periods:
-          type: array
-          items:
-            title: DemandForecastClearPeriod
-            type: object
-            properties:
-              period_start:
-                type: string
-              period_end:
-                type: string
-            required:
-            - period_start
-            - period_end
-            additionalProperties: false
-      required:
-      - variant_id
-      - location_id
-      - periods
-      additionalProperties: false
     DemandForecastUpdateDto:
       title: DemandForecastUpdateDto
       type: object
@@ -121,6 +94,33 @@ components:
             - period_start
             - period_end
             - committed
+            additionalProperties: false
+      required:
+      - variant_id
+      - location_id
+      - periods
+      additionalProperties: false
+    DemandForecastClearDto:
+      title: DemandForecastClearDto
+      type: object
+      properties:
+        variant_id:
+          type: number
+        location_id:
+          type: number
+        periods:
+          type: array
+          items:
+            title: DemandForecastClearPeriod
+            type: object
+            properties:
+              period_start:
+                type: string
+              period_end:
+                type: string
+            required:
+            - period_start
+            - period_end
             additionalProperties: false
       required:
       - variant_id

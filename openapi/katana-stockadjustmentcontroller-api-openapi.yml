@@ -119,6 +119,25 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdateStockAdjustmentDto:
+      title: UpdateStockAdjustmentDto
+      type: object
+      properties:
+        stock_adjustment_number:
+          type: string
+          minLength: 1
+        stock_adjustment_date:
+          type: string
+        reason:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        additional_info:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     CreateStockAdjustmentDto:
       title: CreateStockAdjustmentDto
       type: object
@@ -144,25 +163,6 @@ components:
       - stock_adjustment_number
       - location_id
       - stock_adjustment_rows
-      additionalProperties: false
-    UpdateStockAdjustmentDto:
-      title: UpdateStockAdjustmentDto
-      type: object
-      properties:
-        stock_adjustment_number:
-          type: string
-          minLength: 1
-        stock_adjustment_date:
-          type: string
-        reason:
-          type: string
-        location_id:
-          type: integer
-          maximum: 2147483647
-        additional_info:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     StockAdjustmentTraceabilityInputDto:
       title: StockAdjustmentTraceabilityInputDto
@@ -202,6 +202,21 @@ components:
       required:
       - quantity
       additionalProperties: false
+    CreateBatchTransactionV2Dto:
+      title: CreateBatchTransactionV2Dto
+      type: object
+      properties:
+        batch_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+        quantity:
+          type: number
+      required:
+      - batch_id
+      - quantity
+      additionalProperties: false
     CreateStockAdjustmentRowDto:
       title: CreateStockAdjustmentRowDto
       type: object
@@ -227,19 +242,4 @@ components:
       required:
       - quantity
       - variant_id
-      additionalProperties: false
-    CreateBatchTransactionV2Dto:
-      title: CreateBatchTransactionV2Dto
-      type: object
-      properties:
-        batch_id:
-          type:
-          - integer
-          - 'null'
-          maximum: 2147483647
-        quantity:
-          type: number
-      required:
-      - batch_id
-      - quantity
       additionalProperties: false

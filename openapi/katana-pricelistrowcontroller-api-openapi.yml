@@ -127,6 +127,22 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    PatchPriceListRowDto:
+      title: PatchPriceListRowDto
+      type: object
+      properties:
+        variant_id:
+          type: number
+        adjustment_method:
+          type: string
+          enum:
+          - fixed
+          - percentage
+          - markup
+        amount:
+          type: number
+          exclusiveMinimum: 0
+      additionalProperties: false
     CreatePriceListRowsDto:
       title: CreatePriceListRowsDto
       type: object
@@ -157,20 +173,4 @@ components:
       required:
       - price_list_id
       - price_list_rows
-      additionalProperties: false
-    PatchPriceListRowDto:
-      title: PatchPriceListRowDto
-      type: object
-      properties:
-        variant_id:
-          type: number
-        adjustment_method:
-          type: string
-          enum:
-          - fixed
-          - percentage
-          - markup
-        amount:
-          type: number
-          exclusiveMinimum: 0
       additionalProperties: false

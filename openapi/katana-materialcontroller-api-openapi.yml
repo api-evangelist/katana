@@ -181,80 +181,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    MaterialUpdateDto:
-      title: MaterialUpdateDto
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-          maxLength: 256
-        uom:
-          type: string
-          minLength: 1
-          maxLength: 7
-        category_name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 35
-        default_supplier_id:
-          type:
-          - integer
-          - 'null'
-          maximum: 2147483647
-          minimum: 1
-        purchase_uom:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 7
-        purchase_uom_conversion_rate:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        batch_tracked:
-          type: boolean
-          default: false
-        is_sellable:
-          type: boolean
-          default: false
-        is_archived:
-          type: boolean
-          default: false
-        configs:
-          type: array
-          items:
-            title: ItemVariantConfigDto
-            type: object
-            properties:
-              id:
-                type: number
-              name:
-                type: string
-              values:
-                type: array
-                items:
-                  type: string
-            required:
-            - values
-            additionalProperties: false
-          minItems: 1
-          maxItems: 10
-        additional_info:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        custom_field_collection_id:
-          type:
-          - number
-          - 'null'
-      additionalProperties: false
     CreateMaterialDto:
       title: CreateMaterialDto
       type: object
@@ -378,4 +304,78 @@ components:
       required:
       - name
       - variants
+      additionalProperties: false
+    MaterialUpdateDto:
+      title: MaterialUpdateDto
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 256
+        uom:
+          type: string
+          minLength: 1
+          maxLength: 7
+        category_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 35
+        default_supplier_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+          minimum: 1
+        purchase_uom:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 7
+        purchase_uom_conversion_rate:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        batch_tracked:
+          type: boolean
+          default: false
+        is_sellable:
+          type: boolean
+          default: false
+        is_archived:
+          type: boolean
+          default: false
+        configs:
+          type: array
+          items:
+            title: ItemVariantConfigDto
+            type: object
+            properties:
+              id:
+                type: number
+              name:
+                type: string
+              values:
+                type: array
+                items:
+                  type: string
+            required:
+            - values
+            additionalProperties: false
+          minItems: 1
+          maxItems: 10
+        additional_info:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        custom_field_collection_id:
+          type:
+          - number
+          - 'null'
       additionalProperties: false

@@ -239,6 +239,244 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdateSalesOrderDto:
+      title: UpdateSalesOrderDto
+      type: object
+      properties:
+        order_no:
+          type: string
+          minLength: 1
+        customer_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        customer_ref:
+          type:
+          - string
+          - 'null'
+        order_created_date:
+          type: string
+        delivery_date:
+          type: string
+        picked_date:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        status:
+          type: string
+          enum:
+          - PENDING
+          - NOT_SHIPPED
+          - PACKED
+          - DELIVERED
+        currency:
+          type: string
+        conversion_rate:
+          type: number
+        conversion_date:
+          type: string
+        additional_info:
+          type:
+          - string
+          - 'null'
+        tracking_number:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 256
+        tracking_number_url:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+          maxLength: 2048
+        custom_fields:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+      additionalProperties: false
+    CreateSalesOrderDto:
+      title: CreateSalesOrderDto
+      type: object
+      properties:
+        order_no:
+          type: string
+          minLength: 1
+        customer_id:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        customer_ref:
+          type:
+          - string
+          - 'null'
+        sales_order_rows:
+          type: array
+          items:
+            title: CreateSalesOrderRowDto
+            type: object
+            properties:
+              quantity:
+                type: number
+                minimum: 0
+                maximum: 100000000000000000
+              variant_id:
+                type: integer
+                maximum: 2147483647
+                minimum: 1
+              tax_rate_id:
+                type: integer
+                maximum: 2147483647
+                minimum: 1
+              location_id:
+                type: integer
+                maximum: 2147483647
+                minimum: 1
+              attributes:
+                type: array
+                items:
+                  title: CreateSalesOrderRowAttributeDto
+                  type: object
+                  properties:
+                    key:
+                      type: string
+                    value:
+                      type: string
+                  required:
+                  - key
+                  - value
+                  additionalProperties: false
+              total_discount:
+                type: number
+                minimum: 0
+                maximum: 1000000000000000000
+              price_per_unit:
+                type: number
+                minimum: 0
+                maximum: 1000000000000000000
+              custom_fields:
+                type:
+                - object
+                - 'null'
+                additionalProperties: true
+            required:
+            - quantity
+            - variant_id
+            additionalProperties: false
+          minItems: 1
+        order_created_date:
+          type: string
+        delivery_date:
+          type: string
+        location_id:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        status:
+          type: string
+          enum:
+          - PENDING
+          - NOT_SHIPPED
+        currency:
+          type: string
+        additional_info:
+          type:
+          - string
+          - 'null'
+        tracking_number:
+          type:
+          - string
+          - 'null'
+          minLength: 0
+          maxLength: 256
+        tracking_number_url:
+          type:
+          - string
+          - 'null'
+          minLength: 0
+          maxLength: 2048
+        addresses:
+          type: array
+          items:
+            title: AddressWithinSalesOrderCreateDto
+            type: object
+            properties:
+              entity_type:
+                type: string
+                enum:
+                - billing
+                - shipping
+              first_name:
+                type:
+                - string
+                - 'null'
+              last_name:
+                type:
+                - string
+                - 'null'
+              company:
+                type:
+                - string
+                - 'null'
+              phone:
+                type:
+                - string
+                - 'null'
+              line_1:
+                type:
+                - string
+                - 'null'
+              line_2:
+                type:
+                - string
+                - 'null'
+              city:
+                type:
+                - string
+                - 'null'
+              state:
+                type:
+                - string
+                - 'null'
+              zip:
+                type:
+                - string
+                - 'null'
+              country:
+                type:
+                - string
+                - 'null'
+            required:
+            - entity_type
+            additionalProperties: false
+        ecommerce_order_type:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        ecommerce_store_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        ecommerce_order_id:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        custom_fields:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+      required:
+      - customer_id
+      - sales_order_rows
+      additionalProperties: false
     SearchSalesOrdersDto:
       title: SearchSalesOrdersDto
       type: object
@@ -1704,242 +1942,4 @@ components:
               type: integer
               minimum: 1
               description: 1-based page number — matches the rest of the public API
-      additionalProperties: false
-    CreateSalesOrderDto:
-      title: CreateSalesOrderDto
-      type: object
-      properties:
-        order_no:
-          type: string
-          minLength: 1
-        customer_id:
-          type: integer
-          minimum: 0
-          maximum: 2147483647
-        customer_ref:
-          type:
-          - string
-          - 'null'
-        sales_order_rows:
-          type: array
-          items:
-            title: CreateSalesOrderRowDto
-            type: object
-            properties:
-              quantity:
-                type: number
-                minimum: 0
-                maximum: 100000000000000000
-              variant_id:
-                type: integer
-                maximum: 2147483647
-                minimum: 1
-              tax_rate_id:
-                type: integer
-                maximum: 2147483647
-                minimum: 1
-              location_id:
-                type: integer
-                maximum: 2147483647
-                minimum: 1
-              attributes:
-                type: array
-                items:
-                  title: CreateSalesOrderRowAttributeDto
-                  type: object
-                  properties:
-                    key:
-                      type: string
-                    value:
-                      type: string
-                  required:
-                  - key
-                  - value
-                  additionalProperties: false
-              total_discount:
-                type: number
-                minimum: 0
-                maximum: 1000000000000000000
-              price_per_unit:
-                type: number
-                minimum: 0
-                maximum: 1000000000000000000
-              custom_fields:
-                type:
-                - object
-                - 'null'
-                additionalProperties: true
-            required:
-            - quantity
-            - variant_id
-            additionalProperties: false
-          minItems: 1
-        order_created_date:
-          type: string
-        delivery_date:
-          type: string
-        location_id:
-          type: integer
-          minimum: 0
-          maximum: 2147483647
-        status:
-          type: string
-          enum:
-          - PENDING
-          - NOT_SHIPPED
-        currency:
-          type: string
-        additional_info:
-          type:
-          - string
-          - 'null'
-        tracking_number:
-          type:
-          - string
-          - 'null'
-          minLength: 0
-          maxLength: 256
-        tracking_number_url:
-          type:
-          - string
-          - 'null'
-          minLength: 0
-          maxLength: 2048
-        addresses:
-          type: array
-          items:
-            title: AddressWithinSalesOrderCreateDto
-            type: object
-            properties:
-              entity_type:
-                type: string
-                enum:
-                - billing
-                - shipping
-              first_name:
-                type:
-                - string
-                - 'null'
-              last_name:
-                type:
-                - string
-                - 'null'
-              company:
-                type:
-                - string
-                - 'null'
-              phone:
-                type:
-                - string
-                - 'null'
-              line_1:
-                type:
-                - string
-                - 'null'
-              line_2:
-                type:
-                - string
-                - 'null'
-              city:
-                type:
-                - string
-                - 'null'
-              state:
-                type:
-                - string
-                - 'null'
-              zip:
-                type:
-                - string
-                - 'null'
-              country:
-                type:
-                - string
-                - 'null'
-            required:
-            - entity_type
-            additionalProperties: false
-        ecommerce_order_type:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        ecommerce_store_name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        ecommerce_order_id:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        custom_fields:
-          type:
-          - object
-          - 'null'
-          additionalProperties: true
-      required:
-      - customer_id
-      - sales_order_rows
-      additionalProperties: false
-    UpdateSalesOrderDto:
-      title: UpdateSalesOrderDto
-      type: object
-      properties:
-        order_no:
-          type: string
-          minLength: 1
-        customer_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        customer_ref:
-          type:
-          - string
-          - 'null'
-        order_created_date:
-          type: string
-        delivery_date:
-          type: string
-        picked_date:
-          type: string
-        location_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        status:
-          type: string
-          enum:
-          - PENDING
-          - NOT_SHIPPED
-          - PACKED
-          - DELIVERED
-        currency:
-          type: string
-        conversion_rate:
-          type: number
-        conversion_date:
-          type: string
-        additional_info:
-          type:
-          - string
-          - 'null'
-        tracking_number:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 256
-        tracking_number_url:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-          maxLength: 2048
-        custom_fields:
-          type:
-          - object
-          - 'null'
-          additionalProperties: true
       additionalProperties: false

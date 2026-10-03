@@ -150,27 +150,41 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateStockTransferRowDto:
-      title: CreateStockTransferRowDto
+    CreateStockTransferDto:
+      title: CreateStockTransferDto
       type: object
       properties:
-        quantity:
+        stock_transfer_number:
           type: string
-          maximum: 100000000000000000
-        variant_id:
+        source_location_id:
           type: integer
           maximum: 2147483647
-        batch_transactions:
+        target_location_id:
+          type: integer
+          maximum: 2147483647
+        transfer_date:
+          type: string
+        order_created_date:
+          type:
+          - string
+          - 'null'
+        expected_arrival_date:
+          type:
+          - string
+          - 'null'
+        additional_info:
+          type:
+          - string
+          - 'null'
+        stock_transfer_rows:
           type: array
           items:
-            type: object
-        traceability:
-          type: array
-          items:
-            $ref: '#/components/schemas/TraceabilityInputItemDto'
+            $ref: '#/components/schemas/CreateStockTransferRowDto'
       required:
-      - quantity
-      - variant_id
+      - stock_transfer_number
+      - source_location_id
+      - target_location_id
+      - stock_transfer_rows
       additionalProperties: false
     TraceabilityInputItemDto:
       title: TraceabilityInputItemDto
@@ -208,53 +222,6 @@ components:
               not:
                 pattern: ^(-|)[0]+?\.?[0]*$
       additionalProperties: false
-    UpdateStockTransferStatusDto:
-      title: UpdateStockTransferStatusDto
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - draft
-          - received
-          - inTransit
-      additionalProperties: false
-    CreateStockTransferDto:
-      title: CreateStockTransferDto
-      type: object
-      properties:
-        stock_transfer_number:
-          type: string
-        source_location_id:
-          type: integer
-          maximum: 2147483647
-        target_location_id:
-          type: integer
-          maximum: 2147483647
-        transfer_date:
-          type: string
-        order_created_date:
-          type:
-          - string
-          - 'null'
-        expected_arrival_date:
-          type:
-          - string
-          - 'null'
-        additional_info:
-          type:
-          - string
-          - 'null'
-        stock_transfer_rows:
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateStockTransferRowDto'
-      required:
-      - stock_transfer_number
-      - source_location_id
-      - target_location_id
-      - stock_transfer_rows
-      additionalProperties: false
     UpdateStockTransferDto:
       title: UpdateStockTransferDto
       type: object
@@ -275,4 +242,37 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    CreateStockTransferRowDto:
+      title: CreateStockTransferRowDto
+      type: object
+      properties:
+        quantity:
+          type: string
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        batch_transactions:
+          type: array
+          items:
+            type: object
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceabilityInputItemDto'
+      required:
+      - quantity
+      - variant_id
+      additionalProperties: false
+    UpdateStockTransferStatusDto:
+      title: UpdateStockTransferStatusDto
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - draft
+          - received
+          - inTransit
       additionalProperties: false

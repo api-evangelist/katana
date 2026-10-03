@@ -199,144 +199,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateSalesOrderRowWithSalesOrderIdDto:
-      title: CreateSalesOrderRowWithSalesOrderIdDto
-      type: object
-      properties:
-        quantity:
-          type: number
-          minimum: 0
-          maximum: 100000000000000000
-        variant_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        tax_rate_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        location_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        attributes:
-          type: array
-          items:
-            title: CreateSalesOrderRowAttributeDto
-            type: object
-            properties:
-              key:
-                type: string
-              value:
-                type: string
-            required:
-            - key
-            - value
-            additionalProperties: false
-        total_discount:
-          type: number
-          minimum: 0
-          maximum: 1000000000000000000
-        price_per_unit:
-          type: number
-          minimum: 0
-          maximum: 1000000000000000000
-        custom_fields:
-          type:
-          - object
-          - 'null'
-          additionalProperties: true
-        sales_order_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-      required:
-      - quantity
-      - variant_id
-      - sales_order_id
-      additionalProperties: false
-    UpdateSalesOrderRowDto:
-      title: UpdateSalesOrderRowDto
-      type: object
-      properties:
-        quantity:
-          type: number
-          minimum: 0
-          maximum: 100000000000000000
-        variant_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        tax_rate_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        location_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        batch_transactions:
-          type: array
-          items:
-            title: UpdateBatchTransactionDto
-            type: object
-            properties:
-              batch_id:
-                type: integer
-                maximum: 2147483647
-              quantity:
-                type: number
-            required:
-            - batch_id
-            additionalProperties: false
-        serial_number_transactions:
-          type: array
-          items:
-            title: UpdateSerialNumberTransactionDto
-            type: object
-            properties:
-              serial_number_id:
-                type: integer
-                maximum: 2147483647
-              quantity:
-                type: integer
-                minimum: 0
-                maximum: 1
-            required:
-            - serial_number_id
-            additionalProperties: false
-        traceability:
-          type: array
-          items:
-            $ref: '#/components/schemas/TraceabilityInputItemDto'
-        attributes:
-          type: array
-          items:
-            title: CreateSalesOrderRowAttributeDto
-            type: object
-            properties:
-              key:
-                type: string
-              value:
-                type: string
-            required:
-            - key
-            - value
-            additionalProperties: false
-        price_per_unit:
-          type: number
-          minimum: 0
-          maximum: 1000000000000000000
-        total_discount:
-          type: number
-          minimum: 0
-          maximum: 1000000000000000000
-        custom_fields:
-          type:
-          - object
-          - 'null'
-          additionalProperties: true
-      additionalProperties: false
     SearchSalesOrderRowsDto:
       title: SearchSalesOrderRowsDto
       type: object
@@ -1430,6 +1292,144 @@ components:
               type: integer
               minimum: 1
               description: 1-based page number — matches the rest of the public API
+      additionalProperties: false
+    CreateSalesOrderRowWithSalesOrderIdDto:
+      title: CreateSalesOrderRowWithSalesOrderIdDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        tax_rate_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        attributes:
+          type: array
+          items:
+            title: CreateSalesOrderRowAttributeDto
+            type: object
+            properties:
+              key:
+                type: string
+              value:
+                type: string
+            required:
+            - key
+            - value
+            additionalProperties: false
+        total_discount:
+          type: number
+          minimum: 0
+          maximum: 1000000000000000000
+        price_per_unit:
+          type: number
+          minimum: 0
+          maximum: 1000000000000000000
+        custom_fields:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
+        sales_order_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - quantity
+      - variant_id
+      - sales_order_id
+      additionalProperties: false
+    UpdateSalesOrderRowDto:
+      title: UpdateSalesOrderRowDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        tax_rate_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        batch_transactions:
+          type: array
+          items:
+            title: UpdateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            additionalProperties: false
+        serial_number_transactions:
+          type: array
+          items:
+            title: UpdateSerialNumberTransactionDto
+            type: object
+            properties:
+              serial_number_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: integer
+                minimum: 0
+                maximum: 1
+            required:
+            - serial_number_id
+            additionalProperties: false
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceabilityInputItemDto'
+        attributes:
+          type: array
+          items:
+            title: CreateSalesOrderRowAttributeDto
+            type: object
+            properties:
+              key:
+                type: string
+              value:
+                type: string
+            required:
+            - key
+            - value
+            additionalProperties: false
+        price_per_unit:
+          type: number
+          minimum: 0
+          maximum: 1000000000000000000
+        total_discount:
+          type: number
+          minimum: 0
+          maximum: 1000000000000000000
+        custom_fields:
+          type:
+          - object
+          - 'null'
+          additionalProperties: true
       additionalProperties: false
     TraceabilityInputItemDto:
       title: TraceabilityInputItemDto

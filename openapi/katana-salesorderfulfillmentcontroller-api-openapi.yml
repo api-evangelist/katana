@@ -163,6 +163,42 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    TraceabilityInputItemDto:
+      title: TraceabilityInputItemDto
+      type: object
+      properties:
+        batch_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        bin_location_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+            - type: string
+              pattern: ^(-|)[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false
     CreateSalesOrderFulfillmentDto:
       title: CreateSalesOrderFulfillmentDto
       type: object
@@ -347,40 +383,4 @@ components:
           type: integer
           maximum: 2147483647
           minimum: 1
-      additionalProperties: false
-    TraceabilityInputItemDto:
-      title: TraceabilityInputItemDto
-      type: object
-      properties:
-        batch_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        serial_number_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        bin_location_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        quantity:
-          allOf:
-          - anyOf:
-            - type: number
-            - type: string
-              pattern: ^(-|)[0-9]+?\.?[0-9]*$
-          - anyOf:
-            - type: number
-              not:
-                const: 0
-            - type: string
-              not:
-                pattern: ^(-|)[0]+?\.?[0]*$
       additionalProperties: false
