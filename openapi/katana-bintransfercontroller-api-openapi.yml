@@ -171,83 +171,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdateBinTransferDto:
-      title: UpdateBinTransferDto
-      type: object
-      properties:
-        bin_transfer_number:
-          type: string
-          minLength: 1
-          maxLength: 255
-        location_id:
-          type: integer
-          minimum: 0
-          maximum: 2147483647
-        created_date:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        departed_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        arrived_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        additional_info:
-          type:
-          - string
-          - 'null'
-          minLength: 0
-      additionalProperties: false
-    TraceabilityInputDto:
-      title: TraceabilityInputDto
-      type: object
-      properties:
-        batch_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        serial_number_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        quantity:
-          allOf:
-          - anyOf:
-            - type: number
-              minimum: 0
-            - type: string
-              pattern: ^[0-9]+?\.?[0-9]*$
-          - anyOf:
-            - type: number
-              not:
-                const: 0
-            - type: string
-              not:
-                pattern: ^(-|)[0]+?\.?[0]*$
-      additionalProperties: false
-    UpdateBinTransferStatusDto:
-      title: UpdateBinTransferStatusDto
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - CREATED
-          - IN_TRANSIT
-          - DONE
-      required:
-      - status
-      additionalProperties: false
     CreateBinTransferDto:
       title: CreateBinTransferDto
       type: object
@@ -349,4 +272,81 @@ components:
             additionalProperties: false
       required:
       - location_id
+      additionalProperties: false
+    TraceabilityInputDto:
+      title: TraceabilityInputDto
+      type: object
+      properties:
+        batch_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+      additionalProperties: false
+    UpdateBinTransferStatusDto:
+      title: UpdateBinTransferStatusDto
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - CREATED
+          - IN_TRANSIT
+          - DONE
+      required:
+      - status
+      additionalProperties: false
+    UpdateBinTransferDto:
+      title: UpdateBinTransferDto
+      type: object
+      properties:
+        bin_transfer_number:
+          type: string
+          minLength: 1
+          maxLength: 255
+        location_id:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        created_date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        departed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        arrived_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        additional_info:
+          type:
+          - string
+          - 'null'
+          minLength: 0
       additionalProperties: false

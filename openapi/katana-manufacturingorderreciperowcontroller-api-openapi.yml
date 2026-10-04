@@ -215,22 +215,6 @@ components:
       - variant_id
       - planned_quantity_per_unit
       additionalProperties: false
-    CreateBatchTransactionForManufacturingOrderDto:
-      title: CreateBatchTransactionForManufacturingOrderDto
-      type: object
-      properties:
-        batch_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        quantity:
-          type: number
-          maximum: 100000000000000000
-          minimum: 1.0e-05
-      required:
-      - batch_id
-      - quantity
-      additionalProperties: false
     UpdateManufacturingOrderRecipeRowDto:
       title: UpdateManufacturingOrderRecipeRowDto
       type: object
@@ -306,4 +290,20 @@ components:
                       pattern: ^(-|)[0]+?\.?[0]*$
             additionalProperties: false
             x-typescript-type: Omit<TraceabilityInputItemDto, 'serial_number_id'>
+      additionalProperties: false
+    CreateBatchTransactionForManufacturingOrderDto:
+      title: CreateBatchTransactionForManufacturingOrderDto
+      type: object
+      properties:
+        batch_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        quantity:
+          type: number
+          maximum: 100000000000000000
+          minimum: 1.0e-05
+      required:
+      - batch_id
+      - quantity
       additionalProperties: false

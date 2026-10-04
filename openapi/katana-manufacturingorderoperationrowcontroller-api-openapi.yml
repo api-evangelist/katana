@@ -143,6 +143,76 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CreateManufacturingOrderOperationRowDto:
+      title: CreateManufacturingOrderOperationRowDto
+      type: object
+      properties:
+        manufacturing_order_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        operation_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        operation_name:
+          type: string
+          minLength: 1
+        resource_id:
+          type:
+          - integer
+          - 'null'
+          minimum: 1
+          maximum: 2147483647
+        resource_name:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+        assigned_operators:
+          type: array
+          items:
+            title: CreateOperatorDto
+            type: object
+            properties:
+              operator_id:
+                type: integer
+                minimum: 1
+                maximum: 2147483647
+              name:
+                type: string
+            additionalProperties: false
+        planned_time_per_unit:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        planned_time_parameter:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        cost_per_hour:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        type:
+          type: string
+          enum:
+          - process
+          - setup
+          - perUnit
+          - fixed
+        cost_parameter:
+          type: number
+          minimum: 0
+          maximum: 10000000000000000
+        status:
+          type: string
+          enum:
+          - NOT_STARTED
+      required:
+      - manufacturing_order_id
+      - status
+      additionalProperties: false
     UpdateManufacturingOrderOperationRowDto:
       title: UpdateManufacturingOrderOperationRowDto
       type: object
@@ -238,74 +308,4 @@ components:
                 type: string
                 minLength: 1
             additionalProperties: false
-      additionalProperties: false
-    CreateManufacturingOrderOperationRowDto:
-      title: CreateManufacturingOrderOperationRowDto
-      type: object
-      properties:
-        manufacturing_order_id:
-          type: integer
-          minimum: 1
-          maximum: 2147483647
-        operation_id:
-          type: integer
-          minimum: 1
-          maximum: 2147483647
-        operation_name:
-          type: string
-          minLength: 1
-        resource_id:
-          type:
-          - integer
-          - 'null'
-          minimum: 1
-          maximum: 2147483647
-        resource_name:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-        assigned_operators:
-          type: array
-          items:
-            title: CreateOperatorDto
-            type: object
-            properties:
-              operator_id:
-                type: integer
-                minimum: 1
-                maximum: 2147483647
-              name:
-                type: string
-            additionalProperties: false
-        planned_time_per_unit:
-          type: number
-          minimum: 0
-          maximum: 10000000000000000
-        planned_time_parameter:
-          type: number
-          minimum: 0
-          maximum: 10000000000000000
-        cost_per_hour:
-          type: number
-          minimum: 0
-          maximum: 10000000000000000
-        type:
-          type: string
-          enum:
-          - process
-          - setup
-          - perUnit
-          - fixed
-        cost_parameter:
-          type: number
-          minimum: 0
-          maximum: 10000000000000000
-        status:
-          type: string
-          enum:
-          - NOT_STARTED
-      required:
-      - manufacturing_order_id
-      - status
       additionalProperties: false

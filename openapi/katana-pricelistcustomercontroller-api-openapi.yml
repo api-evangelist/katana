@@ -127,6 +127,15 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdatePriceListCustomerDto:
+      title: UpdatePriceListCustomerDto
+      type: object
+      properties:
+        customer_id:
+          type: number
+      required:
+      - customer_id
+      additionalProperties: false
     CreatePriceListCustomersDto:
       title: CreatePriceListCustomersDto
       type: object
@@ -147,13 +156,4 @@ components:
       required:
       - price_list_id
       - price_list_customers
-      additionalProperties: false
-    UpdatePriceListCustomerDto:
-      title: UpdatePriceListCustomerDto
-      type: object
-      properties:
-        customer_id:
-          type: number
-      required:
-      - customer_id
       additionalProperties: false

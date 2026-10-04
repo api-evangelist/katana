@@ -111,6 +111,16 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    BinLocationUpdateDto:
+      title: BinLocationUpdateDto
+      type: object
+      properties:
+        bin_name:
+          type: string
+          minLength: 1
+      required:
+      - bin_name
+      additionalProperties: false
     BinLocationCreateDto:
       title: BinLocationCreateDto
       type: object
@@ -125,14 +135,4 @@ components:
       required:
       - bin_name
       - location_id
-      additionalProperties: false
-    BinLocationUpdateDto:
-      title: BinLocationUpdateDto
-      type: object
-      properties:
-        bin_name:
-          type: string
-          minLength: 1
-      required:
-      - bin_name
       additionalProperties: false

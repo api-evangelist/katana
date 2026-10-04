@@ -65,16 +65,18 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    RerankPlaceDto:
-      title: RerankPlaceDto
+    CreateMakeToOrderManufacturingOrderDto:
+      title: CreateMakeToOrderManufacturingOrderDto
       type: object
       properties:
-        before_id:
+        sales_order_row_id:
           type: integer
           maximum: 2147483647
-          minimum: 1
+        create_subassemblies:
+          type: boolean
+          default: false
       required:
-      - before_id
+      - sales_order_row_id
       additionalProperties: false
     RerankManufacturingOrderDto:
       title: RerankManufacturingOrderDto
@@ -94,19 +96,6 @@ components:
       - order_ids
       - place
       additionalProperties: false
-    CreateMakeToOrderManufacturingOrderDto:
-      title: CreateMakeToOrderManufacturingOrderDto
-      type: object
-      properties:
-        sales_order_row_id:
-          type: integer
-          maximum: 2147483647
-        create_subassemblies:
-          type: boolean
-          default: false
-      required:
-      - sales_order_row_id
-      additionalProperties: false
     UnlinkManufacturingOrderDto:
       title: UnlinkManufacturingOrderDto
       type: object
@@ -117,4 +106,15 @@ components:
           minimum: 1
       required:
       - sales_order_row_id
+      additionalProperties: false
+    RerankPlaceDto:
+      title: RerankPlaceDto
+      type: object
+      properties:
+        before_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+      required:
+      - before_id
       additionalProperties: false

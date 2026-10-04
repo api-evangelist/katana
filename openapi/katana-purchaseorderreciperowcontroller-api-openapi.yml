@@ -143,18 +143,24 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateBatchTransactionDto:
-      title: CreateBatchTransactionDto
+    UpdatePurchaseOrderRecipeRowDto:
+      title: UpdatePurchaseOrderRecipeRowDto
       type: object
       properties:
-        batch_id:
+        ingredient_variant_id:
           type: integer
+          minimum: 1
           maximum: 2147483647
-        quantity:
+        planned_quantity_per_unit:
           type: number
-      required:
-      - batch_id
-      - quantity
+          maximum: 100000000000000000
+          exclusiveMinimum: 0
+        notes:
+          type: string
+        batch_transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateBatchTransactionDto'
       additionalProperties: false
     CreatePurchaseOrderRecipeRowDto:
       title: CreatePurchaseOrderRecipeRowDto
@@ -183,22 +189,16 @@ components:
       - ingredient_variant_id
       - planned_quantity_per_unit
       additionalProperties: false
-    UpdatePurchaseOrderRecipeRowDto:
-      title: UpdatePurchaseOrderRecipeRowDto
+    CreateBatchTransactionDto:
+      title: CreateBatchTransactionDto
       type: object
       properties:
-        ingredient_variant_id:
+        batch_id:
           type: integer
-          minimum: 1
           maximum: 2147483647
-        planned_quantity_per_unit:
+        quantity:
           type: number
-          maximum: 100000000000000000
-          exclusiveMinimum: 0
-        notes:
-          type: string
-        batch_transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateBatchTransactionDto'
+      required:
+      - batch_id
+      - quantity
       additionalProperties: false

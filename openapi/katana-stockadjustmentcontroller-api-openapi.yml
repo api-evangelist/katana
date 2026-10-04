@@ -138,6 +138,32 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    CreateStockAdjustmentRowDto:
+      title: CreateStockAdjustmentRowDto
+      type: object
+      properties:
+        quantity:
+          type: number
+          maximum: 100000000000000000
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        cost_per_unit:
+          type: number
+          maximum: 1000000000000000000
+          minimum: 0
+        batch_transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateBatchTransactionV2Dto'
+        traceability:
+          type: array
+          items:
+            $ref: '#/components/schemas/StockAdjustmentTraceabilityInputDto'
+      required:
+      - quantity
+      - variant_id
+      additionalProperties: false
     CreateStockAdjustmentDto:
       title: CreateStockAdjustmentDto
       type: object
@@ -216,30 +242,4 @@ components:
       required:
       - batch_id
       - quantity
-      additionalProperties: false
-    CreateStockAdjustmentRowDto:
-      title: CreateStockAdjustmentRowDto
-      type: object
-      properties:
-        quantity:
-          type: number
-          maximum: 100000000000000000
-        variant_id:
-          type: integer
-          maximum: 2147483647
-        cost_per_unit:
-          type: number
-          maximum: 1000000000000000000
-          minimum: 0
-        batch_transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateBatchTransactionV2Dto'
-        traceability:
-          type: array
-          items:
-            $ref: '#/components/schemas/StockAdjustmentTraceabilityInputDto'
-      required:
-      - quantity
-      - variant_id
       additionalProperties: false

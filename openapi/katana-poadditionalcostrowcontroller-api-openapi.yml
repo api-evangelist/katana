@@ -154,6 +154,28 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdatePoAdditionalCostRowDto:
+      title: UpdatePoAdditionalCostRowDto
+      type: object
+      properties:
+        additional_cost_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        tax_rate_id:
+          type: integer
+          minimum: 1
+          maximum: 2147483647
+        price:
+          type: number
+          minimum: 0
+          maximum: 100000000000000000
+        distribution_method:
+          type: string
+          enum:
+          - BY_VALUE
+          - NON_DISTRIBUTED
+      additionalProperties: false
     CreatePoAdditionalCostRowDto:
       title: CreatePoAdditionalCostRowDto
       type: object
@@ -184,26 +206,4 @@ components:
       - group_id
       - tax_rate_id
       - price
-      additionalProperties: false
-    UpdatePoAdditionalCostRowDto:
-      title: UpdatePoAdditionalCostRowDto
-      type: object
-      properties:
-        additional_cost_id:
-          type: integer
-          minimum: 1
-          maximum: 2147483647
-        tax_rate_id:
-          type: integer
-          minimum: 1
-          maximum: 2147483647
-        price:
-          type: number
-          minimum: 0
-          maximum: 100000000000000000
-        distribution_method:
-          type: string
-          enum:
-          - BY_VALUE
-          - NON_DISTRIBUTED
       additionalProperties: false

@@ -164,6 +164,48 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    SalesReturnRowPatchDto:
+      title: SalesReturnRowPatchDto
+      type: object
+      properties:
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+              minimum: 0
+            - type: string
+              pattern: ^[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
+        restock_location_id:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        reason_id:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        batch_transactions:
+          type: array
+          items:
+            title: CreateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            - quantity
+            additionalProperties: false
+      additionalProperties: false
     SalesReturnRowCreateDto:
       title: SalesReturnRowCreateDto
       type: object
@@ -209,46 +251,4 @@ components:
       - variant_id
       - fulfillment_row_id
       - quantity
-      additionalProperties: false
-    SalesReturnRowPatchDto:
-      title: SalesReturnRowPatchDto
-      type: object
-      properties:
-        quantity:
-          allOf:
-          - anyOf:
-            - type: number
-              minimum: 0
-            - type: string
-              pattern: ^[0-9]+?\.?[0-9]*$
-          - anyOf:
-            - type: number
-              not:
-                const: 0
-            - type: string
-              not:
-                pattern: ^(-|)[0]+?\.?[0]*$
-        restock_location_id:
-          type: integer
-          minimum: 0
-          maximum: 2147483647
-        reason_id:
-          type: integer
-          minimum: 0
-          maximum: 2147483647
-        batch_transactions:
-          type: array
-          items:
-            title: CreateBatchTransactionDto
-            type: object
-            properties:
-              batch_id:
-                type: integer
-                maximum: 2147483647
-              quantity:
-                type: number
-            required:
-            - batch_id
-            - quantity
-            additionalProperties: false
       additionalProperties: false

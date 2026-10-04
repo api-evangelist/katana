@@ -150,78 +150,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateStockTransferDto:
-      title: CreateStockTransferDto
-      type: object
-      properties:
-        stock_transfer_number:
-          type: string
-        source_location_id:
-          type: integer
-          maximum: 2147483647
-        target_location_id:
-          type: integer
-          maximum: 2147483647
-        transfer_date:
-          type: string
-        order_created_date:
-          type:
-          - string
-          - 'null'
-        expected_arrival_date:
-          type:
-          - string
-          - 'null'
-        additional_info:
-          type:
-          - string
-          - 'null'
-        stock_transfer_rows:
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateStockTransferRowDto'
-      required:
-      - stock_transfer_number
-      - source_location_id
-      - target_location_id
-      - stock_transfer_rows
-      additionalProperties: false
-    TraceabilityInputItemDto:
-      title: TraceabilityInputItemDto
-      type: object
-      properties:
-        batch_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        serial_number_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        bin_location_id:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 2147483647
-        quantity:
-          allOf:
-          - anyOf:
-            - type: number
-            - type: string
-              pattern: ^(-|)[0-9]+?\.?[0-9]*$
-          - anyOf:
-            - type: number
-              not:
-                const: 0
-            - type: string
-              not:
-                pattern: ^(-|)[0]+?\.?[0]*$
-      additionalProperties: false
     UpdateStockTransferDto:
       title: UpdateStockTransferDto
       type: object
@@ -265,6 +193,42 @@ components:
       - quantity
       - variant_id
       additionalProperties: false
+    CreateStockTransferDto:
+      title: CreateStockTransferDto
+      type: object
+      properties:
+        stock_transfer_number:
+          type: string
+        source_location_id:
+          type: integer
+          maximum: 2147483647
+        target_location_id:
+          type: integer
+          maximum: 2147483647
+        transfer_date:
+          type: string
+        order_created_date:
+          type:
+          - string
+          - 'null'
+        expected_arrival_date:
+          type:
+          - string
+          - 'null'
+        additional_info:
+          type:
+          - string
+          - 'null'
+        stock_transfer_rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStockTransferRowDto'
+      required:
+      - stock_transfer_number
+      - source_location_id
+      - target_location_id
+      - stock_transfer_rows
+      additionalProperties: false
     UpdateStockTransferStatusDto:
       title: UpdateStockTransferStatusDto
       type: object
@@ -275,4 +239,40 @@ components:
           - draft
           - received
           - inTransit
+      additionalProperties: false
+    TraceabilityInputItemDto:
+      title: TraceabilityInputItemDto
+      type: object
+      properties:
+        batch_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        serial_number_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        bin_location_id:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 2147483647
+        quantity:
+          allOf:
+          - anyOf:
+            - type: number
+            - type: string
+              pattern: ^(-|)[0-9]+?\.?[0-9]*$
+          - anyOf:
+            - type: number
+              not:
+                const: 0
+            - type: string
+              not:
+                pattern: ^(-|)[0]+?\.?[0]*$
       additionalProperties: false

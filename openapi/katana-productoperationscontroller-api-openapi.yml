@@ -150,6 +150,24 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ProductOperationRowRankDto:
+      title: ProductOperationRowRankDto
+      type: object
+      properties:
+        rank_product_operation_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        preceding_product_operation_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        should_group:
+          type: boolean
+          default: false
+      required:
+      - rank_product_operation_id
+      additionalProperties: false
     ProductOperationCreateDto:
       title: ProductOperationCreateDto
       type: object
@@ -211,24 +229,6 @@ components:
             additionalProperties: false
       required:
       - rows
-      additionalProperties: false
-    ProductOperationRowRankDto:
-      title: ProductOperationRowRankDto
-      type: object
-      properties:
-        rank_product_operation_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        preceding_product_operation_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        should_group:
-          type: boolean
-          default: false
-      required:
-      - rank_product_operation_id
       additionalProperties: false
     ProductOperationRowUpdateDto:
       title: ProductOperationRowUpdateDto

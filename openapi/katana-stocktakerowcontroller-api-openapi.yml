@@ -130,6 +130,33 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdateStocktakeRowDto:
+      title: UpdateStocktakeRowDto
+      type: object
+      properties:
+        variant_id:
+          type: integer
+          maximum: 2147483647
+        batch_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+        bin_location_id:
+          type:
+          - integer
+          - 'null'
+          maximum: 2147483647
+        notes:
+          type:
+          - string
+          - 'null'
+        counted_quantity:
+          type:
+          - number
+          - 'null'
+          maximum: 2147483647
+      additionalProperties: false
     CreateStocktakeRowsDto:
       title: CreateStocktakeRowsDto
       type: object
@@ -170,31 +197,4 @@ components:
             additionalProperties: false
       required:
       - stocktake_id
-      additionalProperties: false
-    UpdateStocktakeRowDto:
-      title: UpdateStocktakeRowDto
-      type: object
-      properties:
-        variant_id:
-          type: integer
-          maximum: 2147483647
-        batch_id:
-          type:
-          - integer
-          - 'null'
-          maximum: 2147483647
-        bin_location_id:
-          type:
-          - integer
-          - 'null'
-          maximum: 2147483647
-        notes:
-          type:
-          - string
-          - 'null'
-        counted_quantity:
-          type:
-          - number
-          - 'null'
-          maximum: 2147483647
       additionalProperties: false

@@ -200,6 +200,39 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdatePurchaseOrderDto:
+      title: UpdatePurchaseOrderDto
+      type: object
+      properties:
+        order_no:
+          type: string
+          minLength: 1
+        supplier_id:
+          type: integer
+          maximum: 2147483647
+        currency:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          enum:
+          - DRAFT
+          - NOT_RECEIVED
+          - RECEIVED
+          - PARTIALLY_RECEIVED
+        expected_arrival_date:
+          type: string
+        order_created_date:
+          type: string
+        location_id:
+          type: integer
+          maximum: 2147483647
+        tracking_location_id:
+          type: integer
+          maximum: 2147483647
+        additional_info:
+          type: string
+      additionalProperties: false
     CreatePurchaseOrderDto:
       title: CreatePurchaseOrderDto
       type: object
@@ -288,37 +321,4 @@ components:
       - supplier_id
       - location_id
       - purchase_order_rows
-      additionalProperties: false
-    UpdatePurchaseOrderDto:
-      title: UpdatePurchaseOrderDto
-      type: object
-      properties:
-        order_no:
-          type: string
-          minLength: 1
-        supplier_id:
-          type: integer
-          maximum: 2147483647
-        currency:
-          type: string
-          minLength: 1
-        status:
-          type: string
-          enum:
-          - DRAFT
-          - NOT_RECEIVED
-          - RECEIVED
-          - PARTIALLY_RECEIVED
-        expected_arrival_date:
-          type: string
-        order_created_date:
-          type: string
-        location_id:
-          type: integer
-          maximum: 2147483647
-        tracking_location_id:
-          type: integer
-          maximum: 2147483647
-        additional_info:
-          type: string
       additionalProperties: false

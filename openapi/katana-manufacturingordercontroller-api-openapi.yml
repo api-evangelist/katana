@@ -151,100 +151,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateManufacturingOrderDto:
-      title: CreateManufacturingOrderDto
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - NOT_STARTED
-        order_no:
-          type: string
-          minLength: 1
-        variant_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        planned_quantity:
-          type: number
-          minimum: 1.0e-05
-          maximum: 1000000000000000
-        actual_quantity:
-          type:
-          - number
-          - 'null'
-          minimum: 0
-          maximum: 1000000000000000
-        batch_transactions:
-          type: array
-          items:
-            title: CreateBatchTransactionDto
-            type: object
-            properties:
-              batch_id:
-                type: integer
-                maximum: 2147483647
-              quantity:
-                type: number
-            required:
-            - batch_id
-            - quantity
-            additionalProperties: false
-        traceability:
-          type: array
-          items:
-            title: TraceabilityInputItemDtoExcluding_bin_location_id_
-            type: object
-            description: '(tsType: Omit<TraceabilityInputItemDto, ''bin_location_id''>, schemaOptions: { exclude: [ ''bin_location_id'' ] })'
-            properties:
-              batch_id:
-                type:
-                - number
-                - 'null'
-                minimum: 0
-                maximum: 2147483647
-              serial_number_id:
-                type:
-                - number
-                - 'null'
-                minimum: 0
-                maximum: 2147483647
-              quantity:
-                allOf:
-                - anyOf:
-                  - type: number
-                  - type: string
-                    pattern: ^(-|)[0-9]+?\.?[0-9]*$
-                - anyOf:
-                  - type: number
-                    not:
-                      const: 0
-                  - type: string
-                    not:
-                      pattern: ^(-|)[0]+?\.?[0]*$
-            additionalProperties: false
-            x-typescript-type: Omit<TraceabilityInputItemDto, 'bin_location_id'>
-        location_id:
-          type: integer
-          maximum: 2147483647
-          minimum: 1
-        order_created_date:
-          type: string
-          minLength: 1
-        production_deadline_date:
-          type: string
-          minLength: 1
-        additional_info:
-          type:
-          - string
-          - 'null'
-          minLength: 1
-      required:
-      - variant_id
-      - planned_quantity
-      - location_id
-      additionalProperties: false
     UpdateManufacturingOrderDto:
       title: UpdateManufacturingOrderDto
       type: object
@@ -341,4 +247,98 @@ components:
           - string
           - 'null'
           minLength: 1
+      additionalProperties: false
+    CreateManufacturingOrderDto:
+      title: CreateManufacturingOrderDto
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - NOT_STARTED
+        order_no:
+          type: string
+          minLength: 1
+        variant_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        planned_quantity:
+          type: number
+          minimum: 1.0e-05
+          maximum: 1000000000000000
+        actual_quantity:
+          type:
+          - number
+          - 'null'
+          minimum: 0
+          maximum: 1000000000000000
+        batch_transactions:
+          type: array
+          items:
+            title: CreateBatchTransactionDto
+            type: object
+            properties:
+              batch_id:
+                type: integer
+                maximum: 2147483647
+              quantity:
+                type: number
+            required:
+            - batch_id
+            - quantity
+            additionalProperties: false
+        traceability:
+          type: array
+          items:
+            title: TraceabilityInputItemDtoExcluding_bin_location_id_
+            type: object
+            description: '(tsType: Omit<TraceabilityInputItemDto, ''bin_location_id''>, schemaOptions: { exclude: [ ''bin_location_id'' ] })'
+            properties:
+              batch_id:
+                type:
+                - number
+                - 'null'
+                minimum: 0
+                maximum: 2147483647
+              serial_number_id:
+                type:
+                - number
+                - 'null'
+                minimum: 0
+                maximum: 2147483647
+              quantity:
+                allOf:
+                - anyOf:
+                  - type: number
+                  - type: string
+                    pattern: ^(-|)[0-9]+?\.?[0-9]*$
+                - anyOf:
+                  - type: number
+                    not:
+                      const: 0
+                  - type: string
+                    not:
+                      pattern: ^(-|)[0]+?\.?[0]*$
+            additionalProperties: false
+            x-typescript-type: Omit<TraceabilityInputItemDto, 'bin_location_id'>
+        location_id:
+          type: integer
+          maximum: 2147483647
+          minimum: 1
+        order_created_date:
+          type: string
+          minLength: 1
+        production_deadline_date:
+          type: string
+          minLength: 1
+        additional_info:
+          type:
+          - string
+          - 'null'
+          minLength: 1
+      required:
+      - variant_id
+      - planned_quantity
+      - location_id
       additionalProperties: false
