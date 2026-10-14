@@ -1,5 +1,5 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/katana/integrations
 - https://n8n.io/integrations/katana/
@@ -10,7 +10,25 @@ checked:
 - https://monid.ai/tools/katana
 - https://n8n.io/integrations/katana/
 - https://zapier.com/apps/katana/integrations
+- xero/integrations/xero-integration-edges.yml
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: Xero (own)
+  partner: xero
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.xero.com/us/app/katana-cloud-inventory
+  mirror_of: xero/integrations/xero-integration-edges.yml
+  apps:
+  - Katana Cloud Inventory
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Inventory
 templates: []
