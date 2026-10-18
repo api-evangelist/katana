@@ -12,7 +12,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 34
+edge_count: 37
 edges:
 - tag: PurchaseOrderController
   spec_file: katana-purchaseordercontroller-api-openapi.yml
@@ -29,10 +29,11 @@ edges:
   capability_id: BC-1070.10
   capability_id_l1: BC-1070
   capability_name: Bill of Materials Management
-  confidence: 0.9
-  evidence: POST /bom_rows  BomRowController.createBomRow  Bom row controller create bom row ... BomRowCreateDto
-  reason: Full CRUD over bill-of-materials rows in a manufacturing ERP — this is BOM structure maintenance,
-    directly Bill of Materials Management.
+  confidence: 0.92
+  evidence: '"POST /bom_rows BomRowController.createBomRow", "GET /bom_rows BomRowController.getBomRows",
+    schemas BomRowCreateDto, CreateBomRowsBatchDto'
+  reason: Full CRUD over bill-of-materials component rows in a manufacturing ERP — this is directly Bill
+    of Materials Management.
 - tag: PurchaseOrderRowController
   spec_file: katana-purchaseorderrowcontroller-api-openapi.yml
   capability_id: BC-500.30
@@ -172,6 +173,15 @@ edges:
   confidence: 0.75
   evidence: POST /price_list_customers  PriceListCustomerController.create
   reason: Assigns customers to price lists — customer-specific price book maintenance within pricing management.
+- tag: RecipeController
+  spec_file: katana-recipecontroller-api-openapi.yml
+  capability_id: BC-1070.10
+  capability_id_l1: BC-1070
+  capability_name: Bill of Materials Management
+  confidence: 0.75
+  evidence: POST /recipes  'Recipe controller create recipe row'; schema RecipeRowCreateManyDto
+  reason: For this manufacturing ERP, 'recipe' is the product's component/ingredient list, i.e. the manufacturing
+    bill of materials; operations create and list recipe rows per product, matching BOM structure management.
 - tag: SalesOrderController
   spec_file: katana-salesordercontroller-api-openapi.yml
   capability_id: BC-520.40
@@ -254,6 +264,15 @@ edges:
   reason: Creates and progresses transfers of stock between bins/locations — internal inventory movement
     management. L1 only as it spans warehouse movement rather than a specific L2.
   recovered_from: sweep-20260829T005356Z-edges.json
+- tag: ManufacturingOrderProductionController
+  spec_file: katana-manufacturingorderproductioncontroller-api-openapi.yml
+  capability_id: BC-1010.20
+  capability_id_l1: BC-1010
+  capability_name: Shop Floor Execution Management
+  confidence: 0.7
+  evidence: POST /manufacturing_order_productions  ManufacturingOrderProductionController.completePartially
+  reason: Records production completions (including partial completion) against manufacturing orders —
+    shop-floor execution reporting.
 - tag: ManufacturingOrderProductionIngredientController
   spec_file: katana-manufacturingorderproductioningredientcontroller-api-openapi.yml
   capability_id: BC-1010.10
@@ -312,6 +331,16 @@ edges:
   reason: In Katana a recipe is the bill of materials for a manufactured product; BOM definition falls
     under Product Specification Management.
   recovered_from: sweep-20260829T005356Z-edges.json
+- tag: RecipeRowController
+  spec_file: katana-reciperowcontroller-api-openapi.yml
+  capability_id: BC-1070.10
+  capability_id_l1: BC-1070
+  capability_name: Bill of Materials Management
+  confidence: 0.7
+  evidence: PATCH /recipe_rows/{id}  'Recipe row controller update recipe row'; schema RecipeRowUpdateDto
+  reason: Maintains individual component lines of a product recipe (BOM ingredient rows) in a manufacturing
+    ERP — bill-of-materials structure maintenance. Slightly lower confidence as the tag only exposes update/delete
+    with no descriptive text.
 - tag: SalesOrderRowController
   spec_file: katana-salesorderrowcontroller-api-openapi.yml
   capability_id: BC-520.40
