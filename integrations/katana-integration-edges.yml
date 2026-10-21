@@ -16,26 +16,10 @@ checked:
 - https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/katana/integrations
 - xero/integrations/xero-integration-edges.yml
+- bigcommerce/integrations/bigcommerce-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
-- partner_name: Xero (own)
-  partner: xero
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://apps.xero.com/us/app/katana-cloud-inventory
-  mirror_of: xero/integrations/xero-integration-edges.yml
-  apps:
-  - Katana Cloud Inventory
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Inventory
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -117,4 +101,38 @@ edges:
     builder: Fivetran
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
+- partner_name: Xero (own)
+  partner: xero
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.xero.com/us/app/katana-cloud-inventory
+  mirror_of: xero/integrations/xero-integration-edges.yml
+  apps:
+  - Katana Cloud Inventory
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Inventory
+- partner_name: BigCommerce (own)
+  partner: bigcommerce
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.bigcommerce.com/apps/katana-manufacturing-erp/
+  mirror_of: bigcommerce/integrations/bigcommerce-integration-edges.yml
+  apps:
+  - Katana Cloud Inventory
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Catalog & Order Management, Inventory & Order Management, ERP, Enterprise Resource Planning (ERP)
 templates: []
