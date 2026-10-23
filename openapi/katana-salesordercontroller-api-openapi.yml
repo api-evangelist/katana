@@ -1943,3 +1943,9 @@ components:
       - customer_id
       - sales_order_rows
       additionalProperties: false
+x-provenance:
+  method: harvested
+  publisher: Katana
+  source: https://api.katanamrp.com/v1/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)

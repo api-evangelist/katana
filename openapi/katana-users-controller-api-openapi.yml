@@ -41,3 +41,9 @@ paths:
               additionalProperties: true
       summary: Users controller get all users
       x-summary-source: derived
+x-provenance:
+  method: harvested
+  publisher: Katana
+  source: https://api.katanamrp.com/v1/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
